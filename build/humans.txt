@@ -1,0 +1,22 @@
+/* TEAM */
+
+	Chains Develop Team
+ 
+/* THANKS */
+
+    Middleman
+    HTML5 Bolireplate
+    HAML
+    Sass
+    Compass
+    Modernizr
+    jQuery
+    Twitter Bootstrap
+    Framework7
+
+/* SITE */
+
+    Last Update: 2015/02/04
+    Doctype: HTML5
+    IDE: RubyMine
+    Platform: Middleman - Ruby

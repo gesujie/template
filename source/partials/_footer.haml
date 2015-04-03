@@ -1,0 +1,9 @@
+=javascript_include_tag '//libs.baidu.com/jquery/1.10.2/jquery.min.js'
+
+// Fallback to loading jQuery from a local path if the CDN is unavailable
+:javascript
+  (window.jQuery || document.write('<script src="assets/javascripts/vendor/jquery-2.1.3.min.js"><\/script>'));
+
+=javascript_include_tag 'vendor/jquery.easyui.min.js',
+                        'main.js',
+                        'application.js'

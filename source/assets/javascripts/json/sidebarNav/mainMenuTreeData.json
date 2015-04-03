@@ -1,0 +1,35 @@
+[{
+  "id":1,
+  "text":"演示菜单",
+  "url" : "http://www.baidu.com",
+  "children":[]
+},{
+  "id":11,
+  "text":"图片",
+  "state":"open",
+  "parentId" : "1"
+},{
+  "id":111,
+  "text":"百度",
+  "url" : "http://baidu.com",
+  "iconCls" : "fa fa-weibo",
+  "parentId" : "11",
+  "iframe" : true
+},{
+  "id":112,
+  "text":"登陆页",
+  "url" : "login.html",
+  "iconCls" : "fa fa-file",
+  "parentId" : "11"
+},{
+  "id":113,
+  "text":"单元格换行",
+  "url" : "pages/datagrid.html",
+  "iconCls" : "fa fa-bar-chart",
+  "parentId" : "11"
+},{
+  "id":13,
+  "text":"欢迎使用",
+  "iconCls" : "fa fa-file",
+  "parentId" : "1"
+}]

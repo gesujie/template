@@ -1,0 +1,24 @@
+/* TEAM */
+
+	Chains Front-End Develop Team
+	JS: Your Name
+	CSS: My Name
+ 
+/* THANKS */
+
+    Middleman
+    HTML5 Bolireplate
+    HAML
+    Sass
+    Compass
+    Modernizr
+    jQuery
+    Easy UI
+    GIT
+
+/* SITE */
+
+    Last Update: 2015/02/04
+    Doctype: HTML5
+    IDE: RubyMine
+    Platform: Middleman - Ruby

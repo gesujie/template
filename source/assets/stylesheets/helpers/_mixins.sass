@@ -1,0 +1,116 @@
+//== Icons
+//
+//## Font awesome icons
+
+=font-icons($font-family, $icon-unicode, $font-size, $color)
+  content: $icon-unicode
+  font-family: $font-family
+  font-size: $font-size
+  color: $color
+
+//== Media Query
+//
+//## Breakpoints
+
+=media-query($media-query)
+  @if $media-query == small
+    @media only screen and (max-width: $medium - 1)
+      @content
+
+  @if $media-query == medium
+    @media only screen and (min-width: $medium)
+      @content
+
+  @if $media-query == medium-only
+    @media only screen and (min-width: $medium) and (max-width: $wide - 1)
+      @content
+
+  @if $media-query == wide
+    @media only screen and (min-width: $wide)
+      @content
+
+  @if $media-query == huge
+    @media only screen and (min-width: $huge)
+      @content
+
+
+// Just some helpers...
+=small-only
+  +media-query(small)
+    @content
+
+=medium
+  +media-query(medium)
+    @content
+
+=medium-only
+  +media-query(medium-only)
+    @content
+
+=wide
+  +media-query(wide)
+    @content
+
+=huge
+  +media-query(huge)
+    @content
+
+//== CSS Rules
+//
+//##  Mixins simply to store CSS rules
+
+=rule--small
+  font-size: $fontSmall
+  line-height: 2.0000em /* 26px */
+  padding-top: 2.0000em
+  padding-bottom: 0
+
+=rule--base
+  font-size: $fontBase
+  line-height: 1.6250em /* 26px */
+  padding-top: 1.6250em
+  padding-bottom: 0
+
+=rule--medium
+  font-size: $fontMedium
+  font-weight: 300
+  line-height: 1.3000em /* 26px */
+  padding-top: 1.3000em
+  padding-bottom: 0
+
+=rule--large
+  font-family: $fontHighlight
+  font-size: $fontLarge
+  font-weight: 300
+  line-height: 1.0000em /* 26px */
+  padding-top: 1.0000em
+  padding-bottom: 0
+
+=rule--xlarge
+  font-family: $fontHighlight
+  font-size: $fontXLarge
+  font-weight: 300
+  line-height: 1.2381em /* 52px */
+  padding-top: 0.6190em
+  padding-bottom: 0
+
+=rule--xxlarge
+  font-family: $fontHighlight
+  font-size: $fontXXLarge
+  font-weight: 300
+  line-height: 1.1471em /* 78px */
+  padding-top: 0.3824em
+  padding-bottom: 0
+
+=rule--huge
+  font-size: $font-size-large
+  font-weight: 300
+  line-height: 1.19em /* 130px */
+  padding-top: 0.2364em
+  padding-bottom: 0
+
+=type-wide($mediaQuery)
+  @if ($mediaQuery == huge)
+    +rule--huge
+
+

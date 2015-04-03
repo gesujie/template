@@ -1,0 +1,36 @@
+-@title= 'Datagrid | Admin Page '
+-@page_classes= 'datagrid easyui-layout'
+
+.container
+  .toolbar#tb
+    %form.form-horizontal{action:''}
+      .form-control
+        %label Date From:
+        %input.easyui-datebox{'data-options'=>'height:32'}
+      .form-control
+        %label To:
+        %input.easyui-datebox{'data-options'=>'height:32'}
+      .form-control
+        %label Language:
+        %select.easyui-combobox{'data-options'=>"height:'32'", panelheight: 'auto'}
+          %option{:value => 'java'} Java
+          %option{:value => 'c'} C
+          %option{:value => 'basic'} Basic
+          %option{:value => 'perl'} Perl
+          %option{:value => 'python'} Python
+      .form-control.btn-jump
+        %button.easyui-linkbutton{iconcls: 'fa fa-search', size:'small','data-options'=>"height:'32'"}
+          搜索
+    %a.easyui-linkbutton.btn-jump{href: 'javascript:void(0)', iconcls: 'fa fa-plus-square', onclick:"$('#dlg').dialog('open')", 'data-options'=>"height:'32'"} 弹出顶层对话框
+  %table.easyui-datagrid.datagrid-bg#dg{'data-options' => "singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'", style:'height:492px'}
+    %thead
+      %tr
+        %th{'data-options' => "field:'itemid',width:80"} Item ID
+        %th{'data-options' => "field:'productid',width:100"} Product
+        %th{'data-options' => "field:'listprice',width:80,align:'right'"} List Price
+        %th{'data-options' => "field:'unitcost',width:80,align:'right'"} Unit Cost
+        %th{'data-options' => "field:'attr1',width:250"} Attribute
+        %th{'data-options' => "field:'status',width:60,align:'center'"} Status
+
+.easyui-dialog#dlg{'data-options'=>"iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300"}
+  =lorem.words 10

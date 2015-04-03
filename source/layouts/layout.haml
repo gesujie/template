@@ -1,0 +1,31 @@
+!!!5
+%html{lang:''}
+  %head
+    %meta{charset: 'utf-8'}/
+    %meta{content: 'ie=edge', 'http-equiv' => 'x-ua-compatible'}/
+    %title
+      =@title
+    %meta{content: '', :name => 'description'}/
+    %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}/
+    %link{href: 'apple-touch-icon.png', rel: 'apple-touch-icon'}/
+
+    =stylesheet_link_tag  'application',
+                          '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css'
+
+  %body{class: @page_classes || page}
+
+    /[if lt IE 8]
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+
+    = partial 'partials/header'
+
+    = partial 'partials/sidebar'
+
+    = yield
+
+    = partial 'partials/footer'
+
+
+
+
+

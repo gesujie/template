@@ -1,0 +1,18 @@
+-@title= 'Home page | Admin Page '
+-@page_classes= 'home easyui-layout'
+
+
+// Context right click nav
+#mainTabMenu.easyui-menu
+  #refresh 刷新
+  .menu-sep
+  #close 关闭
+  #closeall 全部关闭
+  #closeother 除此之外全部关闭
+  .menu-sep
+  #closeright 当前页右侧全部关闭
+  #closeleft 当前页左侧全部关闭
+
+%div{'data-options' => "region:'center',border:false"}
+  #mainTabs.easyui-tabs{'data-options' => 'fit:true, tabHeight: 41, border:false'}
+    .jumbotron{title: '欢迎使用'}

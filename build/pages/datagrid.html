@@ -1,0 +1,45 @@
+<div class='container'>
+  <div class='toolbar' id='tb'>
+    <form action='' class='form-horizontal'>
+      <div class='form-control'>
+        <label>Date From:</label>
+        <input class='easyui-datebox' data-options='height:32'>
+      </div>
+      <div class='form-control'>
+        <label>To:</label>
+        <input class='easyui-datebox' data-options='height:32'>
+      </div>
+      <div class='form-control'>
+        <label>Language:</label>
+        <select class='easyui-combobox' data-options="height:'32'" panelheight='auto'>
+          <option value='java'>Java</option>
+          <option value='c'>C</option>
+          <option value='basic'>Basic</option>
+          <option value='perl'>Perl</option>
+          <option value='python'>Python</option>
+        </select>
+      </div>
+      <div class='form-control btn-jump'>
+        <button class='easyui-linkbutton' data-options="height:'32'" iconcls='fa fa-search' size='small'>
+          搜索
+        </button>
+      </div>
+    </form>
+    <a class='easyui-linkbutton btn-jump' data-options="height:'32'" href='javascript:void(0)' iconcls='fa fa-plus-square' onclick="$('#dlg').dialog('open')">弹出顶层对话框</a>
+  </div>
+  <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg' style='height:492px'>
+    <thead>
+      <tr>
+        <th data-options="field:'itemid',width:80">Item ID</th>
+        <th data-options="field:'productid',width:100">Product</th>
+        <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+        <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+        <th data-options="field:'attr1',width:250">Attribute</th>
+        <th data-options="field:'status',width:60,align:'center'">Status</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<div class='easyui-dialog' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300" id='dlg'>
+  sequi vitae est voluptates reiciendis perspiciatis non voluptatem ipsam quia
+</div>
