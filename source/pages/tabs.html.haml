@@ -1,0 +1,14 @@
+-@title= 'Tabs | Admin Page '
+-@page_classes= 'datagrid easyui-layout'
+
+.container
+  .easyui-tabs{tabHeight:41}
+    %div{title: 'About', 'data-options' => "iconCls:'fa fa-life-ring'"}
+      %p
+        =lorem.paragraphs 3
+    %div{title: 'My Documents', 'data-options' => "iconCls:'fa fa-pie-chart'"}
+      %p
+        =lorem.paragraphs 3
+    %div{'data-options' => "iconCls:'fa fa-info-circle',closable:true", title: 'Help'}
+      %p
+        =lorem.paragraphs 3

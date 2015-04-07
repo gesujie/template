@@ -25,7 +25,7 @@
   height: auto
 
 .pagination-page-list
-  margin: 0px 6px
+  margin: 0 6px
   padding: 1px 2px
   width: auto
   height: auto
@@ -41,7 +41,7 @@
   font-size: 12px
 
 .pagination span
-  font-size: 12px
+  display: block
 
 .pagination-link .l-btn-text
   width: 24px
@@ -49,10 +49,14 @@
   margin: 0
 
 .pagination-first
+  display: table-cell
+  vertical-align: middle
   &::before
     +font-icons(FontAwesome, '\f100', inherit, #000)
 
 .pagination-prev
+  display: table-cell
+  vertical-align: middle
   &::before
     +font-icons(FontAwesome, '\f104', inherit, #000)
 
@@ -64,18 +68,15 @@
   &::before
     +font-icons(FontAwesome, '\f101', inherit, #000)
 
-
 .pagination-load
+  &::before
+    +font-icons(FontAwesome, '\f021', inherit, #000)
+
+.pagination-loading
   &::before
     +font-icons(FontAwesome, '\f021', inherit, #000)
     +animation (fa-spin 1s infinite)
 
-.pagination-loading
-  &::before
-    +font-icons(FontAwesome, '\f110', inherit, #000)
-    +animation (fa-spin 1s infinite steps(8))
-
 .pagination-page-list,
 .pagination .pagination-num
   border-color: #95B8E7
-

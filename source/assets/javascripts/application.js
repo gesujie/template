@@ -21,8 +21,21 @@
     }
 }());
 
-//### SIDEBAR NAVIGATION JSON
+//### Sidebar navigation json
 qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 
+//### Registry login button
+function btnRegistry(){
+    $('.btn-registry').on('click', function(){
+        $('.panel-registry').addClass('active');
+        $('.panel-login').addClass('passive');
+    });
+}
 
-
+//### Registry back button
+function btnBack(){
+    $('.btn-back').on('click', function(){
+        $('.panel-registry').removeClass('active');
+        $('.panel-login').removeClass('passive');
+    });
+}

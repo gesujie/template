@@ -25,13 +25,7 @@
   vertical-align: top
 
 .l-btn-text
-  display: inline-block
-  vertical-align: top
-  width: auto
-  line-height: 24px
-  font-size: 12px
-  padding: 0
-  margin: 0 4px
+  +inline-block()
 
 .l-btn-icon
   position: absolute
@@ -133,6 +127,7 @@
   background-color: $l-btn-bg-color
   +border-radius(2px)
   +transition(background-color, 0.28s, ease-out)
+  font-size: 12px
 
   &:hover
     +box-shadow(0 1px 6px 0 rgba(0,0,0,.12), 0 1px 6px 0 rgba(0,0,0,.12))
@@ -145,42 +140,44 @@
       +animation(jump 0.4s linear)
 
 .l-btn-plain
+  display: table
   background: transparent
-  border-width: 0
-  filter: none
+  text-align: center
 
 .l-btn-outline
   border-width: 1px
   border-color: #b7d2ff
   padding: 0
 
-.l-btn-plain:hover
-  background: #eaf2ff
-  color: #000000
-  border: 1px solid #b7d2ff
-  +border-radius (2px)
+.l-btn-plain
+  &:hover
+    color: #fff
+    background-color: transparent
+    +box-shadow(none)
 
-.l-btn-disabled,
-.l-btn-disabled:hover
-  opacity: 0.5
-  cursor: default
-  background: #fafafa
-  color: #444
+.l-btn-disabled
+  +opacity(0.2)
+  background-color: transparent
+  cursor: not-allowed
+  &:hover
+    +box-shadow(none)
 
 .l-btn-disabled .l-btn-text,
 .l-btn-disabled .l-btn-icon
-  +opacity(0.5)
+  background-color: transparent
 
-.l-btn-plain-disabled,
-.l-btn-plain-disabled:hover
-  +opacity(0.5)
+.l-btn-plain-disabled
+  +opacity(0.2)
+  background-color: transparent
+  cursor: not-allowed
+  &:hover
+    +box-shadow(none)
 
-.l-btn-selected,
-.l-btn-selected:hover
-  background: #ddd
-  filter: none
+.l-btn-selected
+  &:hover
+    background: #ddd
+    filter: none
 
-.l-btn-plain-selected,
-.l-btn-plain-selected:hover
-  background: #ddd
-
+.l-btn-plain-selected
+  &:hover
+    background: #ddd

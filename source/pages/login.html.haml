@@ -1,0 +1,37 @@
+-@title= 'Login | Admin Page '
+-@page_classes= 'login'
+
+.container
+  .panel-login-container
+    .panel-login
+      %form.form-vertical{action:''}
+        .form-control
+          %label Email or Username:
+          %input.easyui-validatebox.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a email address...' ,validType:'email', width:200, height:32, required:false"}
+        .form-control
+          %label Password:
+          %input.easyui-validatebox.textbox.easyui-textbox{type:'password', name:'Password', 'data-options' => 'width:200, height:32', required:false}
+        .form-checkbox
+          %input{type:'checkbox'}
+          %label Remember me
+      .panel-login-footer
+        %a.easyui-linkbutton{href: '#', iconCls: 'fa fa-circle', 'data-options'=>'height:32'}
+          Login
+        %a.easyui-linkbutton.btn-registry{onclick:'btnRegistry()', href: 'javascript:void(0)', iconCls: 'fa fa-user-plus', 'data-options'=>'height:32'}
+          Registry
+    .panel-registry
+      %form.form-vertical{action:''}
+        .form-control
+          %label Email or Username:
+          %input.easyui-validatebox.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a email address...' ,validType:'email', width:200, height:32, required:true"}
+        .form-control
+          %label Password:
+          %input.easyui-validatebox.textbox.easyui-textbox#pwd{type:'password', name:'pwd', 'data-options' => 'width:200, height:32', required:true}
+        .form-control
+          %label Repeat Password:
+          %input.easyui-validatebox.textbox.easyui-textbox#rpwd{type:'password', name:'rpwd', 'data-options' => 'width:200, height:32', required:true, validType:"equals['#pwd']"}
+      .panel-login-footer
+        %a.easyui-linkbutton{href: 'javascript:void(0)', iconCls:'fa fa-check-square', 'data-options'=>'height:32'}
+          Ok
+        %a.easyui-linkbutton.btn-back{onclick:'btnBack()', href: 'javascript:void(0)', iconCls:'fa fa-arrow-left', 'data-options'=>'height:32'}
+          Back
