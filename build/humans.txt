@@ -1,6 +1,8 @@
 /* TEAM */
 
-	Chains Develop Team
+	Chains Front-End Develop Team
+	JS: Your Name
+	CSS: My Name
  
 /* THANKS */
 
@@ -11,8 +13,8 @@
     Compass
     Modernizr
     jQuery
-    Twitter Bootstrap
-    Framework7
+    Easy UI
+    GIT
 
 /* SITE */
 

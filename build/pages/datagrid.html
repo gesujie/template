@@ -20,17 +20,15 @@
         </select>
       </div>
       <div class='form-control btn-jump'>
-        <button class='easyui-linkbutton' data-options="height:'32'" iconcls='fa fa-search' size='small'>
-          搜索
-        </button>
+        <a iconcls="fa fa-search" class="easyui-linkbutton btn-jump" data-options="height:'32'" href="javascript:void(0)">Search</a>
       </div>
     </form>
-    <a class='easyui-linkbutton btn-jump' data-options="height:'32'" href='javascript:void(0)' iconcls='fa fa-plus-square' onclick="$('#dlg').dialog('open')">弹出顶层对话框</a>
+    <a iconcls="fa fa-plus-square" class="easyui-linkbutton btn-dialog btn-jump" onclick="$('#dlg-add').dialog('open'), btnDialogOpen()" data-options="height:'32'" href="javascript:void(0)">Add</a>
   </div>
-  <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg' style='height:492px'>
+  <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg' style='height:492px'>
     <thead>
       <tr>
-        <th data-options="field:'itemid',width:80">Item ID</th>
+        <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
         <th data-options="field:'productid',width:100">Product</th>
         <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
         <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
@@ -40,6 +38,27 @@
     </thead>
   </table>
 </div>
-<div class='easyui-dialog' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300" id='dlg'>
-  sequi vitae est voluptates reiciendis perspiciatis non voluptatem ipsam quia
+<div class='easyui-dialog passive' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:380, height:300" id='dlg-add' title='Add new rows'>
+  <form action='' class='form-vertical'>
+    <div class='form-control'>
+      <label>First Name:</label>
+      <input class='easyui-textbox' data-options='width:250, height:32' name='firstname'>
+    </div>
+    <div class='form-control'>
+      <label>Last Name:</label>
+      <input class='easyui-textbox' data-options='width:250, height:32' name='lastname'>
+    </div>
+    <div class='form-control'>
+      <label>Phone:</label>
+      <input class='easyui-textbox' data-options='width:250, height:32' name='phone'>
+    </div>
+    <div class='form-control'>
+      <label>Email:</label>
+      <input class='easyui-textbox' data-options='width:250, height:32' name='email' validType='email'>
+    </div>
+  </form>
+  <div class='dialog-button'>
+    <a class='easyui-linkbutton btn-jump' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
+    <a class='easyui-linkbutton btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close'), btnDialogClose()">Cancel</a>
+  </div>
 </div>

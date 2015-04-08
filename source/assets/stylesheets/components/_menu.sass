@@ -7,9 +7,9 @@
   position: absolute
   margin: 0
   padding: 2px
-  border-width: 1px
-  border-style: solid
   overflow: hidden
+  +border-radius(2px)
+  +box-shadow (0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19))
 
 .menu-inline
   position: relative
@@ -21,8 +21,7 @@
   overflow: hidden
   white-space: nowrap
   cursor: pointer
-  border-width: 1px
-  border-style: solid
+  +transition(background-color, 0.28s, ease-out)
 
 .menu-text
   height: 20px
@@ -54,7 +53,7 @@
   font-size: 1px
 
 .menu-sep
-  margin: 3px 0px 3px 25px
+  margin: 3px 0 3px 25px
   font-size: 1px
 
 .menu-noline .menu-line
@@ -65,13 +64,10 @@
   margin-right: 0
 
 .menu-active
-  -moz-border-radius: 5px 5px 5px 5px
-  -webkit-border-radius: 5px 5px 5px 5px
-  border-radius: 5px 5px 5px 5px
+  +border-radius (2px)
 
 .menu-item-disabled
-  opacity: 0.5
-  filter: alpha(opacity=50)
+  +opacity (0.5)
   cursor: default
 
 .menu-text,
@@ -80,17 +76,12 @@
 
 .menu-shadow
   position: absolute
-  -moz-border-radius: 5px 5px 5px 5px
-  -webkit-border-radius: 5px 5px 5px 5px
-  border-radius: 5px 5px 5px 5px
+  +border-radius (2px)
   background: #ccc
-  -moz-box-shadow: 2px 2px 3px #cccccc
-  -webkit-box-shadow: 2px 2px 3px #cccccc
-  box-shadow: 2px 2px 3px #cccccc
-  filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2,MakeShadow=false,ShadowOpacity=0.2)
 
 .menu-rightarrow
-  background: url('images/menu_arrows.png') no-repeat -32px center
+  &::before
+    +font-icons(FontAwesome, '\f0da', inherit, #000)
 
 .menu-line
   border-left: 1px solid #ccc
@@ -106,19 +97,14 @@
   color: #444
 
 .menu-content
-  background: #ffffff
-
-.menu-item
-  border-color: transparent
-  _border-color: #fafafa
+  background: #fff
 
 .menu-active
-  border-color: #b7d2ff
-  color: #000000
-  background: #eaf2ff
+  color: #fff
+  background-color: #D7D7D7
+  +transition(background-color, 0.28s, ease-in)
 
 .menu-active-disabled
-  border-color: transparent
   background: transparent
   color: #444
 
