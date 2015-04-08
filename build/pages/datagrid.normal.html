@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>datagrid，dialog顶层弹出</title>
+
+<!-- 引用插件部分-->
+<link  href="plugins/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+<link  href="plugins/easyui/themes/icon.css" rel="stylesheet" />
+<link  href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<script src="plugins/jquery.min.js"></script>
+<script src="plugins/My97DatePicker/WdatePicker.js"></script>
+<script src="plugins/easyui/jquery.easyui.min.js"></script>
+<script src="plugins/easyui/easyui-lang-zh_CN.js"></script>
+
+<!-- 自定义部分-->
+<link  href="css/qc.admin.css" rel="stylesheet">
+<script src="js/qc.ext.jquery.js"></script>
+<script src="js/qc.ext.easyui.js"></script>
+<script src="js/qc.admin.js"></script>
+</head>
+
+
+<body>
+<div class="easyui-layout" fit="true">
+	<div data-options="region:'center',border:false">
+		<table id="dgNowrap"></table>
+	</div>
+	<div id="tb" class="toolbar" >
+		Date From: <input class="easyui-datebox" style="width:110px">
+		To: <input class="easyui-datebox" style="width:110px">
+		Language: 
+		<select class="easyui-combobox" panelHeight="auto" style="width:100px">
+			<option value="java">Java</option>
+			<option value="c">C</option>
+			<option value="basic">Basic</option>
+			<option value="perl">Perl</option>
+			<option value="python">Python</option>
+		</select>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-add" onclick="qc.demo.showParentDialog();">弹出顶层对话框</a>
+	</div>
+</div>
+
+<script>
+qc.demo = {}; // 定义页面命名空间
+
+$(function(){
+	$("#dgNowrap").datagrid({
+		url : "/assets/javascripts/json/datagridData/demoDatagridData.json",
+		border : false, // 表格边框
+		nowrap : false, // 单元格不换行
+		striped : true, // 单双行颜色
+		fit : true, // 自适应容器宽度
+		fitColumns : true, // 自适应列宽
+		pagination : true, // 分页控件
+		rownumbers:true,  // 行号
+		toolbar : "#tb", // 工具栏ID，必须加#号
+		columns : [[
+			{ title:'itemid',field:'itemid',width:80},
+			{ title:'productid',field:'productid',width:100},
+			{ title:'listprice',field:'listprice',width:80,align:'right'},
+			{ title:'unitcost',field:'unitcost',width:80,align:'right'},
+			{ title:'attr1',field:'attr1',width:250},
+			{ title:'status',field:'status',width:60,align:'center'}
+		]]
+	});
+});
+
+qc.demo.showParentDialog = function() {
+	parent.$.modalDialog({
+		width : 600, height : 200
+	});
+}
+</script>
+</body>
+</html>

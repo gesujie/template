@@ -1,35 +1,38 @@
 [{
   "id":1,
-  "text":"演示菜单",
-  "url" : "http://www.baidu.com",
-  "children":[]
+  "text":"演示菜单"
 },{
   "id":11,
-  "text":"图片",
+  "text":"datagrid",
+  "iconCls" : "fa fa-list-alt",
   "state":"open",
   "parentId" : "1"
 },{
   "id":111,
-  "text":"百度",
-  "url" : "http://baidu.com",
-  "iconCls" : "fa fa-weibo",
-  "parentId" : "11",
-  "iframe" : true
+  "text":"普通datagrid",
+  "url" : "pages/datagrid.normal.html",
+  "iconCls" : "fa fa-list-alt",
+  "parentId" : "11"
 },{
   "id":112,
-  "text":"登陆页",
+  "text":"动态隐藏datagrid列",
   "url" : "login.html",
-  "iconCls" : "fa fa-file",
+  "iconCls" : "fa fa-list-alt",
   "parentId" : "11"
 },{
   "id":113,
-  "text":"单元格换行",
+  "text":"可编辑datagrid",
   "url" : "pages/datagrid.html",
-  "iconCls" : "fa fa-bar-chart",
+  "iconCls" : "fa fa-list-alt",
   "parentId" : "11"
 },{
-  "id":13,
-  "text":"欢迎使用",
-  "iconCls" : "fa fa-file",
-  "parentId" : "1"
+  "id":2,
+  "text":"iframe"
+},{
+  "id":21,
+  "text":"iframe中打开微博",
+  "url" : "http://weibo.com",
+  "iconCls" : "fa fa-weibo",
+  "parentId" : "2",
+  "iframe" : true
 }]
