@@ -35,4 +35,13 @@
   "iconCls" : "fa fa-weibo",
   "parentId" : "2",
   "iframe" : true
+},{
+  "id":3,
+  "text":"独立页"
+},{
+  "id":31,
+  "text":"登录",
+  "url" : "pages/login.html",
+  "iconCls" : "fa fa-user",
+  "parentId" : "3"
 }]
