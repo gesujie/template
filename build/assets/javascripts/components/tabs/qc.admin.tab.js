@@ -26,7 +26,9 @@ $(function(){
 	});
 
 	qc.main.mainTabs = $("#mainTabs").tabs({
-		border : false, fit : true,
+		border : false,
+        fit : true,
+        tabHeight:41,
 		onLoad:function(panel){
 			
 		}

@@ -4,19 +4,16 @@
     <meta charset='utf-8'>
     <meta content='ie=edge' http-equiv='x-ua-compatible'>
     <title>
-      Home page | Admin Page
+      Accordion | Admin Page
     </title>
     <meta content='' name='description'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href='apple-touch-icon.png' rel='apple-touch-icon'>
-    <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" /><link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
   </head>
-  <body class='home easyui-layout'>
+  <body class='accordion'>
     <!--[if lt IE 8]>
-      <div class="easyui-dialog" title="My Dialog" style="width:400px;height:200px;"   
-        data-options="iconCls:'icon-save',resizable:true,modal:true">你正在使用一个 <strong>非常过时的</strong> 浏览器. 请 <a href="http://browsehappy.com/">升级你的浏览器</a>以获得更好的体验.
-      </div>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class='header' data-options="region:'north',split:false,border:false, height:45">
       <div class='logo'>
@@ -46,29 +43,12 @@
     <div class='sidebar' data-options="region:'west',title:'系统菜单',split:false, border:false">
       <ul id='mainSlideMenu'></ul>
     </div>
-    <div class='easyui-menu' id='mainTabMenu'>
-      <div id='refresh'>刷新</div>
-      <div class='menu-sep'></div>
-      <div id='close'>关闭</div>
-      <div id='closeall'>全部关闭</div>
-      <div id='closeother'>除此之外全部关闭</div>
-      <div class='menu-sep'></div>
-      <div id='closeright'>当前页右侧全部关闭</div>
-      <div id='closeleft'>当前页左侧全部关闭</div>
-    </div>
-
-    <div data-options="region:'center',border:false">
-      <div class='easyui-tabs' data-options='fit:true, border:false' id='mainTabs'>
-        <div class='jumbotron' title='欢迎使用'></div>
-      </div>
-    </div>
+    
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js" type="text/javascript"></script>
     <!-- / Fallback to loading jQuery from a local path if the CDN is unavailable -->
     <script>
       (window.jQuery || document.write('<script src="assets/javascripts/vendor/jquery-2.1.3.min.js"><\/script>'));
     </script>
-    <script src="/assets/javascripts/vendor/jquery.easyui.min.js" type="text/javascript"></script>
-    <script src="/assets/javascripts/main.js" type="text/javascript"></script>
-    <script src="/assets/javascripts/application.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/vendor/jquery.easyui.min.js" type="text/javascript"></script><script src="/assets/javascripts/main.js" type="text/javascript"></script><script src="/assets/javascripts/application.js" type="text/javascript"></script>
   </body>
 </html>

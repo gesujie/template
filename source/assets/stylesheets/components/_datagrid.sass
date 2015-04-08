@@ -29,8 +29,7 @@
   top: 0
   width: 100%
   height: 100%
-  opacity: 0.3
-  filter: alpha(opacity=30)
+  +opacity(0.3)
   display: none
 
 .datagrid-mask-msg
@@ -43,9 +42,6 @@
   border-width: 2px
   border-style: solid
   display: none
-
-.datagrid-sort-icon
-  padding: 0
 
 .datagrid-toolbar
   height: auto
@@ -187,26 +183,44 @@
   border: 1px solid #95B8E7
   font-size: 12px
   outline-style: none
-  -moz-border-radius: 0 0 0 0
-  -webkit-border-radius: 0 0 0 0
-  border-radius: 0 0 0 0
+  +border-radius(0)
 
-.datagrid-sort-desc .datagrid-sort-icon
-  padding: 0 13px 0 0
-  background: url('images/datagrid_icons.png') no-repeat -16px center
+.datagrid-sort-icon
+  float: right
+  
+.datagrid-sort-desc
+  & .datagrid-sort-icon
+    &::before
+      +font-icons(FontAwesome, '\f0d7', inherit, #000)
 
-.datagrid-sort-asc .datagrid-sort-icon
-  padding: 0 13px 0 0
-  background: url('images/datagrid_icons.png') no-repeat 0px center
+.datagrid-sort-asc
+  & .datagrid-sort-icon
+    &::before
+      +font-icons(FontAwesome, '\f0d8', inherit, #000)
 
 .datagrid-row-collapse
-  background: url('images/datagrid_icons.png') no-repeat -48px center
+  &::before
+    +font-icons(FontAwesome, '\f146', inherit, #000)
 
 .datagrid-row-expand
-  background: url('images/datagrid_icons.png') no-repeat -32px center
+  &::before
+    +font-icons(FontAwesome, '\f0fe', inherit, #000)
+
+.datagrid-mask
+  background-color: #ccc
 
 .datagrid-mask-msg
-  background: #ffffff url('images/loading.gif') no-repeat scroll 5px center
+  border-color: #fff
+  background-color: #fff
+  padding: $padding-large-vertical $padding-large-horizontal
+  +box-shadow (0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19))
+
+.datagrid-mask-msg
+  &::before
+    +inline-block()
+    margin-right: 10px
+    +font-icons(FontAwesome, '\f110', 20px, #000)
+    +animation (fa-spin 1s infinite steps(8))
 
 .datagrid-header,
 .datagrid-td-rownumber
@@ -217,12 +231,6 @@
 
 .datagrid-resize-proxy
   background: #aac5e7
-
-.datagrid-mask
-  background: #ccc
-
-.datagrid-mask-msg
-  border-color: #95B8E7
 
 .datagrid-toolbar,
 .datagrid-pager
@@ -250,18 +258,17 @@
 
 .datagrid-row-over,
 .datagrid-header td.datagrid-header-over
-  background-color: #009688
-  +opacity(0.8)
-  color: #fff
+  background-color: #B3DAD6
+  color: #000
   cursor: default
+  +transition(background-color, 0.28s, ease-out)
 
 .datagrid-row-selected
-  background: #ffe48d
+  background-color: #009688
   color: #000
+  +transition(background-color, 0.28s, ease-in)
 
 .datagrid-row-editing .textbox,
 .datagrid-row-editing .textbox-text
-  -moz-border-radius: 0 0 0 0
-  -webkit-border-radius: 0 0 0 0
-  border-radius: 0 0 0 0
+  +border-radius(0)
 
