@@ -11,7 +11,7 @@
       </div>
       <div class='form-control'>
         <label>Language:</label>
-        <select class='easyui-combobox' data-options="height:'32'" panelheight='auto'>
+        <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
           <option value='java'>Java</option>
           <option value='c'>C</option>
           <option value='basic'>Basic</option>
@@ -19,11 +19,11 @@
           <option value='python'>Python</option>
         </select>
       </div>
-      <div class='form-control btn-jump'>
+      <div class='form-control'>
         <a iconcls="fa fa-search" class="easyui-linkbutton btn-jump" data-options="height:'32'" href="javascript:void(0)">Search</a>
+        <a iconcls="fa fa-plus-square" class="easyui-linkbutton btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" data-options="height:'32'" href="javascript:void(0)">Add</a>
       </div>
     </form>
-    <a iconcls="fa fa-plus-square" class="easyui-linkbutton btn-dialog btn-jump" onclick="$('#dlg-add').dialog('open'), btnDialogOpen()" data-options="height:'32'" href="javascript:void(0)">Add</a>
   </div>
   <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg' style='height:492px'>
     <thead>
@@ -38,7 +38,7 @@
     </thead>
   </table>
 </div>
-<div class='easyui-dialog passive' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:380, height:300" id='dlg-add' title='Add new rows'>
+<div class='easyui-dialog passive' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300" id='dlg-add' title='Add new rows'>
   <form action='' class='form-vertical'>
     <div class='form-control'>
       <label>First Name:</label>
@@ -59,6 +59,6 @@
   </form>
   <div class='dialog-button'>
     <a class='easyui-linkbutton btn-jump' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
-    <a class='easyui-linkbutton btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close'), btnDialogClose()">Cancel</a>
+    <a class='easyui-linkbutton btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
   </div>
 </div>

@@ -6,24 +6,28 @@
 .textbox
   position: relative
   +inline-block()
-  background-color: #fff
-  white-space: nowrap
-  +border-radius(2px)
-  font-weight: 300
 
 .textbox .textbox-text
-  padding: $padding-base-vertical $padding-base-horizontal
-  white-space: normal
+  padding: $padding-small-vertical $padding-small-horizontal
   vertical-align: middle
-  +border-radius (2px)
-  border: 1px solid transparent
   background-color: #F9F9F9
-  +transition(border-color, 0.28s, ease-out)
+  border: none
+  +border-radius (2px)
+  +transition(background-color, 0.28s, ease-out)
+  font-size: $font-size-base
+  font-weight: 300
 
   &:focus
-    border: 1px solid #22beef
-    +transition(border-color, 0.28s, ease-in)
+    background-color: #22beef
+    color: #fff
+    +transition(background-color, 0.28s, ease-in)
     outline: none
+    &::-webkit-input-placeholder
+      color: #fff
+    &::-moz-placeholder
+      color: #fff
+    &:-ms-input-placeholder
+      color: #fff
 
 .textbox .textbox-prompt
   color: #d7d7d7
@@ -58,4 +62,5 @@
   cursor: default
 
 .textbox-invalid
+  border-color: #ffa8a8
   background-color: #fff3f3

@@ -1,6 +1,7 @@
 -@title= 'Datagrid | Admin Page '
 -@page_classes= 'datagrid easyui-layout'
 
+
 .container
   .toolbar#tb
     %form.form-horizontal{action:''}
@@ -12,15 +13,15 @@
         %input.easyui-datebox{'data-options'=>'height:32'}
       .form-control
         %label Language:
-        %select.easyui-combobox{'data-options'=>"height:'32'", panelheight: 'auto'}
+        %select.easyui-combobox{'data-options'=>"width:'180', height:'32'", panelheight: 'auto'}
           %option{:value => 'java'} Java
           %option{:value => 'c'} C
           %option{:value => 'basic'} Basic
           %option{:value => 'perl'} Perl
           %option{:value => 'python'} Python
-      .form-control.btn-jump
+      .form-control
         =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton btn-jump', 'data-options'=>"height:'32'"
-    =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton btn-dialog btn-jump', onclick:"$('#dlg-add').dialog('open'), btnDialogOpen()", 'data-options'=>"height:'32'"
+        =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')", 'data-options'=>"height:'32'"
   %table.easyui-datagrid.datagrid-bg#dg{'data-options' => "singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'", style:'height:492px'}
     %thead
       %tr
@@ -31,7 +32,7 @@
         %th{'data-options' => "field:'attr1',width:250"} Attribute
         %th{'data-options' => "field:'status',width:60,align:'center'"} Status
 
-.easyui-dialog#dlg-add.passive{'data-options'=>"iconCls:'fa fa-plus-square', modal:true, closed: true, width:380, height:300", title:'Add new rows'}
+.easyui-dialog#dlg-add.passive{'data-options'=>"iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300", title:'Add new rows'}
   %form.form-vertical{action:''}
     .form-control
       %label First Name:
@@ -47,4 +48,4 @@
       %input.easyui-textbox{name: 'email', validType: 'email', 'data-options'=>'width:250, height:32'}
   .dialog-button
     %a.easyui-linkbutton.btn-jump{href: 'javascript:void(0)', iconCls: 'fa fa-check-circle-o', onclick: 'saveUser()', 'data-options'=>'height:32'} Save
-    %a.easyui-linkbutton.btn-jump.btn-dialog-close{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close'), btnDialogClose()", 'data-options'=>'height:32'} Cancel
+    %a.easyui-linkbutton.btn-jump.btn-dialog-close{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close')", 'data-options'=>'height:32'} Cancel

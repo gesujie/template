@@ -17,5 +17,3 @@ if (!qc.menu) qc.menu = {};
 if (!qc.form) qc.form = {};
 if (!qc.dialog) qc.dialog = {};
 if (!qc.tabs) qc.tabs = {};
-
-

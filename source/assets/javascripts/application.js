@@ -35,15 +35,3 @@ function btnBack(){
     $('.panel-registry').removeClass('active');
     $('.panel-login').removeClass('passive');
 }
-
-//### Dialog open button
-function btnDialogOpen(){
-    var dialogWindow = $('.window');
-    dialogWindow.addClass('active');
-}
-
-//### Dialog close button
-function btnDialogClose(){
-    var dialogWindow = $('.window');
-    dialogWindow.removeClass('active');
-}

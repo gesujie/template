@@ -5,15 +5,6 @@
 
 .panel
   overflow: hidden
-  text-align: left
-  margin: 0
-  border: 0
-  +border-radius (0)
-
-.panel-header,
-.panel-body
-  border-width: 1px
-  border-style: solid
 
 .panel-header
   padding: 5px
@@ -24,14 +15,12 @@
 
 .panel-body
   overflow: auto
-  border-top-width: 0
-  padding: 0
 
 .panel-body-noheader
   border-top-width: 1px
 
 .panel-body-noborder
-  border-width: 0px
+  border-width: 0
 
 .panel-body-nobottom
   border-bottom-width: 0
@@ -42,17 +31,13 @@
 .panel-icon,
 .panel-tool
   position: absolute
-  top: 50%
-  margin-top: -8px
-  height: 16px
-  overflow: hidden
+  top: 32%
 
 .panel-icon
   left: 5px
-  width: 16px
 
 .panel-tool
-  right: 5px
+  right: 10px
   width: auto
 
 .panel-noscroll
@@ -73,6 +58,7 @@
   +border-radius(80px)
   text-align: center
   font-size: 20px
+
   &::before
     +inline-block()
     margin-right: 8px
@@ -91,30 +77,30 @@
     +transition(transform, 0.28s, ease-in, 0.5s)
 
 .panel-tool-min
-  background: url('images/panel_tools.png') no-repeat 0px 0px
+  &::before
+    +font-icons(FontAwesome, '\f056', inherit, #4C4949)
 
 .panel-tool-max
-  background: url('images/panel_tools.png') no-repeat 0px -16px
+  &::before
+    +font-icons(FontAwesome, '\f055', inherit, #4C4949)
 
 .panel-tool-restore
-  background: url('images/panel_tools.png') no-repeat -16px -16px
+  &::before
+    +font-icons(FontAwesome, '\f057', inherit, #4C4949)
 
 .panel-tool-collapse
-  background: url('images/panel_tools.png') no-repeat -32px 0
+  &::before
+    +font-icons(FontAwesome, '\f056', inherit, #4C4949)
 
 .panel-tool-expand
-  background: url('images/panel_tools.png') no-repeat -32px -16px
-
-.panel-header,
-.panel-body
-  border-color: #95B8E7
+  &::before
+    +font-icons(FontAwesome, '\f055', inherit, #4C4949)
 
 .panel-header
   background-color: $panel-header-color
 
 .panel-body
   background-color: $panel-body-bg-color
-  font-size: 12px
   overflow: hidden
 
 .panel-title
@@ -122,10 +108,8 @@
   font-size: $panel-title-font-size
 
 .panel-footer
-  border: 1px solid #95B8E7
   overflow: hidden
-  background: #F4F4F4
+  background-color: #F4F4F4
 
 .panel-footer-noborder
   border-width: 1px 0 0 0
-
