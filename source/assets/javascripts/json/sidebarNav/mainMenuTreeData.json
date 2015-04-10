@@ -1,23 +1,64 @@
 [{
   "id":1,
-  "text":"演示菜单",
-  "children":[]
+  "text":"演示菜单"
 },{
-  "id":2,
-  "text":"单元格换行",
-  "url" : "pages/datagrid.html",
-  "iconCls" : "fa fa-th-list",
+  "id":11,
+  "text":"datagrid",
+  "iconCls" : "fa fa-list-alt",
+  "state":"open",
   "parentId" : "1"
 },{
+  "id":111,
+  "text":"普通datagrid",
+  "url" : "pages/datagrid-normal.html",
+  "iconCls" : "fa fa-list-alt",
+  "parentId" : "11"
+},{
+  "id":112,
+  "text":"动态隐藏datagrid列",
+  "url" : "login.html",
+  "iconCls" : "fa fa-list-alt",
+  "parentId" : "11"
+},{
+  "id":113,
+  "text":"可编辑datagrid",
+  "url" : "pages/datagrid.html",
+  "iconCls" : "fa fa-list-alt",
+  "parentId" : "11"
+},{
+  "id":2,
+  "text":"iframe"
+},{
+  "id":21,
+  "text":"iframe中打开微博",
+  "url" : "http://baidu.com",
+  "iconCls" : "fa fa-weibo",
+  "parentId" : "2",
+  "iframe" : true
+},{
   "id":3,
+  "text":"表单"
+},{
+  "id":31,
   "text":"登录",
   "url" : "pages/login.html",
   "iconCls" : "fa fa-user",
-  "parentId" : "1"
+  "parentId" : "3"
+},{
+  "id":32,
+  "text":"电机工程学会申请表",
+  "url" : "pages/register.jdgc.html",
+  "iconCls" : "fa file-text-o",
+  "parentId" : "3"
 },{
   "id":4,
-  "text":"选项卡",
-  "url" : "pages/tabs.html",
-  "iconCls" : "fa fa-file-o",
-  "parentId" : "1"
+  "text":"tree treegrid"
+},{
+  "id":41,
+  "text":"普通树",
+  "url" : "pages/tree-normal.html",
+  "iconCls" : "fa file-text-o",
+  "parentId" : "3"
 }]
+
+

@@ -35,7 +35,7 @@
 .tree-folder,
 .tree-file,
 .tree-checkbox
-  +inline-block()
+  display: inline-block
   min-width: 18px
 
 .tree-indent
@@ -111,15 +111,30 @@
 
 .tree-folder
   &::before
-    +font-icons(FontAwesome, '\f114', inherit, #d7d7d7)
+    display: inline-block
+    +font-icons(FontAwesome, '\f114', 14px, #d7d7d7)
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    transform: translate(0, 0)
 
 .tree-folder-open
   &::before
-    +font-icons(FontAwesome, '\f115', inherit, #d7d7d7)
+    display: inline-block
+    +font-icons(FontAwesome, '\f115', 14px, #d7d7d7)
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    transform: translate(0, 0)
 
 .tree-file
   &::before
+    display: inline-block
     +font-icons(FontAwesome, '\f15b', inherit, #d7d7d7)
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    transform: translate(0, 0)
 
 .tree-loading
   &::before

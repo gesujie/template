@@ -7,20 +7,10 @@
   height: 180px
 
 .datebox-button
-  height: 18px
-  padding: 2px 5px
   text-align: center
 
 .datebox-button a
-  font-size: 12px
-  font-weight: bold
-  text-decoration: none
-  opacity: 0.6
-  filter: alpha(opacity=60)
-
-.datebox-button a:hover
-  opacity: 1.0
-  filter: alpha(opacity=100)
+  +opacity(0.6)
 
 .datebox-current,
 .datebox-close
@@ -34,7 +24,7 @@
     &::before
       display: table-cell
       vertical-align: middle
-      +font-icons(FontAwesome, '\f073', inherit, #222)
+      +font-icons(FontAwesome, '\f073', $font-size-base, #222)
 
 .datebox-button
   background-color: #F4F4F4

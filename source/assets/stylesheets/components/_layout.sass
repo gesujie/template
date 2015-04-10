@@ -6,8 +6,6 @@
 .layout
   position: relative
   overflow: hidden
-  margin: 0
-  padding: 0
   z-index: 0
 
 .layout-panel
@@ -24,25 +22,21 @@
 
 .layout-expand
   position: absolute
-  padding: 0px
+  padding: 0
   font-size: 1px
   cursor: pointer
   z-index: 1
 
 .layout-expand .panel-header,
 .layout-expand .panel-body
-  background: transparent
-  filter: none
+  background-color: transparent
   overflow: hidden
-
-.layout-expand .panel-header
-  border-bottom-width: 0px
 
 .layout-split-proxy-h,
 .layout-split-proxy-v
   position: absolute
-  font-size: 1px
   display: none
+  font-size: 1px
   z-index: 5
 
 .layout-split-proxy-h
@@ -56,41 +50,43 @@
 .layout-mask
   position: absolute
   background: #fafafa
-  filter: alpha(opacity=10)
-  opacity: 0.10
+  +opacity(0.10)
   z-index: 4
 
 .layout-button-up
-  background: url('images/layout_arrows.png') no-repeat -16px -16px
+  &::before
+    +font-icons(FontAwesome, '\f106', 14px, #000)
 
 .layout-button-down
-  background: url('images/layout_arrows.png') no-repeat -16px 0
+  &::before
+    +font-icons(FontAwesome, '\f107', 14px, #000)
 
 .layout-button-left
-  background: url('images/layout_arrows.png') no-repeat 0 0
+  &::before
+    +font-icons(FontAwesome, '\f03b', 14px, #414E5A)
+    +transition(color, 0.28s, ease-out)
+
+  &:hover::before
+    color: darken(#414E5A, 10%)
+    +transition(color, 0.28s, ease-in)
 
 .layout-button-right
-  background: url('images/layout_arrows.png') no-repeat 0 -16px
+  &::before
+    +font-icons(FontAwesome, '\f03c', 14px, #414E5A)
+    +transition(color, 0.28s, ease-out)
+
+  &:hover::before
+    color: darken(#414E5A, 10%)
+    +transition(color, 0.28s, ease-in)
 
 .layout-split-proxy-h,
 .layout-split-proxy-v
   background-color: #aac5e7
 
-.layout-split-north
-  border-bottom: 5px solid #E6EEF8
-
-.layout-split-south
-  border-top: 5px solid #E6EEF8
-
-.layout-split-east
-  border-left: 5px solid #E6EEF8
-
-.layout-split-west
-  border-right: 5px solid #E6EEF8
-
 .layout-expand
-  background-color: #E0ECFF
+  background-color: #5a6e83
+  +transition(background-color, 0.28s, ease-out)
 
 .layout-expand-over
-  background-color: #E0ECFF
-
+  background-color: lighten(#5a6e83, 5%)
+  +transition(background-color, 0.28s, ease-in)
