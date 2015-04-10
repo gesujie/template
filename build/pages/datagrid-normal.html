@@ -20,9 +20,9 @@
 
 <body>
 <div class="easyui-layout" fit="true">
-	<div data-options="region:'center',border:false">
-		<table id="dgNowrap"></table>
-	</div>
+  <div data-options="region:'center',border:false">
+    <table id="dgNowrap"></table>
+  </div>
 
 
 
@@ -80,38 +80,45 @@
   </div>
 </div>
 
-
+<style>
+.dg-tr-bg1 {background-color: blue;}
+</style>
 <script>
 qc.demo = {}; // 定义页面命名空间
 
 $(function(){
-	$("#dgNowrap").datagrid({
-		url : "/assets/javascripts/json/datagridData/demoDatagridData.json",
-		border : false, // 表格边框
-		nowrap : false, // 单元格不换行
-		striped : true, // 单双行颜色
-		fit : true, // 自适应容器宽度
-		fitColumns : true, // 自适应列宽
-		pagination : true, // 分页控件
-		rownumbers:true,  // 行号
-		toolbar : "#tb", // 工具栏ID，必须加#号
-		columns : [[
-			{ title:'itemid',field:'itemid',width:80},
-			{ title:'productid',field:'productid',width:100},
-			{ title:'listprice',field:'listprice',width:80,align:'center'},
-			{ title:'unitcost',field:'unitcost',width:80,align:'right'},
-			{ title:'attr1',field:'attr1',width:250},
-			{ title:'status',field:'status',width:60,align:'center'}
-		]]
-	});
+  $("#dgNowrap").datagrid({
+    url : "/assets/javascripts/json/datagridData/demoDatagridData.json",
+    border : false, // 表格边框
+    nowrap : false, // 单元格不换行
+    striped : true, // 单双行颜色
+    fit : true, // 自适应容器宽度
+    fitColumns : true, // 自适应列宽
+    pagination : true, // 分页控件
+    rownumbers:true,  // 行号
+    toolbar : "#tb", // 工具栏ID，必须加#号
+    columns : [[
+      { title:'itemid',field:'itemid',width:80},
+      { title:'productid',field:'productid',width:100},
+      { title:'listprice',field:'listprice',width:80,align:'right'},
+      { title:'unitcost',field:'unitcost',width:80,align:'right'},
+      { title:'attr1',field:'attr1',width:250},
+      { title:'status',field:'status',width:60,align:'center'}
+    ]],
+    rowStyler :  function(index,row){
+      if (row.itemid == 'EST-13'){
+        return 'dg-tr-bg1';
+      }
+    }
+
+  });
 });
 
 qc.demo.showParentDialog = function() {
-	parent.$.modalDialog({
-		width : 600, height : 200
-	});
+  parent.$.modalDialog({
+    width : 600, height : 200
+  });
 }
 </script>
 </body>
 </html>
-
