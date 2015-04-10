@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"/>
+<link href="/assets/stylesheets/application.css" rel="stylesheet"/>
+
+
+<script src="/assets/javascripts/vendor/jquery-2.1.3.min.js"></script>
+<script src="/assets/javascripts/vendor/jquery.easyui.min.js"></script>
+<script src="/assets/javascripts/components/location/easyui-lang-zh_CN.js"></script>
+
+<script src="/assets/javascripts/components/extJquery/qc.ext.jquery.js"></script>
+<script src="/assets/javascripts/components/extEasyui/qc.ext.easyui.js"></script>
+<script src="/assets/javascripts/components/admin/qc.admin.js"></script>
+
+</head>
+<body>
+  <div class="easyui-layout" fit="true" style="width:100%; height:100%;">   
+    
+    <div data-options="region:'center',border:false">
+      <table id="qc-treeNormal-dgNowrap"></table>
+    </div>
+
+
+    <div class='toolbar' id='tb'></div>
+</div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+qc.treeNormal = {};
+qc.treeNormal.dgNowrap = null; 
+
+  $(function(){
+  qc.treeNormal.dgNowrap = $("#qc-treeNormal-dgNowrap").datagrid({
+    url : "/assets/javascripts/json/datagridData/demoDatagridData.json",
+    border : false, // 表格边框
+    nowrap : false, // 单元格不换行
+    striped : true, // 单双行颜色
+    fit : true, // 自适应容器宽度
+    fitColumns : true, // 自适应列宽
+    pagination : true, // 分页控件
+    rownumbers:true,  // 行号
+    //toolbar : "#qc.treeNormal.tb", // 工具栏ID，必须加#号
+    columns : [[
+      { title:'itemid',field:'itemid',width:80},
+      { title:'productid',field:'productid',width:100},
+      { title:'listprice',field:'listprice',width:80,align:'center'},
+      { title:'unitcost',field:'unitcost',width:80,align:'right'},
+      { title:'attr1',field:'attr1',width:250},
+      { title:'status',field:'status',width:60,align:'center'}
+    ]]
+  });
+});
+</script>
+</body>
+</html>

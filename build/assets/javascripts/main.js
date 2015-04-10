@@ -133,6 +133,13 @@ $.fn.panel.defaults.onBeforeDestroy = function() {
  */
 $.fn.panel.defaults.loadingMessage = '加载中....';
 $.fn.datagrid.defaults.loadMsg = '加载中....';
+$.fn.dialog.defaults.onOpen = function() {
+	console.info($(this));
+	$(this).parent().addClass("active");
+};
+$.fn.dialog.defaults.onClose = function() {
+	$(this).parent().removeClass("active");
+};
 
 /**
  * @author 李钰龙

@@ -10,7 +10,7 @@
 },{
   "id":111,
   "text":"普通datagrid",
-  "url" : "pages/datagrid.normal.html",
+  "url" : "pages/datagrid-normal.html",
   "iconCls" : "fa fa-list-alt",
   "parentId" : "11"
 },{
@@ -31,17 +31,34 @@
 },{
   "id":21,
   "text":"iframe中打开微博",
-  "url" : "http://weibo.com",
+  "url" : "http://baidu.com",
   "iconCls" : "fa fa-weibo",
   "parentId" : "2",
   "iframe" : true
 },{
   "id":3,
-  "text":"独立页"
+  "text":"表单"
 },{
   "id":31,
   "text":"登录",
   "url" : "pages/login.html",
   "iconCls" : "fa fa-user",
   "parentId" : "3"
+},{
+  "id":32,
+  "text":"电机工程学会申请表",
+  "url" : "pages/register.jdgc.html",
+  "iconCls" : "fa file-text-o",
+  "parentId" : "3"
+},{
+  "id":4,
+  "text":"tree treegrid"
+},{
+  "id":41,
+  "text":"普通树",
+  "url" : "pages/tree-normal.html",
+  "iconCls" : "fa file-text-o",
+  "parentId" : "3"
 }]
+
+
