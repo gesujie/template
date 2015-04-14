@@ -81,7 +81,8 @@
 </div>
 
 <style>
-.dg-tr-bg1 {background-color: blue;}
+.dg-row-bg:not(:hover) {background-color: blue;}
+.dg-row-bg+.datagrid-row-selected {background-color: ;}
 </style>
 <script>
 qc.demo = {}; // 定义页面命名空间
@@ -105,12 +106,22 @@ $(function(){
       { title:'attr1',field:'attr1',width:250},
       { title:'status',field:'status',width:60,align:'center'}
     ]],
-    rowStyler :  function(index,row){
-      if (row.itemid == 'EST-13'){
-        return 'dg-tr-bg1';
+    rowStyler: function(index,row){
+      if(index == 5) {
+        row.haveStyle = true;
+        return {class:'dg-row-bg'};
+      }
+    },
+    onClickRow: function(index, row){
+      var rowDom = $($("#dgNowrap").prev().find(".datagrid-body table tr")[index]);
+      if(row.haveStyle == true) {
+        if(rowDom.hasClass("dg-row-bg")) {
+          rowDom.removeClass("dg-row-bg");
+        } else {
+          rowDom.addClass("dg-row-bg");
+        }
       }
     }
-
   });
 });
 

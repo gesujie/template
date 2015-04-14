@@ -39,6 +39,12 @@
   "id":3,
   "text":"表单"
 },{
+  "id":30,
+  "text":"普通表单",
+  "url" : "pages/form-register.html",
+  "iconCls" : "fa fa-user",
+  "parentId" : "3"
+},{
   "id":31,
   "text":"登录",
   "url" : "pages/login.html",
