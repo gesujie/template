@@ -46,12 +46,8 @@ $.fn.panel.defaults.onBeforeDestroy = function() {
 $.fn.panel.defaults.loadingMessage = '加载中....';
 $.fn.datagrid.defaults.loadMsg = '加载中....';
 
-/**
- * dialog打开、关闭时扩展动画效果
- * @author 李钰龙
- * @requires jQuery,EasyUI
- */
 $.fn.dialog.defaults.onOpen = function() {
+	console.info($(this));
 	$(this).parent().addClass("active");
 };
 $.fn.dialog.defaults.onClose = function() {

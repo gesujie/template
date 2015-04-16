@@ -1,64 +1,66 @@
-<div class='container'>
-  <div class='toolbar' id='tb'>
-    <form action='' class='form-horizontal'>
+<div class='easyui-layout' fit='true'>
+  <div class='easyui-panel' data-options="region:'center',headerCls:'panel-header-primary', border:false, title:'Data Grid', iconCls:'fa fa-database'">
+    <div class='toolbar' id='tb'>
+      <form action='' class='form-horizontal'>
+        <div class='form-control'>
+          <label>Date From:</label>
+          <input class='easyui-datebox' data-options='height:32'>
+        </div>
+        <div class='form-control'>
+          <label>To:</label>
+          <input class='easyui-datebox' data-options='height:32'>
+        </div>
+        <div class='form-control'>
+          <label>Language:</label>
+          <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+            <option value='java'>Java</option>
+            <option value='c'>C</option>
+            <option value='basic'>Basic</option>
+            <option value='perl'>Perl</option>
+            <option value='python'>Python</option>
+          </select>
+        </div>
+        <div class='form-control'>
+          <a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" href="javascript:void(0)">Search</a>
+          <a iconcls="fa fa-plus-square" class="easyui-linkbutton color-default btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" href="javascript:void(0)">Add</a>
+        </div>
+      </form>
+    </div>
+    <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, toolbar :'#tb', pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg'>
+      <thead>
+        <tr>
+          <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
+          <th data-options="field:'productid',width:100">Product</th>
+          <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+          <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+          <th data-options="field:'attr1',width:250">Attribute</th>
+          <th data-options="field:'status',width:60,align:'center'">Status</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class='easyui-dialog passive' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300" id='dlg-add' title='Add new rows'>
+    <form action='' class='form-vertical'>
       <div class='form-control'>
-        <label>Date From:</label>
-        <input class='easyui-datebox' data-options='height:32'>
+        <label>First Name:</label>
+        <input class='easyui-textbox' data-options='width:250, height:32' name='firstname'>
       </div>
       <div class='form-control'>
-        <label>To:</label>
-        <input class='easyui-datebox' data-options='height:32'>
+        <label>Last Name:</label>
+        <input class='easyui-textbox' data-options='width:250, height:32' name='lastname'>
       </div>
       <div class='form-control'>
-        <label>Language:</label>
-        <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
-          <option value='java'>Java</option>
-          <option value='c'>C</option>
-          <option value='basic'>Basic</option>
-          <option value='perl'>Perl</option>
-          <option value='python'>Python</option>
-        </select>
+        <label>Phone:</label>
+        <input class='easyui-textbox' data-options='width:250, height:32' name='phone'>
       </div>
       <div class='form-control'>
-        <a iconcls="fa fa-search" class="easyui-linkbutton btn-jump" data-options="height:'32'" href="javascript:void(0)">Search</a>
-        <a iconcls="fa fa-plus-square" class="easyui-linkbutton btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" data-options="height:'32'" href="javascript:void(0)">Add</a>
+        <label>Email:</label>
+        <input class='easyui-textbox' data-options='width:250, height:32' name='email' validType='email'>
       </div>
     </form>
-  </div>
-  <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border:false, toolbar : '#tb', pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg' style='height:492px'>
-    <thead>
-      <tr>
-        <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
-        <th data-options="field:'productid',width:100">Product</th>
-        <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
-        <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
-        <th data-options="field:'attr1',width:250">Attribute</th>
-        <th data-options="field:'status',width:60,align:'center'">Status</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-<div class='easyui-dialog passive' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300" id='dlg-add' title='Add new rows'>
-  <form action='' class='form-vertical'>
-    <div class='form-control'>
-      <label>First Name:</label>
-      <input class='easyui-textbox' data-options='width:250, height:32' name='firstname'>
+    <div class='dialog-button'>
+      <a class='easyui-linkbutton btn-jump' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
+      <a class='easyui-linkbutton btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
     </div>
-    <div class='form-control'>
-      <label>Last Name:</label>
-      <input class='easyui-textbox' data-options='width:250, height:32' name='lastname'>
-    </div>
-    <div class='form-control'>
-      <label>Phone:</label>
-      <input class='easyui-textbox' data-options='width:250, height:32' name='phone'>
-    </div>
-    <div class='form-control'>
-      <label>Email:</label>
-      <input class='easyui-textbox' data-options='width:250, height:32' name='email' validType='email'>
-    </div>
-  </form>
-  <div class='dialog-button'>
-    <a class='easyui-linkbutton btn-jump' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
-    <a class='easyui-linkbutton btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
   </div>
 </div>

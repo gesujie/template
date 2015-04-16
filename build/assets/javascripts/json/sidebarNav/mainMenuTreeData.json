@@ -4,26 +4,20 @@
 },{
   "id":11,
   "text":"datagrid",
-  "iconCls" : "fa fa-list-alt",
+  "iconCls" : "fa fa-list-alt fa-fw",
   "state":"open",
   "parentId" : "1"
 },{
   "id":111,
   "text":"普通datagrid",
-  "url" : "pages/datagrid-normal.html",
-  "iconCls" : "fa fa-list-alt",
+  "url" : "pages/datagrid-form.html",
+  "iconCls" : "fa fa-list-alt fa-fw",
   "parentId" : "11"
 },{
   "id":112,
-  "text":"动态隐藏datagrid列",
-  "url" : "login.html",
-  "iconCls" : "fa fa-list-alt",
-  "parentId" : "11"
-},{
-  "id":113,
   "text":"可编辑datagrid",
   "url" : "pages/datagrid.html",
-  "iconCls" : "fa fa-list-alt",
+  "iconCls" : "fa fa-list-alt fa-fw",
   "parentId" : "11"
 },{
   "id":2,
@@ -32,29 +26,23 @@
   "id":21,
   "text":"iframe中打开微博",
   "url" : "http://baidu.com",
-  "iconCls" : "fa fa-weibo",
+  "iconCls" : "fa fa-weibo fa-fw",
   "parentId" : "2",
   "iframe" : true
 },{
   "id":3,
   "text":"表单"
 },{
-  "id":30,
-  "text":"普通表单",
-  "url" : "pages/form-register.html",
-  "iconCls" : "fa fa-user",
-  "parentId" : "3"
-},{
   "id":31,
   "text":"登录",
   "url" : "pages/login.html",
-  "iconCls" : "fa fa-user",
+  "iconCls" : "fa fa-lock fa-fw",
   "parentId" : "3"
 },{
   "id":32,
-  "text":"电机工程学会申请表",
-  "url" : "pages/register.jdgc.html",
-  "iconCls" : "fa file-text-o",
+  "text":"登记册",
+  "url" : "pages/register.html",
+  "iconCls" : "fa fa-pencil-square fa-fw",
   "parentId" : "3"
 },{
   "id":4,
@@ -62,9 +50,9 @@
 },{
   "id":41,
   "text":"普通树",
-  "url" : "pages/tree-normal.html",
-  "iconCls" : "fa file-text-o",
-  "parentId" : "3"
+  "url" : "pages/tree.html",
+  "iconCls" : "fa file fa-fw",
+  "parentId" : "4"
 }]
 
 

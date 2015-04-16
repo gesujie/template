@@ -1,47 +1,59 @@
-<div class='container'>
-  <div class='panel-login-container'>
-    <div class='panel-login'>
-      <form action='' class='form-vertical'>
-        <div class='form-control'>
-          <label>Email or Username:</label>
-          <input class='easyui-validatebox easyui-textbox' data-options="prompt:'Enter a email address...' ,validType:'email', width:200, height:32, required:false" name='Username'>
+<div class='easyui-layout' data-options='width:450, height:500'>
+  <div class='panel-login'>
+    <div class='panel-sing-in'>
+      <div class='easyui-panel' data-options="region:'west',title:'Sign in', cls:'pr-10', headerCls:'panel-header-default', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true">
+        <div class='panel-bg'>
+          <form action='' class='form-vertical'>
+            <div class='panel-body'>
+              <div class='form-control'>
+                <label>Email:</label>
+                <input class='easyui-textbox' data-options="prompt:'Enter a email address...' ,validType:'email', width:200, height:40, required:false" name='Username'>
+              </div>
+              <div class='form-control'>
+                <label>Password:</label>
+                <input class='easyui-textbox' data-options='width:200, height:40' type='password'>
+              </div>
+              <div class='form-control'>
+                <label>Remember me:</label>
+                <input type='checkbox'>
+              </div>
+            </div>
+            <div class='panel-footer form-control'>
+              <a onclick="btnRegistry()" class="easyui-linkbutton color-primary text-center" iconCls="fa fa-user-plus" data-options="width:196, height:40" href="javascript:void(0)">Sign up</a>
+              <a class="easyui-linkbutton color-default mr-10 text-center" iconCls="fa fa-sign-in" data-options="width:196, height:40" href="javascript:void(0)">Sign in</a>
+            </div>
+          </form>
         </div>
-        <div class='form-control'>
-          <label>Password:</label>
-          <input class='easyui-validatebox textbox easyui-textbox' data-options='width:200, height:32' name='Password' type='password'>
-        </div>
-      </form>
-      <div class='panel-login-footer'>
-        <a class='easyui-linkbutton' data-options='height:32' href='#' iconCls='fa fa-circle'>
-          Login
-        </a>
-        <a class='easyui-linkbutton btn-registry' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-user-plus' onclick='btnRegistry()'>
-          Registry
-        </a>
       </div>
     </div>
-    <div class='panel-registry'>
-      <form action='' class='form-vertical'>
-        <div class='form-control'>
-          <label>Email or Username:</label>
-          <input class='easyui-validatebox easyui-textbox' data-options="prompt:'Enter a email address...' ,validType:'email', width:200, height:32, required:true" name='Username'>
+    <div class='panel-sing-up'>
+      <div class='easyui-panel' data-options="region:'west',title:'Sign up', cls:'pr-10', headerCls:'panel-header-default', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true">
+        <div class='panel-bg'>
+          <form action='' class='form-vertical'>
+            <div class='panel-body'>
+              <div class='form-control'>
+                <label>Username:</label>
+                <input class='easyui-textbox' data-options="prompt:'Enter a username...', width:200, height:40, required:false" name='Username'>
+              </div>
+              <div class='form-control'>
+                <label>Email:</label>
+                <input class='easyui-textbox' data-options="prompt:'Enter a email address...' ,validType:'email', width:200, height:40, required:false" name='Username'>
+              </div>
+              <div class='form-control'>
+                <label>Password:</label>
+                <input class='easyui-textbox' data-options='width:200, height:40' type='password'>
+              </div>
+              <div class='form-control'>
+                <label>Confirm Password:</label>
+                <input class='easyui-textbox' data-options='width:200, height:40' type='password'>
+              </div>
+            </div>
+            <div class='panel-footer form-control'>
+              <a onclick="btnBack()" class="easyui-linkbutton color-default mr-10 text-center" iconCls="fa fa-arrow-left" data-options="width:196, height:40" href="javascript:void(0)">Back</a>
+              <a class="easyui-linkbutton color-primary text-center" iconCls="fa fa-user-plus" data-options="width:196, height:40" href="javascript:void(0)">Sign up</a>
+            </div>
+          </form>
         </div>
-        <div class='form-control'>
-          <label>Password:</label>
-          <input class='easyui-validatebox textbox easyui-textbox' data-options='width:200, height:32' id='pwd' name='pwd' required type='password'>
-        </div>
-        <div class='form-control'>
-          <label>Repeat Password:</label>
-          <input class='easyui-validatebox textbox easyui-textbox' data-options='width:200, height:32' id='rpwd' name='rpwd' required type='password' validType="equals['#pwd']">
-        </div>
-      </form>
-      <div class='panel-login-footer'>
-        <a class='easyui-linkbutton' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-square'>
-          Ok
-        </a>
-        <a class='easyui-linkbutton btn-back' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-arrow-left' onclick='btnBack()'>
-          Back
-        </a>
       </div>
     </div>
   </div>
