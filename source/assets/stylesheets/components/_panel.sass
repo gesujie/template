@@ -4,17 +4,87 @@
 
 
 .panel
+  position: absolute
   overflow: hidden
 
+.panel-bg
+  background-color: $panel-default-bg-color
+  & .panel-body
+    padding: 15px
+
+.panel-header-default
+  background-color: $panel-header-default-bg-color
+  & .panel-tool-close
+    color: #79828B
+  & .panel-tool-close
+    position: relative
+    top: -3px
+
+.panel-header-primary
+  background-color: $panel-header-primary-bg-color
+  & .panel-icon,
+  & .panel-title,
+  & .panel-tool-close
+    color: #fff
+  & .panel-tool-close
+    position: relative
+    top: -3px
+
+.panel-header-info
+  background-color: $panel-header-info-bg-color
+  & .panel-icon,
+  & .panel-title,
+  & .panel-tool-close
+    color: #fff
+  & .panel-tool-close
+    position: relative
+    top: -3px
+
+.panel-header-success
+  background-color: $panel-header-success-bg-color
+  & .panel-icon,
+  & .panel-title,
+  & .panel-tool-close
+    color: #fff
+  & .panel-tool-close
+    position: relative
+    top: -3px
+
+.panel-header-warning
+  background-color: $panel-header-warning-bg-color
+  & .panel-icon,
+  & .panel-title,
+  & .panel-tool-close
+    color: #fff
+  & .panel-tool-close
+    position: relative
+    top: -3px
+
+.panel-header-danger
+  background-color: $panel-header-danger-bg-color
+  & .panel-icon,
+  & .panel-title,
+  & .panel-tool-close
+    color: #fff
+  & .panel-tool-close
+    position: relative
+    top: -3px
+
 .panel-header
-  padding: 5px
   position: relative
+  padding: $padding-large-vertical $padding-large-horizontal
+  +border-top-radius(2px)
 
-.panel-header-noborder
-  border: 0
+.panel-title
+  color: $panel-title-color
+  font-size: $panel-title-font-size
+  font-weight: 300
 
-.panel-body
-  overflow: auto
+.panel-footer
+  padding: $padding-large-vertical $padding-large-horizontal
+  overflow: hidden
+  background-color: #E6E6E6
+  +border-bottom-radius(2px)
 
 .panel-body-noheader
   border-top-width: 1px
@@ -32,13 +102,6 @@
 .panel-tool
   position: absolute
   top: 32%
-
-.panel-icon
-  left: 5px
-
-.panel-tool
-  right: 10px
-  width: auto
 
 .panel-noscroll
   overflow: hidden
@@ -58,58 +121,42 @@
   +border-radius(80px)
   text-align: center
   font-size: 20px
-
   &::before
     +inline-block()
     margin-right: 8px
     +font-icons(FontAwesome, '\f110', 20px, #000)
     +animation (fa-spin 1s infinite steps(8))
 
+.panel-tool
+  right: 10px
+  width: auto
+  & > a
+    margin-left: 3px
+
 .panel-tool-close
   &::before
-    +font-icons(FontAwesome, '\f00d', 15px, #989898)
-    +transform-origin(0,0)
-    +transition(transform, 0.28s, ease-out, 0.5s)
+    +font-icons(FontAwesome, '\f057', 14px, inherit)
+    +transition(color, 0.28s, ease-out)
 
   &:hover::before
-    +transform-origin(0,0)
-    +transform(rotate(90deg))
-    +transition(transform, 0.28s, ease-in, 0.5s)
+    +transition(color, 0.28s, ease-in)
 
 .panel-tool-min
   &::before
-    +font-icons(FontAwesome, '\f056', inherit, #4C4949)
+    +font-icons(FontAwesome, '\f056', 14px, inherit)
 
 .panel-tool-max
   &::before
-    +font-icons(FontAwesome, '\f055', inherit, #4C4949)
+    +font-icons(FontAwesome, '\f055', 14px, inherit)
 
 .panel-tool-restore
   &::before
-    +font-icons(FontAwesome, '\f057', inherit, #4C4949)
+    +font-icons(FontAwesome, '\f057', 14px, inherit)
 
 .panel-tool-collapse
   &::before
-    +font-icons(FontAwesome, '\f056', inherit, #4C4949)
+    +font-icons(FontAwesome, '\f056', 14px, inherit)
 
 .panel-tool-expand
   &::before
-    +font-icons(FontAwesome, '\f055', inherit, #4C4949)
-
-.panel-header
-  background-color: $panel-header-color
-
-.panel-body
-  background-color: $panel-body-bg-color
-  overflow: hidden
-
-.panel-title
-  color: $panel-title-color
-  font-size: $panel-title-font-size
-
-.panel-footer
-  overflow: hidden
-  background-color: #F4F4F4
-
-.panel-footer-noborder
-  border-width: 1px 0 0 0
+    +font-icons(FontAwesome, '\f055', 14px, inherit)

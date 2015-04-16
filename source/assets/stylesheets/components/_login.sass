@@ -3,24 +3,20 @@
 // --------------------------------------------------
 
 
-.panel-login-container
+.panel-login
   position: relative
   float: left
-  width: 450px
-  height: auto
-  +perspective(700px)
+  width: 100%
+  +perspective(1000px)
   z-index: 9
 
-.panel-login
+.panel-sing-in
   position: relative
   top: 0
   left: 0
   +inline-block()
   width: 100%
   height: auto
-  padding: $padding-large-vertical $padding-large-horizontal
-  background-color: $panel-login-bg
-  margin-bottom: 10px
   +transform(rotateX(0deg) rotateY(0deg))
   +transform-style(preserve-3d)
   +backface-visibility(hidden)
@@ -31,16 +27,14 @@
     +transform(rotateY(-180deg))
     z-index: 11
 
-.panel-registry
+.panel-sing-up
   position: absolute
   top: 0
   left: 0
   +inline-block()
   width: 100%
   height: auto
-  padding: $padding-large-vertical $padding-large-horizontal
   background-color: $panel-login-bg
-  margin-bottom: 10px
   +transform(rotateY(180deg))
   +transform-style(preserve-3d)
   +backface-visibility(hidden)
@@ -50,14 +44,3 @@
   &.active
     +transform(rotateY(0deg))
     z-index: 12
-
-.panel-login-footer
-  display: block
-  margin-left: 112px
-  & .easyui-linkbutton
-    margin-right: 10px
-
-.form-checkbox
-  display: block
-  margin-left: 112px
-  margin-bottom: 10px

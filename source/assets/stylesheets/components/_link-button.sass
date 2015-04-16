@@ -5,14 +5,13 @@
 
 .l-btn
   +inline-block()
+  padding: $padding-base-vertical $padding-base-horizontal
   border: none
   outline: none
   cursor: pointer
-  padding-left: 8px
-  padding-right: 8px
+  font-weight: 300
 
 .l-btn-left
-  +inline-block()
   position: relative
 
 .l-btn-text
@@ -25,9 +24,9 @@
 
 .l-btn span span .l-btn-empty
   display: inline-block
-  margin: 0
   width: 16px
   height: 24px
+  margin: 0
   font-size: 1px
   vertical-align: top
 
@@ -69,8 +68,8 @@
   margin: 0 0 0 -8px
 
 .l-btn-left .l-btn-empty
-  margin: 0 4px
   width: 16px
+  margin: 0 4px
 
 .l-btn-plain:hover
   padding: 0
@@ -114,15 +113,12 @@
   width: 32px
 
 .l-btn
-  background-color: $l-btn-bg-color
-  color: $l-btn-color
   +border-radius(2px)
   +transition(background-color, 0.28s, ease-out)
-  font-size: 12px
+  color: #fff
 
   &:hover
     +box-shadow(0 1px 6px 0 rgba(0,0,0,.12), 0 1px 6px 0 rgba(0,0,0,.12))
-    background-color: $l-btn-bg-hover-color
     +transition(background-color, 0.28s, ease-in)
 
 .l-btn-plain
@@ -167,8 +163,3 @@
 .l-btn-plain-selected
   &:hover
     background: #ddd
-
-.btn-jump
-  &:hover
-    & .l-btn-icon
-      +animation(jump 0.4s linear)
