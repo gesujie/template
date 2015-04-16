@@ -11,8 +11,11 @@ page '/*.txt', layout: false
 
 page 'pages/dashboard.html', layout: :resource
 page 'pages/datagrid.html', layout: :resource
+page 'pages/datagrid-form.html', layout: :resource
 page 'pages/tabs.html', layout: :resource
 page 'pages/login.html', layout: :resource
+page 'pages/register.html', layout: :resource
+page 'pages/tree.html', layout: :resource
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

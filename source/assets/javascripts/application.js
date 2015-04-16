@@ -26,12 +26,12 @@ qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json
 
 //### Registry login button
 function btnRegistry(){
-    $('.panel-registry').addClass('active');
-    $('.panel-login').addClass('passive');
+    $('.panel-sing-up').addClass('active');
+    $('.panel-sing-in').addClass('passive');
 }
 
 //### Registry back button
 function btnBack(){
-    $('.panel-registry').removeClass('active');
-    $('.panel-login').removeClass('passive');
+    $('.panel-sing-up').removeClass('active');
+    $('.panel-sing-in').removeClass('passive');
 }

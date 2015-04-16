@@ -38,11 +38,12 @@ $gray:                   lighten($gray-base, 33.5%) // #555
 $gray-light:             lighten($gray-base, 46.7%) // #777
 $gray-lighter:           lighten($gray-base, 93.5%) // #eee
 
-$brand-primary:         darken(#428bca, 6.5%) // #337ab7
-$brand-success:         #5cb85c
-$brand-info:            #5bc0de
-$brand-warning:         #f0ad4e
-$brand-danger:          #d9534f
+$brand-default:         $gray-light
+$brand-primary:         #009688
+$brand-success:         #4caf50
+$brand-info:            #03a9f4
+$brand-warning:         #ff5722
+$brand-danger:          #f44336
 
 $text-muted: #969696
 
@@ -131,10 +132,20 @@ $caret-width-large:         5px
 //
 //## Panel colors and font size
 
-$panel-header-color: rgb(90, 110, 131)
-$panel-body-bg-color: #e7eaeb
-$panel-title-color: #192937
-$panel-title-font-size: 14px
+//Panel title variables
+$panel-title-color: #626364
+$panel-title-font-size: $font-size-base
+
+//Panel header background colors variables
+$panel-header-default-bg-color: #D7D7D7
+$panel-header-primary-bg-color: $brand-primary
+$panel-header-success-bg-color: $brand-success
+$panel-header-info-bg-color: $brand-info
+$panel-header-warning-bg-color: $brand-warning
+$panel-header-danger-bg-color: $brand-danger
+
+//Panel body background color
+$panel-default-bg-color: #fff
 
 //== Tabs
 //
@@ -143,12 +154,6 @@ $panel-title-font-size: 14px
 $tabs-header-color: #d7d7d7
 $tabs-border-color: transparent
 $tabs-button-radius: 1px
-
-//== Tree
-//
-//## Tree nodes padding
-$tree-node-padding-vertical: $padding-large-vertical
-$tree-node-padding-horizontal: $padding-large-horizontal
 
 //== Datagrid
 //
@@ -180,3 +185,27 @@ $panel-login-bg: #fff
 //## Animation cubic bezier
 
 $animation-easing: cubic-bezier(0.455, 0.030, 0.515, 0.955)
+
+//== Sidebar
+//
+//## Sidebar background colors
+
+$sidebar-header-bg: #9AA1A7
+$sidebar-bg: #79828B
+$sidebar-color: #42474C
+$sidebar-hover-bg: #B5BBBF
+$sidebar-hover-color: #fff
+$sidebar-selected-bg: #E7EAEB
+
+//== Header
+//
+//## Page header logo background and text color
+
+$logo-bg: #79828B
+$logo-color: #9AA1A7
+
+//== Textbox
+//
+//## Inputs background and text colors
+
+$textbox-bg-color: #ECECEC

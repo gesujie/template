@@ -63,7 +63,6 @@ output
   display: block
 
 .form-control
-  display: block
 
   &[disabled],
   &[readonly],
@@ -98,3 +97,5 @@ input[type="search"]
     +inline-block()
     width: 100%
     margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0

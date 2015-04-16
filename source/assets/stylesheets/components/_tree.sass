@@ -1,118 +1,74 @@
-//
-// Tree
-// --------------------------------------------------
-
-
 .tree
-  padding: 0
   margin: 0
+  padding: 0
+  list-style-type: none
 
 .tree li
-  list-style: none
   white-space: nowrap
 
 .tree li ul
+  list-style-type: none
   margin: 0
   padding: 0
 
 .tree-node
-  padding: $tree-node-padding-vertical $tree-node-padding-horizontal
+  height: 18px
+  white-space: nowrap
   cursor: pointer
-  color: #9da9bc
-  +transition(background-color, 0.28s ease-in)
-
-.tree-node-hover
-  background: #43515F
-  color: #fff
-  +transition(background-color, 0.28s ease-out)
-
-  & .tree-icon
-    color: #fff
 
 .tree-hit
   cursor: pointer
 
-.tree-folder,
-.tree-file,
-.tree-checkbox
-  display: inline-block
-  min-width: 18px
-
+.tree-expanded,
+.tree-collapsed,
+.tree-checkbox,
 .tree-indent
-  float: left
-  width: 5px
-  height: 12px
+  +inline-block()
+  width: 16px
+  height: 18px
+  overflow: hidden
 
 .tree-expanded
-  float: right
-  display: table
-  text-align: center
+  background: image_url('tree_icons.png') no-repeat -18px 0
 
-  &::before
-    +font-icons(FontAwesome, '\f107', inherit, #d7d7d7)
-    display: table-cell
-    width: 15px
-    height: 15px
-    vertical-align: middle
-    +transition (color 0.28s ease-in)
-
-  &:hover::before
-    +font-icons(FontAwesome, '\f107', inherit, #d7d7d7)
-    +border-radius (50%)
-    background-color: #384356
-    color: #fff
-    +transition (color 0.28s ease-out)
-    +text-shadow(0 0 3px #fff)
+.tree-expanded-hover
+  background: image_url('tree_icons.png') no-repeat -50px 0
 
 .tree-collapsed
-  float: right
-  display: table
-  text-align: center
+  background: image_url('tree_icons.png') no-repeat 0 0
 
-  &::before
-    display: table-cell
-    width: 15px
-    height: 15px
-    vertical-align: middle
-    +font-icons(FontAwesome, '\f104', inherit, #d7d7d7)
-    +transition (color 0.28s ease-in)
-
-  &:hover::before
-    +font-icons(FontAwesome, '\f104', inherit, #d7d7d7)
-    +border-radius (50%)
-    background-color: #1F2632
-    color: #fff
-    +transition (color 0.28s ease-out)
+.tree-collapsed-hover
+  background: image_url('tree_icons.png') no-repeat -32px 0
 
 .tree-lines .tree-expanded,
 .tree-lines .tree-root-first .tree-expanded
-  background: url('images/tree_icons.png') no-repeat -144px 0
+  background: image_url('tree_icons.png') no-repeat -144px 0
 
 .tree-lines .tree-collapsed,
 .tree-lines .tree-root-first .tree-collapsed
-  background: url('images/tree_icons.png') no-repeat -128px 0
+  background: image_url('tree_icons.png') no-repeat -128px 0
 
 .tree-lines .tree-node-last .tree-expanded,
 .tree-lines .tree-root-one .tree-expanded
-  background: url('images/tree_icons.png') no-repeat -80px 0
+  background: image_url('tree_icons.png') no-repeat -80px 0
 
 .tree-lines .tree-node-last .tree-collapsed,
 .tree-lines .tree-root-one .tree-collapsed
-  background: url('images/tree_icons.png') no-repeat -64px 0
+  background: image_url('tree_icons.png') no-repeat -64px 0
 
 .tree-line
-  background: url('images/tree_icons.png') no-repeat -176px 0
+  background: image_url('tree_icons.png') no-repeat -176px 0
 
 .tree-join
-  background: url('images/tree_icons.png') no-repeat -192px 0
+  background: image_url('tree_icons.png') no-repeat -192px 0
 
 .tree-joinbottom
-  background: url('images/tree_icons.png') no-repeat -160px 0
+  background: image_url('tree_icons.png') no-repeat -160px 0
 
 .tree-folder
   &::before
-    display: inline-block
-    +font-icons(FontAwesome, '\f114', 14px, #d7d7d7)
+    +inline-block()
+    +font-icons(FontAwesome, '\f07b', 14px, inherit)
     text-rendering: auto
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
@@ -120,8 +76,8 @@
 
 .tree-folder-open
   &::before
-    display: inline-block
-    +font-icons(FontAwesome, '\f115', 14px, #d7d7d7)
+    +inline-block()
+    +font-icons(FontAwesome, '\f07c', 14px, inherit)
     text-rendering: auto
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
@@ -129,8 +85,8 @@
 
 .tree-file
   &::before
-    display: inline-block
-    +font-icons(FontAwesome, '\f15b', inherit, #d7d7d7)
+    +inline-block()
+    +font-icons(FontAwesome, '\f15b', 14px, inherit)
     text-rendering: auto
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
@@ -138,26 +94,30 @@
 
 .tree-loading
   &::before
-    +font-icons(FontAwesome, '\f110', inherit, #d7d7d7)
+    +font-icons(FontAwesome, '\f110', 14px, #d7d7d7)
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    transform: translate(0, 0)
 
 .tree-checkbox0
-  background: url('images/tree_icons.png') no-repeat -208px -18px
+  background: image_url('tree_icons.png') no-repeat -208px -18px
 
 .tree-checkbox1
-  background: url('images/tree_icons.png') no-repeat -224px -18px
+  background: image_url('tree_icons.png') no-repeat -224px -18px
 
 .tree-checkbox2
-  background: url('images/tree_icons.png') no-repeat -240px -18px
+  background: image_url('tree_icons.png') no-repeat -240px -18px
 
 .tree-title
+  font-size: 12px
   display: inline-block
-  width: 80%
+  text-decoration: none
   vertical-align: top
   white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
-  font-size: $font-size-base
-  font-weight: 300
+  padding: 0 2px
+  height: 18px
+  line-height: 18px
 
 .tree-node-proxy
   font-size: 12px
@@ -177,10 +137,10 @@
   margin-top: -9px
 
 .tree-dnd-yes
-  background: url('images/tree_icons.png') no-repeat -256px 0
+  background: image_url('tree_icons.png') no-repeat -256px 0
 
 .tree-dnd-no
-  background: url('images/tree_icons.png') no-repeat -256px -18px
+  background: image_url('tree_icons.png') no-repeat -256px -18px
 
 .tree-node-top
   border-top: 1px dotted red
@@ -203,12 +163,17 @@
   top: 0
 
 .tree-node-proxy
-  background-color: #ffffff
+  background-color: #fff
   color: #000
   border-color: #95B8E7
 
+.tree-node-hover
+  background-color: #eaf2ff
+  color: #000
+
 .tree-node-selected
-  background: #252f40
+  background-color: #ffe48d
+  color: #000
 
 .tree-node-hidden
   display: none
