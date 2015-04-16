@@ -86,9 +86,9 @@
 </style>
 <script>
 qc.demo = {}; // 定义页面命名空间
-
+qc.demo.rowStyle = "dg-row-bg";
 $(function(){
-  $("#dgNowrap").datagrid({
+  qc.demo.dgNowrap = $("#dgNowrap").datagrid({
     url : "/assets/javascripts/json/datagridData/demoDatagridData.json",
     border : false, // 表格边框
     nowrap : false, // 单元格不换行
@@ -109,16 +109,16 @@ $(function(){
     rowStyler: function(index,row){
       if(index == 5) {
         row.haveStyle = true;
-        return {class:'dg-row-bg'};
+        return {class:qc.demo.rowStyle};
       }
     },
     onClickRow: function(index, row){
-      var rowDom = $($("#dgNowrap").prev().find(".datagrid-body table tr")[index]);
+      var rowDom = $(qc.demo.dgNowrap.prev().find(".datagrid-body table tr")[index]);
       if(row.haveStyle == true) {
-        if(rowDom.hasClass("dg-row-bg")) {
-          rowDom.removeClass("dg-row-bg");
+        if(rowDom.hasClass(qc.demo.rowStyle)) {
+          rowDom.removeClass(qc.demo.rowStyle);
         } else {
-          rowDom.addClass("dg-row-bg");
+          rowDom.addClass(qc.demo.rowStyle);
         }
       }
     }
