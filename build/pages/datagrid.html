@@ -1,32 +1,62 @@
 <div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'center',headerCls:'panel-header-primary', border:false, title:'Data Grid', iconCls:'fa fa-database'">
-    <div class='toolbar' id='tb'>
+  <div class='easyui-panel' data-options="region:'north',title:'Form', headerCls:'panel-header-success', split:false, iconCls:'fa fa-file-text', cls:'panel-bg', border:false, collapsible:false, closable:true, height:80">
+    <div class="panel-body">
       <form action='' class='form-horizontal'>
-        <div class='form-control'>
-          <label>Date From:</label>
-          <input class='easyui-datebox' data-options='height:32'>
-        </div>
-        <div class='form-control'>
-          <label>To:</label>
-          <input class='easyui-datebox' data-options='height:32'>
-        </div>
-        <div class='form-control'>
-          <label>Language:</label>
-          <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
-            <option value='java'>Java</option>
-            <option value='c'>C</option>
-            <option value='basic'>Basic</option>
-            <option value='perl'>Perl</option>
-            <option value='python'>Python</option>
-          </select>
-        </div>
-        <div class='form-control'>
-          <a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" href="javascript:void(0)">Search</a>
-          <a iconcls="fa fa-plus-square" class="easyui-linkbutton color-default btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" href="javascript:void(0)">Add</a>
-        </div>
-      </form>
+            <div class='form-control'>
+              <label>Date From:</label>
+              <input class='easyui-datebox' data-options='height:32'>
+            </div>
+            <div class='form-control'>
+              <label>To:</label>
+              <input class='easyui-datebox' data-options='height:32'>
+            </div>
+            <div class='form-control'>
+              <label>Language:</label>
+              <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+                <option value='java'>Java</option>
+                <option value='c'>C</option>
+                <option value='basic'>Basic</option>
+                <option value='perl'>Perl</option>
+                <option value='python'>Python</option>
+              </select>
+            </div>
+            <div class='form-control'>
+              <a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" href="javascript:void(0)">Search</a>
+              <a iconcls="fa fa-plus-square" class="easyui-linkbutton color-default btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" href="javascript:void(0)">Add</a>
+            </div>
+          </form>
     </div>
-    <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, toolbar :'#tb', pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg'>
+     <div class="panel-body">
+      <form action='' class='form-horizontal'>
+            <div class='form-control'>
+              <label>Date From:</label>
+              <input class='easyui-datebox' data-options='height:32'>
+            </div>
+            <div class='form-control'>
+              <label>To:</label>
+              <input class='easyui-datebox' data-options='height:32'>
+            </div>
+            <div class='form-control'>
+              <label>Language:</label>
+              <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+                <option value='java'>Java</option>
+                <option value='c'>C</option>
+                <option value='basic'>Basic</option>
+                <option value='perl'>Perl</option>
+                <option value='python'>Python</option>
+              </select>
+            </div>
+            <div class='form-control'>
+              <a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" href="javascript:void(0)">Search</a>
+              <a iconcls="fa fa-plus-square" class="easyui-linkbutton color-default btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" href="javascript:void(0)">Add</a>
+            </div>
+          </form>
+    </div>
+    </div>
+
+  <div class='easyui-panel' data-options="region:'center',headerCls:'panel-header-primary', border:false, ">
+    
+    <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false,  pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg'>
       <thead>
         <tr>
           <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
@@ -59,8 +89,8 @@
       </div>
     </form>
     <div class='dialog-button'>
-      <a class='easyui-linkbutton btn-jump' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
-      <a class='easyui-linkbutton btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
+      <a class='easyui-linkbutton btn-jump color-primary' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
+      <a class='easyui-linkbutton color-warning btn-jump btn-dialog-close' data-options='height:32' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
     </div>
   </div>
 </div>
