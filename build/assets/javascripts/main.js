@@ -135,12 +135,8 @@ $.fn.panel.defaults.onBeforeDestroy = function() {
 $.fn.panel.defaults.loadingMessage = '加载中....';
 $.fn.datagrid.defaults.loadMsg = '加载中....';
 
-/**
- * dialog打开、关闭时扩展动画效果
- * @author 李钰龙
- * @requires jQuery,EasyUI
- */
 $.fn.dialog.defaults.onOpen = function() {
+	console.info($(this));
 	$(this).parent().addClass("active");
 };
 $.fn.dialog.defaults.onClose = function() {
@@ -1047,10 +1043,13 @@ $(function(){
 	});
 
 	qc.main.mainTabs = $("#mainTabs").tabs({
-		border : false, fit : true, tabHeight:41,
+		border : false,
+        fit : true,
+        tabHeight:41,
 		onLoad:function(panel){
 			
 		}
+
 	});
 });
 
@@ -1093,15 +1092,9 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 		currTab = qc.main.mainTabs.tabs('getSelected');
 	} else {
 		qc.main.mainTabs.tabs('select', subtitle);
-
 		// 下面的代码解决同名菜单问题，同名但不同地址，则刷新页面
-		var src = null;
+		var src = qc.main.mainTabs.tabs('getTab', subtitle).find("iframe").attr("src");
 		currTab = qc.main.mainTabs.tabs('getSelected');
-		if(iframe) {
-			src = qc.main.mainTabs.tabs('getTab', subtitle).find("iframe").attr("src");
-		} else {
-			src = qc.main.mainTabs.tabs('getTab', subtitle).panel("options").href;
-		}
 		if(src != url) {
 			qc.main.mainTabs.tabs('update', {
 				tab : currTab,
