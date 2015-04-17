@@ -22,15 +22,11 @@
       <div class='pull-right navbar-header'>
         <ul class='nav nav-rounded'>
           <li class='notice'>
-            <a href="javascript:void(0)"><i class='fa fa-bell'></i>
+            <a class="easyui-menubutton" data-options="menu:'#mm1', hasDownArrow:false, plain:false" href="javascript:void(0)"><i class='fa fa-bell'></i>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)"><i class='fa fa-user'></i>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)"><i class='fa fa-search'></i>
+            <a class="easyui-menubutton" data-options="menu:'#mm2', hasDownArrow:false, plain:false" href="javascript:void(0)"><i class='fa fa-user'></i>
             </a>
           </li>
           <li>
@@ -38,6 +34,41 @@
             </a>
           </li>
         </ul>
+      </div>
+    </div>
+    <div id='mm1'>
+      <div data-options="iconCls:'fa fa-user-plus'">
+        <span>
+          New User
+        </span>
+      </div>
+      <div data-options="iconCls:'fa fa-warning'">
+        <span>
+          Dashboard Error
+        </span>
+      </div>
+      <div class='menu-sep'></div>
+      <div data-options="iconCls:'fa fa-square'">
+        <span>
+          See All
+        </span>
+      </div>
+    </div>
+    <div id='mm2'>
+      <div data-options="iconCls:'fa fa-user'">
+        <span>
+          Profile
+        </span>
+      </div>
+      <div data-options="iconCls:'fa fa-photo'">
+        <span>
+          Upload Avatar
+        </span>
+      </div>
+      <div data-options="iconCls:'fa fa-lock'">
+        <span>
+          Change Password
+        </span>
       </div>
     </div>
     <div class='sidebar' data-options="region:'west', title:'系统菜单', split:false, border:false, headerCls:'sidebar-header'">
