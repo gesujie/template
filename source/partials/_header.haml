@@ -4,14 +4,34 @@
   .pull-right.navbar-header
     %ul.nav.nav-rounded
       %li.notice
-        =link_to 'javascript:void(0)' do
+        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options'=>"menu:'#mm1', hasDownArrow:false, plain:false" do
           %i.fa.fa-bell
       %li
-        =link_to 'javascript:void(0)' do
+        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options'=>"menu:'#mm2', hasDownArrow:false, plain:false" do
           %i.fa.fa-user
       %li
         =link_to 'javascript:void(0)' do
-          %i.fa.fa-search
-      %li
-        =link_to 'javascript:void(0)' do
           %i.fa.fa-power-off
+
+#mm1
+  %div{'data-options' => "iconCls:'fa fa-user-plus'"}
+    %span
+      New User
+  %div{'data-options' => "iconCls:'fa fa-warning'"}
+    %span
+      Dashboard Error
+  .menu-sep
+  %div{'data-options' => "iconCls:'fa fa-square'"}
+    %span
+      See All
+
+#mm2
+  %div{'data-options' => "iconCls:'fa fa-user'"}
+    %span
+      Profile
+  %div{'data-options' => "iconCls:'fa fa-photo'"}
+    %span
+      Upload Avatar
+  %div{'data-options' => "iconCls:'fa fa-lock'"}
+    %span
+      Change Password

@@ -80,8 +80,13 @@
   font-size: $panel-title-font-size
   font-weight: 300
 
+.panel-body-default
+  +inline-block()
+  background-color: #fff
+  padding: 15px
+
 .panel-footer
-  padding: $padding-large-vertical $padding-large-horizontal
+  padding: $padding-large-vertical 15px
   overflow: hidden
   background-color: #E6E6E6
   +border-bottom-radius(2px)

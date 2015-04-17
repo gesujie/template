@@ -8,14 +8,15 @@
   +inline-block()
 
 .textbox .textbox-text
+  +inline-block()
+  height: 100%
   padding: $padding-small-vertical $padding-small-horizontal
-  vertical-align: middle
   background-color: $textbox-bg-color
   border: none
   +border-radius (2px)
   +transition(background-color, 0.28s, ease-out)
-  font-size: $font-size-base
   font-weight: 300
+  font-size: $font-size-small
 
   &:focus
     background-color: #d7d7d7
@@ -51,9 +52,38 @@
 .textbox-addon
   position: absolute
   top: 0
+  & .textbox-icon
+    display: table
+    background-color: #d7d7d7
+    &::before
+      display: table-cell
+      vertical-align: middle
+
+.textbox-addon-left
+  margin-left: 2px
+  & .textbox-icon
+    +border-left-radius(2px)
+    +border-right-radius(0)
+
+.textbox-addon-right
+  margin-right: 2px
+  & .textbox-icon
+    +border-left-radius(0)
+    +border-right-radius(2px)
+
+.datebox
+  & .textbox-addon-right
+    margin-right: 0
+  & .textbox-addon-left
+    margin-left: 0
+
+.combo
+  & .textbox-addon-right
+    margin-right: 0
+  & .textbox-addon-left
+    margin-left: 0
 
 .textbox-icon
-  display: table
   text-align: center
   color: #c0c0c0
 

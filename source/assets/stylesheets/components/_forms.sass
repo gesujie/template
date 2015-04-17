@@ -27,6 +27,7 @@ label
   max-width: 100% // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
   margin-bottom: 5px
   font-weight: 300
+  font-size: $font-size-small
 
 // Normalize form controls
 //
@@ -83,13 +84,14 @@ input[type="search"]
   -webkit-appearance: none
 
 .form-horizontal
+  float: left
   & .form-control
     float: left
     margin-right: 15px
 
 .form-vertical
   & label
-    min-width: 140px
+    min-width: 120px
     margin-right: 10px
     text-align: right
     font-size: $font-size-base

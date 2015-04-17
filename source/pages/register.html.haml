@@ -2,23 +2,21 @@
 -@page_classes= 'register'
 
 
-.easyui-layout{fit:'true'}
-  %div.easyui-panel{'data-options' => "region:'west',title:'Form', cls:'pr-10', headerCls:'panel-header-default', split:false, iconCls:'fa fa-file-text', width:450, border:false, collapsible:false, closable:true"}
-    .panel-bg
-      %form.form-vertical{action:''}
-        .panel-body
-          .form-control
-            %label Email:
-            %input.easyui-textbox{'data-options' => "prompt:'Enter a email address...',validType:'email'", 'data-options' => 'width:200, height:40'}
-          .form-control
-            %label First Name:
-            %input.easyui-textbox{'data-options' => 'width:200, height:40'}
-          .form-control
-            %label Last Name:
-            %input.easyui-textbox{'data-options' => 'width:200, height:40'}
-          .form-control
-            %label Company:
-            %input.easyui-textbox{'data-options' => 'width:200, height:40'}
-        .panel-footer.form-control
-          =link_to 'Reset', 'javascript:void(0)', class:'easyui-linkbutton color-primary text-center',  iconCls: 'fa fa-times', 'data-options' => 'width:196, height:40'
-          =link_to 'Register', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-pencil-square-o', 'data-options' => 'width:196, height:40'
+.easyui-layout{'data-options' => 'width:450, height:300'}
+  %div.easyui-panel{'data-options' => "region:'west',title:'Form', headerCls:'panel-header-default', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-file-text', width:450, collapsible:false, closable:true"}
+    %form.form-vertical{action:''}
+      .form-control
+        %label Email:
+        %input.easyui-textbox{'data-options' => "prompt:'Enter a email address...',validType:'email'", 'data-options' => 'width:240, height:35'}
+      .form-control
+        %label First Name:
+        %input.easyui-textbox{'data-options' => 'width:240, height:35'}
+      .form-control
+        %label Last Name:
+        %input.easyui-textbox{'data-options' => 'width:240, height:35'}
+      .form-control
+        %label Company:
+        %input.easyui-textbox{'data-options' => 'width:240, height:35'}
+    .panel-footer.form-control
+      =link_to 'Reset', 'javascript:void(0)', class:'easyui-linkbutton color-danger text-center',  iconCls: 'fa fa-times', 'data-options' => 'width:196'
+      =link_to 'Register', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-pencil-square-o', 'data-options' => 'width:196'
