@@ -9,9 +9,6 @@
       <a onclick="nextButton()" title="Next" class="fa fa-angle-right schedule-tool" href="javascript:void(0)"><span class='sr-only'>Next Button</span>
       </a>
     </div>
-    <div id='script-warning'>
-      <code>can't loading</code>
-    </div>
     <div id='schedule'></div>
   </div>
 </div>
@@ -29,7 +26,7 @@
       events: {
         url: 'assets/javascripts/json/scheduleEvents/events.json',
         error: function() {
-          $('#script-warning').show();
+          console.log('loading error');
         }
       }
       });
