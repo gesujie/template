@@ -60,3 +60,13 @@ function nextButton(){
 	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
 
 }
+
+$('#mainSlideMenu').tree({
+	formatter:function(node){
+		var s = node.text;
+		if (node.children){
+			s += '&nbsp;<span class=\'badge\'>' + node.children.length + '</span>';
+		}
+		return s;
+	}
+});
