@@ -1,17 +1,17 @@
-<div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'north', headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, title:'Toolbar', iconCls:'fa fa-cog'">
+<div id="datagrid-layout"class='easyui-layout' fit='true'>
+  <div class='easyui-panel' data-options="region:'north', headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, title:'Data Grid Toolbar', iconCls:'fa fa-cog',  collapsible:false">
     <form action='' class='form-horizontal mb-10'>
       <div class='form-control'>
         <label>Date From:</label>
-        <input class='easyui-datebox' data-options='height:32'>
+        <input class='easyui-datebox' data-options='width: 100, height:32'>
       </div>
       <div class='form-control'>
         <label>To:</label>
-        <input class='easyui-datebox' data-options='height:32'>
+        <input class='easyui-datebox' data-options='width: 100, height:32'>
       </div>
       <div class='form-control'>
         <label>Language:</label>
-        <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+        <select class='easyui-combobox' data-options="width:'150', height:'32'" panelheight='auto'>
           <option value='java'>Java</option>
           <option value='c'>C</option>
           <option value='basic'>Basic</option>
@@ -27,15 +27,15 @@
     <form action='' class='form-horizontal'>
       <div class='form-control'>
         <label>Date From:</label>
-        <input class='easyui-datebox' data-options='height:32'>
+        <input class='easyui-datebox' data-options='width: 100, height:32'>
       </div>
       <div class='form-control'>
         <label>To:</label>
-        <input class='easyui-datebox' data-options='height:32'>
+        <input class='easyui-datebox' data-options='width: 100, height:32'>
       </div>
       <div class='form-control'>
         <label>Language:</label>
-        <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+        <select class='easyui-combobox' data-options="width:'150', height:'32'" panelheight='auto'>
           <option value='java'>Java</option>
           <option value='c'>C</option>
           <option value='basic'>Basic</option>
@@ -49,7 +49,7 @@
       </div>
     </form>
   </div>
-  <div class='easyui-panel' data-options="region:'center', headerCls:'panel-header-primary', title:'Data Grid', iconCls:'fa fa-database'">
+  <div class='easyui-panel' data-options="region:'center', headerCls:'panel-header-primary'">
     <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg'>
       <thead>
         <tr>
