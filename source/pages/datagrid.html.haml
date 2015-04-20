@@ -2,7 +2,7 @@
 -@page_classes= 'datagrid easyui-layout'
 
 .easyui-layout{fit:'true'}
-  %div.easyui-panel{'data-options' => "region:'north', headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, title:'Toolbar', iconCls:'fa fa-cog'"}
+  %div.easyui-panel{'data-options' => "region:'north', headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, title:'Toolbar', collapsible:false, iconCls:'fa fa-cog'"}
     %form.form-horizontal.mb-10{action:''}
       .form-control
         %label Date From:
@@ -39,7 +39,7 @@
       .form-control
         =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton color-default btn-jump'
         =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton color-default btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')"
-  %div.easyui-panel{'data-options' => "region:'center', headerCls:'panel-header-primary', title:'Data Grid', iconCls:'fa fa-database'"}
+  %div.easyui-panel{'data-options' => "region:'center', headerCls:'panel-header-primary', title:'Data Grid', iconCls:'fa fa-database', collapsible:false"}
     %table.easyui-datagrid.datagrid-bg#dg{'data-options' => "singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
       %thead
         %tr

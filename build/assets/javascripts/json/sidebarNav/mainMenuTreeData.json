@@ -20,6 +20,12 @@
   "iconCls" : "fa fa-list-alt fa-fw",
   "parentId" : "11"
 },{
+  "id":113,
+  "text":"Schedule",
+  "url" : "pages/schedule.html",
+  "iconCls" : "fa fa-calendar fa-fw",
+  "parentId" : "11"
+},{
   "id":2,
   "text":"iframe"
 },{
@@ -43,6 +49,12 @@
   "text":"登记册",
   "url" : "pages/register.html",
   "iconCls" : "fa fa-pencil-square fa-fw",
+  "parentId" : "3"
+},{
+  "id":33,
+  "text":"上传文件",
+  "url" : "pages/webuploader.html",
+  "iconCls" : "fa fa-cloud-upload",
   "parentId" : "3"
 },{
   "id":4,

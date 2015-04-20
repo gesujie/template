@@ -1,0 +1,36 @@
+-@title= 'Schedule | Admin Page '
+-@page_classes= 'calendar easyui-layout'
+
+.easyui-layout{fit:'true'}
+  %div.easyui-panel{'data-options' => "region:'center', tools:'#panel-custom-tool', headerCls:'panel-header-primary', bodyCls:'panel-body-default', title:'Schedule', iconCls:'fa fa-calendar', collapsible:false"}
+    #panel-custom-tool
+      %span#getDate.display-date
+      =link_to 'javascript:void(0)', onclick:'prevButton()', class:'fa fa-angle-left schedule-tool' do
+        %span.sr-only Prev Button
+      =link_to 'javascript:void(0)', onclick:'todayButton()', class:'fa fa-circle schedule-tool' do
+        %span.sr-only Today Button
+      =link_to 'javascript:void(0)', onclick:'nextButton()', class:'fa fa-angle-right schedule-tool' do
+        %span.sr-only Next Button
+    #script-warning
+      %code can't loading
+    #schedule
+
+:javascript
+  $(document).ready(function() {
+    $('#schedule').fullCalendar({
+      header: {
+        left: 'prev, next, today',
+        center: '',
+        right:'title'
+      },
+      defaultDate: '2015-04-17',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: {
+        url: 'assets/javascripts/json/scheduleEvents/events.json',
+        error: function() {
+          $('#script-warning').show();
+        }
+      }
+      });
+  });
