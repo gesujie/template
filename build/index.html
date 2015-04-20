@@ -36,10 +36,15 @@
         </ul>
       </div>
     </div>
-    <div id='mm1'>
+    <div data-options=' itemHeight:32' id='mm1'>
       <div data-options="iconCls:'fa fa-user-plus'">
         <span>
           New User
+        </span>
+      </div>
+      <div data-options="iconCls:'fa fa-inbox'">
+        <span>
+          E-mail Inbox
         </span>
       </div>
       <div data-options="iconCls:'fa fa-warning'">
@@ -47,42 +52,46 @@
           Dashboard Error
         </span>
       </div>
-      <div class='menu-sep'></div>
-      <div data-options="iconCls:'fa fa-square'">
-        <span>
-          See All
-        </span>
-      </div>
     </div>
-    <div id='mm2'>
+    <div data-options=' itemHeight:32' id='mm2'>
       <div data-options="iconCls:'fa fa-user'">
         <span>
           Profile
         </span>
       </div>
-      <div data-options="iconCls:'fa fa-photo'">
+      <div data-options="iconCls:'fa fa-unlock-alt'">
         <span>
-          Upload Avatar
+          Password
         </span>
       </div>
-      <div data-options="iconCls:'fa fa-lock'">
+      <div data-options="iconCls:'fa fa-gear'">
         <span>
-          Change Password
+          Settings
         </span>
       </div>
     </div>
     <div class='sidebar' data-options="region:'west', title:'系统菜单', split:false, border:false, headerCls:'sidebar-header'">
-      <div id='mainSlideMenu'></div>
+      <div data-options='animate:true' id='mainSlideMenu'></div>
     </div>
-    <div class='easyui-menu' id='mainTabMenu'>
-      <div id='refresh'>刷新</div>
-      <div class='menu-sep'></div>
-      <div id='close'>关闭</div>
-      <div id='closeall'>全部关闭</div>
-      <div id='closeother'>除此之外全部关闭</div>
-      <div class='menu-sep'></div>
-      <div id='closeright'>当前页右侧全部关闭</div>
-      <div id='closeleft'>当前页左侧全部关闭</div>
+    <div class='easyui-menu' data-options=' itemHeight:28' id='mainTabMenu'>
+      <div data-options="iconCls:'fa fa-refresh'" id='refresh'>
+        <span>刷新</span>
+      </div>
+      <div data-options="iconCls:'fa fa-times'" id='close'>
+        <span>关闭</span>
+      </div>
+      <div data-options="iconCls:'fa fa-ban'" id='closeall'>
+        <span>全部关闭</span>
+      </div>
+      <div data-options="iconCls:'fa fa-ellipsis-h'" id='closeother'>
+        <span>除此之外全部关闭</span>
+      </div>
+      <div data-options="iconCls:'fa fa-caret-square-o-right'" id='closeright'>
+        <span>当前页右侧全部关闭</span>
+      </div>
+      <div data-options="iconCls:'fa fa-caret-square-o-left'" id='closeleft'>
+        <span>当前页左侧全部关闭</span>
+      </div>
     </div>
     <div data-options="region:'center',border:false">
       <div class='easyui-tabs' data-options='fit:true, border:false' id='mainTabs'>
