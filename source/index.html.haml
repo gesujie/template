@@ -2,15 +2,19 @@
 -@page_classes= 'home easyui-layout'
 
 
-#mainTabMenu.easyui-menu
-  #refresh 刷新
-  .menu-sep
-  #close 关闭
-  #closeall 全部关闭
-  #closeother 除此之外全部关闭
-  .menu-sep
-  #closeright 当前页右侧全部关闭
-  #closeleft 当前页左侧全部关闭
+#mainTabMenu.easyui-menu{'data-options'=>' itemHeight:28'}
+  #refresh{'data-options' => "iconCls:'fa fa-refresh'"}
+    %span 刷新
+  #close{'data-options' => "iconCls:'fa fa-times'"}
+    %span 关闭
+  #closeall{'data-options' => "iconCls:'fa fa-ban'"}
+    %span 全部关闭
+  #closeother{'data-options' => "iconCls:'fa fa-ellipsis-h'"}
+    %span 除此之外全部关闭
+  #closeright{'data-options' => "iconCls:'fa fa-caret-square-o-right'"}
+    %span 当前页右侧全部关闭
+  #closeleft{'data-options' => "iconCls:'fa fa-caret-square-o-left'"}
+    %span 当前页左侧全部关闭
 
 %div{'data-options' => "region:'center',border:false"}
   #mainTabs.easyui-tabs{'data-options' => 'fit:true, border:false'}
