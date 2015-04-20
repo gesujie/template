@@ -85,6 +85,7 @@ body
 
   & .tree-node-hover
     background-color: $sidebar-hover-bg
+
     & .tree-title
       color: $sidebar-hover-color
 
@@ -93,6 +94,11 @@ body
 
   & .tree-node-selected
     background-color: $sidebar-selected-bg
+
+    & .tree-expanded,
+    & .tree-collapsed
+      &::before
+        color: #424344
 
     & .tree-title
       color: #79828B
@@ -145,11 +151,11 @@ body
       width: 18px
       height: 18px
       vertical-align: middle
-      +font-icons(FontAwesome, '\f105', inherit, #ECECE9)
+      +font-icons(FontAwesome, '\f104', inherit, #ECECE9)
       +transition (color 0.28s ease-in)
 
     &:hover::before
-      +font-icons(FontAwesome, '\f105', inherit, #79828B)
+      +font-icons(FontAwesome, '\f104', inherit, #79828B)
       +border-radius (50%)
       background-color: #ECECE9
       +transition (color 0.28s ease-out)
@@ -201,19 +207,9 @@ body
 
 .panel-icon
   color: #79828B
+
   &.fa
     font-size: 13px
-
-#script-warning
-  display: none
-  background: #eee
-  border-bottom: 1px solid #ddd
-  padding: 0 10px
-  line-height: 40px
-  text-align: center
-  font-weight: bold
-  font-size: 12px
-  color: red
 
 .schedule-tool
   position: relative
