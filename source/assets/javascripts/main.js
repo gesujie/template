@@ -18,3 +18,8 @@
 //=require components/moment/moment.js
 //=require components/schedule/fullcalendar.js
 //=require components/schedule/zh-cn.js
+
+//####
+// ## Web Uploader
+//###
+//=require components/webUploader/webuploader.js

@@ -1,3 +1,8 @@
+//
+// Tree
+// --------------------------------------------------
+
+
 .tree
   margin: 0
   padding: 0
@@ -19,9 +24,12 @@
 .tree-hit
   cursor: pointer
 
+.tree-checkbox
+  +inline-block()
+  padding: 1px 2px
+
 .tree-expanded,
 .tree-collapsed,
-.tree-checkbox,
 .tree-indent
   +inline-block()
   width: 16px
@@ -69,45 +77,32 @@
   &::before
     +inline-block()
     +font-icons(FontAwesome, '\f07b', 14px, inherit)
-    text-rendering: auto
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    transform: translate(0, 0)
 
 .tree-folder-open
   &::before
     +inline-block()
     +font-icons(FontAwesome, '\f07c', 14px, inherit)
-    text-rendering: auto
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    transform: translate(0, 0)
 
 .tree-file
   &::before
     +inline-block()
     +font-icons(FontAwesome, '\f15b', 14px, inherit)
-    text-rendering: auto
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    transform: translate(0, 0)
 
 .tree-loading
   &::before
-    +font-icons(FontAwesome, '\f110', 14px, #d7d7d7)
-    text-rendering: auto
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
-    transform: translate(0, 0)
+    +font-icons(FontAwesome, '\f110', 14px, $gray)
 
 .tree-checkbox0
-  background: image_url('tree_icons.png') no-repeat -208px -18px
+  &::before
+    +font-icons(FontAwesome, '\f10c', 14px, $gray)
 
 .tree-checkbox1
-  background: image_url('tree_icons.png') no-repeat -224px -18px
+  &::before
+    +font-icons(FontAwesome, '\f05d', 14px, $gray)
 
 .tree-checkbox2
-  background: image_url('tree_icons.png') no-repeat -240px -18px
+  &::before
+    +font-icons(FontAwesome, '\f192', 14px, $gray)
 
 .tree-title
   font-size: 12px
@@ -152,15 +147,14 @@
   border: 1px dotted red
 
 .tree-editor
-  border: 1px solid #ccc
-  font-size: 12px
-  height: 14px !important
-  height: 18px
-  line-height: 14px
-  padding: 1px 2px
-  width: 80px
   position: absolute
   top: 0
+  width: 80px
+  height: 18px
+  padding: 1px 2px
+  border: 1px solid #ccc
+  font-size: 12px
+  line-height: 14px
 
 .tree-node-proxy
   background-color: #fff
@@ -178,3 +172,5 @@
 .tree-node-hidden
   display: none
 
+.tree-icon
+  color: $gray

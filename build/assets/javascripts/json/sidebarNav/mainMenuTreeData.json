@@ -26,6 +26,12 @@
   "iconCls" : "fa fa-calendar fa-fw",
   "parentId" : "11"
 },{
+  "id":114,
+  "text":"Uploader",
+  "url" : "pages/uploader.html",
+  "iconCls" : "fa fa-upload fa-fw",
+  "parentId" : "11"
+},{
   "id":2,
   "text":"iframe"
 },{

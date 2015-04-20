@@ -15,11 +15,15 @@
   position: relative
   cursor: pointer
   +transition(background-color, 0.28s, ease-out)
+  border-bottom: 1px dotted #ccc
+  &:last-child
+    border-bottom: 0
 
 .menu-text
   float: left
   padding-left: 28px
   font-size: $font-size-base
+  font-weight: 300
 
 .menu-icon
   position: absolute
@@ -64,16 +68,13 @@
   &::before
     +font-icons(FontAwesome, '\f0da', inherit, #000)
 
-.menu-line
-  border-left: 1px solid #d7d7d7
-
 .menu-sep
   border-bottom: 1px solid #d7d7d7
 
 .menu
   background-color: #fafafa
   border-color: #ddd
-  color: #444
+  color: #7e8e9f
 
 .menu-content
   background-color: #fff

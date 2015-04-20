@@ -5,14 +5,12 @@
   %div.easyui-panel{'data-options' => "region:'center', tools:'#panel-custom-tool', headerCls:'panel-header-primary', bodyCls:'panel-body-default', title:'Schedule', iconCls:'fa fa-calendar', collapsible:false"}
     #panel-custom-tool
       %span#getDate.display-date
-      =link_to 'javascript:void(0)', onclick:'prevButton()', class:'fa fa-angle-left schedule-tool' do
+      =link_to 'javascript:void(0)', onclick:'prevButton()', title:'Prev', class:'fa fa-angle-left schedule-tool' do
         %span.sr-only Prev Button
-      =link_to 'javascript:void(0)', onclick:'todayButton()', class:'fa fa-circle schedule-tool' do
+      =link_to 'javascript:void(0)', onclick:'todayButton()', title:'Today', class:'fa fa-circle schedule-tool' do
         %span.sr-only Today Button
-      =link_to 'javascript:void(0)', onclick:'nextButton()', class:'fa fa-angle-right schedule-tool' do
+      =link_to 'javascript:void(0)', onclick:'nextButton()', title:'Next', class:'fa fa-angle-right schedule-tool' do
         %span.sr-only Next Button
-    #script-warning
-      %code can't loading
     #schedule
 
 :javascript
@@ -29,7 +27,7 @@
       events: {
         url: 'assets/javascripts/json/scheduleEvents/events.json',
         error: function() {
-          $('#script-warning').show();
+          console.log('loading error');
         }
       }
       });
