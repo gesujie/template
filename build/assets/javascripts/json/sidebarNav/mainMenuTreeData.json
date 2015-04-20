@@ -20,6 +20,12 @@
   "iconCls" : "fa fa-list-alt fa-fw",
   "parentId" : "11"
 },{
+  "id":113,
+  "text":"Schedule",
+  "url" : "pages/schedule.html",
+  "iconCls" : "fa fa-calendar fa-fw",
+  "parentId" : "11"
+},{
   "id":2,
   "text":"iframe"
 },{

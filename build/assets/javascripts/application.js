@@ -21,18 +21,43 @@
     }
 }());
 
-//### Sidebar navigation json
+//### Sidebar Navigation Json
 qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 
-//### Registry login button
+//### Registry Login Button
 function btnRegistry(){
     $('.panel-sing-up').addClass('active');
     $('.panel-sing-in').addClass('passive');
 }
 
-//### Registry back button
+//### Registry Back Button
 function btnBack(){
     $('.panel-sing-up').removeClass('active');
     $('.panel-sing-in').removeClass('passive');
+}
+
+//### Schedule Prev Button
+function prevButton(){
+	var schedule = $('#schedule');
+	schedule.fullCalendar('prev');
+	var moment = schedule.fullCalendar('getDate');
+	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
+}
+
+//### Schedule Today Button
+function todayButton(){
+	var schedule = $('#schedule');
+	schedule.fullCalendar('today');
+	var moment = schedule.fullCalendar('getDate');
+	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
+}
+
+//### Schedule Next Button
+function nextButton(){
+	var schedule = $('#schedule');
+	schedule.fullCalendar('next');
+	var moment = schedule.fullCalendar('getDate');
+	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
+
 }
 ;

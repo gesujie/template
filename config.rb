@@ -16,6 +16,7 @@ page 'pages/tabs.html', layout: :resource
 page 'pages/login.html', layout: :resource
 page 'pages/register.html', layout: :resource
 page 'pages/tree.html', layout: :resource
+page 'pages/schedule.html', layout: :resource
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
