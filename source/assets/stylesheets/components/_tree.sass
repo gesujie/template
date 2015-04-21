@@ -17,7 +17,6 @@
   padding: 0
 
 .tree-node
-  height: 18px
   white-space: nowrap
   cursor: pointer
 
@@ -105,14 +104,10 @@
     +font-icons(FontAwesome, '\f192', 14px, $gray)
 
 .tree-title
-  font-size: 12px
-  display: inline-block
-  text-decoration: none
-  vertical-align: top
+  +inline-block()
+  font-size: $font-size-base
   white-space: nowrap
   padding: 0 2px
-  height: 18px
-  line-height: 18px
 
 .tree-node-proxy
   font-size: 12px
@@ -123,12 +118,12 @@
   z-index: 9900000
 
 .tree-dnd-icon
-  display: inline-block
   position: absolute
+  top: 50%
+  left: 2px
+  display: inline-block
   width: 16px
   height: 18px
-  left: 2px
-  top: 50%
   margin-top: -9px
 
 .tree-dnd-yes
