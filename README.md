@@ -27,7 +27,7 @@ You don't need any third part to install. For preview you can use "build" folder
 
 If you have ruby you need to install "middleman" gem then you can run middleman server.
 
-### What's Include ###
+### What's Include 目录结构 ###
 
 ```
 #!code
