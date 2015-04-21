@@ -4,6 +4,16 @@ We modified "easy ui" styles and javascript then created a admin template page.
 
 ### How do I get set up? ###
 
+#### Download
+
+Several quick start options are available:
+
+###### If you have no "GIT"
+* [Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
+
+###### If you have "GIT"
+* Clone the repo: git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git
+
 #### Windows 
 
 You don't need any third part to install. For preview you can use "build" folder. Because build are HTML5-CSS3. Please use your localhost.
@@ -12,14 +22,11 @@ You don't need any third part to install. For preview you can use "build" folder
 
 If you have ruby you need to install "middleman" gem then you can run middleman server.
 
-#### Download
-
-Several quick start options are available:
-
-* [Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
-* Clone the repo: git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git
-
 ### What's Include ###
+
+```
+#!code
+
 
 admin-template-easyui/
 ├── build/
@@ -90,6 +97,9 @@ admin-template-easyui/
 │   │   ├── humans.txt
 │   │   ├── index.html.haml
 │   │   └── robots.txt
+
+
+```
 
 ### Contributes Guideline ###
 
