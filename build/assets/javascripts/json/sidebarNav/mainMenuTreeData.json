@@ -57,6 +57,12 @@
   "iconCls" : "fa fa-pencil-square fa-fw",
   "parentId" : "3"
 },{
+  "id":33,
+  "text":"上传文件",
+  "url" : "pages/webuploader.html",
+  "iconCls" : "fa fa-cloud-upload",
+  "parentId" : "3"
+},{
   "id":4,
   "text":"tree treegrid"
 },{
