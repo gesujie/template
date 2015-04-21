@@ -1,12 +1,17 @@
 # README #
+# 说明 #
 
 We modified "easy ui" styles and javascript then created a admin template page.  
+我们修改了easyui的界面风格和部分js，使得后台管理界面框架得以建立。
 
 ### How do I get set up? ###
+### 如何开始使用？ ###
 
 #### Download
+#### 下载
 
 Several quick start options are available:
+下面有几种快速使用的方法：
 
 ###### If you have no "GIT"
 * [Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
