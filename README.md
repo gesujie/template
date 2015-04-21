@@ -1,11 +1,9 @@
-# README #
-# 说明 #
+# 说明 README #
 
 We modified "easy ui" styles and javascript then created a admin template page.  
 我们修改了easyui的界面风格和部分js，使得后台管理界面框架得以建立。
 
-### How do I get set up? ###
-### 如何开始使用？ ###
+### 如何开始使用？ How do I get set up? ###
 
 #### Download
 #### 下载
