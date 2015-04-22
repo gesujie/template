@@ -1,5 +1,5 @@
 !!!5
-%html{lang:''}
+%html{lang:'zh'}
   %head
     %meta{charset: 'utf-8'}/
     %meta{content: 'ie=edge', 'http-equiv' => 'x-ua-compatible'}/
@@ -7,10 +7,8 @@
       =@title
     %meta{content: '', :name => 'description'}/
     %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}/
-    %link{href: 'apple-touch-icon.png', rel: 'apple-touch-icon'}/
 
-    =stylesheet_link_tag  'application',
-                          '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css'
+    =stylesheet_link_tag  'application'
 
   %body{class: @page_classes || page}
 

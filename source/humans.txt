@@ -1,9 +1,9 @@
 /* TEAM */
 
 	Chains Front-End Develop Team
-	JS: Your Name
-	CSS: My Name
- 
+	javascript modify: li yulong
+    styles modify: coskuntekin
+
 /* THANKS */
 
     Middleman
@@ -18,7 +18,7 @@
 
 /* SITE */
 
-    Last Update: 2015/02/04
+    Last Update: 2015/04/22
     Doctype: HTML5
     IDE: RubyMine
     Platform: Middleman - Ruby

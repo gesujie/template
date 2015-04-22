@@ -92,15 +92,6 @@
   background-color: #E6E6E6
   +border-bottom-radius(2px)
 
-.panel-body-noheader
-  border-top-width: 1px
-
-.panel-body-noborder
-  border-width: 0
-
-.panel-body-nobottom
-  border-bottom-width: 0
-
 .panel-with-icon
   padding-left: 18px
 
@@ -139,28 +130,25 @@
 
 .panel-tool-close
   &::before
-    +font-icons(FontAwesome, '\f057', 14px, inherit)
-    +transition(color, 0.28s, ease-out)
-
-  &:hover::before
-    +transition(color, 0.28s, ease-in)
+    +font-icons(FontAwesome, '\f057', 14px, #d7d7d7)
 
 .panel-tool-min
   &::before
-    +font-icons(FontAwesome, '\f056', 14px, inherit)
+    +font-icons(FontAwesome, '\f056', 14px, #d7d7d7)
 
 .panel-tool-max
   &::before
-    +font-icons(FontAwesome, '\f055', 14px, inherit)
+    +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
 
 .panel-tool-restore
   &::before
-    +font-icons(FontAwesome, '\f057', 14px, inherit)
+    +font-icons(FontAwesome, '\f057', 14px, #d7d7d7)
 
 .panel-tool-collapse
+
   &::before
-    +font-icons(FontAwesome, '\f056', 14px, inherit)
+    +font-icons(FontAwesome, '\f056', 14px, #d7d7d7)
 
 .panel-tool-expand
   &::before
-    +font-icons(FontAwesome, '\f055', 14px, inherit)
+    +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
