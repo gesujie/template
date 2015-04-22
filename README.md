@@ -8,11 +8,11 @@
 
 下面有几种快速使用的方法：
 
-* #### 如果你没有使用GIT
+#### 如果你没有使用GIT
 
 [下载这个最新版本的发布包](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
 
-* #### 如果使用了GIT
+#### 如果使用了GIT
 
 直接在你的电脑上迁出这个地址 `git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git`
 
@@ -105,19 +105,19 @@ We modified "easy ui" styles and javascript then created a admin template page.
 
 Several quick start options are available:
 
-* #### If you have no "GIT"
+#### If you have no "GIT"
 
 [Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
 
-* ####  If you have "GIT" 如果使用了GIT
+####  If you have "GIT" 如果使用了GIT
 
 Clone the repo: `git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git`
 
-* #### Windows
+#### Windows
 
 You don't need any third part to install. For preview you can use "build" folder. Because build are HTML5-CSS3. Please use your localhost.
 
-* #### Linux
+#### Linux
 
 If you have ruby you need to install "middleman" gem then you can run middleman server.
 
