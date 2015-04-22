@@ -16,7 +16,7 @@
 
 直接在你的电脑上迁出这个地址 `git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git`
 
-* #### Windows
+#### Windows
 
 请下载以后，将文件夹内的build文件夹放到服务器根目录，然后访问对应的服务器首页进行预览。
 
