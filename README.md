@@ -109,7 +109,7 @@ Several quick start options are available:
 
 [Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
 
-####  If you have "GIT" 如果使用了GIT
+####  If you have "GIT"
 
 Clone the repo: `git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git`
 
