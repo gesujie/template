@@ -3,5 +3,17 @@
 
 
 .easyui-layout{fit:'true'}
-  .easyui-window{"data-options" => "iconCls:'fa fa-columns', modal:true, width:600, height:400, minimizable:false, closable:true", title:'Easy UI Window'}
-    Window Content
+  .easyui-window{"data-options" => "iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true", title:'Easy UI Window Login'}
+    %form.form-vertical{action:''}
+      .form-control
+        %label Email:
+        %input.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a email address...', width:240, height:35, iconCls:'fa fa-user', iconWidth:30, iconAlign:'left'"}
+      .form-control
+        %label Password:
+        %input.easyui-textbox{type:'password', 'data-options' => "prompt:'Password', width:240, height:35, iconCls:'fa fa-lock', iconWidth:30, iconAlign:'left'"}
+      .form-control
+        %label Remember me:
+        %input{type:'checkbox'}
+      .form-control.text-center
+        =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-sign-in', 'data-options' => 'width:200'
+
