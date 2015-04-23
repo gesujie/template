@@ -1,5 +1,21 @@
 <div class='easyui-layout' fit='true'>
-  <div class='easyui-window' data-options="iconCls:'fa fa-columns', modal:true, width:600, height:400, minimizable:false, closable:true" title='Easy UI Window'>
-    Window Content
+  <div class='easyui-window' data-options="iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true" title='Easy UI Window Login'>
+    <form action='' class='form-vertical'>
+      <div class='form-control'>
+        <label>Email:</label>
+        <input class='easyui-textbox' data-options="prompt:'Enter a email address...', width:240, height:35, iconCls:'fa fa-user', iconWidth:30, iconAlign:'left'" name='Username'>
+      </div>
+      <div class='form-control'>
+        <label>Password:</label>
+        <input class='easyui-textbox' data-options="prompt:'Password', width:240, height:35, iconCls:'fa fa-lock', iconWidth:30, iconAlign:'left'" type='password'>
+      </div>
+      <div class='form-control'>
+        <label>Remember me:</label>
+        <input type='checkbox'>
+      </div>
+      <div class='form-control text-center'>
+        <a class="easyui-linkbutton color-primary mr-10 text-center" iconCls="fa fa-sign-in" data-options="width:200" href="javascript:void(0)">Sign in</a>
+      </div>
+    </form>
   </div>
 </div>
