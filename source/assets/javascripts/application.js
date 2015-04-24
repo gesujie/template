@@ -60,7 +60,7 @@ function nextButton(){
 	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
 
 }
-
+//### Sidebar Badge Extend
 $('#mainSlideMenu').tree({
 	formatter:function(node){
 		var s = node.text;
@@ -70,3 +70,6 @@ $('#mainSlideMenu').tree({
 		return s;
 	}
 });
+
+//### Run Alert
+$.messager.alert('Info','The info message', 'info');

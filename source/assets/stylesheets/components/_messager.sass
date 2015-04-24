@@ -3,34 +3,41 @@
 // --------------------------------------------------
 
 
+.messager-window
+  & .window-header
+    border-bottom: 1px dotted #d7d7d7
+    padding-left: 10px
+    padding-right: 10px
+
 .messager-body
-  padding: 10px
   overflow: hidden
 
 .messager-button
+  margin-top: 45px
   text-align: center
-  padding-top: 10px
-
-.messager-button .l-btn
-  width: 70px
+  & .l-btn
+    width: 60px
+    @extend .color-default
 
 .messager-icon
   float: left
-  width: 32px
-  height: 32px
   margin: 0 10px 10px 0
 
 .messager-error
-  background: url('images/messager_icons.png') no-repeat scroll -64px 0
+  &::before
+    +font-icons(FontAwesome, '\f06a', 20px, $brand-danger)
 
 .messager-info
-  background: url('images/messager_icons.png') no-repeat scroll 0 0
+  &::before
+    +font-icons(FontAwesome, '\f05a', 20px, $brand-info)
 
 .messager-question
-  background: url('images/messager_icons.png') no-repeat scroll -32px 0
+  &::before
+    +font-icons(FontAwesome, '\f059', 20px, $brand-primary)
 
 .messager-warning
-  background: url('images/messager_icons.png') no-repeat scroll -96px 0
+  &::before
+    +font-icons(FontAwesome, '\f071', 20px, $brand-warning)
 
 .messager-progress
   padding: 10px
@@ -41,5 +48,4 @@
 .messager-body .messager-input
   width: 100%
   padding: 1px 0
-  border: 1px solid #95B8E7
 

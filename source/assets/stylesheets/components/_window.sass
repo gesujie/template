@@ -13,15 +13,6 @@
   & .panel-tool-close
     color: #79828B
 
-.window .window-body
-  padding: $padding-base-vertical $padding-base-horizontal
-
-.window .window-body-noheader
-  border-top-width: 1px
-
-.window .panel-body-nobottom
-  border-bottom-width: 0
-
 .window .window-header .panel-icon
   position: initial
   top: 0
@@ -74,16 +65,15 @@
 .window-shadow
   +box-shadow(0 27px 24px 0 rgba(0,0,0,.2), 0 40px 77px 0 rgba(0,0,0,.22))
 
-.window .window-body
-  padding: $padding-large-vertical $padding-large-horizontal
-  font-size: $font-size-base
-  color: $window-panel-title-color
+.window
+  & .window-body
+    padding: $padding-large-vertical $padding-large-horizontal
+    font-size: $font-size-base
+    font-weight: 300
+    color: $window-panel-title-color
 
 .window
   background-color: #fff
-
-.window-proxy
-  border: 1px dashed #95B8E7
 
 .window
   & .panel-tool

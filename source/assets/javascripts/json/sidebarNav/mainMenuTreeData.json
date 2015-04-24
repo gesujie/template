@@ -38,6 +38,12 @@
   "id":24,
   "text":"普通树",
   "url" : "pages/tree.html",
+  "iconCls" : "fa fa-list-ol fa-fw",
+  "parentId" : "2"
+},{
+  "id":25,
+  "text":"Tabs",
+  "url" : "pages/tabs.html",
   "iconCls" : "fa fa-list-alt fa-fw",
   "parentId" : "2"
 },{
