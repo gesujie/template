@@ -10,7 +10,7 @@
 
 #### 如果你没有使用GIT
 
-[下载这个最新版本的发布包](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
+[下载这个最新版本的发布包](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.1.zip)
 
 #### 如果使用了GIT
 
@@ -107,7 +107,7 @@ Several quick start options are available:
 
 #### If you have no "GIT"
 
-[Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.0.zip)
+[Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.1.zip)
 
 ####  If you have "GIT"
 
