@@ -2,6 +2,10 @@
 
 我们修改了easyui的界面风格和部分js，使得后台管理界面框架得以建立。
 
+### 演示页面
+
+[在这里查阅](http://192.168.1.46:8888/chainsui/)
+
 ### 如何开始使用
 
 ### 下载
@@ -98,6 +102,10 @@ admin-template-easyui/
 ### README
 
 We modified "easy ui" styles and javascript then created a admin template page.
+
+### Demo Page
+
+[Check out here](http://192.168.1.46:8888/chainsui/)
 
 ### How do I get set up?
 
