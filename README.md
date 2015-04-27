@@ -105,7 +105,7 @@ We modified "easy ui" styles and javascript then created a admin template page.
 
 ### Demo Page
 
-[Check out here](http://192.168.1.46:8888/chainsui/)
+[Check out here](http://192.168.1.34:8080/chainsui/)
 
 ### How do I get set up?
 
