@@ -40,15 +40,15 @@
         =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton color-default btn-jump'
         =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton color-default btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')"
   %div.easyui-panel{'data-options' => "region:'center', headerCls:'panel-header-primary', title:'Data Grid', iconCls:'fa fa-database', collapsible:false"}
-    %table.easyui-datagrid.datagrid-bg#dg{'data-options' => "singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
+    %table.easyui-datagrid.datagrid-bg{'data-options' => "singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, pagination:true, sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
       %thead
         %tr
           %th{'data-options' => "field:'itemid', sortable:'true', width:80"} Item ID
-          %th{'data-options' => "field:'productid',width:100"} Product
-          %th{'data-options' => "field:'listprice',width:80,align:'right'"} List Price
-          %th{'data-options' => "field:'unitcost',width:80,align:'right'"} Unit Cost
-          %th{'data-options' => "field:'attr1',width:250"} Attribute
-          %th{'data-options' => "field:'status',width:60,align:'center'"} Status
+          %th{'data-options' => "field:'productid', sortable:'true', width:100"} Product
+          %th{'data-options' => "field:'listprice', sortable:'true', width:80"} List Price
+          %th{'data-options' => "field:'unitcost', sortable:'true', width:80"} Unit Cost
+          %th{'data-options' => "field:'attr1', sortable:'true', width:250"} Attribute
+          %th{'data-options' => "field:'status', sortable:'true', width:60"} Status
   .easyui-dialog#dlg-add{'data-options'=>"iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300", title:'Add new rows'}
     %form.form-vertical{action:''}
       .form-control
