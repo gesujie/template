@@ -1,0 +1,28 @@
+-@title= 'From | Admin Page '
+-@page_classes= 'form'
+
+.easyui-layout{fit:'true'}
+  .easyui-panel{title:'Form Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', headerCls:'panel-header-primary', bodyCls:'panel-body-default', collapsible:false"}
+    .container
+      .col-4
+        %form.form-horizontal{action:''}
+          .form-control
+            .col-3
+              %label Email:
+            .col-9.col-last
+              %input.easyui-textbox{'data-options' => 'height:32'}
+          .form-control
+            .col-3
+              %label First Name:
+            .col-9.col-last
+              %input.easyui-textbox{'data-options' => 'height:32'}
+          .form-control
+            .col-3
+              %label Last Name:
+            .col-9.col-last
+              %input.easyui-textbox{'data-options' => 'height:32'}
+          .form-control
+            .col-3
+              %label Company:
+            .col-9.col-last
+              %input.easyui-textbox{'data-options' => 'height:32'}

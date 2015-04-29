@@ -2,6 +2,7 @@
 // Grid
 // --------------------------------------------------
 
+$susy: (use-custom: (box-sizing: false,),)
 
 //**** Container
 .container
@@ -122,16 +123,17 @@
   +push(12 of 12)
 
 //**** Grid debug classes
-[class*="col-"]
-  display: table
-  height: 50px
-  padding: $padding-base-vertical $padding-base-horizontal
-  margin-bottom: 15px
-  background-color: rgba(lighten(#000, 35%), .2)
+.debug
+  & [class*="col-"]
+    display: table
+    height: 50px
+    padding: $padding-base-vertical $padding-base-horizontal
+    margin-bottom: 15px
+    background-color: rgba(lighten(#000, 35%), .2)
 
-  &::before
-    display: table-cell
-    content: attr(class)
-    vertical-align: middle
-    font-size: $font-size-small
-    word-break: break-all
+    &::before
+      display: table-cell
+      content: attr(class)
+      vertical-align: middle
+      font-size: $font-size-small
+      word-break: break-all

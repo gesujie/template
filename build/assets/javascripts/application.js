@@ -65,11 +65,30 @@ $('#mainSlideMenu').tree({
 	formatter:function(node){
 		var s = node.text;
 		if (node.children){
-			s += '&nbsp;<span class=\'badge\'>' + node.children.length + '</span>';
+			s += '&nbsp;<span class=\'badge badge-info\'>' + node.children.length + '</span>';
 		}
 		return s;
 	}
 });
 
-//### Run Alert
-$.messager.alert('Info','The info message', 'info');
+
+$(window).load(function(){
+
+	//### Run Alert
+	//$.messager.alert('Info','Message will be closed after 4 seconds.','info');
+
+	//### Message Box
+	$.messager.show({
+		msg: 'Message will be closed after 4 seconds.',
+		showType: 'slide',
+		width: 500,
+		height: 50,
+		noheader: true,
+		onBeforeOpen: function(){
+			$(this).parent().addClass('message-default');
+			$(this).addClass('message-body-primary');
+			$(this).append("<a href='javascript:void(0)' class='message-close'>×</a>");
+		}
+	});
+
+});

@@ -47,6 +47,24 @@
   "iconCls" : "fa fa-list-alt fa-fw",
   "parentId" : "2"
 },{
+  "id":26,
+  "text":"Panels",
+  "url" : "pages/panel.html",
+  "iconCls" : "fa fa-cube fa-fw",
+  "parentId" : "2"
+},{
+  "id":27,
+  "text":"Grids",
+  "url" : "pages/grid.html",
+  "iconCls" : "fa fa-align-justify fa-fw",
+  "parentId" : "2"
+},{
+  "id":28,
+  "text":"Froms",
+  "url" : "pages/form.html",
+  "iconCls" : "fa fa-text-height fa-fw",
+  "parentId" : "2"
+},{
   "id":3,
   "text":"iframe"
 },{
