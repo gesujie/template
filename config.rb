@@ -19,6 +19,8 @@ page 'pages/tree.html', layout: :resource
 page 'pages/schedule.html', layout: :resource
 page 'pages/uploader.html', layout: :resource
 page 'pages/window.html', layout: :resource
+page 'pages/panel.html', layout: :resource
+page 'pages/grid.html', layout: :resource
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

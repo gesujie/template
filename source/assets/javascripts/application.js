@@ -75,7 +75,7 @@ $('#mainSlideMenu').tree({
 $(window).load(function(){
 
 	//### Run Alert
-	$.messager.alert('Info','Message will be closed after 4 seconds.','info');
+	//$.messager.alert('Info','Message will be closed after 4 seconds.','info');
 
 	//### Message Box
 	$.messager.show({
@@ -83,7 +83,6 @@ $(window).load(function(){
 		showType: 'slide',
 		width: 500,
 		height: 50,
-		timeout: 0,
 		noheader: true,
 		onBeforeOpen: function(){
 			$(this).parent().addClass('message-default');
