@@ -72,4 +72,4 @@ $('#mainSlideMenu').tree({
 });
 
 //### Run Alert
-$.messager.alert('Info','The info message', 'info');
+//$.messager.alert('Info','The info message', 'info');
