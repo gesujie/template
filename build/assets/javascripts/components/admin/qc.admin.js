@@ -7,13 +7,11 @@
  */
 
 // 定义命名空间
-if (!qc) var qc = {};
-if (!qc.combotree) qc.combotree = {};
-if (!qc.combobox) qc.combobox = {};
-if (!qc.datagrid) qc.datagrid = {};
-if (!qc.treegrid) qc.treegrid = {};
-if (!qc.tree) qc.tree = {};
-if (!qc.menu) qc.menu = {};
-if (!qc.form) qc.form = {};
-if (!qc.dialog) qc.dialog = {};
-if (!qc.tabs) qc.tabs = {};
+Namespace.register("qc.combotree");
+Namespace.register("qc.combobox");
+Namespace.register("qc.datagrid");
+Namespace.register("qc.treegrid");
+Namespace.register("qc.dialog");
+Namespace.register("qc.tree");
+Namespace.register("qc.form");
+Namespace.register("qc.tabs");

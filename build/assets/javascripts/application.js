@@ -58,8 +58,8 @@ function nextButton(){
 	schedule.fullCalendar('next');
 	var moment = schedule.fullCalendar('getDate');
 	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
-
 }
+
 //### Sidebar Badge Extend
 $('#mainSlideMenu').tree({
 	formatter:function(node){
@@ -75,7 +75,7 @@ $('#mainSlideMenu').tree({
 $(window).load(function(){
 
 	//### Run Alert
-	//$.messager.alert('Info','Message will be closed after 4 seconds.','info');
+	// /$.messager.alert('Info','Message will be closed after 4 seconds.','info');
 
 	//### Message Box
 	$.messager.show({

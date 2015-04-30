@@ -11,6 +11,30 @@
 
 /**
  * @author 李钰龙
+ * @requires jQuery
+ * 注册命名空间
+ * @returns object
+ */
+Namespace = new Object();
+ 
+// 全局对象仅仅存在register函数，参数为名称空间全路径，如"Qianchi.MyWork"
+Namespace.register = function(fullNS){
+    // 将命名空间切成N部分, 比如GQianchi、MyWork等
+    var nsArray = fullNS.split('.');
+    var sEval = "";
+    var sNS = "";
+    for (var i = 0; i < nsArray.length; i++){
+        if (i != 0) sNS += ".";
+        sNS += nsArray[i];
+        // 依次创建构造命名空间对象（假如不存在的话）的语句
+        // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
+        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+    }
+    if (sEval != "") eval(sEval);
+}
+
+/**
+ * @author 李钰龙
  * 增加formatString功能
  * 使用方法：formatString('字符串{0}字符串{1}字符串','第一个变量','第二个变量');
  * @returns 格式化后的字符串

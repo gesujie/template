@@ -8,6 +8,29 @@
  * 12、扩展datagrid，使datagrid的editors能保存combotree的多选值
  */
 
+/**
+ * @author 李钰龙
+ * @requires jQuery
+ * 注册命名空间
+ * @returns object
+ */
+Namespace = new Object();
+ 
+// 全局对象仅仅存在register函数，参数为名称空间全路径，如"Qianchi.MyWork"
+Namespace.register = function(fullNS){
+    // 将命名空间切成N部分, 比如GQianchi、MyWork等
+    var nsArray = fullNS.split('.');
+    var sEval = "";
+    var sNS = "";
+    for (var i = 0; i < nsArray.length; i++){
+        if (i != 0) sNS += ".";
+        sNS += nsArray[i];
+        // 依次创建构造命名空间对象（假如不存在的话）的语句
+        // 比如先创建Qianchi，然后创建Qianchi.MyWork，依次下去
+        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+    }
+    if (sEval != "") eval(sEval);
+};
 
 /**
  * @author 李钰龙
@@ -136,7 +159,6 @@ $.fn.panel.defaults.loadingMessage = '加载中....';
 $.fn.datagrid.defaults.loadMsg = '加载中....';
 
 $.fn.dialog.defaults.onOpen = function() {
-	console.info($(this));
 	$(this).parent().addClass("active");
 };
 $.fn.dialog.defaults.onClose = function() {
@@ -1005,24 +1027,22 @@ if ($.fn.datetimespinner){
  */
 
 // 定义命名空间
-if (!qc) var qc = {};
-if (!qc.combotree) qc.combotree = {};
-if (!qc.combobox) qc.combobox = {};
-if (!qc.datagrid) qc.datagrid = {};
-if (!qc.treegrid) qc.treegrid = {};
-if (!qc.tree) qc.tree = {};
-if (!qc.menu) qc.menu = {};
-if (!qc.form) qc.form = {};
-if (!qc.dialog) qc.dialog = {};
-if (!qc.tabs) qc.tabs = {};
+Namespace.register("qc.combotree");
+Namespace.register("qc.combobox");
+Namespace.register("qc.datagrid");
+Namespace.register("qc.treegrid");
+Namespace.register("qc.dialog");
+Namespace.register("qc.tree");
+Namespace.register("qc.form");
+Namespace.register("qc.tabs");
+
 /* 功能：黔驰EasyuiUI框架，主框架生成js
  * 作者：李钰龙
  * 日期：2015-3-27
  */
 
 
-if (!qc) var qc = {};
-qc.main = {};  // UI框架命名空间
+Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;
 
