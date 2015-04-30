@@ -65,6 +65,12 @@
   "iconCls" : "fa fa-text-height fa-fw",
   "parentId" : "2"
 },{
+  "id":29,
+  "text":"accordion",
+  "url" : "pages/accordion.html",
+  "iconCls" : "fa fa-text-height fa-fw",
+  "parentId" : "2"
+},{
   "id":3,
   "text":"iframe"
 },{
