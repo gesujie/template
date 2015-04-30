@@ -51,6 +51,7 @@
     <table class='easyui-datagrid datagrid-bg' data-options="singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, pagination:true, sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'">
       <thead>
         <tr>
+          <th data-options="field:'ck', checkbox:'true'"></th>
           <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
           <th data-options="field:'productid', sortable:'true', width:100">Product</th>
           <th data-options="field:'listprice', sortable:'true', width:80">List Price</th>
@@ -71,10 +72,10 @@
         <label>Status</label>
         <input class='form-control' placeholder='Status' type='text'>
       </div>
+      <div class='form-group'>
+        <a class='easyui-linkbutton btn-jump color-default' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
+        <a class='easyui-linkbutton btn-jump btn-dialog-close color-warning' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
+      </div>
     </form>
-    <div class='dialog-button'>
-      <a class='easyui-linkbutton btn-jump color-default' href='javascript:void(0)' iconCls='fa fa-check-circle-o' onclick='saveUser()'>Save</a>
-      <a class='easyui-linkbutton btn-jump btn-dialog-close color-warning' href='javascript:void(0)' iconCls='fa fa-times-circle' onclick="$('#dlg-add').dialog('close')">Cancel</a>
-    </div>
   </div>
 </div>

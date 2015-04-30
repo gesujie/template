@@ -3,29 +3,28 @@
 
 
 .easyui-layout{fit:'true'}
-  .easyui-panel{title:'Accordion Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', headerCls:'panel-header-primary', bodyCls:'panel-body-default', collapsible:false"}
-    .container
-      .easyui-accordion.accordion-info{'data-options'=>'width:500, height:420'}
-        %div{'data-options' => "iconCls:'fa fa-check-square-o'", title: 'About'}
-          %h3 Accordion for jQuery
-          %p Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.
-        %div{'data-options' => "iconCls:'fa fa-compass'", title: 'Help'}
-          %p The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.
-        %div{'data-options' => "iconCls:'fa fa-search'", title: 'TreeMenu'}
-          %ul.easyui-tree
-            %li
-              %span Foods
-              %ul
-                %li
-                  %span Fruits
-                  %ul
-                    %li apple
-                    %li orange
-                %li
-                  %span Vegetables
-                  %ul
-                    %li tomato
-                    %li carrot
-                    %li cabbage
-                    %li potato
-                    %li lettuce
+  .easyui-panel{title:'Accordion Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', headerCls:'panel-header-primary', bodyCls:'panel-body-default'"}
+    .easyui-accordion.accordion-info{'data-options'=>'width:500, height:400'}
+      %div{'data-options' => "iconCls:'fa fa-check-square-o'", title: 'About'}
+        %h3 Accordion for jQuery
+        %p Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.
+      %div{'data-options' => "iconCls:'fa fa-compass'", title: 'Help'}
+        %p The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.
+      %div{'data-options' => "iconCls:'fa fa-search'", title: 'TreeMenu'}
+        %ul.easyui-tree
+          %li
+            %span Foods
+            %ul
+              %li
+                %span Fruits
+                %ul
+                  %li apple
+                  %li orange
+              %li
+                %span Vegetables
+                %ul
+                  %li tomato
+                  %li carrot
+                  %li cabbage
+                  %li potato
+                  %li lettuce

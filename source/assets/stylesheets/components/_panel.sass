@@ -9,6 +9,12 @@
   & .panel
     position: absolute
 
+////
+// Margin bottom space for accordion header
+.easyui-accordion
+  & .panel
+    margin-bottom: 5px
+
 .panel
   overflow: hidden
 
@@ -86,7 +92,7 @@
   font-weight: 300
 
 .panel-body-default
-  +inline-block()
+  display: block
   background-color: #fff
   padding: 15px
   overflow: auto

@@ -43,6 +43,7 @@
     %table.easyui-datagrid.datagrid-bg{'data-options' => "singleSelect:true, striped:true, fitColumns:true, fit:true, collapsible:true, rownumbers: true, border:false, pagination:true, sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
       %thead
         %tr
+          %th{'data-options' => "field:'ck', checkbox:'true'"}
           %th{'data-options' => "field:'itemid', sortable:'true', width:80"} Item ID
           %th{'data-options' => "field:'productid', sortable:'true', width:100"} Product
           %th{'data-options' => "field:'listprice', sortable:'true', width:80"} List Price
@@ -57,6 +58,6 @@
       .form-group
         %label Status
         %input.form-control{placeholder: 'Status', type: 'text'}
-    .dialog-button
-      %a.easyui-linkbutton.btn-jump.color-default{href: 'javascript:void(0)', iconCls: 'fa fa-check-circle-o', onclick: 'saveUser()'} Save
-      %a.easyui-linkbutton.btn-jump.btn-dialog-close.color-warning{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close')"} Cancel
+      .form-group
+        %a.easyui-linkbutton.btn-jump.color-default{href: 'javascript:void(0)', iconCls: 'fa fa-check-circle-o', onclick: 'saveUser()'} Save
+        %a.easyui-linkbutton.btn-jump.btn-dialog-close.color-warning{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close')"} Cancel

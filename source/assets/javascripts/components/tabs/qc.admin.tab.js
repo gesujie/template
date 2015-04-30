@@ -19,7 +19,7 @@ $(function(){
 		parentField : "parentId",
 		onClick: function(node){
 			if(node.url) {
-				qc.main.addTab(node.text, node.url, node.icon, !!node.iframe);
+				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
 		}
 	});
