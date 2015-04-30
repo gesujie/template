@@ -1,49 +1,47 @@
 <div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'north', headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, title:'Toolbar', collapsible:false, iconCls:'fa fa-cog'">
-    <form action='' class='form-horizontal mb-10'>
-      <div class='form-control'>
-        <label>Date From:</label>
-        <input class='easyui-datebox' data-options='height:32'>
-      </div>
-      <div class='form-control'>
-        <label>To:</label>
-        <input class='easyui-datebox' data-options='height:32'>
-      </div>
-      <div class='form-control'>
-        <label>Language:</label>
-        <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
-          <option value='java'>Java</option>
-          <option value='c'>C</option>
-          <option value='basic'>Basic</option>
-          <option value='perl'>Perl</option>
-          <option value='python'>Python</option>
-        </select>
-      </div>
-      <div class='form-control'>
+  <div class='easyui-panel' data-options="region:'north', height:150, headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, title:'Toolbar', collapsible:false, iconCls:'fa fa-cog'">
+    <form class='form-inline'>
+      <div class='col-12 mb-10'>
+        <div class='form-group'>
+          <label>Date From:</label>
+          <input class='form-control easyui-datebox' data-options='height:32'>
+        </div>
+        <div class='form-group'>
+          <label>To:</label>
+          <input class='form-control easyui-datebox' data-options='height:32'>
+        </div>
+        <div class='form-group'>
+          <label>Language:</label>
+          <select class='form-control easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+            <option value='java'>Java</option>
+            <option value='c'>C</option>
+            <option value='basic'>Basic</option>
+            <option value='perl'>Perl</option>
+            <option value='python'>Python</option>
+          </select>
+        </div>
         <a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" href="javascript:void(0)">Search</a>
         <a iconcls="fa fa-plus-square" class="easyui-linkbutton color-default btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" href="javascript:void(0)">Add</a>
       </div>
-    </form>
-    <form action='' class='form-horizontal'>
-      <div class='form-control'>
-        <label>Date From:</label>
-        <input class='easyui-datebox' data-options='height:32'>
-      </div>
-      <div class='form-control'>
-        <label>To:</label>
-        <input class='easyui-datebox' data-options='height:32'>
-      </div>
-      <div class='form-control'>
-        <label>Language:</label>
-        <select class='easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
-          <option value='java'>Java</option>
-          <option value='c'>C</option>
-          <option value='basic'>Basic</option>
-          <option value='perl'>Perl</option>
-          <option value='python'>Python</option>
-        </select>
-      </div>
-      <div class='form-control'>
+      <div class='col-12'>
+        <div class='form-group'>
+          <label>Date From:</label>
+          <input class='form-control easyui-datebox' data-options='height:32'>
+        </div>
+        <div class='form-group'>
+          <label>To:</label>
+          <input class='form-control easyui-datebox' data-options='height:32'>
+        </div>
+        <div class='form-group'>
+          <label>Language:</label>
+          <select class='form-control easyui-combobox' data-options="width:'180', height:'32'" panelheight='auto'>
+            <option value='java'>Java</option>
+            <option value='c'>C</option>
+            <option value='basic'>Basic</option>
+            <option value='perl'>Perl</option>
+            <option value='python'>Python</option>
+          </select>
+        </div>
         <a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" href="javascript:void(0)">Search</a>
         <a iconcls="fa fa-plus-square" class="easyui-linkbutton color-default btn-jump btn-dialog" onclick="$('#dlg-add').dialog('open')" href="javascript:void(0)">Add</a>
       </div>
@@ -63,23 +61,15 @@
       </thead>
     </table>
   </div>
-  <div class='easyui-dialog' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:300" id='dlg-add' title='Add new rows'>
-    <form action='' class='form-vertical'>
-      <div class='form-control'>
-        <label>First Name:</label>
-        <input class='easyui-textbox' data-options='width:250, height:32' name='firstname'>
+  <div class='easyui-dialog' data-options="iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:250" id='dlg-add' title='Add new rows'>
+    <form>
+      <div class='form-group'>
+        <label>Product ID</label>
+        <input class='form-control' placeholder='Product ID' type='text'>
       </div>
-      <div class='form-control'>
-        <label>Last Name:</label>
-        <input class='easyui-textbox' data-options='width:250, height:32' name='lastname'>
-      </div>
-      <div class='form-control'>
-        <label>Phone:</label>
-        <input class='easyui-textbox' data-options='width:250, height:32' name='phone'>
-      </div>
-      <div class='form-control'>
-        <label>Email:</label>
-        <input class='easyui-textbox' data-options='width:250, height:32' name='email' validType='email'>
+      <div class='form-group'>
+        <label>Status</label>
+        <input class='form-control' placeholder='Status' type='text'>
       </div>
     </form>
     <div class='dialog-button'>

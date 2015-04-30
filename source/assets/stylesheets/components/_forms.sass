@@ -2,97 +2,93 @@
 // Forms
 // --------------------------------------------------
 
+//////
+// Basic form styles
 
-// Normalize non-controls
-//
-// Restyle and baseline non-control form elements.
+.form-group
+  margin-bottom: 15px
+  &::before
+    display: table
+    content: ''
 
-fieldset
-  padding: 0
-  margin: 0
-  border: 0
-  // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
-  // so we reset that to ensure it behaves more like a standard block element.
-  min-width: 0
-
-legend
-  display: block
-  width: 100%
-  padding: 0
-  line-height: inherit
-  border: 0
 
 label
-  display: table-cell
+  display: inline-block
   max-width: 100%
-  height: 32px
-  vertical-align: middle
+  margin-bottom: 5px
   font-weight: 300
   font-size: $font-size-small
 
-// Override content-box in Normalize (* isn't specific enough)
-input[type="search"]
-  +box-sizing(border-box)
-
-// Position radios and checkboxes better
-input[type="radio"],
-input[type="checkbox"]
-  margin: 4px 0 0
-  line-height: normal
-
-// Set the height of file controls to match text inputs
-input[type="file"]
-  display: block
-
-// Make range inputs behave like textual form controls
-input[type="range"]
+.form-control
   display: block
   width: 100%
+  height: 34px
+  padding: $padding-base-vertical $padding-base-horizontal
+  background-color: $textbox-bg-color
+  font-size: 14px
+  color: #555
+  line-height: $line-height-base
+  border: none
+  +border-radius (2px)
+  +transition(background-color, 0.28s, ease-out)
+  &:focus
+    background-color: #d7d7d7
+    color: #000
+    outline: none
+    +transition(background-color, 0.28s, ease-in)
 
-// Make multiple select elements height not fixed
-select[multiple],
-select[size]
-  height: auto
-
-// Adjust output element
-output
+input[type=file]
   display: block
 
-.form-control
+.help-block
+  display: block
+  margin-top: 5px
+  margin-bottom: 10px
+  color: #737373
+  font-size: $font-size-small
 
-  &[disabled],
-  &[readonly],
-  fieldset[disabled] &
-    opacity: 1
+.checkbox,
+.radio
+  position: relative
+  display: block
+  margin-top: 10px
+  margin-bottom: 10px
 
-  &[disabled],
-  fieldset[disabled] &
-    cursor: not-allowed
 
-// [converter] extracted textarea& to textarea.form-control
+//////
+// From inline styles
 
-// Reset height for `textarea`s
-textarea.form-control
-  height: auto
+.form-inline
+  & .form-group
+    +inline-block()
+    margin-bottom: 0
 
-input[type="search"]
-  -webkit-appearance: none
+.form-inline
+  & .form-control
+    +inline-block()
+    width: auto
+
+//////
+// From horizontal styles
 
 .form-horizontal
-  & .form-control
-    +inline-block()
-    width: 100%
-    margin-bottom: 15px
-
-.form-vertical
-  & label
-    min-width: 120px
-    margin-right: 10px
+  & .control-label
+    padding-top: 7px
+    margin-bottom: 0
     text-align: right
-    font-size: $font-size-base
-  & .form-control
-    +inline-block()
-    width: 100%
-    margin-bottom: 10px
-    &:last-child
-      margin-bottom: 0
+
+.form-horizontal
+  & .form-group
+    padding-bottom: 28px
+
+.form-horizontal .checkbox,
+.form-horizontal .radio
+  min-height: 27px
+
+.form-horizontal .checkbox,
+.form-horizontal .checkbox-inline,
+.form-horizontal .radio,
+.form-horizontal .radio-inline
+  padding-top: 7px
+  margin-top: 0
+  margin-bottom: 0

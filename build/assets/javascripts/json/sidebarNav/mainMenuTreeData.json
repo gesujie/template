@@ -66,9 +66,9 @@
   "parentId" : "2"
 },{
   "id":29,
-  "text":"accordion",
+  "text":"Accordion",
   "url" : "pages/accordion.html",
-  "iconCls" : "fa fa-text-height fa-fw",
+  "iconCls" : "fa fa-server fa-fw",
   "parentId" : "2"
 },{
   "id":3,

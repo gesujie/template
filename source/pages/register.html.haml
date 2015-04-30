@@ -4,19 +4,14 @@
 
 .easyui-layout{'data-options' => 'width:450, height:300'}
   %div.easyui-panel{'data-options' => "region:'west',title:'Form', headerCls:'panel-header-default', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-file-text', width:450, collapsible:false, closable:true"}
-    %form.form-vertical{action:''}
-      .form-control
-        %label Email:
-        %input.easyui-textbox{'data-options' => "prompt:'Enter a email address...',validType:'email'", 'data-options' => 'width:240, height:35'}
-      .form-control
-        %label First Name:
-        %input.easyui-textbox{'data-options' => 'width:240, height:35'}
-      .form-control
-        %label Last Name:
-        %input.easyui-textbox{'data-options' => 'width:240, height:35'}
-      .form-control
-        %label Company:
-        %input.easyui-textbox{'data-options' => 'width:240, height:35'}
-    .panel-footer.form-control
-      =link_to 'Reset', 'javascript:void(0)', class:'easyui-linkbutton color-danger text-center',  iconCls: 'fa fa-times', 'data-options' => 'width:196'
-      =link_to 'Register', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-pencil-square-o', 'data-options' => 'width:196'
+    %form
+      .form-group
+        %label Email address
+        %input.form-control{placeholder: 'Enter email', type: 'email'}
+      .form-group
+        %label Password
+        %input.form-control{placeholder: 'Password', type: 'password'}
+      .form-group
+        %button.easyui-linkbutton.color-primary{type:'submit'} Submit
+        %button.easyui-linkbutton.color-danger{type:'reset'} Reset
+

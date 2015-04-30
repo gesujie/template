@@ -5,36 +5,50 @@
 .easyui-layout{'data-options' => 'width:450, height:500'}
   .panel-login
     .panel-sing-in
-      %div.easyui-panel{'data-options' => "region:'west',title:'Sign in', headerCls:'panel-header-default',  headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true"}
-        %form.form-vertical{action:''}
-          .form-control
-            %label Email:
-            %input.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a email address...', width:240, height:35, iconCls:'fa fa-user', iconWidth:30, iconAlign:'left'"}
-          .form-control
-            %label Password:
-            %input.easyui-textbox{type:'password', 'data-options' => "prompt:'Password', width:240, height:35, iconCls:'fa fa-lock', iconWidth:30, iconAlign:'left'"}
-          .form-control
-            %label Remember me:
-            %input{type:'checkbox'}
-        .panel-footer.form-control
-          =link_to 'Sign up', 'javascript:void(0)', onclick:'btnRegistry()', class:'easyui-linkbutton color-info text-center',  iconCls: 'fa fa-user-plus', 'data-options' => 'width:196'
-          =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-sign-in', 'data-options' => 'width:196'
-
+      .easyui-panel{'data-options' => "region:'west',title:'Sign in', headerCls:'panel-header-default',  headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true"}
+        %form.form-horizontal
+          .form-group
+            %label.col-2.control-label Email
+            .col-10.col-last
+              %input.easyui-textbox.form-control{placeholder: 'Email', type: 'email', 'data-options' => 'width:330, height:35'}
+          .form-group
+            %label.col-2.control-label Password
+            .col-10.col-last
+              %input.easyui-textbox.form-control{placeholder: 'Password', type: 'password', 'data-options' => 'width:330, height:35'}
+          .form-group
+            .col-push-2.col-10
+              .checkbox
+                %label
+                  %input{type: 'checkbox'}
+                    Remember me
+          .form-group
+            .col-push-2.col-10
+              =link_to 'Sign up', 'javascript:void(0)', onclick:'btnRegistry()', class:'easyui-linkbutton color-info text-center',  iconCls: 'fa fa-user-plus'
+              =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-sign-in'
     .panel-sing-up
-      %div.easyui-panel{'data-options' => "region:'west',title:'Sign up', headerCls:'panel-header-info', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
-        %form.form-vertical{action:''}
-          .form-control
-            %label Username:
-            %input.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a username...', width:240, height:35"}
-          .form-control
-            %label Email:
-            %input.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a email address...' ,validType:'email', width:240, height:35"}
-          .form-control
-            %label Password:
-            %input.easyui-textbox{type:'password', 'data-options' => 'width:240, height:35'}
-          .form-control
-            %label Confirm Password:
-            %input.easyui-textbox{type:'password', 'data-options' => 'width:240, height:35'}
-        .panel-footer.form-control
-          =link_to 'Back', 'javascript:void(0)', onclick:'btnBack()', class:'easyui-linkbutton color-default mr-10 text-center',  iconCls: 'fa fa-arrow-left', 'data-options' => 'width:196'
-          =link_to 'Sign up', 'javascript:void(0)', class:'easyui-linkbutton color-info text-center',  iconCls: 'fa fa-user-plus', 'data-options' => 'width:196'
+      .easyui-panel{'data-options' => "region:'west',title:'Sign up', headerCls:'panel-header-info', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
+        %form.form-horizontal
+          .form-group
+            .col-3
+              %label.col-2.control-label Username:
+            .col-9.col-last
+              %input.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a username...', width:240, height:35"}
+          .form-group
+            .col-3
+              %label.col-2.control-label Email:
+            .col-9.col-last
+              %input.easyui-textbox{name:'Username',  'data-options' => "prompt:'Enter a email address...' ,validType:'email', width:240, height:35"}
+          .form-group
+            .col-3
+              %label.col-2.control-label Password:
+            .col-9.col-last
+              %input.easyui-textbox{type:'password', 'data-options' => 'width:240, height:35'}
+          .form-group
+            .col-3
+              %label.col-2.control-label Confirm Password:
+            .col-9.col-last
+              %input.easyui-textbox{type:'password', 'data-options' => 'width:240, height:35'}
+          .form-group
+            .col-push-3
+              =link_to 'Back', 'javascript:void(0)', onclick:'btnBack()', class:'easyui-linkbutton color-default mr-10 text-center',  iconCls: 'fa fa-arrow-left'
+              =link_to 'Sign up', 'javascript:void(0)', class:'easyui-linkbutton color-info text-center',  iconCls: 'fa fa-user-plus'

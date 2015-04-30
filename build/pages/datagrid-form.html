@@ -1,30 +1,18 @@
-<div class='easyui-layout' fit='true'>
+<div class='easyui-layout panel-layout' fit='true'>
   <div class='easyui-panel' data-options="region:'north', iconCls:'fa fa-file-text', split:false, title:'产品信息提交表单', headerCls:'panel-header-rounded panel-header-primary mb-5', height:45, collapsible:false"></div>
   <div class='easyui-panel' data-options="region:'west',title:'Form', cls:'pr-10', split:false, headerCls:'panel-header-default', iconCls:'fa fa-file-text', width:450, border:false, collapsible:false">
-    <div class='panel-bg'>
-      <form action='' class='form-vertical'>
-        <div class='panel-body'>
-          <div class='form-control'>
-            <label>Email:</label>
-            <input class='easyui-textbox' data-options='width:200, height:32'>
-          </div>
-          <div class='form-control'>
-            <label>First Name:</label>
-            <input class='easyui-textbox' data-options='width:200, height:32'>
-          </div>
-          <div class='form-control'>
-            <label>Last Name:</label>
-            <input class='easyui-textbox' data-options='width:200, height:32'>
-          </div>
-          <div class='form-control'>
-            <label>Company:</label>
-            <input class='easyui-textbox' data-options='width:200, height:32'>
-          </div>
+    <div class='panel-body-default col-12'>
+      <form>
+        <div class='form-group'>
+          <label>Product</label>
+          <input class='form-control' placeholder='Enter Product ID' type='text'>
         </div>
-        <div class='panel-footer form-control'>
-          <a class="easyui-linkbutton color-danger mr-10 text-center" iconCls="fa fa-plus-circle" data-options="width:196" href="javascript:void(0)">Remove</a>
-          <a class="easyui-linkbutton text-center color-primary" iconCls="fa fa-times-circle" data-options="width:196" href="javascript:void(0)">Add</a>
+        <div class='form-group'>
+          <label>Status</label>
+          <input class='form-control' placeholder='Enter Status' type='text'>
         </div>
+        <button class='easyui-linkbutton color-primary' type='submit'>Add</button>
+        <button class='easyui-linkbutton color-danger' type='submit'>Remove</button>
       </form>
     </div>
   </div>
