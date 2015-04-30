@@ -2,9 +2,14 @@
 // Panel
 // --------------------------------------------------
 
+////
+// Position absolute only for layout
+// Issue #22 (https://bitbucket.org/coskuntekin/admin-template-easyui/issue/22/design-the-accordion-panel-and-remove-its)
+.panel-layout
+  & .panel
+    position: absolute
 
 .panel
-  position: absolute
   overflow: hidden
 
 .panel-bg
@@ -152,3 +157,8 @@
 .panel-tool-expand
   &::before
     +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
+
+.panel-border-primary
+  border-left: 1px solid $brand-primary
+  border-right: 1px solid $brand-primary
+  border-bottom: 1px solid $brand-primary

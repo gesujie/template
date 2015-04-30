@@ -1,26 +1,18 @@
 <div class='easyui-layout' data-options='width:450, height:300'>
   <div class='easyui-panel' data-options="region:'west',title:'Form', headerCls:'panel-header-default', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-file-text', width:450, collapsible:false, closable:true">
-    <form action='' class='form-vertical'>
-      <div class='form-control'>
-        <label>Email:</label>
-        <input class='easyui-textbox' data-options='width:240, height:35'>
+    <form>
+      <div class='form-group'>
+        <label>Email address</label>
+        <input class='form-control' placeholder='Enter email' type='email'>
       </div>
-      <div class='form-control'>
-        <label>First Name:</label>
-        <input class='easyui-textbox' data-options='width:240, height:35'>
+      <div class='form-group'>
+        <label>Password</label>
+        <input class='form-control' placeholder='Password' type='password'>
       </div>
-      <div class='form-control'>
-        <label>Last Name:</label>
-        <input class='easyui-textbox' data-options='width:240, height:35'>
-      </div>
-      <div class='form-control'>
-        <label>Company:</label>
-        <input class='easyui-textbox' data-options='width:240, height:35'>
+      <div class='form-group'>
+        <button class='easyui-linkbutton color-primary' type='submit'>Submit</button>
+        <button class='easyui-linkbutton color-danger' type='reset'>Reset</button>
       </div>
     </form>
-    <div class='panel-footer form-control'>
-      <a class="easyui-linkbutton color-danger text-center" iconCls="fa fa-times" data-options="width:196" href="javascript:void(0)">Reset</a>
-      <a class="easyui-linkbutton color-primary mr-10 text-center" iconCls="fa fa-pencil-square-o" data-options="width:196" href="javascript:void(0)">Register</a>
-    </div>
   </div>
 </div>

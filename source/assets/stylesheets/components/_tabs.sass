@@ -8,12 +8,14 @@
 
 .tabs-header
   position: relative
-  padding: 0
   padding-top: 2px
-  border-width: 1px
-  border-style: solid
-  border-bottom-width: 0
   overflow: hidden
+
+.tabs
+  width: 50000px
+  height: 30px
+  margin: 0
+  padding-left: 14px
 
 .tabs-scroller-left,
 .tabs-scroller-right
@@ -36,8 +38,6 @@
   bottom: 0
   padding: 1px
   overflow: hidden
-  border-width: 1px
-  border-style: solid
 
 .tabs-header-plain .tabs-tool
   padding: 0 1px
@@ -57,22 +57,12 @@
 .tabs-disabled
   +opacity(0.3)
 
-.tabs
-  height: 26px
-  margin: 0
-  padding: 0
-  padding-left: 4px
-  width: 50000px
-  border-style: solid
-  border-width: 0 0 1px 0
-
 .tabs li
   position: relative
   float: left
   display: inline-block
   margin: 0 4px -1px 0
   padding: 0
-  border: 0
 
 .tabs li a.tabs-inner
   +inline-block()
@@ -119,6 +109,7 @@
 
 .tabs-title
   font-size: 12px
+  font-weight: 300
 
 .tabs-closable
   padding-right: 8px
@@ -153,17 +144,12 @@
   top: 0
   bottom: auto
 
-.tabs-panels-top
-  border-width: 1px 1px 0 1px
-
 .tabs-header-left
   float: left
-  border-width: 1px 0 1px 1px
   padding: 0
 
 .tabs-header-right
   float: right
-  border-width: 1px 1px 1px 0
   padding: 0
 
 .tabs-header-left .tabs-wrap,
@@ -173,12 +159,10 @@
 .tabs-header-left .tabs
   height: 100%
   padding: 4px 0 0 2px
-  border-width: 0 1px 0 0
 
 .tabs-header-right .tabs
   height: 100%
   padding: 4px 2px 0 0
-  border-width: 0 0 0 1px
 
 .tabs-header-left .tabs li,
 .tabs-header-right .tabs li
@@ -218,19 +202,12 @@
 
 .tabs-panels-right
   float: right
-  border-width: 1px 1px 1px 0
 
 .tabs-panels-left
   float: left
-  border-width: 1px 0 1px 1px
-
-.tabs-header-noborder,
-.tabs-panels-noborder
-  border: 0
 
 .tabs-header-plain
-  border: 0
-  background: transparent
+  background-color: transparent
 
 .tabs-pill
   padding-bottom: 3px
@@ -292,6 +269,12 @@
   background-color: #fff
   +transition(background-color, 0.28s, ease-in-out)
 
+.tabs
+  & .tabs-selected
+    & .tabs-close
+      &::before
+        color: #fff
+
 .tabs li a.tabs-close
   position: absolute
   top: 31%
@@ -303,27 +286,26 @@
     display: table-cell
     width: 15px
     height: 15px
-    +text-shadow(0 1px 1px #fff)
-    +font-icons(inherit, '×', 12px, #A3A3A3)
+    +font-icons(inherit, '×', 12px, #4E4C49)
     +transition(color 0.28s ease-in)
     vertical-align: middle
 
   &:hover::before
     content: "×"
     +border-radius (50%)
-    background-color: #E8487F
+    background-color: #bd5151
     color: #fff
     +text-shadow(0 0 0 transparent)
     +transition(color 0.28s ease-out)
 
 .tabs li a.tabs-inner:hover
-  background: #BDBDBD
-  color: #fff
+  background-color: $tabs-hover-bg-color
+  color: $tabs-hover-color
   +transition(background-color 0.28s ease-in)
 
 .tabs li.tabs-selected a.tabs-inner
-  background-color: #fff
-  color: #000
+  background-color: $tabs-selected-bg-color
+  color: $tabs-selected-color
 
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner
   +background-image(linear-gradient(to bottom,#fff 0,#EFF5FF 100%))
@@ -335,43 +317,21 @@
   +background-image(linear-gradient(to right,#fff 0,#EFF5FF 100%))
 
 .tabs li a.tabs-inner
-  background-color: #d7d7d7
-  color: #fff
+  background-color: $tabs-unselected-bg-color
+  color: $tabs-unselected-color
   +transition(background-color 0.28s ease-out)
 
 .tabs-header,
 .tabs-tool
-  background-color: $tabs-header-color
+  background-color: $tabs-header-bg-color
 
 .tabs-header-plain
   background-color: transparent
 
-.tabs-header,
-.tabs-scroller-left,
-.tabs-scroller-right,
-.tabs-tool,
-.tabs,
-.tabs-panels,
-.tabs li a.tabs-inner,
-.tabs li.tabs-selected a.tabs-inner,
-.tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,
-.tabs-header-left .tabs li.tabs-selected a.tabs-inner,
-.tabs-header-right .tabs li.tabs-selected a.tabs-inner
-  border-color: $tabs-border-color
-
 .tabs-p-tool a:hover
   background-color: #eaf2ff
 
-.tabs-header-bottom .tabs li.tabs-selected a.tabs-inner
-  border-top: 1px solid #fff
-
-.tabs-header-left .tabs li.tabs-selected a.tabs-inner
-  border-right: 1px solid #fff
-
-.tabs-header-right .tabs li.tabs-selected a.tabs-inner
-  border-left: 1px solid #fff
-
 .tabs-header .tabs-pill li.tabs-selected a.tabs-inner
-  background: #ffe48d
+  background-color: #ffe48d
   color: #000
 

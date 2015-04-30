@@ -1,0 +1,52 @@
+-@title= 'From | Admin Page '
+-@page_classes= 'form'
+
+.easyui-layout{fit:'true'}
+  .easyui-panel{title:'Form Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', headerCls:'panel-header-primary', bodyCls:'panel-body-default', collapsible:false"}
+    .container.mb-10
+      .col-6
+        %form
+          .form-group
+            %label Email address
+            %input.form-control{placeholder: 'Enter email', type: 'email'}
+          .form-group
+            %label Password
+            %input.form-control{placeholder: 'Password', type: 'password'}
+          .form-group
+            %label File input
+            %input{type: 'file'}
+              %p.help-block Example block-level help text here.
+          .checkbox
+            %label
+              %input{type: 'checkbox'}
+                Check me out
+          %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
+      .col-6.col-last
+        %form.form-horizontal
+          .form-group
+            %label.col-2.control-label Email
+            .col-10.col-last
+              %input.form-control{placeholder: 'Email', type: 'email'}
+          .form-group
+            %label.col-2.control-label Password
+            .col-10.col-last
+              %input.form-control{placeholder: 'Password', type: 'password'}
+          .form-group
+            .col-push-2.col-10
+              .checkbox
+                %label
+                  %input{type: 'checkbox'}
+                    Remember me
+          .form-group
+            .col-push-2.col-10
+              %button.easyui-linkbutton.color-primary{type: 'submit'} Sign in
+    .container
+      .col-7
+        %form.form-inline
+          .form-group
+            %label Email address
+            %input.form-control{placeholder: 'Enter email', type: 'email'}
+          .form-group
+            %label Password
+            %input.form-control{placeholder: 'Password', type: 'password'}
+          %button.easyui-linkbutton.color-primary{type: 'submit'} Submit

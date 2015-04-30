@@ -3,7 +3,7 @@ body
   background-color: $body-bg
 
 .header
-  background-color: #d7dde4
+  background-color: $header-bg-color
 
 .logo
   float: left
@@ -57,11 +57,10 @@ body
     & > a
       +inline-block()
       padding: 6px 8px
-      background-color: #fff
+      background-color: #d7d7d7
       +border-radius(50%)
       text-align: center
       color: #7e8e9f
-
 
 .sidebar-header
   background-color: $sidebar-header-bg
@@ -170,9 +169,18 @@ body
   &::before
     content: '欢迎使用黔驰UI框架'
     display: table-cell
-    width: 200px
+    width: 100%
     vertical-align: middle
     +text-shadow(0 1px 1px #fff)
+  &::after
+    position: absolute
+    bottom: 10px
+    left: 0
+    display: table-cell
+    width: 100%
+    vertical-align: middle
+    content: '设计单位：贵州黔驰信息股份有限公司'
+    font-size: 12px
 
 .datagrid
   & .panel-body

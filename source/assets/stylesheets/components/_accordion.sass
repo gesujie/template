@@ -5,33 +5,75 @@
 
 .accordion
   overflow: hidden
-  border-width: 1px
-  border-style: solid
-  .accordion-header
-    border-width: 0 0 1px
+  & .accordion-header
     cursor: pointer
-  .accordion-body
-    border-width: 0 0 1px
+  & .accordion-body
+    background-color: #f8f8f8
+    padding: 15px
+    color: #555
 
-.accordion-noborder
-  border-width: 0
-  .accordion-header,
-  .accordion-body
-    border-width: 0 0 1px
+.accordion-default
+  & .accordion-header
+    background-color: #E0ECFF
+  & .accordion-header-selected
+    background-color: #ffe48d
+    & .panel-title
+      color: #000
+
+.accordion-primary
+  & .accordion-header
+    background-color: $brand-primary
+    & .panel-title
+      color: #fff
+    & .panel-icon
+      color: #fff
+    & .panel-tool
+      color: #fff
+
+.accordion-info
+  & .accordion-header
+    background-color: $brand-info
+    & .panel-title
+      color: #fff
+    & .panel-icon
+      color: #fff
+    & .panel-tool
+      color: #fff
+
+.accordion-success
+  & .accordion-header
+    background-color: $brand-success
+    & .panel-title
+      color: #fff
+    & .panel-icon
+      color: #fff
+    & .panel-tool
+      color: #fff
+
+.accordion-warning
+  & .accordion-header
+    background-color: $brand-warning
+    & .panel-title
+      color: #fff
+    & .panel-icon
+      color: #fff
+    & .panel-tool
+      color: #fff
+
+.accordion-danger
+  & .accordion-header
+    background-color: $brand-danger
+    & .panel-title
+      color: #fff
+    & .panel-icon
+      color: #fff
+    & .panel-tool
+      color: #fff
 
 .accordion-collapse
-  //background: url('images/accordion_arrows.png') no-repeat 0 0
+  &::before
+    +font-icons(FontAwesome, '\f146', 14px, #f8f8f8)
 
 .accordion-expand
-  //background: url('images/accordion_arrows.png') no-repeat -16px 0
-
-.accordion
-  background-color: #ffffff
-  border-color: #95B8E7
-  .accordion-header
-    background-color: #E0ECFF
-    filter: none
-  .accordion-header-selected
-    background: #ffe48d
-    .panel-title
-      color: #000
+  &::before
+    +font-icons(FontAwesome, '\f0fe', 14px, #f8f8f8)
