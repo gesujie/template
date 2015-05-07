@@ -78,7 +78,7 @@ $(window).load(function(){
 	// /$.messager.alert('Info','Message will be closed after 4 seconds.','info');
 
 	//### Message Box
-	$.messager.show({
+	/*$.messager.show({
 		msg: 'Message will be closed after 4 seconds.',
 		showType: 'slide',
 		width: 500,
@@ -89,6 +89,6 @@ $(window).load(function(){
 			$(this).addClass('message-body-primary');
 			$(this).append("<a href='javascript:void(0)' class='message-close'>×</a>");
 		}
-	});
+	});*/
 
 });
