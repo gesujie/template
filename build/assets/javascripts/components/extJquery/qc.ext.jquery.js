@@ -9,6 +9,26 @@
  */
 
 
+ 
+/**
+ * 功能：获取数值的百分数形式
+ * 返回： String
+ */
+Number.prototype.toPercent = function(){
+	return (Math.round(this * 10000)/100).toFixed(2) + '%';
+};
+
+/**
+ * 功能：检测数组中是否存在指定值
+ * 用法：	var arr=[" ","b"];  
+ *  		alert(arr.inArray("a"));
+ */
+Array.prototype.inArray=function(e) {  
+	var r = new RegExp(this.S+e+this.S);  
+	return (r.test(this.S+this.join(this.S)+this.S));  
+};
+
+
 /**
  * @author 李钰龙
  * @requires jQuery
