@@ -122,13 +122,17 @@ $susy: (use-custom: (box-sizing: false,),)
 .col-push-12
   +push(12 of 12)
 
+
+@for $i from 10 through 50
+  .mb-#{$i}
+    margin-bottom: ($i+px)
+
 //**** Grid debug classes
 .debug
   & [class*="col-"]
     display: table
     height: 50px
     padding: $padding-base-vertical $padding-base-horizontal
-    margin-bottom: 15px
     background-color: rgba(lighten(#000, 35%), .2)
 
     &::before
