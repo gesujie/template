@@ -127,6 +127,14 @@ $susy: (use-custom: (box-sizing: false))
   .mb-#{$i}
     margin-bottom: ($i+px)
 
+@for $i from 10 through 50
+  .pr-#{$i}
+    padding-right: ($i+px)
+
+@for $i from 10 through 50
+  .pl-#{$i}
+    padding-right: ($i+px)
+
 //**** Grid debug classes
 .debug
   & [class*="col-"]
