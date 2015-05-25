@@ -1,8 +1,8 @@
 <div class='easyui-layout' fit='true'>
-  <a class='easyui-linkbutton color-default' onclick='qc.demoWindow.openWindow()'>打开窗口</a>
+  <a class='easyui-linkbutton color-info' href='javascript:void(0)' onclick="$('#w').window('open')">Open</a>
 </div>
 <div class='easyui-layout' fit='true'>
-  <div class='easyui-window' data-options="iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true" title='Easy UI Window Login'>
+  <div class='easyui-window' data-options="iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true" id='w' title='Easy UI Window Login'>
     <form class='form-horizontal'>
       <div class='form-group'>
         <label class='col-2 control-label'>Email</label>
