@@ -58,8 +58,8 @@ function nextButton(){
 	schedule.fullCalendar('next');
 	var moment = schedule.fullCalendar('getDate');
 	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
-}
 
+}
 //### Sidebar Badge Extend
 $('#mainSlideMenu').tree({
 	formatter:function(node){
@@ -71,14 +71,32 @@ $('#mainSlideMenu').tree({
 	}
 });
 
-
 $(window).load(function(){
 
+	Namespace.register("qc.demoWindow");
+	qc.main.pushWindowId("qc-window-windowObj");
+	qc.demoWindow.windowObj = null;
+	qc.demoWindow.openWindow = function() {
+		if (!qc.demoWindow.windowObj) {
+			qc.demoWindow.windowObj = $("#qc-window-windowObj").show().window({
+				title: 'Easy UI Window Login',
+				iconCls: 'fa fa-columns',
+				modal: true,
+				width: 450,
+				height: 240,
+				minimizable: false,
+				closable: true
+			});
+		} else {
+			qc.demoWindow.windowObj.window("open");
+		}
+	};
+
 	//### Run Alert
-	// /$.messager.alert('Info','Message will be closed after 4 seconds.','info');
+	//$.messager.alert('Info','Message will be closed after 4 seconds.','info');
 
 	//### Message Box
-	/*$.messager.show({
+	$.messager.show({
 		msg: 'Message will be closed after 4 seconds.',
 		showType: 'slide',
 		width: 500,
@@ -89,6 +107,6 @@ $(window).load(function(){
 			$(this).addClass('message-body-primary');
 			$(this).append("<a href='javascript:void(0)' class='message-close'>×</a>");
 		}
-	});*/
+	});
 
 });

@@ -19,6 +19,7 @@
  * panel关闭时回收内存，主要用于layout使用iframe嵌入网页时的内存泄漏问题
  */
 
+
 $.fn.panel.defaults.onBeforeDestroy = function() {
 	var frame = $('iframe', this);
 	try {
@@ -46,7 +47,6 @@ $.fn.panel.defaults.loadingMessage = '加载中....';
 $.fn.datagrid.defaults.loadMsg = '加载中....';
 
 $.fn.dialog.defaults.onOpen = function() {
-	console.info($(this));
 	$(this).parent().addClass("active");
 };
 $.fn.dialog.defaults.onClose = function() {
@@ -838,3 +838,4 @@ $.fn.my97.defaults = {
 };
 $.parser.plugins.push('my97');
 //扩展my97日期控件结束
+;

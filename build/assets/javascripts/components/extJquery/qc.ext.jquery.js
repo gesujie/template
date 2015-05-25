@@ -14,6 +14,7 @@
  * 功能：获取数值的百分数形式
  * 返回： String
  */
+
 Number.prototype.toPercent = function(){
 	return (Math.round(this * 10000)/100).toFixed(2) + '%';
 };

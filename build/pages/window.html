@@ -1,59 +1,38 @@
-<script>
-  Namespace.register("qc.demoWindow");
-  qc.main.pushWindowId("qc-window-windowObj");
-  qc.demoWindow.windowObj = null;
-  qc.demoWindow.openWindow = function() {
-    if (!qc.demoWindow.windowObj) {
-      qc.demoWindow.windowObj = $("#qc-window-windowObj").show().window({
-        title: 'Easy UI Window Login',
-        iconCls: 'fa fa-columns', 
-        modal: true,
-        width: 450, 
-        height: 240, 
-        minimizable: false, 
-        closable: true
-      });
-    } else {
-      qc.demoWindow.windowObj.window("open");
-    }
-  };
-</script>
 <div class='easyui-layout' fit='true'>
-  <a class="easyui-linkbutton color-default" onclick="qc.demoWindow.openWindow()">打开窗口</a>
+  <a class='easyui-linkbutton color-default' onclick='qc.demoWindow.openWindow()'>打开窗口</a>
 </div>
-
-
-
-<div id="qc-window-windowObj" style="display:none;">
-  <form class='form-horizontal'>
-    <div class='form-group'>
-      <label class='col-2 control-label'>Email</label>
-      <div class='col-10 col-last'>
-        <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Email' type='email'>
-      </div>
-    </div>
-    <div class='form-group'>
-      <label class='col-2 control-label'>Password</label>
-      <div class='col-10 col-last'>
-        <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Password' type='password'>
-      </div>
-    </div>
-    <div class='form-group'>
-      <div class='col-push-2 col-10'>
-        <div class='checkbox'>
-          <label>
-            <input type='checkbox'>
-              Remember me
-            </input>
-          </label>
+<div class='easyui-layout' fit='true'>
+  <div class='easyui-window' data-options="iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true" title='Easy UI Window Login'>
+    <form class='form-horizontal'>
+      <div class='form-group'>
+        <label class='col-2 control-label'>Email</label>
+        <div class='col-10 col-last'>
+          <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Email' type='email'>
         </div>
       </div>
-    </div>
-    <div class='form-group'>
-      <div class='col-push-2 col-10'>
-        <a class="easyui-linkbutton color-info text-center" iconCls="fa fa-user-plus" href="javascript:void(0)">Sign up</a>
-        <a class="easyui-linkbutton color-primary mr-10 text-center" iconCls="fa fa-sign-in" href="javascript:void(0)">Sign in</a>
+      <div class='form-group'>
+        <label class='col-2 control-label'>Password</label>
+        <div class='col-10 col-last'>
+          <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Password' type='password'>
+        </div>
       </div>
-    </div>
-  </form>
+      <div class='form-group'>
+        <div class='col-push-2 col-10'>
+          <div class='checkbox'>
+            <label>
+              <input type='checkbox'>
+                Remember me
+              </input>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <div class='col-push-2 col-10'>
+          <a class="easyui-linkbutton color-info text-center" iconCls="fa fa-user-plus" href="javascript:void(0)">Sign up</a>
+          <a class="easyui-linkbutton color-primary mr-10 text-center" iconCls="fa fa-sign-in" href="javascript:void(0)">Sign in</a>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

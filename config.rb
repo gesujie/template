@@ -23,6 +23,7 @@ page 'pages/panel.html', layout: :resource
 page 'pages/grid.html', layout: :resource
 page 'pages/form.html', layout: :resource
 page 'pages/accordion.html', layout: :resource
+page 'pages/numberspinner.html', layout: :resource
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

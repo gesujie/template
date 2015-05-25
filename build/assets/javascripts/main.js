@@ -8,10 +8,13 @@
  * 12、扩展datagrid，使datagrid的editors能保存combotree的多选值
  */
 
+
+ 
 /**
  * 功能：获取数值的百分数形式
  * 返回： String
  */
+
 Number.prototype.toPercent = function(){
 	return (Math.round(this * 10000)/100).toFixed(2) + '%';
 };
@@ -20,7 +23,7 @@ Number.prototype.toPercent = function(){
  * 功能：检测数组中是否存在指定值
  * 用法：	var arr=[" ","b"];  
  *  		alert(arr.inArray("a"));
- */ 
+ */
 Array.prototype.inArray=function(e) {  
 	var r = new RegExp(this.S+e+this.S);  
 	return (r.test(this.S+this.join(this.S)+this.S));  
@@ -45,11 +48,11 @@ Namespace.register = function(fullNS){
         if (i != 0) sNS += ".";
         sNS += nsArray[i];
         // 依次创建构造命名空间对象（假如不存在的话）的语句
-        // 比如先创建Qianchi，然后创建Qianchi.MyWork，依次下去
+        // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
         sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
     }
     if (sEval != "") eval(sEval);
-};
+}
 
 /**
  * @author 李钰龙
@@ -109,20 +112,20 @@ $.stringToList = function(value) {
  * 		inFrame 是否在iframe内调用，默认没有
  */
 $.getFrameContent = function(idOrSrc, inFrame) {
-	if (idOrSrc && idOrSrc != null) {
+	if(idOrSrc && idOrSrc != null) {
 		// 先判断参数为id的情况
-		if (idOrSrc.indexOf(".") > 0 || idOrSrc.indexOf("/") > 0 || idOrSrc.indexOf(":") > 0) {
+		if(idOrSrc.indexOf(".") > 0 || idOrSrc.indexOf("/") > 0 || idOrSrc.indexOf(":") > 0) {
 			// 找不到id对应的iframe，则传递的参数应该是src
 			var frames = inFrame == true ? parent.$("iframe") : $("iframe");
 			for(var i=0; i<frames.size(); i++) {
 				var src = $(frames[i]).attr("src")
-				if (src == idOrSrc) {
+				if(src == idOrSrc) {
 					return frames[i].contentWindow;
 				}
 			}
 		} else {
 			var frame =  inFrame == true ? parent.$("iframe#" + idOrSrc) : $("iframe#" + idOrSrc);
-			if (frame.length != 0) {
+			if(frame.length != 0) {
 				return frame[0].contentWindow;;
 			}
 		}
@@ -151,6 +154,7 @@ $.getFrameContent = function(idOrSrc, inFrame) {
  */
 
 
+
 $.fn.panel.defaults.onBeforeDestroy = function() {
 	var frame = $('iframe', this);
 	try {
@@ -167,10 +171,6 @@ $.fn.panel.defaults.onBeforeDestroy = function() {
 	} catch (e) {
 	}
 };
-/*
-$.fn.panel.defaults.onLoadError = function() {
-	$(this).html('<iframe src="404.html" frameborder="0"></iframe>');
-};*/
 
 /**
  * 使panel和datagrid在加载时提示
@@ -383,7 +383,7 @@ $.extend($.fn.validatebox.defaults.rules, {
 	},
 	same:{ 
 		validator : function(value, param){
-			if (value == undefined) {
+			if(value == undefined) {
 				return false;
 			}
 			return $(param[0]).val() == value;
@@ -395,81 +395,9 @@ $.extend($.fn.validatebox.defaults.rules, {
 /**
  * @author 李钰龙
  * @requires jQuery,EasyUI
- * 扩展datagrid，添加datagrid方法
+ * 扩展datagrid，添加单元格内容提示框
  */
-$.extend($.fn.datagrid.methods, {
-	/**
-	 * 相同连续列合并扩展	
-	 * @param {} jq	
-	 * @param {} fields
-	 * 用法：onLoadSuccess:function(){
-				//所有列进行合并操作
-				//$(this).datagrid("autoMergeCells");
-				//指定列进行合并操作
-				$(this).datagrid("autoMergeCells",['itemid','productid']);
-    		}
-	 */	 
-	autoMergeCells : function (jq, fields) {
-		return jq.each(function () {
-			var target = $(this);
-			if (!fields) {
-				fields = target.datagrid("getColumnFields");
-			}
-			var rows = target.datagrid("getRows");
-			var i = 0,
-				j = 0,
-				temp = {};
-			for (i; i < rows.length; i++) {
-				var row = rows[i];
-				j = 0;
-				for (j; j < fields.length; j++) {
-					var field = fields[j];
-					var tf = temp[field];
-					if (!tf) {
-						tf = temp[field] = {};
-						tf[row[field]] = [i];
-					} else {
-						var tfv = tf[row[field]];
-						if (tfv) {
-							tfv.push(i);
-						} else {
-							tfv = tf[row[field]] = [i];
-						}
-					}
-				}
-			}
-			$.each(temp, function (field, colunm) {
-				$.each(colunm, function () {
-					var group = this;
-					
-					if (group.length > 1) {
-						var before,
-						after,
-						megerIndex = group[0];
-						for (var i = 0; i < group.length; i++) {
-							before = group[i];
-							after = group[i + 1];
-							if (after && (after - before) == 1) {
-								continue;
-							}
-							var rowspan = before - megerIndex + 1;
-							if (rowspan > 1) {
-								target.datagrid('mergeCells', {
-									index : megerIndex,
-									field : field,
-									rowspan : rowspan
-								});
-							}
-							if (after && (after - before) != 1) {
-								megerIndex = after;
-							}
-						}
-					}
-				});
-			});
-		});
-	},
-
+$.extend($.fn.datagrid.methods, {	  
 	/**
 	 * 开打提示功能	
 	 * @param {} jq	
@@ -492,10 +420,10 @@ $.extend($.fn.datagrid.methods, {
 				},
 				onShow:function () {	  
 					var tip = $(this).tooltip('tip');	  
-					if (showParams.tipStyler){	  
+					if(showParams.tipStyler){	  
 						tip.css(showParams.tipStyler);	  
 					}
-					if (showParams.contentStyler){	  
+					if(showParams.contentStyler){	  
 						tip.find('div.tipcontent').css(showParams.contentStyler);	  
 					}
 				}	  
@@ -511,17 +439,17 @@ $.extend($.fn.datagrid.methods, {
 					var delegateEle = $(this).find('> div.datagrid-body-inner').length ? $(this).find('> div.datagrid-body-inner')[0] : this;	  
 					$(delegateEle).undelegate('td', 'mouseover').undelegate('td', 'mouseout').undelegate('td', 'mousemove').delegate('td[field]', {	  
 						'mouseover':function (e) {   
-							//if ($(this).attr('field')===undefined) return;	  
+							//if($(this).attr('field')===undefined) return;	  
 							var that = this;   
 							var setField = null;   
-							if (params.specialShowFields && params.specialShowFields.sort){   
+							if(params.specialShowFields && params.specialShowFields.sort){   
 								for(var i=0; i<params.specialShowFields.length; i++){   
-									if (params.specialShowFields[i].field == $(this).attr('field')){   
+									if(params.specialShowFields[i].field == $(this).attr('field')){   
 										setField = params.specialShowFields[i];   
 									}   
 								}   
 							}   
-							if (setField==null){   
+							if(setField==null){   
 								options.factContent = $(this).find('>div').clone().css({'margin-left':'-5000px', 'width':'auto', 'display':'inline', 'position':'absolute'}).appendTo('body');	  
 								var factContentWidth = options.factContent.width();	  
 								params.content = $(this).text();	  
@@ -537,7 +465,7 @@ $.extend($.fn.datagrid.methods, {
 									var trs = $(this).find('tr[datagrid-row-index="' + $(that).parent().attr('datagrid-row-index') + '"]');   
 									trs.each(function(){   
 										var td = $(this).find('> td[field="' + setField.showField + '"]');   
-										if (td.length){   
+										if(td.length){   
 											params.content = td.text();   
 										}   
 									});   
@@ -585,7 +513,7 @@ $.extend(jQuery.fn.datagrid.defaults.editors, {
 			var editor = jQuery('<input type="text">').appendTo(container);
 			cip.editor = editor;
 			cip.options = options;
-			if (editor.combotree) {
+			if(editor.combotree) {
 				editor.combotree(options);
 			} 
 			return editor;
@@ -598,7 +526,7 @@ $.extend(jQuery.fn.datagrid.defaults.editors, {
 			return temp.join(',');
 		},  
 		setValue: function(target, value){
-			if (value && value != null) {
+			if(value && value != null) {
 				var temp = value.split(',');
 				$(target).combotree('setValues', temp);
 			}
@@ -687,13 +615,13 @@ $.extend($.fn.treegrid.methods,{
 	 */  
 	cascadeCheck : function(target,param){  
 		var opts = $.data(target[0], "treegrid").options;  
-		if (opts.singleSelect)  
+		if(opts.singleSelect)  
 			return;  
 		var idField = opts.idField;//这里的idField其实就是API里方法的id参数  
 		var status = false;//用来标记当前节点的状态，true:勾选，false:未勾选  
 		var selectNodes = $(target).treegrid('getSelections');//获取当前选中项  
 		for(var i=0;i<selectNodes.length;i++){  
-			if (selectNodes[i][idField]==param.id)  
+			if(selectNodes[i][idField]==param.id)  
 				status = true;  
 		}  
 		//级联选择父节点  
@@ -708,9 +636,9 @@ $.extend($.fn.treegrid.methods,{
 		 */  
 		function selectParent(target,id,idField,status){  
 			var parent = $(target).treegrid('getParent',id);  
-			if (parent){  
+			if(parent){  
 				var parentId = parent[idField];  
-				if (status)  
+				if(status)  
 					$(target).treegrid('select',parentId);  
 				else  
 					$(target).treegrid('unselect',parentId);  
@@ -727,13 +655,13 @@ $.extend($.fn.treegrid.methods,{
 		 */  
 		function selectChildren(target,id,idField,deepCascade,status){  
 			//深度级联时先展开节点  
-			if (!status&&deepCascade)  
+			if(!status&&deepCascade)  
 				$(target).treegrid('expand',id);  
 			//根据ID获取下层孩子节点  
 			var children = $(target).treegrid('getChildren',id);  
 			for(var i=0;i<children.length;i++){  
 				var childId = children[i][idField];  
-				if (status)  
+				if(status)  
 					$(target).treegrid('select',childId);  
 				else  
 					$(target).treegrid('unselect',childId);  
@@ -759,10 +687,10 @@ $.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
 $.extend($.fn.datagrid.defaults.editors.combobox, {
 	getValue : function(jq) {
 		var opts = $(jq).combobox('options');
-		if (opts.multiple){
+		if(opts.multiple){
 			var values = $(jq).combobox('getValues');
-			if (values.length>0){
-				if (values[0]==''||values[0]==' '){
+			if(values.length>0){
+				if(values[0]==''||values[0]==' '){
 					return values.join(',').substring(1);//新增的时候会把空白当成一个值了，去掉
 				}
 			}
@@ -772,7 +700,7 @@ $.extend($.fn.datagrid.defaults.editors.combobox, {
 	},
 	setValue : function(jq, value) {
 		var opts = $(jq).combobox('options');
-		if (opts.multiple && value!=null && (""+value).indexOf(opts.separator)!=-1){//多选且不只一个值
+		if(opts.multiple && value!=null && (""+value).indexOf(opts.separator)!=-1){//多选且不只一个值
 			var values = (""+value).split(opts.separator);
 			$(jq).combobox("setValues", values);
 		} else
@@ -797,10 +725,10 @@ $.extend($.fn.datagrid.defaults.editors, {
 		},
 		getValue: function(jq){
 			var opts = $(jq).combogrid('options');
-			if (opts.multiple){
+			if(opts.multiple){
 				var values = $(jq).combogrid('getValues');
-				if (values.length>0){
-					if (values[0]==''||values[0]==' '){
+				if(values.length>0){
+					if(values[0]==''||values[0]==' '){
 						return values.join(',').substring(1);//新增的时候会把空白当成一个值了，去掉
 					}
 				}
@@ -810,7 +738,7 @@ $.extend($.fn.datagrid.defaults.editors, {
 		},
 		setValue: function(jq, value){
 			var opts = $(jq).combogrid('options');
-			if (opts.multiple && value!=null && (""+value).indexOf(opts.separator)!=-1){//多选且不只一个值
+			if(opts.multiple && value!=null && (""+value).indexOf(opts.separator)!=-1){//多选且不只一个值
 				var values = (""+value).split(opts.separator);
 				$(jq).combogrid("setValues", values);
 			} else
@@ -1137,51 +1065,29 @@ Namespace.register("qc.tabs");
  */
 
 
+
 Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;
 qc.main.windowStack = [];
-qc.main.mainSlidMenu = null;
 
 $(function(){
-	if (!qc.main.slideMenuUrl || qc.main.slideMenuUrl == null) {
+	if(!qc.main.slideMenuUrl || qc.main.slideMenuUrl == null) {
 		qc.main.slideMenuUrl = "json/mainMenuTreeData.json";
 	}
 
-	qc.main.mainSlidMenu = $("#mainSlideMenu").tree({
+	$("#mainSlideMenu").tree({
 		url : qc.main.slideMenuUrl,
 		fit : true, animate : true,
 		parentField : "parentId",
 		onClick: function(node){
-			if (node.url) {
+			if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
-			} else {
-				if (!!node.children) {
-
-				}
 			}
 		},
-		onLoadSuccess: function(node, data) {
-			// 加载完成之后，处理展开按钮的文档位置，将按钮放到占位符之前
-			// 没有折叠按钮的节点，将占位符去掉一个
-			$.each($("#mainSlideMenu .tree-node"), function(i, e) {
-				var self = $(this);
-				var treeHit = self.find(".tree-hit");
-				var treeIndent = self.find(".tree-indent:eq(0)");
-				var treeIcon = self.find(".tree-icon");
-				if (treeHit.length > 0) {
-					treeIndent.before(treeHit);
-				} else if (treeIndent.length > 0) {
-					treeIndent.remove();
-				}
-				if (treeIcon.hasClass("fa")) {
-					treeIcon.addClass("fa-fw");
-				}
-			})
-		}/*,
-		loadFilter: function(data,parent) {
-			return $.fn.treeDataFilterListToTree(data, $(this).tree("options"));
-		}*/
+		onLoadSuccess: function(node, data)  {
+			$("#mainSlideMenu .tree-hit").before('<span class="tree-indent"></span>');
+		}
 	});
 
 	qc.main.mainTabs = $("#mainTabs").tabs({
@@ -1241,7 +1147,7 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 		// 下面的代码解决同名菜单问题，同名但不同地址，则刷新页面
 		var src = qc.main.mainTabs.tabs('getTab', subtitle).find("iframe").attr("src");
 		currTab = qc.main.mainTabs.tabs('getSelected');
-		if (src != url) {
+		if(src != url) {
 			qc.main.mainTabs.tabs('update', {
 				tab : currTab,
 				options : {
@@ -1251,7 +1157,7 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 			});
 		}
 	}
-	if (iframe && currTab != null) {
+	if(iframe && currTab != null) {
 		currTab.css("overflow", "hidden");
 		currTab.iframe = iframe;
 	}
@@ -1274,7 +1180,7 @@ qc.main.tabClose = function() {
 	});
 	$(".tabs-inner").mousedown(function(e){
 		e.preventDefault();
-		if (e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
+		if(e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 			var subtitle = $(this).children(".tabs-closable").text();
 			qc.main.mainTabs.tabs('close', subtitle);
 			return false;//阻止链接跳转
@@ -1283,7 +1189,7 @@ qc.main.tabClose = function() {
 	// 鼠标中键点击关闭操作
 	$(".tabs-selected").mousedown(function(e){
 		e.preventDefault();
-		if (e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
+		if(e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 			var subtitle = $(this).children().first().text();
 			qc.main.mainTabs.tabs('close', subtitle);
 			return false;//阻止链接跳转
@@ -1314,12 +1220,10 @@ qc.main.tabCloseEven = function() {
 }
 
 qc.main.pushWindowId = function(ids) {
-	if(qc.main.mainTabs && qc.main.mainTabs.length > 0) {
-		qc.main.windowStack.push({
-			title : qc.main.mainTabs.tabs('getSelected').panel("options").title,
-			windows : ids.split(",")
-		});
-	}
+	qc.main.windowStack.push({
+		title : qc.main.mainTabs.tabs('getSelected').panel("options").title,
+		windows : ids.split(",")
+	});
 };
 
 /**
@@ -1329,15 +1233,15 @@ qc.main.pushWindowId = function(ids) {
 qc.main.destroyContainsWindow = function(titleArray) {
 	var tempWindowStack = new Array();
 	var orglWindowStack = qc.main.windowStack;
-	if (titleArray && titleArray.length > 0) {
+	if(titleArray && titleArray.length > 0) {
 		for(var i=0; i<orglWindowStack.length; i++) {
 			// 判断弹出窗口的tabs页面
-			if (titleArray.indexOf(orglWindowStack[i].title) > -1) {
+			if(titleArray.indexOf(orglWindowStack[i].title) > -1) {
 				// 遍历销毁包含窗口
 				var windowArray = orglWindowStack[i].windows;
 				for(var j=0; j<windowArray.length; j++) {
 					var windowObj = $("#" + windowArray[j]);
-					if (!!windowObj) {
+					if(!!windowObj) {
 						qc.main.destoryWindow = windowObj;
 						windowObj.panel("destroy");
 					}
@@ -1366,7 +1270,7 @@ qc.main.closeTab = function(action) {
 		var src;
 		if (currtabTitle != qc.main.onlyOpenTitle) {
 			src = currentTab.children("iframe").src;
-			if (src != null && src.length > 0) {
+			if(src != null && src.length > 0) {
 				qc.main.mainTabs.tabs('update', {
 					tab : currentTab,
 					options : {
@@ -1451,13 +1355,13 @@ qc.main.menushow = function(e){
 	$("#"+e.id).addClass("active");
 	$("div."+e.id).fadeIn();
 	var src=$("div."+e.id+" > iframe").attr("src");
-	if (src==""||src=="#"){
+	if(src==""||src=="#"){
 		durl=$("div."+e.id).attr("title");
 		$("div."+e.id+" > iframe").attr("src",durl);
 	}
 	for ( var int = 0; int < lis.length; int++) {
 		var lid=lis[int].id;
-		if (e.id!=lid){
+		if(e.id!=lid){
 			$("#"+lid).removeClass("active");
 			$("div."+lid).css("display", "none");
 		}
@@ -1482,7 +1386,7 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 		var iframe = $(currTab.panel('options').content);
 		src = iframe.attr('src');
 		//地址不同，更换Frame
-		if (src != frameURL) 
+		if(src != frameURL) 
 		{
 		 qc.main.mainTabs.tabs('update', {
 				tab : currTab,
@@ -1518,7 +1422,7 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 qc.main.getCurrentWindow = function(frameID) {
 	var framename=frameID;
 	var index = frameID.lastIndexOf(".");
-	if (index!=-1)
+	if(index!=-1)
 	{
 		 framename=frameID.substring(0,index);
 	}
@@ -21510,7 +21414,7 @@ return fc; // export for Node/CommonJS
                 {
                     // var time_start = new Date().getTime();
     
-                    if (quality) setQuality(quality);
+                    if(quality) setQuality(quality);
     
                     // Initialize bit writer
                     byteout = new Array();
@@ -21560,11 +21464,11 @@ return fc; // export for Node/CommonJS
                             col = ( pos & 7 ) * 4; // %8
                             p = start + ( row * quadWidth ) + col;
     
-                            if (y+row >= height){ // padding bottom
+                            if(y+row >= height){ // padding bottom
                                 p-= (quadWidth*(y+1+row-height));
                             }
     
-                            if (x+col >= quadWidth){ // padding right
+                            if(x+col >= quadWidth){ // padding right
                                 p-= ((x+col) - quadWidth +4)
                             }
     
@@ -21627,7 +21531,7 @@ return fc; // export for Node/CommonJS
                     quality = 100;
                 }
     
-                if (currentQuality == quality) return // don't recalc if unchanged
+                if(currentQuality == quality) return // don't recalc if unchanged
     
                 var sf = 0;
                 if (quality < 50) {
@@ -21643,7 +21547,7 @@ return fc; // export for Node/CommonJS
     
             function init(){
                 // var time_start = new Date().getTime();
-                if (!quality) quality = 50;
+                if(!quality) quality = 50;
                 // Create tables
                 initCharLookupTable()
                 initHuffmanTbl();

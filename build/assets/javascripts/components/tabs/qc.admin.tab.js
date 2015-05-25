@@ -5,6 +5,7 @@
  */
 
 
+
 Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;

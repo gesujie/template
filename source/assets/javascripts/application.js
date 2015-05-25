@@ -71,8 +71,26 @@ $('#mainSlideMenu').tree({
 	}
 });
 
-
 $(window).load(function(){
+
+	Namespace.register("qc.demoWindow");
+	qc.main.pushWindowId("qc-window-windowObj");
+	qc.demoWindow.windowObj = null;
+	qc.demoWindow.openWindow = function() {
+		if (!qc.demoWindow.windowObj) {
+			qc.demoWindow.windowObj = $("#qc-window-windowObj").show().window({
+				title: 'Easy UI Window Login',
+				iconCls: 'fa fa-columns',
+				modal: true,
+				width: 450,
+				height: 240,
+				minimizable: false,
+				closable: true
+			});
+		} else {
+			qc.demoWindow.windowObj.window("open");
+		}
+	};
 
 	//### Run Alert
 	//$.messager.alert('Info','Message will be closed after 4 seconds.','info');
