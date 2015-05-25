@@ -33,21 +33,25 @@
 .textbox .textbox-prompt
   color: #BDBCBC
 
-.textbox .textbox-button,
-.textbox .textbox-button:hover
+.textbox-button-right,
+.textbox-button-left
+  background-color: #D7D7D7
+  color: #525050
+
+.textbox-button-right
+  +border-right-radius(2px)
+  +border-left-radius(0)
+
+.textbox-button-left
+  +border-left-radius(2px)
+  +border-right-radius(0)
+
+.textbox .textbox-button
   position: absolute
   top: 0
-  padding: 0
+  float: left
+  margin-right: 4px
   vertical-align: middle
-  +border-radius (0)
-
-.textbox-button-right,
-.textbox-button-right:hover
-  border: 1px solid #22beef
-
-.textbox-button-left,
-.textbox-button-left:hover
-  border-bottom: 1px solid #22beef
 
 .textbox-addon
   position: absolute

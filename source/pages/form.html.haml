@@ -2,9 +2,9 @@
 -@page_classes= 'form'
 
 .easyui-layout{fit:'true'}
-  .easyui-panel{title:'Form Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', headerCls:'panel-header-primary', bodyCls:'panel-body-default', collapsible:false"}
-    .container.mb-10
-      .col-6
+  .easyui-panel{title:'Form Live Example', 'data-options' => "region:'center', iconCls:'fa fa-text-height', headerCls:'panel-header-primary', bodyCls:'panel-body-default', collapsible:false"}
+    .container
+      .col-6.mb-10
         %form
           .form-group
             %label Email address
@@ -21,7 +21,7 @@
               %input{type: 'checkbox'}
                 Check me out
           %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
-      .col-6.col-last
+      .col-6.col-last.mb-10
         %form.form-horizontal
           .form-group
             %label.col-2.control-label Email
@@ -42,11 +42,21 @@
               %button.easyui-linkbutton.color-primary{type: 'submit'} Sign in
     .container
       .col-8
-        %form.form-inline
-          .form-group
-            %label Email address
-            %input.form-control{placeholder: 'Enter email', type: 'email'}
-          .form-group
-            %label Password
-            %input.form-control{placeholder: 'Password', type: 'password'}
-          %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
+        .panel
+          .panel-header.panel-header-info
+            .panel-title Form with by Icon
+          .panel-body-default
+            %form.form-inline
+              .form-group
+                %label Email address
+                %input.form-control.easyui-textbox{'data-options' => "prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+              .form-group
+                %label Password
+                %input.form-control.easyui-textbox{'data-options' => "prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+              %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
+      .col-4.col-last
+        .panel
+          .panel-header.panel-header-info
+            .panel-title Button with by Icon
+          .panel-body-default
+            %input.easyui-textbox{'data-options' => "buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:280, height:34"}

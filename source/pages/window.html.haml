@@ -3,10 +3,10 @@
 
 
 .easyui-layout{:fit => "true"}
-  %a.easyui-linkbutton.color-default{:onclick => "qc.demoWindow.openWindow()"} 打开窗口
+  %a.easyui-linkbutton.color-info{:href => "javascript:void(0)", :onclick => "$('#w').window('open')"} Open
 
 .easyui-layout{fit:'true'}
-  .easyui-window{"data-options" => "iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true", title:'Easy UI Window Login'}
+  .easyui-window#w{"data-options" => "iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true", title:'Easy UI Window Login'}
     %form.form-horizontal
       .form-group
         %label.col-2.control-label Email
