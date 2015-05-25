@@ -5,7 +5,7 @@
 .easyui-layout{'data-options' => 'width:450, height:500'}
   .panel-login
     .panel-sing-in
-      .easyui-panel{'data-options' => "region:'west',title:'Sign in', headerCls:'panel-header-default',  headerCls:'panel-header-primary', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true"}
+      .easyui-panel{'data-options' => "region:'west',title:'Sign in', cls:'panel-primary', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true"}
         %form.form-horizontal
           .form-group
             %label.col-2.control-label Email
@@ -26,7 +26,7 @@
               =link_to 'Sign up', 'javascript:void(0)', onclick:'btnRegistry()', class:'easyui-linkbutton color-info text-center',  iconCls: 'fa fa-user-plus'
               =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-sign-in'
     .panel-sing-up
-      .easyui-panel{'data-options' => "region:'west',title:'Sign up', headerCls:'panel-header-info', bodyCls:'panel-body-default', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
+      .easyui-panel{'data-options' => "region:'west',title:'Sign up', cls:'panel-info', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
         %form.form-horizontal
           .form-group
             .col-3

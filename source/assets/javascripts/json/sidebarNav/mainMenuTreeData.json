@@ -25,7 +25,7 @@
 
   {"id": "2-1-8", "text": "Datagrid", "parentId": "2-1", "iconCls": "fa fa-list-alt"},
   {"id": "2-1-8-1", "text": "上下布局", "url": "pages/datagrid.html", "parentId": "2-1-8", "iconCls": "fa fa-list-alt"},
-  {"id": "2-1-8-2", "text": "Datagrid form", "url": "pages/datagrid-form.html", "parentId": "2-1-8", "iconCls": "fa fa-list-alt"},
+  {"id": "2-1-8-2", "text": "Datagrid Form", "url": "pages/datagrid-form.html", "parentId": "2-1-8", "iconCls": "fa fa-list-alt"},
 
   {"id": "2-1-9", "text": "iframe中打开百度", "url": "http://baidu.com", "iframe": true, "parentId": "2-1", "iconCls": "fa fa-paw"},
 

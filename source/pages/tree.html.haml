@@ -2,7 +2,7 @@
 -@page_classes= 'tree'
 
 .easyui-layout{fit:'true'}
-  .easyui-panel{title:'Tree Live Example', 'data-options' => "region:'west', iconCls:'fa fa-list-ol', width:420, headerCls:'panel-header-primary', bodyCls:'panel-body-default', collapsible:false"}
+  .easyui-panel{title:'Tree Live Example', 'data-options' => "region:'west', iconCls:'fa fa-list-ol', width:420, cls:'panel-primary', collapsible:false"}
     %ul#tt.easyui-tree{'data-options' => "url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true"}
     .panel-footer
       %small Tree folder with by lines
