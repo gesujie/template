@@ -1,0 +1,51 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label
+  display: inline
+  padding: .2em .6em .3em
+  font-size: 75%
+  font-weight: bold
+  line-height: 1
+  color: #fff
+  text-align: center
+  white-space: nowrap
+  vertical-align: baseline
+  border-radius: .25em
+
+  // [converter] extracted a& to a.label
+
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty
+    display: none
+
+
+// Add hover effects, but only for links
+a.label
+  &:hover,
+  &:focus
+    color: #d7d7d7
+    text-decoration: none
+    cursor: pointer
+
+// Colors
+// Contextual variations (linked labels get darker on :hover)
+
+.label-default
+  @include label-variant($brand-default)
+
+.label-primary
+  @include label-variant($brand-primary)
+
+.label-success
+  @include label-variant($brand-success)
+
+.label-info
+  @include label-variant($brand-info)
+
+.label-warning
+  @include label-variant($brand-warning)
+
+.label-danger
+  @include label-variant($brand-danger)
