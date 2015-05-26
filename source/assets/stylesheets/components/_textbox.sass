@@ -7,31 +7,40 @@
   position: relative
   +inline-block()
 
-.textbox .textbox-text
-  +inline-block()
-  height: 100%
-  padding: $padding-small-vertical
-  background-color: $textbox-bg-color
-  border: none
-  +border-radius (2px)
-  +transition(background-color, 0.28s, ease-out)
-  font-weight: 300
-  font-size: $font-size-small
+.textbox
+  & .textbox-text
+    +inline-block()
+    height: 100%
+    padding: $padding-small-vertical
+    background-color: $textbox-bg-color
+    border: none
+    +border-radius (2px)
+    +transition(background-color, 0.28s, ease-out)
+    font-weight: 300
+    font-size: $font-size-small
 
-  &:focus
-    background-color: #d7d7d7
-    color: #000
-    +transition(background-color, 0.28s, ease-in)
-    outline: none
-    &::-webkit-input-placeholder
-      color: #BDBCBC
-    &::-moz-placeholder
-      color: #BDBCBC
-    &:-ms-input-placeholder
-      color: #BDBCBC
+    &:focus
+      background-color: #d7d7d7
+      color: #000
+      +transition(background-color, 0.28s, ease-in)
+      outline: none
+      &::-webkit-input-placeholder
+        color: #BDBCBC
+      &::-moz-placeholder
+        color: #BDBCBC
+      &:-ms-input-placeholder
+        color: #BDBCBC
 
-.textbox .textbox-prompt
-  color: #BDBCBC
+.textbox-invalid
+  & .validatebox-invalid,
+  & .textbox-text
+    background-color: $brand-danger
+    color: #fff
+
+
+.textbox
+  & .textbox-prompt
+    color: #BDBCBC
 
 .textbox-button-right,
 .textbox-button-left
@@ -95,6 +104,4 @@
 .textbox-icon-readonly
   cursor: default
 
-//TODO
-  inputs invalid styles have to coding (.textbox-invalid)
 

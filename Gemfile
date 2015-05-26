@@ -3,10 +3,10 @@
 source 'https://rubygems.org'
 
 #Middleman
-gem 'middleman', '~> 4.0.0.alpha.6'
+gem 'middleman', '~> 4.0.0.beta.2'
 
 # Middleman-sprockets
-gem 'middleman-sprockets', '~> 3.4.1'
+gem 'middleman-sprockets', '~> 4.0.0.beta.1'
 
 # Live-reloading plugin
 gem 'middleman-livereload', '~> 3.4.2'
@@ -18,7 +18,7 @@ gem 'wdm', '~> 0.1.0', :platforms => [:mswin, :mingw]
 # gem 'middleman-deploy', '~> 1.0.0'
 
 # Sass
-gem 'sass', '~> 3.4.12'
+gem 'sass', '~> 3.4.14'
 
 # Compass
 gem 'compass', '1.0.3'
