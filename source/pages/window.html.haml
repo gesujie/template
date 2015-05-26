@@ -1,28 +1,46 @@
 -@title= 'Window | Admin Page '
 -@page_classes= 'window easyui-layout'
 
+.easyui-layout{fit: 'true'}
+  %a.easyui-linkbutton.color-primary{onclick: 'qc.demoWindow.openWindow()', iconCls:'fa fa-bookmark'} 打开窗口
 
-.easyui-layout{:fit => "true"}
-  %a.easyui-linkbutton.color-info{:href => "javascript:void(0)", :onclick => "$('#w').window('open')"} Open
+#qc-window-windowObj
+  %form.form-horizontal
+    .form-group
+      %label.col-2.control-label Email
+      .col-10.col-last
+        %input.easyui-textbox.form-control{'data-options' => 'width:330, height:35', placeholder: 'Email', type: 'email'}
+    .form-group
+      %label.col-2.control-label Password
+      .col-10.col-last
+        %input.easyui-textbox.form-control{'data-options' => 'width:330, height:35', placeholder: 'Password', type: 'password'}
+    .form-group
+      .col-push-2.col-10
+        .checkbox
+          %label
+            %input{type: 'checkbox'}
+              Remember me
+    .form-group
+      .col-push-2.col-10
+        %a.easyui-linkbutton.color-info.text-center{href: 'javascript:void(0)', iconCls:'fa fa-user-plus'} Sign up
+        %a.easyui-linkbutton.color-primary.mr-10.text-center{href: 'javascript:void(0)', iconCls: 'fa fa-sign-in'} Sign in
 
-.easyui-layout{fit:'true'}
-  .easyui-window#w{"data-options" => "iconCls:'fa fa-columns', modal:true, width:450, height:240, minimizable:false, closable:true", title:'Easy UI Window Login'}
-    %form.form-horizontal
-      .form-group
-        %label.col-2.control-label Email
-        .col-10.col-last
-          %input.easyui-textbox.form-control{placeholder: 'Email', type: 'email', 'data-options' => 'width:330, height:35'}
-      .form-group
-        %label.col-2.control-label Password
-        .col-10.col-last
-          %input.easyui-textbox.form-control{placeholder: 'Password', type: 'password', 'data-options' => 'width:330, height:35'}
-      .form-group
-        .col-push-2.col-10
-          .checkbox
-            %label
-              %input{type: 'checkbox'}
-                Remember me
-      .form-group
-        .col-push-2.col-10
-          =link_to 'Sign up', 'javascript:void(0)', class:'easyui-linkbutton color-info text-center',  iconCls: 'fa fa-user-plus'
-          =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton color-primary mr-10 text-center',  iconCls: 'fa fa-sign-in'
+:javascript
+  Namespace.register("qc.demoWindow");
+  qc.main.pushWindowId("qc-window-windowObj");
+  qc.demoWindow.windowObj = null;
+  qc.demoWindow.openWindow = function() {
+    if (!qc.demoWindow.windowObj) {
+      qc.demoWindow.windowObj = $("#qc-window-windowObj").show().window({
+        title: 'Easy UI Window Login',
+        iconCls: 'fa fa-columns',
+        modal: true,
+        width: 450,
+        height: 240,
+        minimizable: false,
+        closable: true
+      });
+    } else {
+      qc.demoWindow.windowObj.window("open");
+    }
+  };
