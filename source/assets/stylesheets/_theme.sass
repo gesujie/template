@@ -76,7 +76,10 @@ body
   overflow: auto
 
   & .tree-indent
-    width: 5px
+    width: 10px
+
+  & .tree-title
+    width: auto
 
   & .tree-node
     height: 100%
@@ -159,6 +162,10 @@ body
       background-color: #ECECE9
       +transition (color 0.28s ease-out)
 
+.sidebar-nav
+  & ul
+    background: rgb(8, 13, 21)
+
 .jumbotron
   display: table
   width: 100%
@@ -184,7 +191,7 @@ body
 
 .datagrid
   & .panel-body
-    background-color: #fff
+    padding: 0
 
 .toolbar
   +inline-block()
@@ -198,24 +205,11 @@ body
 .bg-white
   background-color: $panel-login-bg
 
-.pr-10
-  padding-right: 10px
-
-.mb-5
-  margin-bottom: 5px
-
-.mb-10
-  margin-bottom: 10px
-
-.mr-10
-  margin-right: 11px
-
 .panel-header-rounded
   +border-bottom-radius(2px)
 
 .panel-icon
   color: #79828B
-
   &.fa
     font-size: 13px
 

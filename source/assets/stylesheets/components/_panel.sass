@@ -5,9 +5,14 @@
 ////
 // Position absolute only for layout
 // Issue #22 (https://bitbucket.org/coskuntekin/admin-template-easyui/issue/22/design-the-accordion-panel-and-remove-its)
-.panel-layout
+.layout-panel
+  position: absolute
+
+////
+// Margin bottom space for accordion header
+.easyui-accordion
   & .panel
-    position: absolute
+    margin-bottom: 5px
 
 .panel
   overflow: hidden
@@ -17,16 +22,26 @@
   & .panel-body
     padding: 15px
 
-.panel-header-default
-  background-color: $panel-header-default-bg-color
+%panel-body
+  display: block
+  background-color: #fff
+  padding: 15px
+  overflow: auto
+
+.panel-default
+  & .panel-header
+    background-color: $panel-header-default-bg-color
   & .panel-tool-close
     color: #79828B
   & .panel-tool-close
     position: relative
     top: -3px
+  & .panel-body
+    @extend %panel-body
 
-.panel-header-primary
-  background-color: $panel-header-primary-bg-color
+.panel-primary
+  & .panel-header
+    background-color: $panel-header-primary-bg-color
   & .panel-icon,
   & .panel-title,
   & .panel-tool-close
@@ -34,9 +49,12 @@
   & .panel-tool-close
     position: relative
     top: -3px
+  & .panel-body
+    @extend %panel-body
 
-.panel-header-info
-  background-color: $panel-header-info-bg-color
+.panel-info
+  & .panel-header
+    background-color: $panel-header-info-bg-color
   & .panel-icon,
   & .panel-title,
   & .panel-tool-close
@@ -44,9 +62,12 @@
   & .panel-tool-close
     position: relative
     top: -3px
+  & .panel-body
+    @extend %panel-body
 
-.panel-header-success
-  background-color: $panel-header-success-bg-color
+.panel-success
+  & .panel-header
+    background-color: $panel-header-success-bg-color
   & .panel-icon,
   & .panel-title,
   & .panel-tool-close
@@ -54,9 +75,12 @@
   & .panel-tool-close
     position: relative
     top: -3px
+  & .panel-body
+    @extend %panel-body
 
-.panel-header-warning
-  background-color: $panel-header-warning-bg-color
+.panel-warning
+  & .panel-header
+    background-color: $panel-header-warning-bg-color
   & .panel-icon,
   & .panel-title,
   & .panel-tool-close
@@ -64,9 +88,12 @@
   & .panel-tool-close
     position: relative
     top: -3px
+  & .panel-body
+    @extend %panel-body
 
-.panel-header-danger
-  background-color: $panel-header-danger-bg-color
+.panel-danger
+  & .panel-header
+    background-color: $panel-header-danger-bg-color
   & .panel-icon,
   & .panel-title,
   & .panel-tool-close
@@ -74,22 +101,18 @@
   & .panel-tool-close
     position: relative
     top: -3px
+  & .panel-body
+    @extend %panel-body
 
 .panel-header
   position: relative
-  padding: $padding-large-vertical $padding-large-horizontal
+  padding: $padding-large-vertical $padding-base-horizontal
   +border-top-radius(2px)
 
 .panel-title
   color: $panel-title-color
   font-size: $panel-title-font-size
   font-weight: 300
-
-.panel-body-default
-  +inline-block()
-  background-color: #fff
-  padding: 15px
-  overflow: auto
 
 .panel-footer
   padding: $padding-large-vertical 15px
@@ -150,7 +173,6 @@
     +font-icons(FontAwesome, '\f057', 14px, #d7d7d7)
 
 .panel-tool-collapse
-
   &::before
     +font-icons(FontAwesome, '\f056', 14px, #d7d7d7)
 

@@ -7,47 +7,60 @@
   position: relative
   +inline-block()
 
-.textbox .textbox-text
-  +inline-block()
-  height: 100%
-  padding: $padding-small-vertical
-  background-color: $textbox-bg-color
-  border: none
-  +border-radius (2px)
-  +transition(background-color, 0.28s, ease-out)
-  font-weight: 300
-  font-size: $font-size-small
+.textbox
+  & .textbox-text
+    +inline-block()
+    height: 100%
+    padding: $padding-small-vertical
+    background-color: $textbox-bg-color
+    border: none
+    +border-radius (2px)
+    +transition(background-color, 0.28s, ease-out)
+    font-weight: 300
+    font-size: $font-size-small
 
-  &:focus
-    background-color: #d7d7d7
-    color: #000
-    +transition(background-color, 0.28s, ease-in)
-    outline: none
-    &::-webkit-input-placeholder
-      color: #BDBCBC
-    &::-moz-placeholder
-      color: #BDBCBC
-    &:-ms-input-placeholder
-      color: #BDBCBC
+    &:focus
+      background-color: #d7d7d7
+      color: #000
+      +transition(background-color, 0.28s, ease-in)
+      outline: none
+      &::-webkit-input-placeholder
+        color: #BDBCBC
+      &::-moz-placeholder
+        color: #BDBCBC
+      &:-ms-input-placeholder
+        color: #BDBCBC
 
-.textbox .textbox-prompt
-  color: #BDBCBC
+.textbox-invalid
+  & .validatebox-invalid,
+  & .textbox-text
+    background-color: $brand-danger
+    color: #fff
 
-.textbox .textbox-button,
-.textbox .textbox-button:hover
-  position: absolute
-  top: 0
-  padding: 0
-  vertical-align: middle
-  +border-radius (0)
+
+.textbox
+  & .textbox-prompt
+    color: #BDBCBC
 
 .textbox-button-right,
-.textbox-button-right:hover
-  border: 1px solid #22beef
+.textbox-button-left
+  background-color: #D7D7D7
+  color: #525050
 
-.textbox-button-left,
-.textbox-button-left:hover
-  border-bottom: 1px solid #22beef
+.textbox-button-right
+  +border-right-radius(2px)
+  +border-left-radius(0)
+
+.textbox-button-left
+  +border-left-radius(2px)
+  +border-right-radius(0)
+
+.textbox .textbox-button
+  position: absolute
+  top: 0
+  float: left
+  margin-right: 4px
+  vertical-align: middle
 
 .textbox-addon
   position: absolute
@@ -91,6 +104,4 @@
 .textbox-icon-readonly
   cursor: default
 
-//TODO
-  inputs invalid styles have to coding (.textbox-invalid)
 

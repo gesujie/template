@@ -9,6 +9,51 @@
  */
 
 
+ 
+/**
+ * 功能：获取数值的百分数形式
+ * 返回： String
+ */
+
+Number.prototype.toPercent = function(){
+	return (Math.round(this * 10000)/100).toFixed(2) + '%';
+};
+
+/**
+ * 功能：检测数组中是否存在指定值
+ * 用法：	var arr=[" ","b"];  
+ *  		alert(arr.inArray("a"));
+ */
+Array.prototype.inArray=function(e) {  
+	var r = new RegExp(this.S+e+this.S);  
+	return (r.test(this.S+this.join(this.S)+this.S));  
+};
+
+
+/**
+ * @author 李钰龙
+ * @requires jQuery
+ * 注册命名空间
+ * @returns object
+ */
+Namespace = new Object();
+ 
+// 全局对象仅仅存在register函数，参数为名称空间全路径，如"Qianchi.MyWork"
+Namespace.register = function(fullNS){
+    // 将命名空间切成N部分, 比如GQianchi、MyWork等
+    var nsArray = fullNS.split('.');
+    var sEval = "";
+    var sNS = "";
+    for (var i = 0; i < nsArray.length; i++){
+        if (i != 0) sNS += ".";
+        sNS += nsArray[i];
+        // 依次创建构造命名空间对象（假如不存在的话）的语句
+        // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
+        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+    }
+    if (sEval != "") eval(sEval);
+}
+
 /**
  * @author 李钰龙
  * 增加formatString功能
