@@ -1,50 +1,30 @@
-<div class='easyui-layout panel-layout' fit='true'>
-  <div class='container'>
-    <div class='col-4'>
-      <div class='panel panel-primary'>
-        <div class='panel-header'>
-          <div class='panel-icon fa fa-file-text'></div>
-          <div class='panel-title panel-with-icon'>
-            Form
-          </div>
-        </div>
-        <div class='panel-body'>
-          <form>
-            <div class='form-group'>
-              <label>Product</label>
-              <input class='form-control' placeholder='Enter Product ID' type='text'>
-            </div>
-            <div class='form-group'>
-              <label>Status</label>
-              <input class='form-control' placeholder='Enter Status' type='text'>
-            </div>
-            <button class='easyui-linkbutton color-primary' type='submit'>Add</button>
-            <button class='easyui-linkbutton color-danger' type='submit'>Remove</button>
-          </form>
-        </div>
+<div class='easyui-layout' fit='true'>
+  <div class='easyui-panel' data-options="region:'west', title:'Form', cls:'panel-default pr-10', split:false, iconCls:'fa fa-file-text', width:450, border:false, collapsible:false">
+    <form>
+      <div class='form-group'>
+        <label>Product</label>
+        <input class='form-control' placeholder='Enter Product ID' type='text'>
       </div>
-    </div>
-    <div class='col-8 col-last'>
-      <div class='panel panel-primary'>
-        <div class='panel-header'>
-          <div class='panel-icon fa fa-database'></div>
-          <div class='panel-title panel-with-icon'>
-            Data Grid
-          </div>
-        </div>
-        <table class='easyui-datagrid datagrid-bg' data-options="height:500, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'">
-          <thead>
-            <tr>
-              <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
-              <th data-options="field:'productid', sortable:'true', width:100">Product</th>
-              <th data-options="field:'listprice', sortable:'true', width:100">List Price</th>
-              <th data-options="field:'unitcost', sortable:'true', width:100">Unit Cost</th>
-              <th data-options="field:'attr1', sortable:'true', width:220">Attribute</th>
-              <th data-options="field:'status', sortable:'true', width:100">Status</th>
-            </tr>
-          </thead>
-        </table>
+      <div class='form-group'>
+        <label>Status</label>
+        <input class='form-control' placeholder='Enter Status' type='text'>
       </div>
-    </div>
+      <button class='easyui-linkbutton color-primary' data-options="iconCls:'fa fa-plus'" type='submit'>Add</button>
+      <button class='easyui-linkbutton color-danger' data-options="iconCls:'fa fa-minus'" type='submit'>Remove</button>
+    </form>
+  </div>
+  <div class='easyui-panel' data-options="region:'center', border:false">
+    <table class='easyui-datagrid datagrid-bg' data-options="title:'Data Grid', iconCls:'fa fa-database', cls:'panel-default', fit:true, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg'>
+      <thead>
+        <tr>
+          <th data-options="field:'itemid', sortable:'true', width:80">Item ID</th>
+          <th data-options="field:'productid',width:100">Product</th>
+          <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+          <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+          <th data-options="field:'attr1',width:250">Attribute</th>
+          <th data-options="field:'status',width:60,align:'center'">Status</th>
+        </tr>
+      </thead>
+    </table>
   </div>
 </div>
