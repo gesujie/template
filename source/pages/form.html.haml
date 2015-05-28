@@ -2,75 +2,111 @@
 -@page_classes= 'form'
 
 .easyui-layout{fit:'true'}
-  .container
-    .col-6.mb-10
-      .panel.panel-primary
-        .panel-header
-          .panel-icon.fa.fa-database
-          .panel-title.panel-with-icon
-            Simple Form
-        .panel-body
-          %form
-            .form-group
-              %label Email address
-              %input.form-control{placeholder: 'Enter email', type: 'email'}
-            .form-group
-              %label Password
-              %input.form-control{placeholder: 'Password', type: 'password'}
-            .form-group
-              %label File input
-              %input{type: 'file'}
-                %p.help-block Example block-level help text here.
-            .checkbox
-              %label
-                %input{type: 'checkbox'}
-                  Check me out
-            %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
-    .col-6.col-last.mb-10
-      .panel.panel-primary
-        .panel-header
-          .panel-icon.fa.fa-database
-          .panel-title.panel-with-icon
-            Horizontal Form
-        .panel-body
-          %form.form-horizontal
-            .form-group
-              %label.col-2.control-label Email
-              .col-10.col-last
-                %input.form-control{placeholder: 'Email', type: 'email'}
-            .form-group
-              %label.col-2.control-label Password
-              .col-10.col-last
+  .easyui-panel{title:'Forms Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', cls:'panel-primary', collapsible:false"}
+    .container
+      .col-6.mb-10
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              Simple Form
+          .panel-body
+            %form
+              .form-group
+                %label Email address
+                %input.form-control{placeholder: 'Enter email', type: 'email'}
+              .form-group
+                %label Password
                 %input.form-control{placeholder: 'Password', type: 'password'}
-            .form-group
-              .col-push-2.col-10
-                .checkbox
-                  %label
-                    %input{type: 'checkbox'}
-                      Remember me
-            .form-group
-              .col-push-2.col-10
-                %button.easyui-linkbutton.color-primary{type: 'submit'} Sign in
-    .col-8
-      .panel.panel-primary
-        .panel-header
-          .panel-icon.fa.fa-database
-          .panel-title.panel-with-icon
-            From Inline
-        .panel-body
-          %form.form-inline
-            .form-group
-              %label Email address
-              %input.form-control.easyui-textbox{'data-options' => "prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
-            .form-group
-              %label Password
-              %input.form-control.easyui-textbox{'data-options' => "prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
-            %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
-    .col-4.col-last
-      .panel.panel-primary
-        .panel-header
-          .panel-icon.fa.fa-database
-          .panel-title.panel-with-icon
-            From Inline
-        .panel-body
-          %input.easyui-textbox{'data-options' => "buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:280, height:34"}
+              .form-group
+                %label File input
+                %input{type: 'file'}
+                  %p.help-block Example block-level help text here.
+              .checkbox
+                %label
+                  %input{type: 'checkbox'}
+                    Check me out
+              %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
+      .col-6.col-last.mb-10
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              Horizontal Form
+          .panel-body
+            %form.form-horizontal
+              .form-group
+                %label.col-2.control-label Email
+                .col-10.col-last
+                  %input.form-control{placeholder: 'Email', type: 'email'}
+              .form-group
+                %label.col-2.control-label Password
+                .col-10.col-last
+                  %input.form-control{placeholder: 'Password', type: 'password'}
+              .form-group
+                .col-push-2.col-10
+                  .checkbox
+                    %label
+                      %input{type: 'checkbox'}
+                        Remember me
+              .form-group
+                .col-push-2.col-10
+                  %button.easyui-linkbutton.color-primary{type: 'submit'} Sign in
+      .col-8
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              From Inline
+          .panel-body
+            %form.form-inline
+              .form-group
+                %label Email address
+                %input.form-control.easyui-textbox{'data-options' => "prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+              .form-group
+                %label Password
+                %input.form-control.easyui-textbox{'data-options' => "prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+              %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
+      .col-4.col-last
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              From Inline
+          .panel-body
+            %input.easyui-textbox{'data-options' => "buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34"}
+      .col-6
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              Validate Form on Submit
+          .panel-body
+            %form.easyui-form#ff{'data-options' => 'novalidate:true', method: 'post'}
+              .form-group
+                %label Name:
+                %input.easyui-textbox.form-control{'data-options' => 'required:true, width:440, height:34', name: 'name', type: 'text'}
+              .form-group
+                %label Email:
+                %input.easyui-textbox.form-control{'data-options' => "required:true, width:440, height:34, validType:'email'", name: 'email', type: 'text'}
+              .form-group
+                %label Subject:
+                %input.easyui-textbox.form-control{'data-options' => 'required:true, width:440, height:34', name: 'subject', type: 'text'}
+              .form-group
+                %label Message:
+                %input.easyui-textbox.form-control{'data-options' => 'multiline:true, width:440, height:60', name: 'message'}
+              .form-group
+                %button.easyui-linkbutton.color-primary{onclick: 'submitForm()', type: 'submit'} Submit
+                %button.easyui-linkbutton.color-primary{onclick: 'clearForm()', type: 'submit'} Clear
+
+:javascript
+  function submitForm(){
+      $('#ff').form('submit',{
+          onSubmit:function(){
+              return $(this).form('enableValidation').form('validate');
+          }
+      });
+  }
+  function clearForm(){
+      $('#ff').form('clear');
+  }

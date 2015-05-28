@@ -122,18 +122,17 @@ $susy: (  columns: 12, gutters: 1/4, use-custom: (box-sizing: false))
 .col-push-12
   +push(12 of 12)
 
+@for $i from 1 through 5
+  .mb-#{($i*10)}
+    margin-bottom: (($i*10)+px)
 
-@for $i from 10 through 50
-  .mb-#{$i}
-    margin-bottom: ($i+px)
+@for $i from 1 through 5
+  .pr-#{($i*10)}
+    padding-right: (($i*10)+px)
 
-@for $i from 10 through 50
-  .pr-#{$i}
-    padding-right: ($i+px)
-
-@for $i from 10 through 50
-  .pl-#{$i}
-    padding-right: ($i+px)
+@for $i from 1 through 5
+  .pl-#{($i*10)}
+    padding-right: (($i*10)+px)
 
 //**** Grid debug classes
 .debug
