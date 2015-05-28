@@ -18,7 +18,10 @@ label
   font-weight: 300
   font-size: $font-size-small
 
-.form-control
+//// Merged Class
+// Merge with by form-control class
+
+.easyui-textbox
   display: block
   width: 100%
   height: 34px
@@ -53,7 +56,6 @@ input[type=file]
   margin-top: 10px
   margin-bottom: 10px
 
-
 //////
 // From inline styles
 
@@ -63,7 +65,7 @@ input[type=file]
     margin-bottom: 0
 
 .form-inline
-  & .form-control
+  & .easyui-textbox
     +inline-block()
     width: auto
 
