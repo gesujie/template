@@ -85,28 +85,63 @@
             %form.easyui-form#ff{'data-options' => 'novalidate:true', method: 'post'}
               .form-group
                 %label Name:
-                %input.easyui-textbox.form-control{'data-options' => 'required:true, width:440, height:34', name: 'name', type: 'text'}
+                %input.easyui-textbox.form-control{'data-options' => 'required:true, width:480, height:34', name: 'name', type: 'text'}
               .form-group
                 %label Email:
-                %input.easyui-textbox.form-control{'data-options' => "required:true, width:440, height:34, validType:'email'", name: 'email', type: 'text'}
+                %input.easyui-textbox.form-control{'data-options' => "required:true, width:480, height:34, validType:'email'", name: 'email', type: 'text'}
               .form-group
                 %label Subject:
-                %input.easyui-textbox.form-control{'data-options' => 'required:true, width:440, height:34', name: 'subject', type: 'text'}
+                %input.easyui-textbox.form-control{'data-options' => 'required:true, width:480, height:34', name: 'subject', type: 'text'}
               .form-group
                 %label Message:
-                %input.easyui-textbox.form-control{'data-options' => 'multiline:true, width:440, height:60', name: 'message'}
+                %input.easyui-textbox.form-control{'data-options' => 'multiline:true, width:480, height:60', name: 'message'}
               .form-group
                 %button.easyui-linkbutton.color-primary{onclick: 'submitForm()', type: 'submit'} Submit
                 %button.easyui-linkbutton.color-primary{onclick: 'clearForm()', type: 'submit'} Clear
+      .col-6.col-last
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              Search Box
+          .panel-body
+            %form
+              %input.easyui-searchbox{'data-options' => "prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
+      .col-6
+        .panel.panel-primary
+          .panel-header
+            .panel-icon.fa.fa-database
+            .panel-title.panel-with-icon
+              Format Number Box
+          .panel-body
+            %form
+              %p List Price:
+              %input.easyui-numberbox{'data-options'=>'height:34', precision: '2', value: '234.56'}
+              %p Amount:
+              %input.easyui-numberbox{'data-options'=>'height:34', value: '100'}
+              %p Number in the United States
+              %input.easyui-numberbox{'data-options' => "precision:2, groupSeparator:',', height:34", value: '1234567.89'}
+              %p Number in France
+              %input.easyui-numberbox{'data-options' => "precision:2,groupSeparator:' ',decimalSeparator:',', height:34", value: '1234567.89'}
+              %p Currency:USD
+              %input.easyui-numberbox{'data-options' => "precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34", value: '1234567.89'}
+              %p Currency:EUR
+              %input.easyui-numberbox{'data-options' => "precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34", value: '1234567.89'}
+
 
 :javascript
+  //Search Box
+  function doSearch(value){
+    alert('You input: ' + value);
+  }
+  //Validate Form on Submit
   function submitForm(){
-      $('#ff').form('submit',{
-          onSubmit:function(){
-              return $(this).form('enableValidation').form('validate');
-          }
-      });
+    $('#ff').form('submit',{
+        onSubmit:function(){
+            return $(this).form('enableValidation').form('validate');
+        }
+    });
   }
   function clearForm(){
-      $('#ff').form('clear');
+    $('#ff').form('clear');
   }

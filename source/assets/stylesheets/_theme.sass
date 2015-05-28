@@ -78,18 +78,12 @@ body
   & .tree-indent
     width: 10px
 
-  & .tree-title
-    width: auto
-
   & .tree-node
     height: 100%
     padding: $padding-large-vertical $padding-base-horizontal
 
   & .tree-node-hover
     background-color: $sidebar-hover-bg
-
-    & .tree-title
-      color: $sidebar-hover-color
 
   & .tree-icon
     color: #ECECE9
@@ -109,16 +103,14 @@ body
       color: #79828B
 
   & .tree-title
-    +inline-block()
     width: 80%
     height: 100%
     line-height: inherit
-    white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-    font-size: $font-size-base
     font-weight: 300
     color: $sidebar-color
+    vertical-align: bottom
 
   & .tree-expanded
     float: right
