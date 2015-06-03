@@ -132,6 +132,26 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 		return undefined;
 	}
 };
+
+/**
+ * 功能：选中radio单选按钮
+ * 参数：
+ *	  radioParentId 父级容器的id
+ *	  radioName 元素name
+ *	  radiovalue 值
+ */
+$.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
+	var obj = radioParentId && radioParentId != "" ? 
+			$("#" + radioParentId).find("[name=" +  radioName+ "]") : 
+			$("[name=" +  radioName+ "]");
+	for(var i=0; i<obj.length; i++) {
+		if(obj[i].value == radiovalue) {  
+			obj[i].checked = true;
+			return true;
+		}  
+	}
+};
+
 /* 作者：李钰龙
  * 功能：扩展EasyUI
  * 扩展项目：
@@ -775,7 +795,8 @@ $.extend($.fn.datagrid.defaults.editors, {
 	}
 }); 
 
-$.extend($.fn.datagrid.methods, { /*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
+$.extend($.fn.datagrid.methods, { 
+	/*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
 	addEditor : function(jq, param) {
 		if (param instanceof Array) {
 			$.each(param, function(index, item) {
@@ -787,6 +808,7 @@ $.extend($.fn.datagrid.methods, { /*扩展动态编辑框，可以指定禁止�
 			e.editor = param.editor;
 		}
 	},
+	/*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
 	removeEditor : function(jq, param) {
 		if (param instanceof Array) {
 			$.each(param, function(index, item) {
@@ -797,8 +819,70 @@ $.extend($.fn.datagrid.methods, { /*扩展动态编辑框，可以指定禁止�
 			var e = $(jq).datagrid('getColumnOption', param);
 			e.editor = {};
 		}
+	},
+	/*扩展自动合并连续单元格*/
+	autoMergeCells : function (jq, fields) {
+		return jq.each(function () {
+			var target = $(this);
+			if (!fields) {
+				fields = target.datagrid("getColumnFields");
+			}
+			var rows = target.datagrid("getRows");
+			var i = 0,
+			j = 0,
+			temp = {};
+			for (i; i < rows.length; i++) {
+				var row = rows[i];
+				j = 0;
+				for (j; j < fields.length; j++) {
+					var field = fields[j];
+					var tf = temp[field];
+					if (!tf) {
+						tf = temp[field] = {};
+						tf[row[field]] = [i];
+					} else {
+						var tfv = tf[row[field]];
+						if (tfv) {
+							tfv.push(i);
+						} else {
+							tfv = tf[row[field]] = [i];
+						}
+					}
+				}
+			}
+			$.each(temp, function (field, colunm) {
+				$.each(colunm, function () {
+					var group = this;
+					
+					if (group.length > 1) {
+						var before,
+						after,
+						megerIndex = group[0];
+						for (var i = 0; i < group.length; i++) {
+							before = group[i];
+							after = group[i + 1];
+							if (after && (after - before) == 1) {
+								continue;
+							}
+							var rowspan = before - megerIndex + 1;
+							if (rowspan > 1) {
+								target.datagrid('mergeCells', {
+									index : megerIndex,
+									field : field,
+									rowspan : rowspan
+								});
+							}
+							if (after && (after - before) != 1) {
+								megerIndex = after;
+							}
+						}
+					}
+				});
+			});
+		});
 	}
 });
+
 
 /**
  * @author 李钰龙
@@ -1081,7 +1165,11 @@ $(function(){
 		fit : true, animate : true,
 		parentField : "parentId",
 		onClick: function(node){
-			if(node.url) {
+			if(!!node.children) {
+				if(node.state == "closed") {
+
+				}
+			} else if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
 		},

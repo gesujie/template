@@ -132,3 +132,23 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 		return undefined;
 	}
 };
+
+
+/**
+ * 功能：选中radio单选按钮
+ * 参数：
+ *	  radioParentId 父级容器的id
+ *	  radioName 元素name
+ *	  radiovalue 值
+ */
+$.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
+	var obj = radioParentId && radioParentId != "" ? 
+			$("#" + radioParentId).find("[name=" +  radioName+ "]") : 
+			$("[name=" +  radioName+ "]");
+	for(var i=0; i<obj.length; i++) {
+		if(obj[i].value == radiovalue) {  
+			obj[i].checked = true;
+			return true;
+		}  
+	}
+};
