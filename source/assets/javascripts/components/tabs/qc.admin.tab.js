@@ -5,6 +5,7 @@
  */
 
 
+
 Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;
@@ -15,12 +16,14 @@ $(function(){
 		qc.main.slideMenuUrl = "json/mainMenuTreeData.json";
 	}
 
-	$("#mainSlideMenu").tree({
+	qc.main.slideMenu = $("#mainSlideMenu").tree({
 		url : qc.main.slideMenuUrl,
 		fit : true, animate : true,
 		parentField : "parentId",
 		onClick: function(node){
-			if(node.url) {
+			if(!!node.children) {
+				qc.main.slideMenu.tree("toggle", node.target);
+			} else if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
 		},
@@ -33,13 +36,11 @@ $(function(){
 		border : false,
         fit : true,
         tabHeight:41,
-        onAdd:function(title,index) {
-			//console.info(title);
-        },
-		onUpdate:function(title,index) {
-		},
 		onClose: function(title, index) {
 			qc.main.destroyContainsWindow(title);
+		},
+		onSelect: function(title,index) {
+			$(".combo-p").hide();
 		}
 	});
 });
