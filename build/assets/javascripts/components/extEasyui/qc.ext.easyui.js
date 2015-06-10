@@ -751,6 +751,33 @@ $.modalDialog = function(options) {
 	return $.modalDialog.handler = $('<div/>').dialog(opts);
 };
 
+$.showMessage = function(options) {
+	var msgType = !!options && !!options.msgType ? options.msgType : "primary";
+	var opts = $.extend({
+		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
+			+ '一般情况只用修改msg参数即可',
+		showType: 'slide',
+		width: 500,
+		height: 50,
+		noheader: true,
+		onBeforeOpen: function(){
+			if(options && options.onBeforeOpen) {
+				options.onBeforeOpen();
+			}
+			$(this).addClass('message-body-' + msgType);
+			$(this).append("<a class='message-close' href='javascript:void(0);' onclick='$.closeMessage(this)'>×</a>");
+		}
+	}, options);
+	opts.width = opts.width < 400 ? 400 : opts.width; // 强制宽度大于400
+	return $.messager.show(opts);
+}
+
+$.closeMessage = function(btn) {
+	if(!!btn) {
+		$(btn).parents(".panel.window").remove()
+	}
+}
+
 
 
 /**
