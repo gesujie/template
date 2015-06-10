@@ -1,36 +1,53 @@
-<div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'center', tools:'#panel-custom-tool', cls:'panel-primary', title:'Uploader', iconCls:'fa fa-upload', collapsible:false">
-    <div class='wu-example' id='uploader'>
-      <div class='uploader-list' id='thelist'></div>
-      <div class='btns'>
+<a iconcls="fa fa-search" class="easyui-linkbutton color-default btn-jump" onclick="qc.demoUploader.openDialog();">打开上传窗口</a>
+
+<div id="qc-uploader-dialog" style="display:none;">
+    <form id="qc-uploader-form">
+        
+
         <div id='picker'>选择文件</div>
-      </div>
-    </div>
-  </div>
+        <div class='uploader-list' id='thelist'></div>
+    </form>
 </div>
+
 <script>
-  var uploader = WebUploader.create({
-  
-      // swf文件路径
-      swf: '/assets/javascripts/components/webuploader/Uploader.swf',
-  
-      // 文件接收服务端。
-      server: 'http://webuploader.duapp.com/server/fileupload.php',
-  
-      // 选择文件的按钮。可选。
-      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-      pick: '#picker',
-  
-      // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
-      resize: false
-  });
-  
-  	// 当有文件被添加进队列的时候
-  uploader.on( 'fileQueued', function( file ) {
-  	console.info(file);
-      $("#thelist").append( '' +
-          '' + file.name + '' +
-          '等待上传...' +
-      '' );
-  });
+Namespace.register("qc.demoUploader");
+qc.main.pushWindowId("qc-uploader-dialog");
+
+qc.demoUploader.openDialog = function() {
+    if(!qc.demoUploader.dialog) {
+        qc.demoUploader.dialog = $("#qc-uploader-dialog").show().dialog({
+            width: 500,
+            height: 300,
+            title: "上传测试窗口"
+        });
+        qc.demoUploader.form = $("qc-uploader-form").form();
+        
+        qc.demoUploader.uploader = WebUploader.create({
+
+            // swf文件路径
+            swf: 'assets/javascripts/components/webuploader/Uploader.swf',
+
+            // 文件接收服务端。
+            server: 'http://webuploader.duapp.com/server/fileupload.php',
+
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: '#picker',
+
+            // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+            resize: false
+        });
+
+            // 当有文件被添加进队列的时候
+        qc.demoUploader.uploader.on( 'fileQueued', function( file ) {
+            console.info(file);
+            $("#thelist").append( '' +
+                '' + file.name + '' +
+                '等待上传...' +
+            '' );
+        });
+    } else {
+        qc.demoUploader.dialog.dialog("open");
+    }
+}
 </script>

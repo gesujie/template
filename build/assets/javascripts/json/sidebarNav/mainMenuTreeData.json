@@ -26,7 +26,8 @@
   {"id": "2-1-7", "text": "Grids", "url": "pages/grid.html", "parentId": "2-1", "iconCls": "fa fa-align-justify"},
   {"id": "2-1-8", "text": "Form", "url": "pages/form.html", "parentId": "2-1", "iconCls": "fa fa-text-height"},
   {"id": "2-1-9", "text": "Tree", "url": "pages/tree.html", "parentId": "2-1", "iconCls": "fa fa-list-ol"},
-  {"id": "2-1-10", "text": "Number Spinner", "url": "pages/numberspinner.html", "parentId": "2-1", "iconCls": "fa fa-sort-numeric-asc"},
+  {"id": "2-1-10", "text": "Tree Grid", "url": "pages/treegrid.html", "parentId": "2-1", "iconCls": "fa fa-list-ol"},
+  {"id": "2-1-11", "text": "Number Spinner", "url": "pages/numberspinner.html", "parentId": "2-1", "iconCls": "fa fa-sort-numeric-asc"},
 
   {"id": "2-1-8", "text": "Datagrid", "parentId": "2-1", "iconCls": "fa fa-list-alt"},
   {"id": "2-1-8-1", "text": "上下布局", "url": "pages/datagrid.html", "parentId": "2-1-8", "iconCls": "fa fa-list-alt"},

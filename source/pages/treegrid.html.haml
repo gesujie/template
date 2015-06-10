@@ -1,0 +1,14 @@
+-@title= 'Tree | Admin Page '
+-@page_classes= 'treegrid'
+
+
+.easyui-layout{fit:'true'}
+  .easyui-panel{title:'Tree Grid Live Example', 'data-options' => "region:'west',  width:600, iconCls:'fa fa-list-ol', cls:'panel-primary', collapsible:false"}
+    %table.easyui-treegrid{'data-options' => "method: 'get', rownumbers: true, idField: 'id', treeField: 'name', url:'assets/javascripts/json/datagridData/treegrid_data1.json'"}
+      %thead
+        %tr
+          %th{'data-options' => "field:'name'", :width => '220'} Name
+          %th{:align => 'right', 'data-options' => "field:'size'", :width => '100'} Size
+          %th{'data-options' => "field:'date'", :width => '150'} Modified Date
+    .panel-footer
+      %small Tree folder with by lines
