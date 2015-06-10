@@ -21,7 +21,7 @@
     }
 }());
 
-//### Sidebar Navigation Json
+//### Sidebar Navigation JSON
 qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 
 //### Registry Login Button

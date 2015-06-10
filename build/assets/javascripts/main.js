@@ -15,6 +15,7 @@
  * 返回： String
  */
 
+
 Number.prototype.toPercent = function(){
 	return (Math.round(this * 10000)/100).toFixed(2) + '%';
 };
@@ -138,6 +139,7 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 	}
 };
 
+
 /**
  * 功能：选中radio单选按钮
  * 参数：
@@ -156,7 +158,6 @@ $.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
 		}  
 	}
 };
-
 /* 作者：李钰龙
  * 功能：扩展EasyUI
  * 扩展项目：
@@ -177,6 +178,7 @@ $.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
  * @requires jQuery,EasyUI
  * panel关闭时回收内存，主要用于layout使用iframe嵌入网页时的内存泄漏问题
  */
+
 
 
 
@@ -888,7 +890,6 @@ $.extend($.fn.datagrid.methods, {
 	}
 });
 
-
 /**
  * @author 李钰龙
  * @requires jQuery,EasyUI
@@ -912,6 +913,7 @@ $.modalDialog = function(options) {
 };
 
 $.showMessage = function(options) {
+	var msgType = !!options && !!options.msgType ? options.msgType : "primary";
 	var opts = $.extend({
 		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
 			+ '一般情况只用修改msg参数即可',
@@ -920,15 +922,10 @@ $.showMessage = function(options) {
 		height: 50,
 		noheader: true,
 		onBeforeOpen: function(){
-			if(options) {
-				if(options.onBeforeOpen) {
-					options.onBeforeOpen();
-				}
-				if(options.msgType) {
-					options.msgType = !!options.msgType ? options.msgType : "primary";
-				}
+			if(options && options.onBeforeOpen) {
+				options.onBeforeOpen();
 			}
-			$(this).addClass('message-body-' + options.msgType);
+			$(this).addClass('message-body-' + msgType);
 			$(this).append("<a class='message-close' href='javascript:void(0);' onclick='$.closeMessage(this)'>×</a>");
 		}
 	}, options);
@@ -941,6 +938,8 @@ $.closeMessage = function(btn) {
 		$(btn).parents(".panel.window").remove()
 	}
 }
+
+
 
 /**
  * @author 李钰龙
@@ -1181,6 +1180,7 @@ Namespace.register("qc.tabs");
  * 作者：李钰龙
  * 日期：2015-3-27
  */
+
 
 
 
