@@ -1,6 +1,6 @@
 [
-  {"id": "1", "text": "项目实例", "state": "closed"},
-  {"id": "2", "text": "框架演示说明"},
+  {"id": "1", "text": "项目实例"},
+  {"id": "2", "text": "框架演示说明", "state": "closed"},
 
 
   {"id": "1-1", "text": "基础增删改", "parentId": "1", "iconCls": "fa fa-list-alt", "state": "closed"},
@@ -12,6 +12,9 @@
   {"id": "1-2", "text": "用户功能", "parentId": "1", "iconCls": "fa fa-user", "state": "closed"},
   {"id": "1-2-1", "text": "登陆注册", "url": "pages/login.html", "iconCls": "fa fa-sign-in", "parentId": "1-2"},
 
+  {"id": "1-3", "text": "权限管理", "parentId": "1", "iconCls": "fa fa-user"},
+  {"id": "1-3-1", "text": "用户管理", "url": "pages/login.html", "iconCls": "fa fa-sign-in", "parentId": "1-3"},
+  {"id": "1-3-2", "text": "用户管理", "url": "pages/login.html", "iconCls": "fa fa-sign-in", "parentId": "1-3"},
 
   {"id": "2-1", "text": "UI / UX", "parentId": "2", "iconCls": "fa fa-user"},
   {"id": "2-1-1", "text": "Tabs", "url": "pages/tabs.html", "parentId": "2-1", "iconCls": "fa fa-list-alt"},

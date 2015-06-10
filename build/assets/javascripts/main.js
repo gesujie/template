@@ -49,7 +49,12 @@ Namespace.register = function(fullNS){
         sNS += nsArray[i];
         // 依次创建构造命名空间对象（假如不存在的话）的语句
         // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
-        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        if(i == nsArray.length - 1) {
+        	// 最后一个节点，如果已经存在，清空一次再生成
+        	sEval += sNS + " = new Object();"
+        } else {
+        	sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        }
     }
     if (sEval != "") eval(sEval);
 }
@@ -906,7 +911,36 @@ $.modalDialog = function(options) {
 	return $.modalDialog.handler = $('<div/>').dialog(opts);
 };
 
+$.showMessage = function(options) {
+	var opts = $.extend({
+		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
+			+ '一般情况只用修改msg参数即可',
+		showType: 'slide',
+		width: 500,
+		height: 50,
+		noheader: true,
+		onBeforeOpen: function(){
+			if(options) {
+				if(options.onBeforeOpen) {
+					options.onBeforeOpen();
+				}
+				if(options.msgType) {
+					options.msgType = !!options.msgType ? options.msgType : "primary";
+				}
+			}
+			$(this).addClass('message-body-' + options.msgType);
+			$(this).append("<a class='message-close' href='javascript:void(0);' onclick='$.closeMessage(this)'>×</a>");
+		}
+	}, options);
+	opts.width = opts.width < 400 ? 400 : opts.width; // 强制宽度大于400
+	return $.messager.show(opts);
+}
 
+$.closeMessage = function(btn) {
+	if(!!btn) {
+		$(btn).parents(".panel.window").remove()
+	}
+}
 
 /**
  * @author 李钰龙
@@ -1160,15 +1194,13 @@ $(function(){
 		qc.main.slideMenuUrl = "json/mainMenuTreeData.json";
 	}
 
-	$("#mainSlideMenu").tree({
+	qc.main.slideMenu = $("#mainSlideMenu").tree({
 		url : qc.main.slideMenuUrl,
 		fit : true, animate : true,
 		parentField : "parentId",
 		onClick: function(node){
 			if(!!node.children) {
-				if(node.state == "closed") {
-
-				}
+				qc.main.slideMenu.tree("toggle", node.target);
 			} else if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
@@ -1182,13 +1214,11 @@ $(function(){
 		border : false,
         fit : true,
         tabHeight:41,
-        onAdd:function(title,index) {
-			//console.info(title);
-        },
-		onUpdate:function(title,index) {
-		},
 		onClose: function(title, index) {
 			qc.main.destroyContainsWindow(title);
+		},
+		onSelect: function(title,index) {
+			$(".combo-p").hide();
 		}
 	});
 });

@@ -49,7 +49,12 @@ Namespace.register = function(fullNS){
         sNS += nsArray[i];
         // 依次创建构造命名空间对象（假如不存在的话）的语句
         // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
-        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        if(i == nsArray.length - 1) {
+        	// 最后一个节点，如果已经存在，清空一次再生成
+        	sEval += sNS + " = new Object();"
+        } else {
+        	sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        }
     }
     if (sEval != "") eval(sEval);
 }
