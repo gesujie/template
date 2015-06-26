@@ -573,7 +573,7 @@ $.extend(jQuery.fn.datagrid.defaults.editors, {
 $.fn.treeDataFilterListToTree = function(data, opt) {
 	if (opt.parentField) {
 		var idField = opt.idField || 'id';
-		var textField = opt.textField || 'text';
+		var textField = opt.textField || opt.treeField || 'text';
 		var iconField = opt.iconField || 'iconCls';
 		var parentField = opt.parentField || 'parentField';
 		var i, l, treeData = [], tmpMap = [];
@@ -622,6 +622,13 @@ $.fn.treegrid.defaults.loadFilter = function(data) {
 	return $.fn.treeDataFilterListToTree(data, $(this).data().treegrid.options);
 };
 
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展combotree，使combotree支持设置父节点，自动生成树形结构
+ * 增加parentField属性
+ */
+$.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
 
 
 /** 
@@ -698,13 +705,6 @@ $.extend($.fn.treegrid.methods,{
 	}  
 });
 
-/**
- * @author 李钰龙
- * @requires jQuery,EasyUI
- * 扩展combotree，使combotree支持设置父节点，自动生成树形结构
- * 增加parentField属性
- */
-$.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
 
 /**
  * @author 李钰龙
@@ -913,7 +913,7 @@ $.modalDialog = function(options) {
 };
 
 $.showMessage = function(options) {
-	var msgType = !!options && !!options.msgType ? options.msgType : "primary";
+	var msgType = !!options && !!options.msgType ? options.msgType : "warning";
 	var opts = $.extend({
 		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
 			+ '一般情况只用修改msg参数即可',
@@ -1387,7 +1387,7 @@ qc.main.closeTab = function(action) {
 	case "refresh":
 		var src;
 		if (currtabTitle != qc.main.onlyOpenTitle) {
-			src = currentTab.children("iframe").src;
+			src = currentTab.children("iframe").attr("src");
 			if(src != null && src.length > 0) {
 				qc.main.mainTabs.tabs('update', {
 					tab : currentTab,
