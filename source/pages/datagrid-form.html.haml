@@ -7,10 +7,10 @@
     %form
       .form-group
         %label Product
-        %input.form-control{placeholder: 'Enter Product ID', type: 'text'}
+        %input.easyui-textbox{'data-options' => "width:300, height:34", type: 'text'}
       .form-group
         %label Status
-        %input.form-control{placeholder: 'Enter Status', type: 'text'}
+        %input.easyui-textbox{'data-options' => "width:300, height:34", type: 'text'}
       %button.easyui-linkbutton.color-primary{type: 'submit', 'data-options'=>"iconCls:'fa fa-plus'"} Add
       %button.easyui-linkbutton.color-danger{type: 'submit', 'data-options'=>"iconCls:'fa fa-minus'"} Remove
   %div.easyui-panel{'data-options' => "region:'center', border:false"}

@@ -65,10 +65,10 @@
   %form
     .form-group
       %label Product ID
-      %input.form-control{placeholder: 'Product ID', type: 'text'}
+      %input.easyui-textbox{'data-options' => "width:450, height:34", type: 'text'}
     .form-group
       %label Status
-      %input.form-control{placeholder: 'Status', type: 'text'}
+      %input.easyui-textbox{'data-options' => "width:450, height:34", type: 'text'}
     .form-group
       %a.easyui-linkbutton.btn-jump.color-default{href: 'javascript:void(0)', iconCls: 'fa fa-check-circle-o', onclick: 'saveUser()'} Save
       %a.easyui-linkbutton.btn-jump.btn-dialog-close.color-warning{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close')"} Cancel
