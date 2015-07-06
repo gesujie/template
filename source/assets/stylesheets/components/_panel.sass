@@ -2,129 +2,43 @@
 // Panel
 // --------------------------------------------------
 
-
-////
-// Margin bottom space for accordion header
-.easyui-accordion
-  & .panel
-    margin-bottom: 5px
-
 .panel
   overflow: hidden
+  & > .panel-header
+    position: relative
+    background-color: $brand-primary
+    padding: $padding-large-vertical $padding-base-horizontal
+    +box-shadow(0 0 3px 0 rgba(119, 117, 117, 0.98))
+    & > .panel-icon,
+    & > .panel-tool
+      position: absolute
+      top: 32%
+      width: auto
+      color: lighten($brand-default, 50%)
+    & > .panel-tool
+      right: 10px
+    & > .panel-title
+      color: lighten($brand-default, 50%)
+      font-size: $font-size-base
+    & .panel-tool-icon
+      color: lighten($brand-default, 30%)
+      +transition(color, .28s, ease-out)
+      &:hover
+        color: lighten($brand-default, 80%)
+        +transition(color, .28s, ease-in)
+  & > .panel-footer
+    padding: $padding-large-vertical 15px
+    background-color: #E6E6E6
+    overflow: hidden
 
-.panel-bg
-  background-color: $panel-default-bg-color
-  & .panel-body
-    padding: 15px
-
-%panel-body
-  display: block
-  background-color: #fff
-  padding: 15px
+.panel-body
   overflow: auto
-
-.panel-default
-  & .panel-header
-    background-color: $panel-header-default-bg-color
-  & .panel-tool-close
-    color: #79828B
-  & .panel-tool-close
-    position: relative
-    top: -3px
-  & .panel-body
-    @extend %panel-body
-
-.panel-primary
-  & .panel-header
-    background-color: $panel-header-primary-bg-color
-  & .panel-icon,
-  & .panel-title,
-  & .panel-tool-close
-    color: #fff
-  & .panel-tool-close
-    position: relative
-    top: -3px
-  & .panel-body
-    @extend %panel-body
-
-.panel-info
-  & .panel-header
-    background-color: $panel-header-info-bg-color
-  & .panel-icon,
-  & .panel-title,
-  & .panel-tool-close
-    color: #fff
-  & .panel-tool-close
-    position: relative
-    top: -3px
-  & .panel-body
-    @extend %panel-body
-
-.panel-success
-  & .panel-header
-    background-color: $panel-header-success-bg-color
-  & .panel-icon,
-  & .panel-title,
-  & .panel-tool-close
-    color: #fff
-  & .panel-tool-close
-    position: relative
-    top: -3px
-  & .panel-body
-    @extend %panel-body
-
-.panel-warning
-  & .panel-header
-    background-color: $panel-header-warning-bg-color
-  & .panel-icon,
-  & .panel-title,
-  & .panel-tool-close
-    color: #fff
-  & .panel-tool-close
-    position: relative
-    top: -3px
-  & .panel-body
-    @extend %panel-body
-
-.panel-danger
-  & .panel-header
-    background-color: $panel-header-danger-bg-color
-  & .panel-icon,
-  & .panel-title,
-  & .panel-tool-close
-    color: #fff
-  & .panel-tool-close
-    position: relative
-    top: -3px
-  & .panel-body
-    @extend %panel-body
-
-.panel-header
-  position: relative
-  padding: $padding-large-vertical $padding-base-horizontal
-  +border-top-radius(2px)
-
-.panel-title
-  color: $panel-title-color
-  font-size: $panel-title-font-size
-  font-weight: 300
-
-.panel-footer
-  padding: $padding-large-vertical 15px
-  overflow: hidden
-  background-color: #E6E6E6
-  +border-bottom-radius(2px)
-
-.panel-with-icon
-  padding-left: 18px
-
-.panel-icon,
-.panel-tool
-  position: absolute
-  top: 32%
 
 .panel-noscroll
   overflow: hidden
+
+.panel-with-icon
+  padding-left: 18px
 
 .panel-fit,
 .panel-fit body
@@ -147,9 +61,23 @@
     +font-icons(FontAwesome, '\f110', 20px, #000)
     +animation (fa-spin 1s infinite steps(8))
 
-.panel-tool
-  right: 10px
-  width: auto
+.panel-default
+  +panel-variant($panel-header-bg: $brand-default)
+
+.panel-primary
+  +panel-variant($panel-header-bg: $brand-primary)
+
+.panel-info
+  +panel-variant($panel-header-bg: $brand-info)
+
+.panel-success
+  +panel-variant($panel-header-bg: $brand-success)
+
+.panel-warning
+  +panel-variant($panel-header-bg: $brand-warning)
+
+.panel-danger
+  +panel-variant($panel-header-bg: $brand-danger)
 
 .panel-tool-close
   &::before
@@ -175,7 +103,3 @@
   &::before
     +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
 
-.panel-border-primary
-  border-left: 1px solid $brand-primary
-  border-right: 1px solid $brand-primary
-  border-bottom: 1px solid $brand-primary

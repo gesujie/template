@@ -1,35 +1,36 @@
 -@title= 'Panel | Admin Page '
 -@page_classes= 'panel'
 
-
-
 .container.mb-10
   .col-4
-    .panel.panel-default
+    .panel
       .panel-header
         %i.panel-icon.fa.fa-paper-plane
         .panel-title.panel-with-icon
-          Default Panel
+          No Panel Class
       .panel-body
         %p
           =lorem.words 10
       .panel-footer
         %small
           =lorem.words 2
-
   .col-4
-    .panel.panel-primary
+    .panel.panel-default
       .panel-header
         %i.panel-icon.fa.fa-bell
         .panel-title.panel-with-icon
-          Primary Panel
+          Default Panel
+        .panel-tool.pull-right
+          =link_to '#', class:'panel-tool-icon' do
+            %i.fa.fa-info-circle
+          =link_to '#', class:'panel-tool-icon' do
+            %i.fa.fa-times-circle
       .panel-body
         %p
           =lorem.words 10
       .panel-footer
         %small
           =lorem.words 2
-
   .col-4.col-last
     .panel.panel-info
       .panel-header
@@ -42,8 +43,7 @@
       .panel-footer
         %small
           =lorem.words 2
-
-.container
+  %hr.col-12
   .col-4
     .panel.panel-success
       .panel-header
@@ -56,7 +56,6 @@
       .panel-footer
         %small
           =lorem.words 2
-
   .col-4
     .panel.panel-warning
       .panel-header
@@ -69,13 +68,25 @@
       .panel-footer
         %small
           =lorem.words 2
-
   .col-4.col-last
     .panel.panel-danger
       .panel-header
         %i.panel-icon.fa.fa-diamond
         .panel-title.panel-with-icon
           Danger Panel
+      .panel-body
+        %p
+          =lorem.words 10
+      .panel-footer
+        %small
+          =lorem.words 2
+  %hr.col-12
+  .col-4
+    .panel.panel-primary
+      .panel-header
+        %i.panel-icon.fa.fa-diamond
+        .panel-title.panel-with-icon
+          Primary Panel
       .panel-body
         %p
           =lorem.words 10

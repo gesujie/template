@@ -7,9 +7,23 @@
 @import "helpers/mixins"
 @import "helpers/functions"
 
+//Mixins
+@import "mixins/panel"
+
 // Reset and dependencies
 @import "base/normalize"
-@import "helpers/animation"
+
+// Core CSS
+@import "base/scaffolding"
+
+// Pages
+@import "pages/dashboard"
+@import "pages/colors"
+
+// Layouts
+@import "layout/header"
+@import "layout/sidebar"
+@import "layout/footer"
 
 // Components
 @import "components/accordion"
@@ -55,4 +69,4 @@
 @import "vendor/fontawesome/font-awesome"
 
 // Themes
-@import "theme"
+@import "themes/default"

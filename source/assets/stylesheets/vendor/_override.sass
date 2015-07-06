@@ -22,7 +22,7 @@
   border-top-width: 1px
 
 .panel-body-noborder
-  border-width: 0px
+  border-width: 0
 
 .panel-body-nobottom
   border-bottom-width: 0
@@ -55,7 +55,7 @@
     +inline-block()
     font-size: 18px
     color: #fff
-    font-family: $fontAwesome
+    font-family: FontAwesome
 
 .layout-button-right
   &::before
@@ -88,13 +88,13 @@
     +inline-block()
     margin-right: 4px
     content: '\f1ce'
-    font-family: $fontAwesome
+    font-family: FontAwesome
     +animation (fa-spin 2s infinite linear)
 
 .panel-tool-close
   &::before
     content: '\f00d'
-    font-family: $fontAwesome
+    font-family: FontAwesome
 
 .panel-tool-min
   //background: url('images/panel_tools.png') no-repeat 0px 0px
@@ -179,11 +179,11 @@
   border-style: solid
   .window-header
     background: transparent
-    padding: 0px 0px 6px 0px
+    padding: 0 0 6px 0
   .window-body
     border-width: 1px
     border-style: solid
-    border-top-width: 0px
+    border-top-width: 0
   .window-body-noheader
     border-top-width: 1px
   .panel-body-nobottom
@@ -231,9 +231,9 @@
   -webkit-border-radius: 5px 5px 5px 5px
   border-radius: 5px 5px 5px 5px
   background: #ccc
-  -moz-box-shadow: 2px 2px 3px #cccccc
-  -webkit-box-shadow: 2px 2px 3px #cccccc
-  box-shadow: 2px 2px 3px #cccccc
+  -moz-box-shadow: 2px 2px 3px #ccc
+  -webkit-box-shadow: 2px 2px 3px #ccc
+  box-shadow: 2px 2px 3px #ccc
   filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2,MakeShadow=false,ShadowOpacity=0.2)
 
 .window
@@ -646,7 +646,7 @@
   text-align: center
   &::before
     content: '\f078'
-    font-family: $fontAwesome
+    font-family: FontAwesome
     color: #222
 
 .combo-panel
@@ -1813,7 +1813,7 @@
   & .combo-arrow
     &::before
       content: '\f073'
-      font-family: $fontAwesome
+      font-family: FontAwesome
       color: #222
 
 .datebox-button
@@ -2389,7 +2389,7 @@
     content: '\f107'
     +inline-block()
     padding-right: 3px
-    font-family: $fontAwesome
+    font-family: FontAwesome
 
 .tree-expanded-hover
   //background: url('images/tree_icons.png') no-repeat -50px 0px
@@ -2399,7 +2399,7 @@
     content: '\f105'
     +inline-block()
     padding-right: 3px
-    font-family:  $fontAwesome
+    font-family: FontAwesome
 
 .tree-collapsed-hover
   //background: url('images/tree_icons.png') no-repeat -32px 0px

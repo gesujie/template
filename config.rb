@@ -27,6 +27,7 @@ page 'pages/accordion.html', layout: :resource
 page 'pages/numberspinner.html', layout: :resource
 page 'pages/layout.html', layout: :resource
 page 'pages/label.html', layout: :resource
+page 'pages/colors.html', layout: :resource
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

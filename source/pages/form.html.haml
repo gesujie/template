@@ -2,7 +2,7 @@
 -@page_classes= 'form'
 
 .easyui-layout{fit:'true'}
-  .easyui-panel{title:'Forms Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', cls:'panel-primary', collapsible:false"}
+  .easyui-panel{title:'Forms Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', cls:'panel-info', collapsible:false"}
     .container
       .col-6.mb-10
         .panel.panel-primary
@@ -52,6 +52,7 @@
               .form-group
                 .col-push-2.col-10
                   %button.easyui-linkbutton.color-primary{type: 'submit'} Sign in
+      %hr.col-12
       .col-8
         .panel.panel-primary
           .panel-header
@@ -75,6 +76,7 @@
               From Inline with by button
           .panel-body
             %input.easyui-textbox{'data-options' => "buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34"}
+      %hr.col-12
       .col-6
         .panel.panel-primary
           .panel-header
@@ -107,6 +109,7 @@
           .panel-body
             %form
               %input.easyui-searchbox{'data-options' => "prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
+      %hr.col-12
       .col-6
         .panel.panel-primary
           .panel-header
