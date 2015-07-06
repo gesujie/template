@@ -26,14 +26,14 @@ qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json
 
 //### Registry Login Button
 function btnRegistry(){
-    $('.panel-sing-up').addClass('active');
-    $('.panel-sing-in').addClass('passive');
+	$('.panel-sing-up').addClass('active');
+	$('.panel-sing-in').addClass('passive');
 }
 
 //### Registry Back Button
 function btnBack(){
-    $('.panel-sing-up').removeClass('active');
-    $('.panel-sing-in').removeClass('passive');
+	$('.panel-sing-up').removeClass('active');
+	$('.panel-sing-in').removeClass('passive');
 }
 
 //### Sidebar Badge Extend
@@ -46,3 +46,4 @@ $('#mainSlideMenu').tree({
 		return s;
 	}
 });
+

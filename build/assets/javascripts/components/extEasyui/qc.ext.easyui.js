@@ -22,6 +22,7 @@
 
 
 
+
 $.fn.panel.defaults.onBeforeDestroy = function() {
 	var frame = $('iframe', this);
 	try {

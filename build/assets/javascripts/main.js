@@ -16,6 +16,7 @@
  */
 
 
+
 Number.prototype.toPercent = function(){
 	return (Math.round(this * 10000)/100).toFixed(2) + '%';
 };
@@ -178,6 +179,7 @@ $.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
  * @requires jQuery,EasyUI
  * panel关闭时回收内存，主要用于layout使用iframe嵌入网页时的内存泄漏问题
  */
+
 
 
 
@@ -631,6 +633,7 @@ $.fn.treegrid.defaults.loadFilter = function(data) {
 $.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
 
 
+
 /** 
  * 扩展树表格级联勾选方法： 
  * @param {Object} container 
@@ -704,7 +707,6 @@ $.extend($.fn.treegrid.methods,{
 		}  
 	}  
 });
-
 
 /**
  * @author 李钰龙
@@ -917,7 +919,7 @@ $.showMessage = function(options) {
 	var opts = $.extend({
 		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
 			+ '一般情况只用修改msg参数即可',
-		showType: 'fade',
+		showType: 'slide',
 		width: 500,
 		height: 50,
 		noheader: true,
@@ -1182,8 +1184,6 @@ Namespace.register("qc.tabs");
  */
 
 
-
-
 Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;
@@ -1387,7 +1387,7 @@ qc.main.closeTab = function(action) {
 	case "refresh":
 		var src;
 		if (currtabTitle != qc.main.onlyOpenTitle) {
-			src = currentTab.children("iframe").attr("src");
+			src = currentTab.children("iframe").src;
 			if(src != null && src.length > 0) {
 				qc.main.mainTabs.tabs('update', {
 					tab : currentTab,
@@ -4645,6 +4645,7 @@ qc.main.msgShow = function(title, msgString, msgType) {
  * Docs & License: http://fullcalendar.io/
  * (c) 2015 Adam Shaw
  */
+
 
 
 (function(factory) {
@@ -15439,6 +15440,7 @@ return fc; // export for Node/CommonJS
  *
  * AMD API 内部的简单不完全实现，请忽略。只有当WebUploader被合并成一个文件的时候才会引入。
  */
+
 
 (function( root, factory ) {
     var modules = {},
