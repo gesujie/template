@@ -23,14 +23,15 @@
   margin-top: 1px
   overflow: visible
   font-size: 15px
+  color: #CECECE
 
 .window .window-header .panel-title
-  display: inline-block
-  vertical-align: top
+  +inline-block()
+  width: 80%
   color: $window-panel-title-color
 
 .window .window-header .panel-tool
-  position: initial
+  position: unset
   top: 0
   left: 0
   float: right
