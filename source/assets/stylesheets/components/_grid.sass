@@ -2,7 +2,7 @@
 // Grid
 // --------------------------------------------------
 
-$susy: (  columns: 12, gutters: 1/4, use-custom: (box-sizing: false))
+$susy: (columns: 12, gutters: 1/4, use-custom: (box-sizing: false))
 
 //**** Container
 .container
@@ -121,6 +121,15 @@ $susy: (  columns: 12, gutters: 1/4, use-custom: (box-sizing: false))
 
 .col-push-12
   +push(12 of 12)
+
+.clearfix
+  &:before,
+  &:after
+    content: ''
+    display: table
+
+  &:after
+    clear: both
 
 //**** Grid debug classes
 .debug

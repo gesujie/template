@@ -47,19 +47,19 @@
           </div>
           <div class='panel-body'>
             <form class='form-horizontal'>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <label class='col-2 control-label'>Email</label>
                 <div class='col-10 col-last'>
                   <input class='easyui-textbox' data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
                 </div>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <label class='col-2 control-label'>Password</label>
                 <div class='col-10 col-last'>
                   <input class='easyui-textbox' data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
                 </div>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <div class='col-push-2 col-10'>
                   <div class='checkbox'>
                     <label>
@@ -70,7 +70,7 @@
                   </div>
                 </div>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <div class='col-push-2 col-10'>
                   <button class='easyui-linkbutton color-primary' type='submit'>Sign in</button>
                 </div>
@@ -127,25 +127,25 @@
           </div>
           <div class='panel-body'>
             <form class='easyui-form' data-options='novalidate:true' id='ff' method='post'>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <label>Name:</label>
                 <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='name' type='text'>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <label>Email:</label>
                 <input class='easyui-textbox' data-options="required:true, width:480, height:34, validType:'email'" name='email' type='text'>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <label>Subject:</label>
                 <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='subject' type='text'>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <label>Message:</label>
                 <input class='easyui-textbox' data-options='multiline:true, width:480, height:60' name='message'>
               </div>
-              <div class='form-group'>
+              <div class='form-group col-12 mb-20'>
                 <button class='easyui-linkbutton color-primary' onclick='submitForm()' type='submit'>Submit</button>
-                <button class='easyui-linkbutton color-primary' onclick='clearForm()' type='submit'>Clear</button>
+                <button class='easyui-linkbutton color-danger' onclick='clearForm()' type='submit'>Clear</button>
               </div>
             </form>
           </div>
@@ -167,7 +167,57 @@
         </div>
       </div>
       <hr class='col-12'>
-      <div class='col-6'>
+      <div class='col-12'>
+        <div class='panel panel-primary'>
+          <div class='panel-header'>
+            <div class='panel-icon fa fa-align-justify'></div>
+            <div class='panel-title panel-with-icon'>
+              Form for Datagrid
+            </div>
+          </div>
+        </div>
+        <div class='panel-body'>
+          <form class='form-horizontal mt-30'>
+            <div class='col-3'>
+              <div class='form-group'>
+                <label class='col-3 control-label'>申请单号:</label>
+                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
+              </div>
+            </div>
+            <div class='col-3'>
+              <div class='form-group'>
+                <label class='col-3 control-label'>单位/部门:</label>
+                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
+              </div>
+            </div>
+            <div class='col-3 mt-30'>
+              <div class='form-group'>
+                <label class='col-3 control-label'>备注:</label>
+                <textarea class='col-2 easyui-textbox easyui-textarea' data-options='multiline:true, height:100'></textarea>
+              </div>
+            </div>
+            <div class='col-3 col-last mt-30'>
+              <a class='easyui-linkbutton color-success btn-jump l-btn l-btn-small'>
+                Button
+              </a>
+            </div>
+            <div class='col-3'>
+              <div class='form-group'>
+                <label class='col-3 control-label'>日期:</label>
+                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
+              </div>
+            </div>
+            <div class='col-3'>
+              <div class='form-group'>
+                <label class='col-3 control-label'>申请人:</label>
+                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class='col-12'>
+      <div class='col-12'>
         <div class='panel panel-primary'>
           <div class='panel-header'>
             <div class='panel-icon fa fa-align-justify'></div>

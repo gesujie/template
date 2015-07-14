@@ -5,16 +5,16 @@
   %a.easyui-linkbutton.color-primary{onclick: 'qc.demoWindow.openWindow()', iconCls:'fa fa-bookmark'} 打开窗口
 
 #qc-window-windowObj
-  %form.form-horizontal
-    .form-group
+  %form.form-horizontal.mt-20
+    .form-group.col-12.mb-20
       %label.col-2.control-label Email
       .col-10.col-last
         %input.easyui-textbox.form-control{'data-options' => 'width:330, height:35', placeholder: 'Email', type: 'email'}
-    .form-group
+    .form-group.col-12.mb-20
       %label.col-2.control-label Password
       .col-10.col-last
         %input.easyui-textbox.form-control{'data-options' => 'width:330, height:35', placeholder: 'Password', type: 'password'}
-    .form-group
+    .form-group.col-12.mb-20
       .col-push-2.col-10
         .checkbox
           %label
@@ -36,7 +36,7 @@
         iconCls: 'fa fa-columns',
         modal: true,
         width: 450,
-        height: 250,
+        height: 280,
         minimizable: false,
         closable: true
       });

@@ -132,3 +132,18 @@
     &:focus
       background-color: darken($color, 10%)
 
+//
+// panel Mixin
+// --------------------------------------------------
+=panel-variant($panel-header-bg)
+  & > .panel-header
+    background-color: $panel-header-bg
+    & > .panel-tool-close
+      position: relative
+      top: -3px
+      color: #79828B
+  & > .panel-body
+    background-color: #F1F0F0
+    padding: 15px
+  & .panel-footer
+    border-top: 1px solid #d7d7d7

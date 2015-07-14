@@ -7,7 +7,7 @@ body
   background-color: $body-bg
 
 .header
-  background-color: $header-bg-color
+  background-color: $header-bg
 
 .logo
   float: left
@@ -69,45 +69,34 @@ body
 .sidebar-header
   background-color: $sidebar-header-bg
   +border-top-radius(0)
-
   & .panel-title
-    color: $sidebar-color
+    color: $sidebar-title-color
 
 .sidebar
   width: 250px
   height: 100%
   background-color: $sidebar-bg
   overflow: auto
-
   & .tree-indent
     float: left
     width: 10px
-
-
   & .tree-node
     height: 100%
     padding: $padding-large-vertical $padding-base-horizontal
-
   & .tree-node-hover
     background-color: $sidebar-hover-bg
-
   & .tree-icon
     color: #ECECE9
-
   & .tree-node-selected
-    background-color: $sidebar-selected-bg
-
+    background-color: $sidebar-active-bg
     & .tree-expanded,
     & .tree-collapsed
       &::before
         color: #424344
-
     & .tree-title
-      color: #79828B
-
+      color: $sidebar-title-color
     & .tree-icon
-      color: #79828B
-
+      color: $sidebar-title-color
   & .tree-title
     width: 80%
     height: 100%
@@ -115,16 +104,14 @@ body
     overflow: hidden
     text-overflow: ellipsis
     font-weight: 300
-    color: $sidebar-color
+    color: $sidebar-title-color
     vertical-align: bottom
-
   & .tree-expanded
     float: right
     width: 18px
     display: table
     text-align: center
     background: none
-
     &::before
       +font-icons(FontAwesome, '\f107', inherit, #ECECE9)
       display: table-cell
@@ -132,20 +119,17 @@ body
       height: 18px
       vertical-align: middle
       +transition (color 0.28s ease-in)
-
     &:hover::before
       +font-icons(FontAwesome, '\f107', inherit, #79828B)
       +border-radius (50%)
       background-color: #ECECE9
       +transition (color 0.28s ease-out)
-
   & .tree-collapsed
     float: right
     width: 18px
     display: table
     text-align: center
     background: none
-
     &::before
       display: table-cell
       width: 18px
@@ -153,7 +137,6 @@ body
       vertical-align: middle
       +font-icons(FontAwesome, '\f104', inherit, #ECECE9)
       +transition (color 0.28s ease-in)
-
     &:hover::before
       +font-icons(FontAwesome, '\f104', inherit, #79828B)
       +border-radius (50%)
@@ -162,7 +145,7 @@ body
 
 .sidebar-nav
   & ul
-    background: rgb(8, 13, 21)
+    background-color: $sidebar-accordion-body-bg
 
 .jumbotron
   display: table
