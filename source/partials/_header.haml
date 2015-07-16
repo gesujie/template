@@ -1,40 +1,40 @@
-.header{'data-options' => "region:'north', split:false, border:false, height:45"}
+.header{'data-options':"region:'north', split:false, border:false, height:45"}
   .logo
     %span.logo-text 黔驰UI框架
   .pull-right.navbar-header
     %ul.nav.nav-rounded
       %li.notice
-        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options'=>"menu:'#mm1', hasDownArrow:false, plain:false" do
+        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm1', hasDownArrow:false, plain:false" do
           %i.fa.fa-bell
       %li
-        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options'=>"menu:'#mm2', hasDownArrow:false, plain:false" do
+        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm2', hasDownArrow:false, plain:false" do
           %i.fa.fa-user
       %li
         =link_to 'javascript:void(0)' do
           %i.fa.fa-power-off
 
-#mm1{'data-options'=>' itemHeight:32'}
-  %div{'data-options' => "iconCls:'fa fa-user-plus'"}
+#mm1{'data-options':' itemHeight:32'}
+  %div{'data-options':"iconCls:'fa fa-user-plus'"}
     %span
       New User
-  %div{'data-options' => "iconCls:'fa fa-inbox'"}
+  %div{'data-options':"iconCls:'fa fa-inbox'"}
     %span
       E-mail Inbox
     %span.badge.badge-info
       3
-  %div{'data-options' => "iconCls:'fa fa-warning'"}
+  %div{'data-options':"iconCls:'fa fa-warning'"}
     %span
       Dashboard Error
     %span.badge.badge-info
       1
 
-#mm2{'data-options'=>' itemHeight:32'}
-  %div{'data-options' => "iconCls:'fa fa-user'"}
+#mm2{'data-options':' itemHeight:32'}
+  %div{'data-options':"iconCls:'fa fa-user'"}
     %span
       Profile
-  %div{'data-options' => "iconCls:'fa fa-unlock-alt'"}
+  %div{'data-options':"iconCls:'fa fa-unlock-alt'"}
     %span
       Password
-  %div{'data-options' => "iconCls:'fa fa-gear'"}
+  %div{'data-options':"iconCls:'fa fa-gear'"}
     %span
       Settings

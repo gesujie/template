@@ -13,62 +13,62 @@
           %form.form-inline.mb-10
             .form-group
               %label Date From:
-              %input.form-control.easyui-datebox{'data-options'=>'height:32'}
+              %input.form-control.easyui-datebox{'data-options':'height:32'}
             .form-group
               %label To:
-              %input.form-control.easyui-datebox{'data-options'=>'height:32'}
+              %input.form-control.easyui-datebox{'data-options':'height:32'}
             .form-group
               %label Language:
-              %select.form-control.easyui-combobox{'data-options'=>"width:'180', height:'32'", panelheight: 'auto'}
+              %select.form-control.easyui-combobox{'data-options':"width:'180', height:'32'", panelheight: 'auto'}
                 %option{value: 'java'} Java
                 %option{value: 'c'} C
                 %option{value: 'basic'} Basic
                 %option{value: 'perl'} Perl
                 %option{value: 'python'} Python
-            =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton color-default btn-jump'
-            =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton color-default btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')"
+            =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton btn-default btn-jump'
+            =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton btn-default btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')"
           %form.form-inline
             .form-group
               %label Date From:
-              %input.form-control.easyui-datebox{'data-options'=>'height:32'}
+              %input.form-control.easyui-datebox{'data-options':'height:32'}
             .form-group
               %label To:
-              %input.form-control.easyui-datebox{'data-options'=>'height:32'}
+              %input.form-control.easyui-datebox{'data-options':'height:32'}
             .form-group
               %label Language:
-              %select.form-control.easyui-combobox{'data-options'=>"width:'180', height:'32'", panelheight: 'auto'}
+              %select.form-control.easyui-combobox{'data-options':"width:'180', height:'32'", panelheight: 'auto'}
                 %option{value: 'java'} Java
                 %option{value: 'c'} C
                 %option{value: 'basic'} Basic
                 %option{value: 'perl'} Perl
                 %option{value: 'python'} Python
-            =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton color-default btn-jump'
-            =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton color-default btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')"
+            =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton btn-default btn-jump'
+            =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton btn-default btn-jump btn-dialog', onclick:"$('#dlg-add').dialog('open')"
     .col-12
       .panel.panel-primary
         .panel-header
           .panel-icon.fa.fa-database
           .panel-title.panel-with-icon
             Data Grid
-        %table.easyui-datagrid.datagrid-bg{'data-options' => "height:500, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
+        %table.easyui-datagrid.datagrid-bg{'data-options':"height:500, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
           %thead
             %tr
-              %th{'data-options' => "field:'ck', checkbox:'true'"}
-              %th{'data-options' => "field:'itemid', sortable:'true', width:80"} Item ID
-              %th{'data-options' => "field:'productid', sortable:'true', width:100"} Product
-              %th{'data-options' => "field:'listprice', sortable:'true', width:80"} List Price
-              %th{'data-options' => "field:'unitcost', sortable:'true', width:80"} Unit Cost
-              %th{'data-options' => "field:'attr1', sortable:'true', width:250"} Attribute
-              %th{'data-options' => "field:'status', sortable:'true', width:60"} Status
+              %th{'data-options':"field:'ck', checkbox:'true'"}
+              %th{'data-options':"field:'itemid', sortable:'true', width:80"} Item ID
+              %th{'data-options':"field:'productid', sortable:'true', width:100"} Product
+              %th{'data-options':"field:'listprice', sortable:'true', width:80"} List Price
+              %th{'data-options':"field:'unitcost', sortable:'true', width:80"} Unit Cost
+              %th{'data-options':"field:'attr1', sortable:'true', width:250"} Attribute
+              %th{'data-options':"field:'status', sortable:'true', width:60"} Status
 
-.easyui-dialog#dlg-add{'data-options'=>"iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:250", title:'Add new rows'}
+.easyui-dialog#dlg-add{'data-options':"iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:250", title:'Add new rows'}
   %form
-    .form-group
+    .form-group.col-12.mb-10
       %label Product ID
-      %input.easyui-textbox{'data-options' => "width:450, height:34", type: 'text'}
-    .form-group
+      %input.easyui-textbox{'data-options':'width:450, height:34', type: 'text'}
+    .form-group.col-12.mb-10
       %label Status
-      %input.easyui-textbox{'data-options' => "width:450, height:34", type: 'text'}
+      %input.easyui-textbox{'data-options':'width:450, height:34', type: 'text'}
     .form-group
-      %a.easyui-linkbutton.btn-jump.color-default{href: 'javascript:void(0)', iconCls: 'fa fa-check-circle-o', onclick: 'saveUser()'} Save
-      %a.easyui-linkbutton.btn-jump.btn-dialog-close.color-warning{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close')"} Cancel
+      %a.easyui-linkbutton.btn-jump.btn-default{href: 'javascript:void(0)', iconCls: 'fa fa-check-circle-o', onclick: 'saveUser()'} Save
+      %a.easyui-linkbutton.btn-jump.btn-dialog-close.btn-warning{href: 'javascript:void(0)', iconCls: 'fa fa-times-circle', onclick: "$('#dlg-add').dialog('close')"} Cancel

@@ -2,7 +2,6 @@
 // Link Button
 // --------------------------------------------------
 
-
 .l-btn
   +inline-block()
   padding: 8px 12px
@@ -25,12 +24,11 @@
   margin-top: -6px
 
 .l-btn span span .l-btn-empty
-  display: inline-block
+  +inline-block()
   width: 16px
   height: 24px
   margin: 0
   font-size: 1px
-  vertical-align: top
 
 .l-btn span .l-btn-icon-left
   padding: 0 0 0 20px
@@ -118,7 +116,6 @@
   +border-radius(2px)
   +transition(background-color, 0.28s, ease-out)
   color: #fff
-
   &:hover
     +box-shadow(0 1px 6px 0 rgba(0,0,0,.12), 0 1px 6px 0 rgba(0,0,0,.12))
     +transition(background-color, 0.28s, ease-in)

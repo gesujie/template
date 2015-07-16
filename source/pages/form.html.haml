@@ -2,7 +2,7 @@
 -@page_classes= 'form'
 
 .easyui-layout{fit:'true'}
-  .easyui-panel{title:'Forms Live Example', 'data-options' => "region:'center', iconCls:'fa fa-align-justify', cls:'panel-info', collapsible:false"}
+  .easyui-panel{title:'Forms Live Example', 'data-options':"region:'center', iconCls:'fa fa-align-justify', cls:'panel-info', collapsible:false"}
     .container
       .col-6.mb-10
         .panel.panel-primary
@@ -14,10 +14,10 @@
             %form
               .form-group
                 %label Email address
-                %input.easyui-textbox{'data-options' => "prompt:'Email', width:450, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+                %input.easyui-textbox{'data-options':"prompt:'Email', width:450, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
               .form-group
                 %label Password
-                %input.easyui-textbox{'data-options' => "prompt:'Password', width:450, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+                %input.easyui-textbox{'data-options':"prompt:'Password', width:450, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
               .form-group
                 %label File input
                 %input{type: 'file'}
@@ -25,8 +25,8 @@
               .checkbox
                 %label
                   %input{type: 'checkbox'}
-                    Check me out
-              %button.easyui-linkbutton.color-success.pull-right{type: 'submit'} Submit
+                  Check me out
+              %button.easyui-linkbutton.btn-success.pull-left{type: 'submit'} Submit
       .col-6.col-last.mb-10
         .panel.panel-primary
           .panel-header
@@ -38,20 +38,20 @@
               .form-group.col-12.mb-20
                 %label.col-2.control-label Email
                 .col-10.col-last
-                  %input.easyui-textbox{'data-options' => "prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+                  %input.easyui-textbox{'data-options':"prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
               .form-group.col-12.mb-20
                 %label.col-2.control-label Password
                 .col-10.col-last
-                  %input.easyui-textbox{'data-options' => "prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+                  %input.easyui-textbox{'data-options':"prompt:'Email', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'text'}
               .form-group.col-12.mb-20
                 .col-push-2.col-10
                   .checkbox
                     %label
-                      %input{type: 'checkbox'}
-                        Remember me
+                      %input{type:'checkbox'}
+                      Remember me
               .form-group.col-12.mb-20
                 .col-push-2.col-10
-                  %button.easyui-linkbutton.color-primary{type: 'submit'} Sign in
+                  %button.easyui-linkbutton.btn-primary{type: 'submit'} Sign in
       %hr.col-12
       .col-8
         .panel.panel-primary
@@ -63,11 +63,11 @@
             %form.form-inline
               .form-group
                 %label Email address
-                %input.easyui-textbox{'data-options' => "prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+                %input.easyui-textbox{'data-options':"prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
               .form-group
                 %label Password
-                %input.easyui-textbox{'data-options' => "prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
-              %button.easyui-linkbutton.color-primary{type: 'submit'} Submit
+                %input.easyui-textbox{'data-options':"prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+              %button.easyui-linkbutton.btn-primary{type: 'submit'} Submit
       .col-4.col-last
         .panel.panel-primary
           .panel-header
@@ -75,7 +75,7 @@
             .panel-title.panel-with-icon
               From Inline with by button
           .panel-body
-            %input.easyui-textbox{'data-options' => "buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34"}
+            %input.easyui-textbox{'data-options':"buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34"}
       %hr.col-12
       .col-6
         .panel.panel-primary
@@ -84,22 +84,22 @@
             .panel-title.panel-with-icon
               Validate Form on Submit
           .panel-body
-            %form.easyui-form#ff{'data-options' => 'novalidate:true', method: 'post'}
+            %form.easyui-form#ff{'data-options':'novalidate:true', method: 'post'}
               .form-group.col-12.mb-20
                 %label Name:
-                %input.easyui-textbox{'data-options' => 'required:true, width:480, height:34', name: 'name', type: 'text'}
+                %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'name', type: 'text'}
               .form-group.col-12.mb-20
                 %label Email:
-                %input.easyui-textbox{'data-options' => "required:true, width:480, height:34, validType:'email'", name: 'email', type: 'text'}
+                %input.easyui-textbox{'data-options':"required:true, width:480, height:34, validType:'email'", name: 'email', type: 'text'}
               .form-group.col-12.mb-20
                 %label Subject:
-                %input.easyui-textbox{'data-options' => 'required:true, width:480, height:34', name: 'subject', type: 'text'}
+                %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'subject', type: 'text'}
               .form-group.col-12.mb-20
                 %label Message:
-                %input.easyui-textbox{'data-options' => 'multiline:true, width:480, height:60', name: 'message'}
+                %input.easyui-textbox{'data-options':'multiline:true, width:480, height:60', name: 'message'}
               .form-group.col-12.mb-20
-                %button.easyui-linkbutton.color-primary{onclick: 'submitForm()', type: 'submit'} Submit
-                %button.easyui-linkbutton.color-danger{onclick: 'clearForm()', type: 'submit'} Clear
+                %button.easyui-linkbutton.btn-primary{onclick: 'submitForm()', type: 'submit'} Submit
+                %button.easyui-linkbutton.btn-danger{onclick: 'clearForm()', type: 'submit'} Clear
       .col-6.col-last
         .panel.panel-primary
           .panel-header
@@ -108,7 +108,7 @@
               Search Box
           .panel-body
             %form
-              %input.easyui-searchbox{'data-options' => "prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
+              %input.easyui-searchbox{'data-options':"prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
       %hr.col-12
       .col-12
         .panel.panel-primary
@@ -117,7 +117,7 @@
             .panel-title.panel-with-icon
               Form for Datagrid
         .panel-body
-          %form.form-horizontal.mt-30
+          %form.form-horizontal.form-absolute.mt-30
             .col-3
               .form-group
                 %label.col-3.control-label 申请单号:
@@ -127,11 +127,11 @@
                 %label.col-3.control-label  单位/部门:
                 %input.col-2.easyui-textbox{'data-options': 'width:180, height:34', type: 'text'}
             .col-3.mt-30
-              .form-group
+              .form-group.form-textarea
                 %label.col-3.control-label 备注:
-                %textarea.col-2.easyui-textbox.easyui-textarea{'data-options':'multiline:true, height:100'}
+                %textarea.col-2.easyui-textbox{'data-options':'multiline:true, height:95'}
             .col-3.col-last.mt-30
-              %a.easyui-linkbutton.color-success.btn-jump.l-btn.l-btn-small
+              %a.easyui-linkbutton.btn-success.btn-jump.l-btn.l-btn-small
                 Button
             .col-3
               .form-group
@@ -151,17 +151,17 @@
           .panel-body
             %form
               %p List Price:
-              %input.easyui-numberbox{'data-options'=>'height:34', precision: '2', value: '234.56'}
+              %input.easyui-numberbox{'data-options':'height:34', precision: '2', value: '234.56'}
               %p Amount:
-              %input.easyui-numberbox{'data-options'=>'height:34', value: '100'}
+              %input.easyui-numberbox{'data-options':'height:34', value: '100'}
               %p Number in the United States
-              %input.easyui-numberbox{'data-options' => "precision:2, groupSeparator:',', height:34", value: '1234567.89'}
+              %input.easyui-numberbox{'data-options':"precision:2, groupSeparator:',', height:34", value: '1234567.89'}
               %p Number in France
-              %input.easyui-numberbox{'data-options' => "precision:2,groupSeparator:' ',decimalSeparator:',', height:34", value: '1234567.89'}
+              %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:' ',decimalSeparator:',', height:34", value: '1234567.89'}
               %p Currency:USD
-              %input.easyui-numberbox{'data-options' => "precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34", value: '1234567.89'}
+              %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34", value: '1234567.89'}
               %p Currency:EUR
-              %input.easyui-numberbox{'data-options' => "precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34", value: '1234567.89'}
+              %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34", value: '1234567.89'}
 
 :javascript
   //Search Box

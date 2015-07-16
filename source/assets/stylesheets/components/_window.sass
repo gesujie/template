@@ -5,6 +5,7 @@
 
 .window
   overflow: hidden
+  background-color: #fff
 
 .window .window-header
   padding-top: 8px
@@ -12,14 +13,12 @@
   background-color: $window-header-color
   & .panel-tool-close
     color: #79828B
+    &:hover
+      color: $brand-danger
 
 .window .window-header .panel-icon
   position: unset
-  top: 0
-  left: 0
   float: left
-  width: auto
-  height: auto
   margin-top: 2px
   overflow: visible
   font-size: 15px
@@ -32,11 +31,7 @@
 
 .window .window-header .panel-tool
   position: unset
-  top: 0
-  left: 0
   float: right
-  width: auto
-  height: auto
   margin-top: 0
   overflow: visible
 
@@ -73,9 +68,6 @@
     font-weight: 300
 
 .window
-  background-color: #fff
-
-.window
   & .panel-tool
     & a
       margin: 0 1px
@@ -87,3 +79,6 @@
 .window .panel-footer
   position: relative
   top: -1px
+
+
+

@@ -3,8 +3,24 @@
 // --------------------------------------------------
 
 hr
-  margin-top:    $line-height-computed
+  margin-top: $line-height-computed
   margin-bottom: $line-height-computed
   border: 0
   border-top: 1px solid $hr-border
 
+a
+  +transition(color, 300ms, ease-out)
+  &:hover,
+  &:focus,
+  &:active
+    +transition(color, 300ms, ease-in)
+
+.sr-only
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0,0,0,0)
+  border: 0

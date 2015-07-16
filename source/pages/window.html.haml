@@ -2,7 +2,7 @@
 -@page_classes= 'window easyui-layout'
 
 .easyui-layout{fit: 'true'}
-  %a.easyui-linkbutton.color-primary{onclick: 'qc.demoWindow.openWindow()', iconCls:'fa fa-bookmark'} 打开窗口
+  %a.easyui-linkbutton.btn-primary{onclick: 'qc.demoWindow.openWindow()', iconCls:'fa fa-bookmark'} 打开窗口
 
 #qc-window-windowObj
   %form.form-horizontal.mt-20
@@ -22,8 +22,8 @@
               Remember me
     .form-group
       .col-push-2.col-10
-        %a.easyui-linkbutton.color-info.text-center{href: 'javascript:void(0)', iconCls:'fa fa-user-plus'} Sign up
-        %a.easyui-linkbutton.color-primary.mr-10.text-center{href: 'javascript:void(0)', iconCls: 'fa fa-sign-in'} Sign in
+        %a.easyui-linkbutton.btn-info.text-center{href: 'javascript:void(0)', iconCls:'fa fa-user-plus'} Sign up
+        %a.easyui-linkbutton.btn-primary.mr-10.text-center{href: 'javascript:void(0)', iconCls: 'fa fa-sign-in'} Sign in
 
 :javascript
   Namespace.register("qc.demoWindow");

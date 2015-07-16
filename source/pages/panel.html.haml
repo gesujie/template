@@ -3,7 +3,7 @@
 
 .container.mb-10
   .col-4
-    .panel
+    .panel.panel-default
       .panel-header
         %i.panel-icon.fa.fa-paper-plane
         .panel-title.panel-with-icon
@@ -15,16 +15,11 @@
         %small
           =lorem.words 2
   .col-4
-    .panel.panel-default
+    .panel.panel-primary
       .panel-header
-        %i.panel-icon.fa.fa-bell
+        %i.panel-icon.fa.fa-diamond
         .panel-title.panel-with-icon
-          Default Panel
-        .panel-tool.pull-right
-          =link_to '#', class:'panel-tool-icon' do
-            %i.fa.fa-info-circle
-          =link_to '#', class:'panel-tool-icon' do
-            %i.fa.fa-times-circle
+          Primary Panel
       .panel-body
         %p
           =lorem.words 10
@@ -80,16 +75,4 @@
       .panel-footer
         %small
           =lorem.words 2
-  %hr.col-12
-  .col-4
-    .panel.panel-primary
-      .panel-header
-        %i.panel-icon.fa.fa-diamond
-        .panel-title.panel-with-icon
-          Primary Panel
-      .panel-body
-        %p
-          =lorem.words 10
-      .panel-footer
-        %small
-          =lorem.words 2
+

@@ -2,15 +2,13 @@
 // Combobox
 // --------------------------------------------------
 
-
 .combobox-item,
 .combobox-group
   font-size: 12px
   padding: 8px 0 8px 3px
   +transition(background-color, 0.28s, ease-out)
-  border-bottom: 1px dotted #ccc
-  &:last-child
-    border-bottom: 0
+  &:not(:last-child)
+    border-bottom: 1px dotted #ccc
 
 .combobox-item-disabled
   +opacity(0.5)

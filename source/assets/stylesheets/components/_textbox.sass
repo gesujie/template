@@ -16,7 +16,6 @@
     +transition(background-color, 0.28s, ease-out)
     font-weight: 300
     font-size: $font-size-small
-
     &:focus
       background-color: #d7d7d7
       color: #000
@@ -101,4 +100,10 @@
 .textbox-icon-readonly
   cursor: default
 
+.form-absolute
+  position: relative
 
+.form-textarea
+  & .textbox
+    position: absolute
+    top: -10px
