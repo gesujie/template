@@ -1,0 +1,87 @@
+/*------------------------------------*
+    #SIDEBAR
+/*------------------------------------*
+
+
+.sidebar-header
+  background-color: $sidebar-header-bg
+  +border-top-radius(0)
+  & .panel-title
+    color: $sidebar-title-color
+
+.sidebar
+  width: 250px
+  height: 100%
+  background-color: $sidebar-bg
+  overflow: auto
+  & .tree-indent
+    float: left
+    width: 10px
+  & .tree-node
+    height: 100%
+    padding: $padding-large-vertical $padding-base-horizontal
+  & .tree-node-hover
+    background-color: $sidebar-hover-bg
+  & .tree-icon
+    color: $sidebar-icon-color
+    font-size: 13px
+  & .tree-node-selected
+    background-color: $sidebar-active-bg
+    & .tree-expanded,
+    & .tree-collapsed
+      &::before
+        color: #424344
+    & .tree-title
+      color: $sidebar-title-color
+    & .tree-icon
+      color: $sidebar-title-color
+  & .tree-title
+    width: 80%
+    height: 100%
+    margin-left: 3px
+    line-height: 12px
+    overflow: hidden
+    text-overflow: ellipsis
+    font-weight: 300
+    color: $sidebar-title-color
+    vertical-align: bottom
+  & .tree-expanded
+    float: right
+    width: 18px
+    display: table
+    text-align: center
+    background: none
+    &::before
+      +font-icons(FontAwesome, '\f107', inherit, #616161)
+      display: table-cell
+      width: 18px
+      height: 18px
+      vertical-align: middle
+      +transition (color 0.28s ease-in)
+    &:hover::before
+      +font-icons(FontAwesome, '\f107', inherit, #fff)
+      +border-radius (50%)
+      background-color: #616161
+      +transition (color 0.28s ease-out)
+  & .tree-collapsed
+    float: right
+    width: 18px
+    display: table
+    text-align: center
+    background: none
+    &::before
+      display: table-cell
+      width: 18px
+      height: 18px
+      vertical-align: middle
+      +font-icons(FontAwesome, '\f104', inherit, #616161)
+      +transition (color 0.28s ease-in)
+    &:hover::before
+      +font-icons(FontAwesome, '\f104', inherit, #fff)
+      +border-radius (50%)
+      background-color: #616161
+      +transition (color 0.28s ease-out)
+
+.sidebar-nav
+  & ul
+    background-color: $sidebar-accordion-body-bg

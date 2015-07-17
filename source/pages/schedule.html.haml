@@ -2,16 +2,9 @@
 -@page_classes= 'calendar easyui-layout'
 
 .easyui-layout{fit:'true'}
-  %div.easyui-panel{'data-options' => "region:'center', tools:'#panel-custom-tool', cls:'panel-primary', title:'Schedule', iconCls:'fa fa-calendar', collapsible:false"}
-    #panel-custom-tool
-      %span#getDate.display-date
-      =link_to 'javascript:void(0)', onclick:'prevButton()', title:'Prev', class:'fa fa-angle-left schedule-tool' do
-        %span.sr-only Prev Button
-      =link_to 'javascript:void(0)', onclick:'todayButton()', title:'Today', class:'fa fa-circle schedule-tool' do
-        %span.sr-only Today Button
-      =link_to 'javascript:void(0)', onclick:'nextButton()', title:'Next', class:'fa fa-angle-right schedule-tool' do
-        %span.sr-only Next Button
-    #schedule
+  .easyui-panel{'data-options':"region:'center', tools:'#panel-custom-tool', cls:'panel-primary', title:'Schedule', iconCls:'fa fa-calendar', collapsible:false"}
+    .col-12
+      #schedule
 
 :javascript
   $(document).ready(function() {

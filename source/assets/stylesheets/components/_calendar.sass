@@ -1,41 +1,46 @@
-//
-// Calendar
-// --------------------------------------------------
+/*------------------------------------*
+    #CALENDAR
+/*------------------------------------*
+
 
 .calendar
   padding: 1px
   overflow: hidden
-  table
-    table-layout: fixed
-    border-collapse: separate
-    font-size: 12px
-    width: 100%
-    height: 100%
-    td,
-    th
-      font-size: 12px
 
-.calendar-noborder
-  border: 0
+.calendar-dtable,
+.calendar-mtable
+  table-layout: fixed
+  border-collapse: separate
+  font-size: 12px
+  width: 100%
+  height: 100%
+  td,
+  th
+    text-align: center
+    font-size: 12px
+
+.calendar-dtable
+  & > tr
+    background-color: lighten(#d7d7d7, 5%)
 
 .calendar-header
   position: relative
-  height: 22px
+  background-color: #d7d7d7
+  padding-top: 4px
+  padding-bottom: 4px
 
 .calendar-title
   text-align: center
-  height: 22px
 
-  span
-    position: relative
-    top: 2px
-    display: inline-block
-    height: 18px
-    padding: 0 3px
-    line-height: 18px
-    font-size: 12px
-    cursor: pointer
-    +border-radius(2px)
+.calendar-text
+  position: relative
+  top: 2px
+  +inline-block()
+  padding-left: 3px
+  padding-right: 3px
+  font-size: 12px
+  cursor: pointer
+  +border-radius(2px)
 
 .calendar-prevmonth,
 .calendar-nextmonth,
@@ -43,11 +48,9 @@
 .calendar-nextyear
   position: absolute
   top: 50%
-  width: 14px
-  height: 14px
-  margin-top: -7px
+  padding: 3px 4px
+  margin-top: -12px
   cursor: pointer
-  font-size: 1px
   +border-radius(2px)
   text-align: center
 
@@ -73,14 +76,12 @@
 
 .calendar-body
   position: relative
-  th,
-  td
-    text-align: center
 
 .calendar-day
   padding: 1px
   cursor: pointer
-  +border-radius(2px)
+  color: darken(#d7d7d7, 60%)
+  background-color: lighten(#d7d7d7, 10%)
 
 .calendar-other-month
   +opacity(0.3)
@@ -136,18 +137,18 @@
 .calendar-menu-month
   color: #4d4d4d
 
-.calendar-day
-  color: #000
-
 .calendar-sunday
   color: #db1e2d
 
 .calendar-saturday
-  color: #00aa9a
+  color: $brand-warning
 
 .calendar-today
-  border-bottom: 1px solid #22beef
-  +border-radius(0)
+  border: 1px solid $brand-success
+
+.calendar-selected
+  &.calendar-today
+    border-bottom: 1px solid $brand-success
 
 .calendar-header
   border-bottom: 1px solid #D7DDE4
@@ -166,13 +167,8 @@
 .calendar-hover,
 .calendar-nav-hover,
 .calendar-menu-hover
-  background-color: lighten(#009688, 10%)
+  background-color: lighten(#d7d7d7, 30%)
   color: #000
-
-.calendar-hover
-  padding: 0
 
 .calendar-selected
-  padding: 0
-  background-color: #ffe48d
-  color: #000
+  border: 1px solid darken(#d7d7d7, 20%)

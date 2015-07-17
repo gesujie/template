@@ -2,10 +2,38 @@
 -@page_classes= 'label'
 
 .container
-  .col-12.mb-30
+  .col-12
+    %h1 Labels
     %span.label.label-default Default
     %span.label.label-primary Primary
     %span.label.label-success Success
     %span.label.label-info Info
     %span.label.label-warning Warning
     %span.label.label-danger Danger
+  %hr.col-12
+  .col-12
+    %h1 Button Color Variables
+    =link_to 'Button Default', 'javascript:void()', class:'easyui-linkbutton l-btn-default'
+    =link_to 'Button Primary', 'javascript:void()', class:'easyui-linkbutton l-btn-primary'
+    =link_to 'Button Info', 'javascript:void()', class:'easyui-linkbutton l-btn-info'
+    =link_to 'Button Success', 'javascript:void()', class:'easyui-linkbutton l-btn-success'
+    =link_to 'Button Warning', 'javascript:void()', class:'easyui-linkbutton l-btn-warning'
+    =link_to 'Button Danger', 'javascript:void()', class:'easyui-linkbutton l-btn-danger'
+  %hr.col-12
+  .col-12
+    =link_to 'Button With Icon', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-user'"
+    =link_to 'Button Disabled', 'javascript:void()', class:'easyui-linkbutton l-btn-danger', 'data-options':"iconCls:'fa fa-lock', disabled:true"
+  %hr.col-12
+  .col-12
+    =link_to 'Large', 'javascript:void()', class:'easyui-linkbutton l-btn-default', 'data-options':"iconCls:'fa fa-camera fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Large', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-calendar fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Large', 'javascript:void()', class:'easyui-linkbutton l-btn-info', 'data-options':"iconCls:'fa fa-dashboard fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Large', 'javascript:void()', class:'easyui-linkbutton l-btn-success', 'data-options':"iconCls:'fa fa-envelope-o fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Large', 'javascript:void()', class:'easyui-linkbutton l-btn-warning', 'data-options':"iconCls:'fa fa-gear fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Large', 'javascript:void()', class:'easyui-linkbutton l-btn-danger', 'data-options':"iconCls:'fa fa-folder fa-2x', size:'large', iconAlign:'top'"
+  %hr.col-12
+  .col-12
+    =link_to 'Left', 'javascript:void()', class:'easyui-linkbutton l-btn-default', 'data-options':"iconCls:'fa fa-arrow-circle-o-left', iconAlign:'left'"
+    =link_to 'Right', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-trash', iconAlign:'right'"
+    =link_to 'Top', 'javascript:void()', class:'easyui-linkbutton l-btn-info', 'data-options':"iconCls:'fa fa-times', iconAlign:'top'"
+    =link_to 'Bottom', 'javascript:void()', class:'easyui-linkbutton l-btn-success', 'data-options':"iconCls:'fa fa-volume-down', iconAlign:'bottom'"

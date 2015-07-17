@@ -1,6 +1,6 @@
-//
-// Tabs
-// --------------------------------------------------
+/*------------------------------------*
+    #TABS
+/*------------------------------------*
 
 .tabs-container
   overflow: hidden
@@ -11,8 +11,6 @@
   overflow: hidden
 
 .tabs
-  width: 50000px
-  height: 30px
   margin: 0
   padding-left: 14px
 
@@ -44,10 +42,10 @@
 .tabs-wrap
   position: relative
   left: 0
-  overflow: hidden
   width: 100%
   margin: 0
   padding: 0
+  overflow: hidden
 
 .tabs-scrolling
   margin-left: 18px
@@ -122,17 +120,10 @@
     line-height: $line-height-base
 
 .tabs-header-bottom
-  border-width: 0 1px 1px 1px
   padding: 0 0 2px 0
-
-.tabs-header-bottom .tabs
-  border-width: 1px 0 0 0
 
 .tabs-header-bottom .tabs li
   margin: -1px 4px 0 0
-
-.tabs-header-bottom .tabs li a.tabs-inner
-  +border-radius (0 0 5px 5px)
 
 .tabs-header-bottom .tabs-tool
   top: 0
@@ -189,14 +180,12 @@
   text-align: left
   padding-left: 10px
   padding-right: 10px
-  +border-radius (5px 0 0 5px)
 
 .tabs-header-right .tabs li a.tabs-inner
   display: block
   text-align: left
   padding-left: 10px
   padding-right: 10px
-  +border-radius(0 5px 5px 0)
 
 .tabs-panels-right
   float: right
@@ -304,13 +293,16 @@
   color: $tabs-selected-color
 
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner
-  +background-image(linear-gradient(to bottom,#fff 0,#EFF5FF 100%))
+  background-color: $tabs-selected-bg-color
+  color: $tabs-selected-color
 
 .tabs-header-left .tabs li.tabs-selected a.tabs-inner
-  +background-image(linear-gradient(to right,#EFF5FF 0,#fff 100%))
+  background-color: $tabs-selected-bg-color
+  color: $tabs-selected-color
 
 .tabs-header-right .tabs li.tabs-selected a.tabs-inner
-  +background-image(linear-gradient(to right,#fff 0,#EFF5FF 100%))
+  background-color: $tabs-selected-bg-color
+  color: $tabs-selected-color
 
 .tabs li a.tabs-inner
   background-color: $tabs-unselected-bg-color

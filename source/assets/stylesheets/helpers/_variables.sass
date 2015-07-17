@@ -1,30 +1,6 @@
-//
-// Variables
-// --------------------------------------------------
-
-//== Media queries breakpoints
-//
-//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
-
-// Extra small screen / phone
-$screen-xs:                  480px
-$screen-xs-min:              $screen-xs
-
-// Small screen / tablet
-$screen-sm:                  768px
-$screen-sm-min:              $screen-sm
-
-// Medium screen / desktop
-$screen-md:                  992px
-$screen-md-min:              $screen-md
-
-// Large screen / wide desktop
-$screen-lg:                  1200px
-$screen-lg-min:              $screen-lg
-
-$screen-xs-max:              ($screen-sm-min - 1)
-$screen-sm-max:              ($screen-md-min - 1)
-$screen-md-max:              ($screen-lg-min - 1)
+/*------------------------------------*
+    #VARIABLES
+/*------------------------------------*
 
 //== Colors
 //
@@ -60,7 +36,7 @@ $link-color:            $brand-primary
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%)
 //** Link hover decoration.
-$link-hover-decoration: underline
+$link-hover-decoration: none
 
 //== Typography
 //
@@ -176,12 +152,13 @@ $animation-easing: cubic-bezier(0.455, 0.030, 0.515, 0.955)
 //## Sidebar background colors
 
 $sidebar-header-bg: $brand-primary
-$sidebar-bg: #3666A5
-$sidebar-title-color: #fff
-$sidebar-accordion-body-bg: #184A8B
-$sidebar-hover-bg: darken(#184A8B, 10%)
-$sidebar-active-bg: darken(#184A8B, 10%)
-$sidebar-hover-color: #fff
+$sidebar-bg: #fafafa
+$sidebar-title-color: #616161
+$sidebar-accordion-body-bg: #ededed
+$sidebar-hover-bg: #f5f5f5
+$sidebar-active-bg: $sidebar-hover-bg
+$sidebar-hover-color: #212121
+$sidebar-icon-color: $sidebar-title-color
 
 //== Header
 //
