@@ -6,11 +6,11 @@
     %form
       .form-group
         %label Product
-        %input.easyui-textbox{'data-options':"prompt:'Email', width:450, height:34, type: 'text'"}
+        %input.easyui-textbox{'data-options':"prompt:'Product', width:400, height:34, type: 'text'"}
       .form-group.mb-10
         %label Price
-        %input.easyui-textbox{'data-options':"prompt:'Password', width:450, height:34, type: 'password'"}
-      %button.easyui-linkbutton.btn-success.pull-left{type: 'submit'} Submit
+        %input.easyui-textbox{'data-options':"prompt:'Price', width:400, height:34, type: 'text'"}
+      %button.easyui-linkbutton.l-btn-success{type: 'submit'} Add
   %div.easyui-panel{'data-options':"region:'center', border:false"}
     %table.easyui-datagrid.datagrid-bg#dg{'data-options':"title:'Data Grid', iconCls:'fa fa-database', cls:'panel-default', fit:true, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
       %thead

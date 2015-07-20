@@ -17,3 +17,44 @@
 @for $i from 1 through 5
   .pl-#{($i*10)}
     padding-left: (($i*10)+px)
+
+
+//
+// map-fetch($map, $keys)
+//
+// An easy way to fetch a deep value in a multi-level map. Works much like
+// map-get() except that you pass multiple keys as the second parameter to
+// go down multiple levels in the nested map.
+//
+
+@function map-fetch($map, $keys)
+  $key: nth($keys, 1)
+  $length: length($keys)
+  $value: map-get($map, $key)
+  @if ($length > 1)
+    $rest: ()
+    @for $i from 2 through $length
+      $rest: append($rest, nth($keys, $i))
+
+    @return map-fetch($value, $rest)
+  @else
+  @return $value
+
+$config: ( themes: ( theme-material: ( header: $header-material-bg, logo: $logo-material-bg, sidebar-header: $sidebar-material-header-bg , sidebar-body: $sidebar-material-body-bg, sidebar-body-inner: $sidebar-material-body-inner-bg, tabs-header: $tabs-material-header-bg ), spring: ( header: #f4fac7, content: #c2454e, footer: #ffb158 )))
+
+@each $theme in map-keys(map-get($config, themes))
+  .#{$theme}
+    .header
+      background-color: map-fetch($config, themes $theme header  )
+    .logo
+      background-color: map-fetch($config, themes $theme logo )
+    .sidebar-header
+      background-color: map-fetch($config, themes $theme sidebar-header)
+    .sidebar
+      background-color: map-fetch($config, themes $theme sidebar-body)
+    .sidebar-nav
+      background-color: map-fetch($config, themes $theme sidebar-body-inner)
+    .tabs-header
+      background-color: map-fetch($config, themes $theme tabs-header)
+
+

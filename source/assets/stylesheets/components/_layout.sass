@@ -67,22 +67,28 @@
   &::before
     +font-icons(FontAwesome, '\f107', 14px, #000)
 
+.layout-expand
+  & .layout-button-right
+    &::before
+      +font-icons(FontAwesome, '\f03c', 14px, darken(#d7d7d7, 20%))
+  & .layout-button-left
+    &::before
+      +font-icons(FontAwesome, '\f03b', 14px, darken(#d7d7d7, 20%))
+
 .layout-button-left
   &::before
     +font-icons(FontAwesome, '\f03b', 14px, #d7d7d7)
     +transition(color, 0.28s, ease-out)
-
   &:hover::before
-    color: darken(#d7d7d7, 10%)
+    color: darken(#d7d7d7, 20%)
     +transition(color, 0.28s, ease-in)
 
 .layout-button-right
   &::before
-    +font-icons(FontAwesome, '\f03c', 14px, #414E5A)
+    +font-icons(FontAwesome, '\f03c', 14px, #d7d7d7)
     +transition(color, 0.28s, ease-out)
-
   &:hover::before
-    color: darken(#414E5A, 10%)
+    color: darken(#d7d7d7, 20%)
     +transition(color, 0.28s, ease-in)
 
 .layout-split-proxy-h,

@@ -1,0 +1,19 @@
+/*------------------------------------*
+    #MATERAIL THEME
+/*------------------------------------*
+
+.theme-material
+  & .sidebar
+    & .tree-icon,
+    & .tree-title
+      color: $sidebar-material-title-color
+    & .tree-node-hover,
+    & .tree-node-selected
+      background-color: lighten($sidebar-material-body-bg, 8%)
+      & .tree-icon,
+      & .tree-title
+        color: darken($sidebar-material-title-color, 90%)
+    & .tree-collapsed,
+    & .tree-expanded
+      &::before
+        +font-icons(FontAwesome, '\f104', inherit, #fff)

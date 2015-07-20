@@ -1,5 +1,5 @@
 -@title= 'Home page | Admin Page '
--@page_classes= 'home easyui-layout'
+-@page_classes= 'easyui-layout theme-material'
 
 #mainTabMenu.easyui-menu{'data-options':' itemHeight:28'}
   #refresh{'data-options':"iconCls:'fa fa-refresh'"}
@@ -16,5 +16,5 @@
     %span 当前页左侧全部关闭
 
 %div{'data-options':"region:'center', border:false"}
-  .easyui-tabs#mainTabs{'data-options':'fit:true, border:false'}
+  .easyui-tabs.tabs-shadow#mainTabs{'data-options':'fit:true, border:false'}
     .jumbotron{title: '欢迎使用'}

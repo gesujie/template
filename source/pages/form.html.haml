@@ -1,135 +1,133 @@
 -@title= 'From | Admin Page '
 -@page_classes= 'form'
 
-.easyui-layout{fit:'true'}
-  .easyui-panel{title:'Forms Live Example', 'data-options':"region:'center', iconCls:'fa fa-align-justify', cls:'panel-info', collapsible:false"}
-    .container
-      .col-6.mb-10
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              Simple Form
-          .panel-body
-            %form
-              .form-group
-                %label Email address
-                %input.easyui-textbox{'data-options':"prompt:'Email', width:490, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
-              .form-group
-                %label Password
-                %input.easyui-textbox{'data-options':"prompt:'Password', width:490, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
-              .form-group
-                %label File input
-                %input{type: 'file'}
-                  %p.help-block Example block-level help text here.
+.container
+  .col-6.mb-10
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          Simple Form
+      .panel-body
+        %form
+          .form-group
+            %label Email address
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:450, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+          .form-group
+            %label Password
+            %input.easyui-textbox{'data-options':"prompt:'Password', width:450, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          .form-group
+            %label File input
+            %input{type: 'file'}
+              %p.help-block Example block-level help text here.
+          .checkbox
+            %label
+              %input.easyui-checkbox{type: 'checkbox'}
+              Check me out (checkbox button)
+          %button.easyui-linkbutton.l-btn-success{type: 'submit'} Submit
+  .col-6.col-last.mb-10
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          Horizontal Form
+      .panel-body
+        %form.form-horizontal
+          .form-group
+            %label.col-2.control-label Email
+            .col-10.col-last
+              %input.easyui-textbox{'data-options':"prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+          .form-group
+            %label.col-2.control-label Password
+            .col-10.col-last
+              %input.easyui-textbox{'data-options':"prompt:'Password', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          .form-group
+            .col-push-2.col-10
               .checkbox
                 %label
-                  %input.easyui-checkbox{type: 'checkbox'}
-                  Check me out (checkbox button)
-              %button.easyui-linkbutton.l-btn-success{type: 'submit'} Submit
-      .col-6.col-last.mb-10
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              Horizontal Form
-          .panel-body
-            %form.form-horizontal
-              .form-group.col-12.mb-20
-                %label.col-2.control-label Email
-                .col-10.col-last
-                  %input.easyui-textbox{'data-options':"prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
-              .form-group.col-12.mb-20
-                %label.col-2.control-label Password
-                .col-10.col-last
-                  %input.easyui-textbox{'data-options':"prompt:'Email', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'text'}
-              .form-group.col-12.mb-20
-                .col-push-2.col-10
-                  .checkbox
-                    %label
-                      %input.easyui-radio{type: 'radio'}
-                      Remember me (radio button)
-              .form-group.col-12.mb-20
-                .col-push-2.col-10
-                  %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Sign in
-      %hr.col-12
-      .col-8
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              From Inline
-          .panel-body
-            %form.form-inline
-              .form-group
-                %label Email address
-                %input.easyui-textbox{'data-options':"prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
-              .form-group
-                %label Password
-                %input.easyui-textbox{'data-options':"prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
-              %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Submit
-      .col-4.col-last
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              From Inline with by button
-          .panel-body
-            %input.easyui-textbox{'data-options':"buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34"}
-      %hr.col-12
-      .col-6
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              Validate Form on Submit
-          .panel-body
-            %form.easyui-form#ff{'data-options':'novalidate:true', method: 'post'}
-              .form-group.col-12.mb-20
-                %label Name:
-                %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'name', type: 'text'}
-              .form-group.col-12.mb-20
-                %label Email:
-                %input.easyui-textbox{'data-options':"required:true, width:480, height:34, validType:'email'", name: 'email', type: 'text'}
-              .form-group.col-12.mb-20
-                %label Subject:
-                %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'subject', type: 'text'}
-              .form-group.col-12.mb-20
-                %label Message:
-                %input.easyui-textbox{'data-options':'multiline:true, width:480, height:60', name: 'message'}
-              .form-group.col-12.mb-20
-                %button.easyui-linkbutton.l-btn-primary{onclick: 'submitForm()', type: 'submit'} Submit
-                %button.easyui-linkbutton.l-btn-danger{onclick: 'clearForm()', type: 'submit'} Clear
-      .col-6.col-last
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              Search Box
-          .panel-body
-            %form
-              %input.easyui-searchbox{'data-options':"prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
-      %hr.col-12
-      .col-12
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              Format Number Box
-          .panel-body
-            %form
-              %p List Price:
-              %input.easyui-numberbox{'data-options':'height:34', precision: '2', value: '234.56'}
-              %p Amount:
-              %input.easyui-numberbox{'data-options':'height:34', value: '100'}
-              %p Number in the United States
-              %input.easyui-numberbox{'data-options':"precision:2, groupSeparator:',', height:34", value: '1234567.89'}
-              %p Number in France
-              %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:' ',decimalSeparator:',', height:34", value: '1234567.89'}
-              %p Currency:USD
-              %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34", value: '1234567.89'}
-              %p Currency:EUR
-              %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34", value: '1234567.89'}
+                  %input.easyui-radio{type: 'radio'}
+                  Remember me (radio button)
+          .form-group
+            .col-push-2.col-10
+              %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Sign in
+  %hr.col-12
+  .col-8
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          From Inline
+      .panel-body
+        %form.form-inline
+          .form-group
+            %label Email address
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+          .form-group
+            %label Password
+            %input.easyui-textbox{'data-options':"prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Submit
+  .col-4.col-last
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          From Inline with by button
+      .panel-body
+        %input.easyui-textbox{'data-options':"buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34"}
+  %hr.col-12
+  .col-6
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          Validate Form on Submit
+      .panel-body
+        %form.easyui-form#ff{'data-options':'novalidate:true', method: 'post'}
+          .form-group.col-12.mb-20
+            %label Name:
+            %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'name', type: 'text'}
+          .form-group.col-12.mb-20
+            %label Email:
+            %input.easyui-textbox{'data-options':"required:true, width:480, height:34, validType:'email'", name: 'email', type: 'text'}
+          .form-group.col-12.mb-20
+            %label Subject:
+            %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'subject', type: 'text'}
+          .form-group.col-12.mb-20
+            %label Message:
+            %input.easyui-textbox{'data-options':'multiline:true, width:480, height:60', name: 'message'}
+          .form-group.col-12.mb-20
+            %button.easyui-linkbutton.l-btn-primary{onclick: 'submitForm()', type: 'submit'} Submit
+            %button.easyui-linkbutton.l-btn-danger{onclick: 'clearForm()', type: 'submit'} Clear
+  .col-6.col-last
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          Search Box
+      .panel-body
+        %form
+          %input.easyui-searchbox{'data-options':"prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          Format Number Box
+      .panel-body
+        %form
+          %p List Price:
+          %input.easyui-numberbox{'data-options':'height:34', precision: '2', value: '234.56'}
+          %p Amount:
+          %input.easyui-numberbox{'data-options':'height:34', value: '100'}
+          %p Number in the United States
+          %input.easyui-numberbox{'data-options':"precision:2, groupSeparator:',', height:34", value: '1234567.89'}
+          %p Number in France
+          %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:' ',decimalSeparator:',', height:34", value: '1234567.89'}
+          %p Currency:USD
+          %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34", value: '1234567.89'}
+          %p Currency:EUR
+          %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34", value: '1234567.89'}
 
 :javascript
   //Search Box

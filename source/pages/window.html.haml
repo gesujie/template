@@ -6,25 +6,24 @@
     打开窗口
 
 #qc-window-windowObj
-  %form.form-horizontal.mt-20
-    .form-group.col-12.mb-20
+  %form.form-horizontal
+    .form-group
       %label.col-2.control-label Email
       .col-10.col-last
-        %input.easyui-textbox.form-control{'data-options':'width:330, height:35', placeholder: 'Email', type: 'email'}
-    .form-group.col-12.mb-20
+        %input.easyui-textbox{'data-options':"prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+    .form-group
       %label.col-2.control-label Password
       .col-10.col-last
-        %input.easyui-textbox.form-control{'data-options':'width:330, height:35', placeholder: 'Password', type: 'password'}
-    .form-group.col-12.mb-20
+        %input.easyui-textbox{'data-options':"prompt:'Password', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+    .form-group
       .col-push-2.col-10
         .checkbox
           %label
-            %input{type: 'checkbox'}
-              Remember me
+            %input.easyui-checkbox{type: 'checkbox'}
+            Remember me
     .form-group
       .col-push-2.col-10
-        %a.easyui-linkbutton.l-btn-info.text-center{href: 'javascript:void(0)', iconCls:'fa fa-user-plus'} Sign up
-        %a.easyui-linkbutton.l-btn-primary.col-push-1.text-center{href: 'javascript:void(0)', iconCls: 'fa fa-sign-in'} Sign in
+        %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Sign in
 
 :javascript
   Namespace.register("qc.demoWindow");

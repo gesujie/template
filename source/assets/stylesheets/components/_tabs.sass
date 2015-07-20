@@ -30,7 +30,8 @@
   top: auto
   bottom: 0
   display: none
-  padding: 14px 4px
+  padding: 10px 4px
+  background-color: $gray-light
   cursor: pointer
   text-align: center
 
@@ -58,8 +59,8 @@
     margin-right: 5px
 
 .tabs-inner
-  +inline-block()
   padding: 0 16px
+  +text-shadow(0 0 1px #fff)
   text-align: center
   white-space: nowrap
 
@@ -181,7 +182,7 @@
 .tabs-header-right .tabs li
   left: 0
   right: auto
-  margin: 0 0 4px -1px
+  margin: 0 0 4px 0
   float: left
 
 .tabs-justified li a.tabs-inner
