@@ -22,8 +22,8 @@
                   Remember me
           .form-group
             .col-push-2.col-10
-              =link_to 'Sign up', 'javascript:void(0)', onclick:'btnRegistry()', class:'easyui-linkbutton btn-info text-center',  iconCls: 'fa fa-user-plus'
-              =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton btn-primary mr-10 text-center',  iconCls: 'fa fa-sign-in'
+              =link_to 'Sign up', 'javascript:void(0)', onclick:'btnRegistry()', class:'easyui-linkbutton l-btn-info text-center',  iconCls: 'fa fa-user-plus'
+              =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton l-btn-primary mr-10 text-center',  iconCls: 'fa fa-sign-in'
     .panel-sing-up
       .easyui-panel{'data-options':"region:'west',title:'Sign up', cls:'panel-info', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
         %form.form-horizontal
@@ -49,5 +49,5 @@
               %input.easyui-textbox{type:'password', 'data-options':'width:240, height:35'}
           .form-group
             .col-push-3
-              =link_to 'Back', 'javascript:void(0)', onclick:'btnBack()', class:'easyui-linkbutton btn-default mr-10 text-center',  iconCls: 'fa fa-arrow-left'
-              =link_to 'Sign up', 'javascript:void(0)', class:'easyui-linkbutton btn-info text-center',  iconCls: 'fa fa-user-plus'
+              =link_to 'Back', 'javascript:void(0)', onclick:'btnBack()', class:'easyui-linkbutton l-btn-default mr-10 text-center',  iconCls: 'fa fa-arrow-left'
+              =link_to 'Sign up', 'javascript:void(0)', class:'easyui-linkbutton l-btn-info text-center',  iconCls: 'fa fa-user-plus'

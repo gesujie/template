@@ -2,17 +2,27 @@
     #TABS
 /*------------------------------------*
 
+.tabs
+  width: 50000px
+  margin: 0
+  padding-left: 14px
+
 .tabs-container
   overflow: hidden
 
 .tabs-header
   position: relative
-  padding-top: 2px
   overflow: hidden
 
-.tabs
-  margin: 0
-  padding-left: 14px
+.tabs-tool
+  position: absolute
+  bottom: 0
+  padding: 1px
+  overflow: hidden
+
+.tabs-scrolling
+  margin-left: 18px
+  margin-right: 18px
 
 .tabs-scroller-left,
 .tabs-scroller-right
@@ -30,15 +40,6 @@
 .tabs-scroller-right
   right: 0
 
-.tabs-tool
-  position: absolute
-  bottom: 0
-  padding: 1px
-  overflow: hidden
-
-.tabs-header-plain .tabs-tool
-  padding: 0 1px
-
 .tabs-wrap
   position: relative
   left: 0
@@ -47,29 +48,25 @@
   padding: 0
   overflow: hidden
 
-.tabs-scrolling
-  margin-left: 18px
-  margin-right: 18px
-
 .tabs-disabled
   +opacity(0.3)
 
 .tabs li
   position: relative
-  float: left
   display: inline-block
-  margin: 0 4px -1px 0
-  padding: 0
+  &:not(:last-child)
+    margin-right: 5px
 
-.tabs li a.tabs-inner
+.tabs-inner
   +inline-block()
   padding: 0 16px
   text-align: center
   white-space: nowrap
-  +border-top-radius ($tabs-button-radius)
 
-.tabs li.tabs-selected a:hover.tabs-inner
-  cursor: default
+.tabs-selected
+  &:hover
+    & .tabs-inner
+      cursor: default
 
 .tabs-p-tool
   position: absolute
@@ -98,11 +95,11 @@
 
 .tabs-icon
   position: absolute
+  top: 50%
+  left: 10px
   width: 16px
   height: 16px
-  left: 10px
-  top: 50%
-  margin-top: -8px
+  margin-top: -6px
 
 .tabs-title
   font-size: 12px
@@ -113,18 +110,33 @@
 
 .tabs-panels
   padding: 12px
+  border:
+    right: 2px solid #d7d7d7
+    bottom: 2px solid #d7d7d7
+    left: 2px solid #d7d7d7
+  background-color: lighten(#ededed, 10%)
   overflow: hidden
-  & p
-    font-size: $font-size-base
-    font-weight: 300
-    line-height: $line-height-base
 
-.tabs-header-bottom
-  padding: 0 0 2px 0
+.tabs-panels-top
+  border:
+    top: 2px solid #d7d7d7
+    bottom: 0
 
-.tabs-header-bottom .tabs li
-  margin: -1px 4px 0 0
+.tabs-panels-right
+  min-height: 250px
+  border:
+    top: 2px solid #d7d7d7
+    left: 0
 
+.tabs-panels-left
+  min-height: 250px
+  border:
+    top: 2px solid #d7d7d7
+    right: 0
+
+//###
+// Tabs Bottom
+//
 .tabs-header-bottom .tabs-tool
   top: 0
 
@@ -135,11 +147,11 @@
 
 .tabs-header-left
   float: left
-  padding: 0
+  min-height: 250px
 
 .tabs-header-right
   float: right
-  padding: 0
+  min-height: 250px
 
 .tabs-header-left .tabs-wrap,
 .tabs-header-right .tabs-wrap
@@ -147,11 +159,11 @@
 
 .tabs-header-left .tabs
   height: 100%
-  padding: 4px 0 0 2px
+  padding: 4px 0 0 0
 
 .tabs-header-right .tabs
   height: 100%
-  padding: 4px 2px 0 0
+  padding: 4px 0 0 0
 
 .tabs-header-left .tabs li,
 .tabs-header-right .tabs li
@@ -162,8 +174,9 @@
 .tabs-header-left .tabs li
   left: auto
   right: 0
-  margin: 0 -1px 4px 0
   float: right
+  margin-right: 0
+  margin-bottom: 5px
 
 .tabs-header-right .tabs li
   left: 0
@@ -192,9 +205,6 @@
 
 .tabs-panels-left
   float: left
-
-.tabs-header-plain
-  background-color: transparent
 
 .tabs-pill
   padding-bottom: 3px
@@ -242,10 +252,7 @@
   margin-left: -1px
 
 .tabs-scroller-left
-  display: table
   &::before
-    display: table-cell
-    vertical-align: middle
     +font-icons(FontAwesome, '\f104', 15px, #000)
 
 .tabs-scroller-right
@@ -256,13 +263,7 @@
   background-color: #fff
   +transition(background-color, 0.28s, ease-in-out)
 
-.tabs
-  & .tabs-selected
-    & .tabs-close
-      &::before
-        color: #fff
-
-.tabs li a.tabs-close
+.tabs-close
   position: absolute
   top: 31%
   right: 4px
@@ -283,31 +284,33 @@
     +text-shadow(0 0 0 transparent)
     +transition(color 0.28s ease-out)
 
-.tabs li a.tabs-inner:hover
-  background-color: $tabs-hover-bg-color
-  color: $tabs-hover-color
-  +transition(background-color 0.28s ease-in)
+.tabs-inner
+  position: relative
+  +inline-block()
+  +transform (translateZ(0))
+  +backface-visibility (hidden)
+  +transition(color 300ms ease-in-out)
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: $tabs-hover-bg-color
+    +transform (scaleX(0))
+    +transform-origin (0, 50%)
+    +transition(transform 300ms ease-in-out)
+    z-index: -1
+  &:hover
+    color: $tabs-hover-color
+    &::before
+      +transform (scaleX(1))
 
-.tabs li.tabs-selected a.tabs-inner
-  background-color: $tabs-selected-bg-color
-  color: $tabs-selected-color
-
-.tabs-header-bottom .tabs li.tabs-selected a.tabs-inner
-  background-color: $tabs-selected-bg-color
-  color: $tabs-selected-color
-
-.tabs-header-left .tabs li.tabs-selected a.tabs-inner
-  background-color: $tabs-selected-bg-color
-  color: $tabs-selected-color
-
-.tabs-header-right .tabs li.tabs-selected a.tabs-inner
-  background-color: $tabs-selected-bg-color
-  color: $tabs-selected-color
-
-.tabs li a.tabs-inner
-  background-color: $tabs-unselected-bg-color
-  color: $tabs-unselected-color
-  +transition(background-color 0.28s ease-out)
+.tabs-selected
+  & .tabs-inner
+    background-color: $tabs-selected-bg-color
+    color: $tabs-selected-color
 
 .tabs-header,
 .tabs-tool
@@ -316,10 +319,14 @@
 .tabs-header-plain
   background-color: transparent
 
-.tabs-p-tool a:hover
-  background-color: #eaf2ff
+.tabs-p-tool
+  &:hover
+    background-color: #eaf2ff
 
 .tabs-header .tabs-pill li.tabs-selected a.tabs-inner
   background-color: #ffe48d
   color: #000
 
+.tabs-panels-noborder
+  border: 0
+  background-color: transparent

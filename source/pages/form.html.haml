@@ -14,19 +14,19 @@
             %form
               .form-group
                 %label Email address
-                %input.easyui-textbox{'data-options':"prompt:'Email', width:450, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+                %input.easyui-textbox{'data-options':"prompt:'Email', width:490, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
               .form-group
                 %label Password
-                %input.easyui-textbox{'data-options':"prompt:'Password', width:450, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+                %input.easyui-textbox{'data-options':"prompt:'Password', width:490, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
               .form-group
                 %label File input
                 %input{type: 'file'}
                   %p.help-block Example block-level help text here.
               .checkbox
                 %label
-                  %input{type: 'checkbox'}
-                  Check me out
-              %button.easyui-linkbutton.l-btn-success.pull-left{type: 'submit'} Submit
+                  %input.easyui-checkbox{type: 'checkbox'}
+                  Check me out (checkbox button)
+              %button.easyui-linkbutton.l-btn-success{type: 'submit'} Submit
       .col-6.col-last.mb-10
         .panel.panel-primary
           .panel-header
@@ -47,8 +47,8 @@
                 .col-push-2.col-10
                   .checkbox
                     %label
-                      %input{type:'checkbox'}
-                      Remember me
+                      %input.easyui-radio{type: 'radio'}
+                      Remember me (radio button)
               .form-group.col-12.mb-20
                 .col-push-2.col-10
                   %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Sign in
@@ -109,38 +109,6 @@
           .panel-body
             %form
               %input.easyui-searchbox{'data-options':"prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
-      %hr.col-12
-      .col-12
-        .panel.panel-primary
-          .panel-header
-            .panel-icon.fa.fa-align-justify
-            .panel-title.panel-with-icon
-              Form for Datagrid
-        .panel-body
-          %form.form-horizontal.form-absolute.mt-30
-            .col-3
-              .form-group
-                %label.col-3.control-label 申请单号:
-                %input.col-2.easyui-textbox{'data-options': 'width:180, height:34', type: 'text'}
-            .col-3
-              .form-group
-                %label.col-3.control-label  单位/部门:
-                %input.col-2.easyui-textbox{'data-options': 'width:180, height:34', type: 'text'}
-            .col-3.mt-30
-              .form-group.form-textarea
-                %label.col-3.control-label 备注:
-                %textarea.col-2.easyui-textbox{'data-options':'multiline:true, height:95'}
-            .col-3.col-last.mt-30
-              %a.easyui-linkbutton.l-btn-success.l-btn-jump.l-btn.l-l-btn-small
-                Button
-            .col-3
-              .form-group
-                %label.col-3.control-label  日期:
-                %input.col-2.easyui-textbox{'data-options': 'width:180, height:34', type: 'text'}
-            .col-3
-              .form-group
-                %label.col-3.control-label  申请人:
-                %input.col-2.easyui-textbox{'data-options': 'width:180, height:34', type: 'text'}
       %hr.col-12
       .col-12
         .panel.panel-primary
