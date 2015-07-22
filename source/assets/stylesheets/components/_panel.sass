@@ -4,31 +4,33 @@
 
 .panel
   overflow: hidden
-  & > .panel-header
-    position: relative
-    padding: $padding-large-vertical $padding-base-horizontal
-    +box-shadow(0 0 3px 0 rgba(119, 117, 117, 0.98))
-    & > .panel-icon,
-    & > .panel-tool
-      position: absolute
-      top: 32%
-      width: auto
-      color: lighten($brand-default, 50%)
-    & > .panel-tool
-      right: 10px
-    & > .panel-title
-      color: lighten($brand-default, 50%)
-      font-size: $font-size-base
-    & .panel-tool-icon
-      color: lighten($brand-default, 30%)
-      +transition(color, .28s, ease-out)
-      &:hover
-        color: lighten($brand-default, 80%)
-        +transition(color, .28s, ease-in)
-  & > .panel-footer
-    padding: $padding-large-vertical 15px
-    background-color: #E6E6E6
-    overflow: hidden
+
+.panel-header
+  position: relative
+  padding: $padding-large-vertical $padding-base-horizontal
+  +box-shadow(0 0 3px 0 rgba(119, 117, 117, 0.98))
+  & > .panel-icon,
+  & > .panel-tool
+    position: absolute
+    top: 32%
+    width: auto
+    color: lighten($brand-default, 50%)
+  & > .panel-tool
+    right: 10px
+  & > .panel-title
+    color: lighten($brand-default, 50%)
+    font-size: $font-size-base
+  & .panel-tool-icon
+    color: lighten($brand-default, 30%)
+    +transition(color, .28s, ease-out)
+    &:hover
+      color: lighten($brand-default, 80%)
+      +transition(color, .28s, ease-in)
+
+.panel-footer
+  padding: $padding-large-vertical 15px
+  background-color: #E6E6E6
+  overflow: hidden
 
 .panel-body
   overflow: auto
@@ -60,24 +62,6 @@
     +font-icons(FontAwesome, '\f110', 20px, #000)
     +animation (fa-spin 1s infinite steps(8))
 
-.panel-default
-  +panel-variant($panel-header-bg: $brand-default)
-
-.panel-primary
-  +panel-variant($panel-header-bg: $brand-primary)
-
-.panel-info
-  +panel-variant($panel-header-bg: $brand-info)
-
-.panel-success
-  +panel-variant($panel-header-bg: $brand-success)
-
-.panel-warning
-  +panel-variant($panel-header-bg: $brand-warning)
-
-.panel-danger
-  +panel-variant($panel-header-bg: $brand-danger)
-
 .panel-tool-close
   &::before
     +font-icons(FontAwesome, '\f057', 14px, #d7d7d7)
@@ -102,3 +86,40 @@
   &::before
     +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
 
+.panel-default
+  +panel-variant($panel-header-bg: $brand-default)
+
+.panel-primary
+  +panel-variant($panel-header-bg: $brand-primary)
+
+.panel-info
+  +panel-variant($panel-header-bg: $brand-info)
+
+.panel-success
+  +panel-variant($panel-header-bg: $brand-success)
+
+.panel-warning
+  +panel-variant($panel-header-bg: $brand-warning)
+
+.panel-danger
+  +panel-variant($panel-header-bg: $brand-danger)
+
+//Material Theme Colors
+
+.panel-default
+  +panel-variant($panel-header-bg: $brand-material-default)
+
+.panel-primary
+  +panel-variant($panel-header-bg: $brand-material-primary)
+
+.panel-info
+  +panel-variant($panel-header-bg: $brand-material-info)
+
+.panel-success
+  +panel-variant($panel-header-bg: $brand-material-success)
+
+.panel-warning
+  +panel-variant($panel-header-bg: $brand-material-warning)
+
+.panel-danger
+  +panel-variant($panel-header-bg: $brand-material-danger)

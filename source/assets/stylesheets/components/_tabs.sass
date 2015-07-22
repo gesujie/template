@@ -60,7 +60,6 @@
 
 .tabs-inner
   padding: 0 16px
-  +text-shadow(0 0 1px #fff)
   text-align: center
   white-space: nowrap
 
@@ -298,24 +297,25 @@
     left: 0
     right: 0
     bottom: 0
-    background-color: $tabs-hover-bg-color
+    background-color: $tabs-link-bg
     +transform (scaleX(0))
     +transform-origin (0, 50%)
     +transition(transform 300ms ease-in-out)
     z-index: -1
+  &:focus,
   &:hover
-    color: $tabs-hover-color
+    color: $tabs-link-color
     &::before
       +transform (scaleX(1))
 
 .tabs-selected
   & .tabs-inner
-    background-color: $tabs-selected-bg-color
+    background-color: $tabs-selected-bg
     color: $tabs-selected-color
 
 .tabs-header,
 .tabs-tool
-  background-color: $tabs-header-bg-color
+  background-color: $tabs-header-bg
 
 .tabs-header-plain
   background-color: transparent

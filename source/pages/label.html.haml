@@ -11,6 +11,17 @@
     %span.label.label-warning Warning
     %span.label.label-danger Danger
   %hr.col-12
+  .col-6
+    %h1 Progress Bar
+    .easyui-progressbar{'data-options':'value:80'}
+  %hr.col-12
+  .col-12
+    %h1 Tooltips
+    =link_to 'Label Top', 'javascript:void()', class:'easyui-linkbutton l-btn-default easyui-tooltip', title:'This is the tooltip message.', 'data-options':"position:'top'"
+    =link_to 'Label Right', 'javascript:void()', class:'easyui-linkbutton l-btn-primary easyui-tooltip', title:'This is the tooltip message.', 'data-options':"position:'right'"
+    =link_to 'Label Bottom', 'javascript:void()', class:'easyui-linkbutton l-btn-info easyui-tooltip', title:'This is the tooltip message.', 'data-options':"position:'bottom'"
+    =link_to 'Label Left', 'javascript:void()', class:'easyui-linkbutton l-btn-warning easyui-tooltip', title:'This is the tooltip message.', 'data-options':"position:'left'"
+  %hr.col-12
   .col-12
     %h1 Button Color Variables
     =link_to 'Button Default', 'javascript:void()', class:'easyui-linkbutton l-btn-default'

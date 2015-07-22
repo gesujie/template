@@ -3,39 +3,40 @@
 /*------------------------------------*
 
 .window
-  overflow: hidden
-  background-color: #fff
+  background-color: $gray-light
 
-.window .window-header
-  padding-top: 8px
-  padding-bottom: 8px
+.window-header
   background-color: $window-header-color
-  & .panel-tool-close
-    color: #79828B
-    &:hover
-      color: $brand-danger
 
-.window .window-header .panel-icon
-  position: unset
-  float: left
-  margin-top: 2px
-  overflow: visible
-  font-size: 15px
-  color: #CECECE
+.window-header
+  & .panel-icon
+    position: unset
+    float: left
+    margin-top: 5px
+    font-size: 14px
+    color: #f7f7f7
 
-.window .window-header .panel-title
-  +inline-block()
-  width: 80%
-  color: $window-panel-title-color
+.window-header
+  & .panel-title
+    +inline-block()
+    width: 80%
 
-.window .window-header .panel-tool
-  position: unset
-  float: right
-  margin-top: 0
-  overflow: visible
+.window-header
+  & .panel-tool
+    position: unset
+    float: right
+    width: auto
+    height: 40px
+    background-color: darken($brand-primary, 10%)
+    margin-top: -10px
+    margin-right: -12px
+    padding-top: 10px
+    padding-left: 10px
+    padding-right: 10px
 
-.window .window-header .panel-with-icon
-  padding-left: 5px
+.window-header
+  & .panel-with-icon
+    padding-left: 5px
 
 .window-proxy
   position: absolute
@@ -43,7 +44,7 @@
 
 .window-proxy-mask
   position: absolute
-  +opacity (0.05)
+  +opacity (0.5)
 
 .window-mask
   position: absolute
@@ -60,24 +61,24 @@
 .window-shadow
   +box-shadow(0 27px 24px 0 rgba(0,0,0,.2), 0 40px 77px 0 rgba(0,0,0,.22))
 
-.window
-  & .window-body
-    padding: $padding-large-vertical $padding-large-horizontal
-    font-size: $font-size-base
-    font-weight: 300
+.window-body
+  background-color: #f7f7f7
+  padding: $padding-large-vertical $padding-large-horizontal
+  font-size: $font-size-base
 
-.window
-  & .panel-tool
-    & a
-      margin: 0 1px
+.panel-tool
+  & > a
+    &:not(:last-child)
+      margin-right: 3px
 
 .window-proxy-mask,
 .window-mask
   background-color: rgba(47, 47, 47, 0.69)
 
-.window .panel-footer
-  position: relative
-  top: -1px
+.window
+  & .panel-footer
+    position: relative
+    top: -1px
 
 
 

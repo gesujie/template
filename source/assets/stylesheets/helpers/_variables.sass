@@ -27,22 +27,35 @@ $text-muted: #969696
 //
 //## Theme color variables
 
-$main-material-color: #00BCD4
+$primary-material-color: #00BCD4
+$secondary-material-color: #fff
 
 //Header
-$header-material-bg: #fff
+$header-material-bg: $secondary-material-color
 
 //Logo
-$logo-material-bg: $main-material-color
+$logo-material-bg: $primary-material-color
 
 //Sidebar
-$sidebar-material-header-bg: darken($main-material-color, 4%)
-$sidebar-material-body-bg: $main-material-color
-$sidebar-material-body-inner-bg: darken($main-material-color, 6%)
-$sidebar-material-title-color: #fff
+$sidebar-material-header-bg: darken($primary-material-color, 4%)
+$sidebar-material-body-bg: $primary-material-color
+$sidebar-material-body-in-bg: darken($primary-material-color, 6%)
+$sidebar-material-title-color: $secondary-material-color
 
 //Tabs
 $tabs-material-header-bg: $sidebar-material-header-bg
+$tabs-material-selected-bg: darken($secondary-material-color, 6%)
+$tabs-material-selected-color: darken($secondary-material-color, 100%)
+$tabs-material-link-bg: adjust_hue($primary-material-color, 222%)
+$tabs-material-link-color: $secondary-material-color
+
+//Material Colors
+$brand-material-default:         #607d8b
+$brand-material-primary:         #0288d1
+$brand-material-success:         #00bcd4
+$brand-material-info:            #4CAF50
+$brand-material-warning:         #ffa000
+$brand-material-danger:          #c2185b
 
 //== Scaffolding
 //
@@ -102,14 +115,11 @@ $border-radius-small:       3px
 //
 //## Tabs colors and font size
 
-$tabs-header-bg-color: #d7d7d7
-$tabs-button-radius: 1px
-$tabs-selected-bg-color: #5479aa
+$tabs-header-bg: #d7d7d7
+$tabs-selected-bg: #5479aa
 $tabs-selected-color: #fff
-$tabs-unselected-bg-color: #d7d7d7
-$tabs-unselected-color: #000
-$tabs-hover-bg-color: $tabs-selected-bg-color
-$tabs-hover-color: $tabs-selected-color
+$tabs-link-bg: $tabs-selected-bg
+$tabs-link-color: $tabs-selected-color
 
 //== Datagrid
 //
@@ -127,7 +137,7 @@ $l-btn-bg-hover-color: #00aa9a
 //
 //## Window colors
 
-$window-header-color: #fff
+$window-header-color: $brand-primary
 $window-panel-title-color: #5A5A5A
 
 //== Login
@@ -149,10 +159,9 @@ $animation-easing: cubic-bezier(0.455, 0.030, 0.515, 0.955)
 $sidebar-header-bg: $brand-primary
 $sidebar-bg: #fafafa
 $sidebar-title-color: #616161
-$sidebar-accordion-body-bg: #ededed
-$sidebar-hover-bg: #f5f5f5
-$sidebar-active-bg: $sidebar-hover-bg
-$sidebar-hover-color: #212121
+$sidebar-in-bg: #ededed
+$sidebar-link-bg: #f5f5f5
+$sidebar-active-bg: #212121
 $sidebar-icon-color: $sidebar-title-color
 
 //== Header

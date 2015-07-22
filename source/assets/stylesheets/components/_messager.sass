@@ -2,27 +2,26 @@
     #MESSAGER
 /*------------------------------------*
 
-.messager-window
-  & .window-header
-    border-bottom: 1px dotted #d7d7d7
-    padding-left: 10px
-    padding-right: 10px
-
 .messager-body
   display: table-cell
   vertical-align: middle
   overflow: hidden
+  +box-shadow (inset 0 1px 2px rgba(0,0,0,.1))
+  border:
+    right: 2px solid rgba(0,0,0,.1)
+    bottom: 2px solid rgba(0,0,0,.1)
+    left: 2px solid rgba(0,0,0,.1)
 
 .messager-button
   margin-top: 45px
   text-align: center
-  & .l-btn
+  & .l-btn-small
     width: 60px
     @extend .l-btn-default
 
 .messager-icon
   float: left
-  margin: 0 10px 10px 0
+  margin: -3px 10px 10px 0
 
 .messager-error
   &::before

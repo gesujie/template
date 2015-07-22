@@ -40,12 +40,12 @@
   @else
   @return $value
 
-$config: ( themes: ( theme-material: ( header: $header-material-bg, logo: $logo-material-bg, sidebar-header: $sidebar-material-header-bg , sidebar-body: $sidebar-material-body-bg, sidebar-body-inner: $sidebar-material-body-inner-bg, tabs-header: $tabs-material-header-bg ), spring: ( header: #f4fac7, content: #c2454e, footer: #ffb158 )))
+$config: ( themes: ( theme-material: ( header: $header-material-bg, logo: $logo-material-bg, sidebar-header: $sidebar-material-header-bg , sidebar-body: $sidebar-material-body-bg, sidebar-body-in: $sidebar-material-body-in-bg, tabs-header: $tabs-material-header-bg,  tabs-selected-bg: $tabs-material-selected-bg, tabs-selected-color: $tabs-material-selected-color, tabs-link-color: $tabs-material-link-bg)))
 
 @each $theme in map-keys(map-get($config, themes))
   .#{$theme}
     .header
-      background-color: map-fetch($config, themes $theme header  )
+      background-color: map-fetch($config, themes $theme header)
     .logo
       background-color: map-fetch($config, themes $theme logo )
     .sidebar-header
@@ -53,8 +53,16 @@ $config: ( themes: ( theme-material: ( header: $header-material-bg, logo: $logo-
     .sidebar
       background-color: map-fetch($config, themes $theme sidebar-body)
     .sidebar-nav
-      background-color: map-fetch($config, themes $theme sidebar-body-inner)
+      background-color: map-fetch($config, themes $theme sidebar-body-in)
     .tabs-header
       background-color: map-fetch($config, themes $theme tabs-header)
+    .tabs-selected
+      & .tabs-inner
+        background-color: map-fetch($config, themes $theme tabs-selected-bg)
+        color: map-fetch($config, themes $theme tabs-selected-color)
+    .tabs-inner
+      color: map-fetch($config, themes $theme header)
+      &::before
+        background-color: map-fetch($config, themes $theme tabs-link-color)
 
 
