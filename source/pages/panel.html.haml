@@ -2,6 +2,8 @@
 -@page_classes= 'panel'
 
 .container.mb-10
+  .col-12
+    %h1 Css Only Panels
   .col-4
     .panel.panel-default
       .panel-header
@@ -75,4 +77,14 @@
       .panel-footer
         %small
           =lorem.words 2
-
+  %hr.col-12
+  .col-12
+    %h1 EasyUI Panels
+    .col-6
+      .easyui-panel{'data-options': "cls:'panel-default', iconCls:'fa fa-floppy-o',collapsible:true,minimizable:true,maximizable:true,closable:true, footer:'#footer'", title:'Panel Tools'}
+        %p
+          =lorem.sentences 3
+      #footer
+        %small
+          =lorem.words 3
+  %hr.col-12

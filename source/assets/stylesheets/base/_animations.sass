@@ -1,0 +1,35 @@
+/*------------------------------------*
+    #ANIMATIONS
+/*------------------------------------*
+
+.l-btn-bounce
+  & .l-btn-icon
+    +transform (translateZ(0))
+    +backface-visibility (hidden)
+    +transition-duration(0.3s)
+    &::before
+      position: absolute
+      +transform (translateZ(0))
+      +transition-duration (0.3s)
+      +transition-property (transform)
+      +transition-timing-function (ease-out)
+  &:hover
+    & .l-btn-icon
+      &::before
+        +transform(scale(1.5))
+        +transition-timing-function (cubic-bezier(0.47, 2.02, 0.31, -0.36))
+
+.l-btn-fade
+  & .l-btn-icon
+    +transform (translateZ(0))
+    +backface-visibility (hidden)
+    +transition-duration(0.3s)
+    &::before
+      +transform (translateZ(0))
+      +transition-duration (0.3s)
+      +transition-property (color)
+      +transition-timing-function (ease-out)
+  &:hover
+    & .l-btn-icon
+      &::before
+        color: rgba(0,0,0, 0.1)

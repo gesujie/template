@@ -4,7 +4,6 @@
 
 .layout
   position: relative
-  overflow: hidden
   z-index: 0
 
 ////
@@ -13,7 +12,6 @@
 
 .layout-panel
   position: absolute
-  overflow: hidden
 
 .layout-panel-east,
 .layout-panel-west
@@ -31,12 +29,7 @@
   position: absolute
   cursor: pointer
   z-index: 1
-  background-color: #D7D7D7
-  +transition(opacity, 0.28s, ease-out)
-
-.layout-expand-over
-  background-color: lighten(#D7D7D7, 20%)
-  +transition(opacity, 0.28s, ease-in)
+  background-color: darken(#d7d7d7, 10%)
 
 .layout-split-proxy-h,
 .layout-split-proxy-v
@@ -55,42 +48,30 @@
 
 .layout-mask
   position: absolute
-  background: #fafafa
-  +opacity(0.10)
   z-index: 4
 
 .layout-button-up
   &::before
-    +font-icons(FontAwesome, '\f106', 14px, #000)
+    +font-icons(FontAwesome, '\f151', 15px, darken(#d7d7d7, 3%))
 
 .layout-button-down
   &::before
-    +font-icons(FontAwesome, '\f107', 14px, #000)
+    +font-icons(FontAwesome, '\f150', 15px, darken(#d7d7d7, 3%))
 
 .layout-expand
   & .layout-button-right
     &::before
-      +font-icons(FontAwesome, '\f03c', 14px, darken(#d7d7d7, 20%))
+      +font-icons(FontAwesome, '\f152', 15px, darken(#d7d7d7, 40%))
   & .layout-button-left
     &::before
-      +font-icons(FontAwesome, '\f03b', 14px, darken(#d7d7d7, 20%))
+      +font-icons(FontAwesome, '\f191', 15px, darken(#d7d7d7, 40%))
 
 .layout-button-left
   &::before
-    +font-icons(FontAwesome, '\f03b', 14px, #d7d7d7)
-    +transition(color, 0.28s, ease-out)
-  &:hover::before
-    color: darken(#d7d7d7, 20%)
-    +transition(color, 0.28s, ease-in)
+    +font-icons(FontAwesome, '\f191', 15px, #d7d7d7)
 
 .layout-button-right
   &::before
-    +font-icons(FontAwesome, '\f03c', 14px, #d7d7d7)
-    +transition(color, 0.28s, ease-out)
-  &:hover::before
-    color: darken(#d7d7d7, 20%)
-    +transition(color, 0.28s, ease-in)
+    +font-icons(FontAwesome, '\f152', 15px, #d7d7d7)
 
-.layout-split-proxy-h,
-.layout-split-proxy-v
-  background-color: #aac5e7
+

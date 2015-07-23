@@ -9,25 +9,31 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-page 'pages/dashboard.html', layout: :resource
-page 'pages/datagrid.html', layout: :resource
-page 'pages/datagrid-form.html', layout: :resource
-page 'pages/tabs.html', layout: :resource
-page 'pages/login.html', layout: :resource
-page 'pages/register.html', layout: :resource
-page 'pages/tree.html', layout: :resource
-page 'pages/treegrid.html', layout: :resource
-page 'pages/schedule.html', layout: :resource
-page 'pages/uploader.html', layout: :resource
-page 'pages/window.html', layout: :resource
-page 'pages/panel.html', layout: :resource
-page 'pages/grid.html', layout: :resource
-page 'pages/form.html', layout: :resource
-page 'pages/accordion.html', layout: :resource
-page 'pages/numberspinner.html', layout: :resource
-page 'pages/layout.html', layout: :resource
-page 'pages/label.html', layout: :resource
-page 'pages/colors.html', layout: :resource
+
+# Iframe Layouts
+page 'pages/dashboard.html', layout: :iframe_layout
+page 'pages/datagrid.html', layout: :iframe_layout
+page 'pages/datagrid-form.html', layout: :iframe_layout
+page 'pages/tabs.html', layout: :iframe_layout
+page 'pages/login.html', layout: :iframe_layout
+page 'pages/tree.html', layout: :iframe_layout
+page 'pages/treegrid.html', layout: :iframe_layout
+page 'pages/schedule.html', layout: :iframe_layout
+page 'pages/uploader.html', layout: :iframe_layout
+page 'pages/window.html', layout: :iframe_layout
+page 'pages/panel.html', layout: :iframe_layout
+page 'pages/grid.html', layout: :iframe_layout
+page 'pages/form.html', layout: :iframe_layout
+page 'pages/accordion.html', layout: :iframe_layout
+page 'pages/numberspinner.html', layout: :iframe_layout
+page 'pages/layout.html', layout: :iframe_layout
+page 'pages/label-button.html', layout: :iframe_layout
+page 'pages/colors.html', layout: :iframe_layout
+
+# Pages Layouts
+page 'pages/register.html', layout: :pages_layout
+page 'pages/error.html', layout: :pages_layout
+page 'pages/colors.html', layout: :pages_layout
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

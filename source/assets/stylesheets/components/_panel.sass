@@ -2,35 +2,56 @@
     #PANEL
 /*------------------------------------*
 
-.panel
-  overflow: hidden
-
 .panel-header
   position: relative
   padding: $padding-large-vertical $padding-base-horizontal
-  +box-shadow(0 0 3px 0 rgba(119, 117, 117, 0.98))
-  & > .panel-icon,
-  & > .panel-tool
-    position: absolute
-    top: 32%
-    width: auto
-    color: lighten($brand-default, 50%)
-  & > .panel-tool
-    right: 10px
-  & > .panel-title
-    color: lighten($brand-default, 50%)
-    font-size: $font-size-base
-  & .panel-tool-icon
-    color: lighten($brand-default, 30%)
-    +transition(color, .28s, ease-out)
+  +box-shadow (0 3px 6px rgba(0, 0, 0, 0.1))
+
+.panel-icon,
+.panel-tool
+  position: absolute
+  top: 32%
+  width: auto
+
+.panel-icon
+  color: #fff
+
+.panel-tool
+  right: 10px
+  margin-top: -12px
+  margin-right: -10px
+  & > a
+    +inline-block()
+    background-color: rgba(0,0,0, 0.2)
+    padding: 9px 10px
+    +transform (translateZ(0))
+    +backface-visibility (hidden)
+    +transition-duration(0.3s)
+    &:last-child
+      border-right: 0
+    &:first-child
+      border-left: 0
+    &::before
+      +transform (translateZ(0))
+      +transition-duration (0.3s)
+      +transition-property (color)
+      +transition-timing-function (ease-out)
     &:hover
-      color: lighten($brand-default, 80%)
-      +transition(color, .28s, ease-in)
+      &::before
+        color: rgba(255, 255, 255, 0.2)
+
+.panel-title
+  color: lighten($brand-default, 50%)
+  font-size: $font-size-base
+
+.panel-tool-icon
+  color: lighten($brand-default, 30%)
+  +transition(color, .28s, ease-out)
 
 .panel-footer
   padding: $padding-large-vertical 15px
   background-color: #E6E6E6
-  overflow: hidden
+  border-top: 1px solid #d7d7d7
 
 .panel-body
   overflow: auto
@@ -44,10 +65,6 @@
 .panel-fit,
 .panel-fit body
   height: 100%
-  margin: 0
-  padding: 0
-  border: 0
-  overflow: hidden
 
 .panel-loading
   +inline-block()
@@ -63,28 +80,40 @@
     +animation (fa-spin 1s infinite steps(8))
 
 .panel-tool-close
+  border-right: 1px solid #627D8A
+  border-left: 1px solid #465C67
   &::before
-    +font-icons(FontAwesome, '\f057', 14px, #d7d7d7)
+    +font-icons(FontAwesome, '\f00d', 14px, #d7d7d7)
 
 .panel-tool-min
+  border-right: 1px solid #627D8A
+  border-left: 1px solid #465C67
   &::before
-    +font-icons(FontAwesome, '\f056', 14px, #d7d7d7)
+    +font-icons(FontAwesome, '\f068', 14px, #d7d7d7)
 
 .panel-tool-max
+  border-right: 1px solid #627D8A
+  border-left: 1px solid #465C67
   &::before
-    +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
+    +font-icons(FontAwesome, '\f065', 14px, #d7d7d7)
 
 .panel-tool-restore
+  border-right: 1px solid #627D8A
+  border-left: 1px solid #465C67
   &::before
-    +font-icons(FontAwesome, '\f057', 14px, #d7d7d7)
+    +font-icons(FontAwesome, '\f066', 14px, #d7d7d7)
 
 .panel-tool-collapse
+  border-right: 1px solid #627D8A
+  border-left: 1px solid #465C67
   &::before
-    +font-icons(FontAwesome, '\f056', 14px, #d7d7d7)
+    +font-icons(FontAwesome, '\f151', 14px, #d7d7d7)
 
 .panel-tool-expand
+  border-right: 1px solid #627D8A
+  border-left: 1px solid #465C67
   &::before
-    +font-icons(FontAwesome, '\f055', 14px, #d7d7d7)
+    +font-icons(FontAwesome, '\f150', 14px, #d7d7d7)
 
 .panel-default
   +panel-variant($panel-header-bg: $brand-default)

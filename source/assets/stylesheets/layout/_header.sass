@@ -4,6 +4,8 @@
 
 .header
   background-color: $header-bg
+  &.panel-body
+    overflow: visible
 
 .logo
   float: left
@@ -21,6 +23,53 @@
   padding-left: 16px
   vertical-align: middle
 
+.navbar-subpages
+  float: left
+  width: 500px
+  height: inherit
+
+.nav-subpages
+  & > li
+    & > a
+      +inline-block()
+      background-color: darken($logo-material-bg, 10%)
+      padding: 13px $padding-large-horizontal
+      color: #fff
+      &:hover
+        background-color: lighten($brand-material-primary, 5%)
+
+/*ul
+.dropdown-menu
+  +opacity(0)
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  float: left
+  min-width: 160px
+  background-color: $brand-material-warning
+  +background-clip(padding-box)
+  padding: $padding-large-vertical $padding-large-horizontal
+  +transform(translateY(-100px))
+  +transition(transform, 400ms, ease-in-out, opacity, 400ms, ease-in-out)
+  z-index: 99
+
+.btn-dropdown
+  display: block
+  padding: $padding-base-vertical $padding-base-horizontal
+  background-color: darken($brand-material-warning, 10%)
+  color: #fff
+
+/*li
+.dropdown
+  position: relative
+  +inline-block()
+  &:hover
+    .dropdown-menu
+      +opacity(1)
+      +transform(translateY(0))
+      +transition(transform, 400ms, ease-in-out, opacity, 400ms, ease-in-out)
+
 .navbar-header
   display: table
   height: inherit
@@ -32,6 +81,7 @@
   display: table-cell
   vertical-align: middle
   margin: 0
+  padding: 0
   & > li
     list-style: none
 
