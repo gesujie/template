@@ -1,247 +1,191 @@
-<div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'center', iconCls:'fa fa-align-justify', cls:'panel-info', collapsible:false" title='Forms Live Example'>
-    <div class='container'>
-      <div class='col-6 mb-10'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              Simple Form
+<div class='container'>
+  <div class='col-6 mb-10'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          Simple Form
+        </div>
+      </div>
+      <div class='panel-body'>
+        <form>
+          <div class='form-group'>
+            <label>Email address</label>
+            <input class='easyui-textbox' data-options="prompt:'Email', width:450, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
+          </div>
+          <div class='form-group'>
+            <label>Password</label>
+            <input class='easyui-textbox' data-options="prompt:'Password', width:450, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
+          </div>
+          <div class='form-group'>
+            <label>File input</label>
+            <input type='file'>
+              <p class='help-block'>Example block-level help text here.</p>
+            </input>
+          </div>
+          <div class='checkbox'>
+            <label>
+              <input class='easyui-checkbox' type='checkbox'>
+              Check me out (checkbox button)
+            </label>
+          </div>
+          <button class='easyui-linkbutton l-btn-success' type='submit'>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class='col-6 col-last mb-10'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          Horizontal Form
+        </div>
+      </div>
+      <div class='panel-body'>
+        <form class='form-horizontal'>
+          <div class='form-group col-12 mb-10'>
+            <label class='col-2 control-label'>Email</label>
+            <div class='col-10 col-last'>
+              <input class='easyui-textbox' data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
             </div>
           </div>
-          <div class='panel-body'>
-            <form>
-              <div class='form-group'>
-                <label>Email address</label>
-                <input class='easyui-textbox' data-options="prompt:'Email', width:450, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
-              </div>
-              <div class='form-group'>
-                <label>Password</label>
-                <input class='easyui-textbox' data-options="prompt:'Password', width:450, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
-              </div>
-              <div class='form-group'>
-                <label>File input</label>
-                <input type='file'>
-                  <p class='help-block'>Example block-level help text here.</p>
-                </input>
-              </div>
+          <div class='form-group col-12 mb-10'>
+            <label class='col-2 control-label'>Password</label>
+            <div class='col-10 col-last'>
+              <input class='easyui-textbox' data-options="prompt:'Password', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
+            </div>
+          </div>
+          <div class='form-group col-12 mb-10'>
+            <div class='col-push-2 col-10'>
               <div class='checkbox'>
                 <label>
-                  <input type='checkbox'>
-                    Check me out
-                  </input>
+                  <input class='easyui-radio' type='radio'>
+                  Remember me (radio button)
                 </label>
               </div>
-              <button class='easyui-linkbutton color-success pull-right' type='submit'>Submit</button>
-            </form>
+            </div>
           </div>
+          <div class='form-group'>
+            <div class='col-push-2 col-10'>
+              <button class='easyui-linkbutton l-btn-primary' type='submit'>Sign in</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr class='col-12'>
+  <div class='col-8'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          From Inline
         </div>
       </div>
-      <div class='col-6 col-last mb-10'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              Horizontal Form
-            </div>
+      <div class='panel-body'>
+        <form class='form-inline'>
+          <div class='form-group'>
+            <label>Email address</label>
+            <input class='easyui-textbox' data-options="prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
           </div>
-          <div class='panel-body'>
-            <form class='form-horizontal'>
-              <div class='form-group col-12 mb-20'>
-                <label class='col-2 control-label'>Email</label>
-                <div class='col-10 col-last'>
-                  <input class='easyui-textbox' data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
-                </div>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <label class='col-2 control-label'>Password</label>
-                <div class='col-10 col-last'>
-                  <input class='easyui-textbox' data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
-                </div>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <div class='col-push-2 col-10'>
-                  <div class='checkbox'>
-                    <label>
-                      <input type='checkbox'>
-                        Remember me
-                      </input>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <div class='col-push-2 col-10'>
-                  <button class='easyui-linkbutton color-primary' type='submit'>Sign in</button>
-                </div>
-              </div>
-            </form>
+          <div class='form-group'>
+            <label>Password</label>
+            <input class='easyui-textbox' data-options="prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
           </div>
+          <button class='easyui-linkbutton l-btn-primary' type='submit'>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class='col-4 col-last'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          From Inline with by button
         </div>
       </div>
-      <hr class='col-12'>
-      <div class='col-8'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              From Inline
-            </div>
-          </div>
-          <div class='panel-body'>
-            <form class='form-inline'>
-              <div class='form-group'>
-                <label>Email address</label>
-                <input class='easyui-textbox' data-options="prompt:'Email', width:200, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
-              </div>
-              <div class='form-group'>
-                <label>Password</label>
-                <input class='easyui-textbox' data-options="prompt:'Password', width:200, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
-              </div>
-              <button class='easyui-linkbutton color-primary' type='submit'>Submit</button>
-            </form>
-          </div>
+      <div class='panel-body'>
+        <input class='easyui-textbox' data-options="buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34">
+      </div>
+    </div>
+  </div>
+  <hr class='col-12'>
+  <div class='col-6'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          Validate Form on Submit
         </div>
       </div>
-      <div class='col-4 col-last'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              From Inline with by button
-            </div>
+      <div class='panel-body'>
+        <form class='easyui-form' data-options='novalidate:true' id='ff' method='post'>
+          <div class='form-group col-12 mb-20'>
+            <label>Name:</label>
+            <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='name' type='text'>
           </div>
-          <div class='panel-body'>
-            <input class='easyui-textbox' data-options="buttonText:'Search',buttonIcon:'fa fa-search',prompt:'Search...', width:270, height:34">
+          <div class='form-group col-12 mb-20'>
+            <label>Email:</label>
+            <input class='easyui-textbox' data-options="required:true, width:480, height:34, validType:'email'" name='email' type='text'>
           </div>
+          <div class='form-group col-12 mb-20'>
+            <label>Subject:</label>
+            <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='subject' type='text'>
+          </div>
+          <div class='form-group col-12 mb-20'>
+            <label>Message:</label>
+            <input class='easyui-textbox' data-options='multiline:true, width:480, height:60' name='message'>
+          </div>
+          <div class='form-group col-12 mb-20'>
+            <button class='easyui-linkbutton l-btn-primary' onclick='submitForm()' type='submit'>Submit</button>
+            <button class='easyui-linkbutton l-btn-danger' onclick='clearForm()' type='submit'>Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class='col-6 col-last'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          Search Box
         </div>
       </div>
-      <hr class='col-12'>
-      <div class='col-6'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              Validate Form on Submit
-            </div>
-          </div>
-          <div class='panel-body'>
-            <form class='easyui-form' data-options='novalidate:true' id='ff' method='post'>
-              <div class='form-group col-12 mb-20'>
-                <label>Name:</label>
-                <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='name' type='text'>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <label>Email:</label>
-                <input class='easyui-textbox' data-options="required:true, width:480, height:34, validType:'email'" name='email' type='text'>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <label>Subject:</label>
-                <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='subject' type='text'>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <label>Message:</label>
-                <input class='easyui-textbox' data-options='multiline:true, width:480, height:60' name='message'>
-              </div>
-              <div class='form-group col-12 mb-20'>
-                <button class='easyui-linkbutton color-primary' onclick='submitForm()' type='submit'>Submit</button>
-                <button class='easyui-linkbutton color-danger' onclick='clearForm()' type='submit'>Clear</button>
-              </div>
-            </form>
-          </div>
+      <div class='panel-body'>
+        <form>
+          <input class='easyui-searchbox' data-options="prompt:'Please Input Value', searcher:doSearch, width: 440, height:34">
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr class='col-12'>
+  <div class='col-12'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          Format Number Box
         </div>
       </div>
-      <div class='col-6 col-last'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              Search Box
-            </div>
-          </div>
-          <div class='panel-body'>
-            <form>
-              <input class='easyui-searchbox' data-options="prompt:'Please Input Value', searcher:doSearch, width: 440, height:34">
-            </form>
-          </div>
-        </div>
-      </div>
-      <hr class='col-12'>
-      <div class='col-12'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              Form for Datagrid
-            </div>
-          </div>
-        </div>
-        <div class='panel-body'>
-          <form class='form-horizontal mt-30'>
-            <div class='col-3'>
-              <div class='form-group'>
-                <label class='col-3 control-label'>申请单号:</label>
-                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
-              </div>
-            </div>
-            <div class='col-3'>
-              <div class='form-group'>
-                <label class='col-3 control-label'>单位/部门:</label>
-                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
-              </div>
-            </div>
-            <div class='col-3 mt-30'>
-              <div class='form-group'>
-                <label class='col-3 control-label'>备注:</label>
-                <textarea class='col-2 easyui-textbox easyui-textarea' data-options='multiline:true, height:100'></textarea>
-              </div>
-            </div>
-            <div class='col-3 col-last mt-30'>
-              <a class='easyui-linkbutton color-success btn-jump l-btn l-btn-small'>
-                Button
-              </a>
-            </div>
-            <div class='col-3'>
-              <div class='form-group'>
-                <label class='col-3 control-label'>日期:</label>
-                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
-              </div>
-            </div>
-            <div class='col-3'>
-              <div class='form-group'>
-                <label class='col-3 control-label'>申请人:</label>
-                <input class='col-2 easyui-textbox' data-options='width:180, height:34' type='text'>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <hr class='col-12'>
-      <div class='col-12'>
-        <div class='panel panel-primary'>
-          <div class='panel-header'>
-            <div class='panel-icon fa fa-align-justify'></div>
-            <div class='panel-title panel-with-icon'>
-              Format Number Box
-            </div>
-          </div>
-          <div class='panel-body'>
-            <form>
-              <p>List Price:</p>
-              <input class='easyui-numberbox' data-options='height:34' precision='2' value='234.56'>
-              <p>Amount:</p>
-              <input class='easyui-numberbox' data-options='height:34' value='100'>
-              <p>Number in the United States</p>
-              <input class='easyui-numberbox' data-options="precision:2, groupSeparator:',', height:34" value='1234567.89'>
-              <p>Number in France</p>
-              <input class='easyui-numberbox' data-options="precision:2,groupSeparator:' ',decimalSeparator:',', height:34" value='1234567.89'>
-              <p>Currency:USD</p>
-              <input class='easyui-numberbox' data-options="precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34" value='1234567.89'>
-              <p>Currency:EUR</p>
-              <input class='easyui-numberbox' data-options="precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34" value='1234567.89'>
-            </form>
-          </div>
-        </div>
+      <div class='panel-body'>
+        <form>
+          <p>List Price:</p>
+          <input class='easyui-numberbox' data-options='height:34' precision='2' value='234.56'>
+          <p>Amount:</p>
+          <input class='easyui-numberbox' data-options='height:34' value='100'>
+          <p>Number in the United States</p>
+          <input class='easyui-numberbox' data-options="precision:2, groupSeparator:',', height:34" value='1234567.89'>
+          <p>Number in France</p>
+          <input class='easyui-numberbox' data-options="precision:2,groupSeparator:' ',decimalSeparator:',', height:34" value='1234567.89'>
+          <p>Currency:USD</p>
+          <input class='easyui-numberbox' data-options="precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34" value='1234567.89'>
+          <p>Currency:EUR</p>
+          <input class='easyui-numberbox' data-options="precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34" value='1234567.89'>
+        </form>
       </div>
     </div>
   </div>

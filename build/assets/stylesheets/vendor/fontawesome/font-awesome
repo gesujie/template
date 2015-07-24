@@ -21,6 +21,29 @@
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0); }
 
+/* makes the font 33% larger relative to the icon container */
+/* line 6, /home/coskuntekin/Workshop/admin-template-easyui/source/assets/stylesheets/vendor/fontawesome/_larger.scss */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+/* line 11, /home/coskuntekin/Workshop/admin-template-easyui/source/assets/stylesheets/vendor/fontawesome/_larger.scss */
+.fa-2x {
+  font-size: 2em; }
+
+/* line 12, /home/coskuntekin/Workshop/admin-template-easyui/source/assets/stylesheets/vendor/fontawesome/_larger.scss */
+.fa-3x {
+  font-size: 3em; }
+
+/* line 13, /home/coskuntekin/Workshop/admin-template-easyui/source/assets/stylesheets/vendor/fontawesome/_larger.scss */
+.fa-4x {
+  font-size: 4em; }
+
+/* line 14, /home/coskuntekin/Workshop/admin-template-easyui/source/assets/stylesheets/vendor/fontawesome/_larger.scss */
+.fa-5x {
+  font-size: 5em; }
+
 /* line 3, /home/coskuntekin/Workshop/admin-template-easyui/source/assets/stylesheets/vendor/fontawesome/_fixed-width.scss */
 .fa-fw {
   width: 1.28571em;

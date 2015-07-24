@@ -20,9 +20,6 @@
  */
 
 
-
-
-
 $.fn.panel.defaults.onBeforeDestroy = function() {
 	var frame = $('iframe', this);
 	try {
@@ -189,7 +186,7 @@ $.extend($.fn.validatebox.defaults.rules, {
 	
 	chinese : {// 验证中文 
 		validator : function(value) { 
-			return /^[\Α-\￥]+$/i.test(value); 
+			return /^[Α-\￥]+$/i.test(value);
 		}, 
 		message : '请输入中文' 
 	}, 
@@ -232,7 +229,7 @@ $.extend($.fn.validatebox.defaults.rules, {
 	}, 
 	name : {// 验证姓名，可以是中文或英文 
 			validator : function(value) { 
-				return /^[\Α-\￥]+$/i.test(value)|/^\w+[\w\s]+\w+$/i.test(value); 
+				return /^[Α-\￥]+$/i.test(value)|/^\w+[\w\s]+\w+$/i.test(value);
 			}, 
 			message : '请输入姓名' 
 	},
@@ -297,7 +294,7 @@ $.extend($.fn.datagrid.methods, {
 				}	  
 			}).tooltip('show');	  
 	 
-		};	  
+		}
 		return jq.each(function () {	  
 			var grid = $(this);	  
 			var options = $(this).data('datagrid');	  
@@ -378,7 +375,7 @@ $.extend($.fn.datagrid.methods, {
 $.extend(jQuery.fn.datagrid.defaults.editors, {
 	combotree: {
 		init: function(container, options){
-			var editor = jQuery('<input type="text">').appendTo(container);
+			var editor = jQuery('<input type="text"/>').appendTo(container);
 			cip.editor = editor;
 			cip.options = options;
 			if(editor.combotree) {
@@ -441,7 +438,7 @@ $.fn.treeDataFilterListToTree = function(data, opt) {
 	}
 	return data;
 	
-}
+};
 
 /**
  * @author 李钰龙
@@ -584,7 +581,7 @@ $.extend($.fn.datagrid.defaults.editors.combobox, {
 $.extend($.fn.datagrid.defaults.editors, {
 	combogrid: {
 		init: function(container, options){
-			var input = $('<input type="text" class="datagrid-editable-input">').appendTo(container);
+			var input = $('<input type="text" class="datagrid-editable-input"/>').appendTo(container);
 			input.combogrid(options);
 			return input;
 		},
@@ -772,13 +769,13 @@ $.showMessage = function(options) {
 	}, options);
 	opts.width = opts.width < 400 ? 400 : opts.width; // 强制宽度大于400
 	return $.messager.show(opts);
-}
+};
 
 $.closeMessage = function(btn) {
 	if(!!btn) {
 		$(btn).parents(".panel.window").remove()
 	}
-}
+};
 
 
 
@@ -855,7 +852,6 @@ $.changeThemeFun = function(themeName) {
 		expires : 7
 	});
 };
-
 
 /**
  * @author 李钰龙

@@ -59,7 +59,7 @@ Namespace.register = function(fullNS){
         }
     }
     if (sEval != "") eval(sEval);
-}
+};
 
 /**
  * @author 李钰龙
@@ -125,7 +125,7 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 			// 找不到id对应的iframe，则传递的参数应该是src
 			var frames = inFrame == true ? parent.$("iframe") : $("iframe");
 			for(var i=0; i<frames.size(); i++) {
-				var src = $(frames[i]).attr("src")
+				var src = $(frames[i]).attr("src");
 				if(src == idOrSrc) {
 					return frames[i].contentWindow;
 				}
@@ -133,7 +133,7 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 		} else {
 			var frame =  inFrame == true ? parent.$("iframe#" + idOrSrc) : $("iframe#" + idOrSrc);
 			if(frame.length != 0) {
-				return frame[0].contentWindow;;
+				return frame[0].contentWindow;
 			}
 		}
 		return undefined;

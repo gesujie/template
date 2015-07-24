@@ -27,7 +27,7 @@
   {"id": "2-1-1", "text": "Tabs", "url": "pages/tabs.html", "parentId": "2-1", "iconCls": "fa fa-list-alt"},
   {"id": "2-1-2", "text": "Panel", "url": "pages/panel.html", "parentId": "2-1", "iconCls": "fa fa-cube"},
   {"id": "2-1-3", "text": "Layout", "url": "pages/layout.html", "parentId": "2-1", "iconCls": "fa fa-align-left"},
-  {"id": "2-1-4", "text": "Label", "url": "pages/label.html", "parentId": "2-1", "iconCls": "fa fa-flag"},
+  {"id": "2-1-4", "text": "Label & Button", "url": "pages/label-button.html", "parentId": "2-1", "iconCls": "fa fa-flag"},
   {"id": "2-1-5", "text": "Window", "url": "pages/window.html", "parentId": "2-1", "iconCls": "fa fa-list-alt"},
   {"id": "2-1-6", "text": "Accordion", "url": "pages/accordion.html", "parentId": "2-1", "iconCls": "fa fa-server"},
   {"id": "2-1-7", "text": "Grids", "url": "pages/grid.html", "parentId": "2-1", "iconCls": "fa fa-align-justify"},

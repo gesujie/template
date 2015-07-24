@@ -1,35 +1,35 @@
 <div class='easyui-layout' fit='true'>
-  <a class='easyui-linkbutton color-primary' iconCls='fa fa-bookmark' onclick='qc.demoWindow.openWindow()'>打开窗口</a>
+  <a class='easyui-linkbutton l-btn-primary' iconCls='fa fa-columns' onclick='qc.demoWindow.openWindow()'>
+    打开窗口
+  </a>
 </div>
 <div id='qc-window-windowObj'>
-  <form class='form-horizontal mt-20'>
-    <div class='form-group col-12 mb-20'>
+  <form class='form-horizontal'>
+    <div class='form-group'>
       <label class='col-2 control-label'>Email</label>
       <div class='col-10 col-last'>
-        <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Email' type='email'>
+        <input class='easyui-textbox' data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type='text'>
       </div>
     </div>
-    <div class='form-group col-12 mb-20'>
+    <div class='form-group'>
       <label class='col-2 control-label'>Password</label>
       <div class='col-10 col-last'>
-        <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Password' type='password'>
+        <input class='easyui-textbox' data-options="prompt:'Password', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
       </div>
     </div>
-    <div class='form-group col-12 mb-20'>
+    <div class='form-group'>
       <div class='col-push-2 col-10'>
         <div class='checkbox'>
           <label>
-            <input type='checkbox'>
-              Remember me
-            </input>
+            <input class='easyui-checkbox' type='checkbox'>
+            Remember me
           </label>
         </div>
       </div>
     </div>
     <div class='form-group'>
       <div class='col-push-2 col-10'>
-        <a class='easyui-linkbutton color-info text-center' href='javascript:void(0)' iconCls='fa fa-user-plus'>Sign up</a>
-        <a class='easyui-linkbutton color-primary mr-10 text-center' href='javascript:void(0)' iconCls='fa fa-sign-in'>Sign in</a>
+        <button class='easyui-linkbutton l-btn-primary' type='submit'>Sign in</button>
       </div>
     </div>
   </form>

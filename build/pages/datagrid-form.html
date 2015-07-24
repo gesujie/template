@@ -3,14 +3,13 @@
     <form>
       <div class='form-group'>
         <label>Product</label>
-        <input class='easyui-textbox' data-options='width:300, height:34' type='text'>
+        <input class='easyui-textbox' data-options="prompt:'Product', width:400, height:34, type: 'text'">
       </div>
-      <div class='form-group'>
-        <label>Status</label>
-        <input class='easyui-textbox' data-options='width:300, height:34' type='text'>
+      <div class='form-group mb-10'>
+        <label>Price</label>
+        <input class='easyui-textbox' data-options="prompt:'Price', width:400, height:34, type: 'text'">
       </div>
-      <button class='easyui-linkbutton color-primary' data-options="iconCls:'fa fa-plus'" type='submit'>Add</button>
-      <button class='easyui-linkbutton color-danger' data-options="iconCls:'fa fa-minus'" type='submit'>Remove</button>
+      <button class='easyui-linkbutton l-btn-success' type='submit'>Add</button>
     </form>
   </div>
   <div class='easyui-panel' data-options="region:'center', border:false">

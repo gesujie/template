@@ -41,7 +41,7 @@ $('#mainSlideMenu').tree({
 	formatter:function(node){
 		var s = node.text;
 		if (node.children){
-			s += '&nbsp;<span class=\'badge badge-info\'>' + node.children.length + '</span>';
+			s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
 		}
 		return s;
 	}
