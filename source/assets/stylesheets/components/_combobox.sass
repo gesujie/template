@@ -1,13 +1,14 @@
-//
-// Combobox
-// --------------------------------------------------
-
+/*------------------------------------*
+    #COMBOBOX
+/*------------------------------------*
 
 .combobox-item,
 .combobox-group
   font-size: 12px
-  padding: 3px
-  padding-right: 0
+  padding: 8px 0 8px 8px
+  +transition(background-color, 0.28s, ease-out)
+  &:not(:last-child)
+    border-bottom: 1px dotted #ccc
 
 .combobox-item-disabled
   +opacity(0.5)
@@ -15,14 +16,11 @@
 .combobox-gitem
   padding-left: 10px
 
-.combobox-group
-  font-weight: bold
-
 .combobox-item-hover
-  background-color: #eaf2ff
+  background-color: lighten($brand-primary, 20%)
   color: #000
 
 .combobox-item-selected
-  background-color: #ffe48d
+  background-color: lighten($brand-warning, 20%)
   color: #000
 

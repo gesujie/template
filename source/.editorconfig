@@ -1,33 +1,22 @@
-i# EditorConfig is awesome: http://EditorConfig.org
+# For more information about the properties used in
+# this file, please see the EditorConfig documentation:
+# http://editorconfig.org/
 
- # top-most EditorConfig file
- root = true
+root = true
 
- # Unix-style newlines with a newline ending every file
- [*]
- end_of_line = lf
- insert_final_newline = true
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
 
- # Matches multiple files with brace expansion notation
- # Set default charset
- [*.{js,py}]
- charset = utf-8
+[*.md]
+trim_trailing_whitespace = false
 
- # 4 space indentation
- [*.py]
- indent_style = space
- indent_size = 4
-
- # Tab indentation (no size specified)
- [*.js]
- indent_style = tab
-
- # Indentation override for all JS under lib directory
- [lib/**.js]
- indent_style = space
- indent_size = 2
-
- # Matches the exact files either package.json or .travis.yml
- [{package.json,.travis.yml}]
- indent_style = space
- indent_size =
+[{.travis.yml,package.json}]
+# The indent size used in the `package.json` file cannot be changed
+# https://github.com/npm/npm/pull/3180#issuecomment-16336516
+indent_size = 2
+indent_style = space

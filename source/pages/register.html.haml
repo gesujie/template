@@ -1,17 +1,30 @@
 -@title= 'Register | Admin Page '
 -@page_classes= 'register'
 
-
-.easyui-layout{'data-options' => 'width:450, height:300'}
-  %div.easyui-panel{'data-options' => "region:'west',title:'Form', cls:'panel-primary', split:false, iconCls:'fa fa-file-text', width:450, collapsible:false, closable:true"}
-    %form
-      .form-group
-        %label Email address
-        %input.form-control{placeholder: 'Enter email', type: 'email'}
-      .form-group
-        %label Password
-        %input.form-control{placeholder: 'Password', type: 'password'}
-      .form-group
-        %button.easyui-linkbutton.color-primary{type:'submit'} Submit
-        %button.easyui-linkbutton.color-danger{type:'reset'} Reset
-
+.container
+  .col-4.col-push-4
+    .panel.panel-primary
+      .panel-header
+        .panel-title
+          %i.fa.fa-lock
+          Login The Admin App
+      .panel-body
+        .text-center
+          .border-circle.mt-20
+            %i.fa.fa-user.fa-5x.mt-10
+        %form
+          .form-group
+            %label Email address
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+          .form-group
+            %label Password
+            %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          .checkbox
+            %label
+              %input.easyui-checkbox{type: 'checkbox'}
+              Remember me
+          %button.col-12.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
+            Login
+      .panel-footer.text-center
+        %small.text-muted
+          设计单位：贵州黔驰信息股份有限公司

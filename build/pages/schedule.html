@@ -1,15 +1,8 @@
 <div class='easyui-layout' fit='true'>
   <div class='easyui-panel' data-options="region:'center', tools:'#panel-custom-tool', cls:'panel-primary', title:'Schedule', iconCls:'fa fa-calendar', collapsible:false">
-    <div id='panel-custom-tool'>
-      <span class='display-date' id='getDate'></span>
-      <a onclick="prevButton()" title="Prev" class="fa fa-angle-left schedule-tool" href="javascript:void(0)"><span class='sr-only'>Prev Button</span>
-      </a>
-      <a onclick="todayButton()" title="Today" class="fa fa-circle schedule-tool" href="javascript:void(0)"><span class='sr-only'>Today Button</span>
-      </a>
-      <a onclick="nextButton()" title="Next" class="fa fa-angle-right schedule-tool" href="javascript:void(0)"><span class='sr-only'>Next Button</span>
-      </a>
+    <div class='col-12'>
+      <div id='schedule'></div>
     </div>
-    <div id='schedule'></div>
   </div>
 </div>
 <script>

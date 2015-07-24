@@ -1,8 +1,9 @@
-//
-// Grid
-// --------------------------------------------------
+/*------------------------------------*
+    #GRID
+/*------------------------------------*
 
-$susy: (  columns: 12, gutters: 1/4, use-custom: (box-sizing: false))
+
+$susy: (columns: 12, container: 1200px, gutters: 1/4, use-custom:(box-sizing: false))
 
 //**** Container
 .container
@@ -122,29 +123,23 @@ $susy: (  columns: 12, gutters: 1/4, use-custom: (box-sizing: false))
 .col-push-12
   +push(12 of 12)
 
-@for $i from 1 through 5
-  .mb-#{($i*10)}
-    margin-bottom: (($i*10)+px)
+.clearfix
+  &:before,
+  &:after
+    content: ''
+    display: table
+  &:after
+    clear: both
 
-@for $i from 1 through 5
-  .pr-#{($i*10)}
-    padding-right: (($i*10)+px)
-
-@for $i from 1 through 5
-  .pl-#{($i*10)}
-    padding-right: (($i*10)+px)
-
-//**** Grid debug classes
 .debug
   & [class*="col-"]
     display: table
     height: 50px
     padding: $padding-base-vertical $padding-base-horizontal
     background-color: rgba(lighten(#000, 35%), .2)
-
     &::before
       display: table-cell
       content: attr(class)
       vertical-align: middle
-      font-size: $font-size-small
+      font-size: $font-size-base
       word-break: break-all

@@ -5,7 +5,6 @@
  */
 
 
-
 Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;
@@ -16,12 +15,14 @@ $(function(){
 		qc.main.slideMenuUrl = "json/mainMenuTreeData.json";
 	}
 
-	$("#mainSlideMenu").tree({
+	qc.main.slideMenu = $("#mainSlideMenu").tree({
 		url : qc.main.slideMenuUrl,
 		fit : true, animate : true,
 		parentField : "parentId",
 		onClick: function(node){
-			if(node.url) {
+			if(!!node.children) {
+				qc.main.slideMenu.tree("toggle", node.target);
+			} else if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
 		},
@@ -34,13 +35,11 @@ $(function(){
 		border : false,
         fit : true,
         tabHeight:41,
-        onAdd:function(title,index) {
-			//console.info(title);
-        },
-		onUpdate:function(title,index) {
-		},
 		onClose: function(title, index) {
 			qc.main.destroyContainsWindow(title);
+		},
+		onSelect: function(title,index) {
+			$(".combo-p").hide();
 		}
 	});
 });
@@ -106,44 +105,46 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 };
 
 qc.main.createFrame = function(url) {
-	var s = '<iframe scrolling="auto" frameborder="0"  src="' + url
-			+ '" style="width:100%;height:100%;"></iframe>';
+	var s = '<iframe scrolling="auto" src="' + url + '" style="width:100%;height:100%;"></iframe>';
 	return s;
 };
 
 // 绑定菜单
+var mainTabMenu = $('#mainTabMenu');
 qc.main.tabClose = function() {
+	var tabsInner = $('.tabs-inner');
+	var tabsSelected = $('.tabs-selected');
 	/* 双击关闭TAB选项卡 */
-	$(".tabs-inner").dblclick(function() {
+	tabsInner.dblclick(function() {
 		var subtitle = $(this).children(".tabs-closable").text();
 		qc.main.mainTabs.tabs('close', subtitle);
 	});
-	$(".tabs-inner").mousedown(function(e){
+	tabsInner.mousedown(function(e){
 		e.preventDefault();
 		if(e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 			var subtitle = $(this).children(".tabs-closable").text();
 			qc.main.mainTabs.tabs('close', subtitle);
 			return false;//阻止链接跳转
-		};
+		}
 	});
 	// 鼠标中键点击关闭操作
-	$(".tabs-selected").mousedown(function(e){
+	tabsSelected.mousedown(function(e){
 		e.preventDefault();
 		if(e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 			var subtitle = $(this).children().first().text();
 			qc.main.mainTabs.tabs('close', subtitle);
 			return false;//阻止链接跳转
-		};
+		}
 		return false;
 	});
 	/* 为选项卡绑定右键 */
-	$(".tabs-selected").bind('contextmenu', function(e) {
-		$('#mainTabMenu').menu('show', {
+	tabsSelected.bind('contextmenu', function(e) {
+		mainTabMenu.menu('show', {
 			left : e.pageX,
 			top : e.pageY
 		});
 		var subtitle = $(this).children().first().text();
-		$('#mainTabMenu').data("currtab", subtitle);
+		mainTabMenu.data("currtab", subtitle);
 		qc.main.mainTabs.tabs('select', subtitle);
 		return false;
 	});
@@ -151,13 +152,13 @@ qc.main.tabClose = function() {
 
 // 绑定右键菜单事件
 qc.main.tabCloseEven = function() {
-	$('#mainTabMenu').menu({
+	mainTabMenu.menu({
 		onClick : function(item) {
 			qc.main.closeTab(item.id);
 		}
 	});
 	return false;
-}
+};
 
 qc.main.pushWindowId = function(ids) {
 	qc.main.windowStack.push({
@@ -288,7 +289,7 @@ qc.main.closeTab = function(action) {
 		break;
 	}
 	qc.main.destroyContainsWindow(allCloseTabTitle);
-}
+};
 
 qc.main.menushow = function(e){
 	var lis=$(".menu > li");
@@ -306,7 +307,7 @@ qc.main.menushow = function(e){
 			$("div."+lid).css("display", "none");
 		}
 	}
-}
+};
 /**
  * 功能：关闭当前tab,选中指定标题的tab,并刷新对应的frameID
  * 参数：tab的id
@@ -343,17 +344,17 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 	}
 	else//名称otherTabTitle的tab不存在
 	{
-			var currTab2 = qc.main.mainTabs.tabs('getSelected');
-			qc.main.mainTabs.tabs('update', {
-				tab : currTab2,
-				options : {
-				    title: otherTabTitle,
-					content : qc.main.createFrame(frameURL)
-				}
-			});
+		var currTab2 = qc.main.mainTabs.tabs('getSelected');
+		qc.main.mainTabs.tabs('update', {
+			tab : currTab2,
+			options : {
+				title: otherTabTitle,
+				content : qc.main.createFrame(frameURL)
+			}
+		});
 	}
 	
-}
+};
 
 /**
  * 功能：关闭模态窗口并刷新制定Frame
@@ -367,7 +368,7 @@ qc.main.getCurrentWindow = function(frameID) {
 		 framename=frameID.substring(0,index);
 	}
 	return frames[framename];
-}
+};
 
 /**
  * 功能：弹出信息窗口
@@ -377,5 +378,4 @@ qc.main.getCurrentWindow = function(frameID) {
  */
 qc.main.msgShow = function(title, msgString, msgType) {
 	$.messager.alert(title, msgString, msgType);
-}
-;
+};

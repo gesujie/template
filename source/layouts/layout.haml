@@ -1,16 +1,20 @@
 !!!5
-%html{lang:'zh'}
+%html{lang:'en'}
   %head
     %meta{charset: 'utf-8'}/
-    %meta{content: 'ie=edge', 'http-equiv' => 'x-ua-compatible'}/
+    %meta{content: 'ie=edge', 'http-equiv':'x-ua-compatible'}/
     %title
       =@title
-    %meta{content: '', :name => 'description'}/
+    %meta{content: '', name:'description'}/
     %meta{content: 'width=device-width, initial-scale=1', name: 'viewport'}/
 
-    =stylesheet_link_tag  'application'
+    = yield_content :meta
+
+    = partial 'partials/head'
 
     %link{rel:'icon', href:'favicon.ico', type:'image/x-icon'}/
+
+    %link{type:'text/plain', rel:'author', href:'https://domain.com/humans.txt'}/
 
   %body{class: @page_classes || page}
 

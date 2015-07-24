@@ -3,33 +3,32 @@
     <div class='panel-sing-in'>
       <div class='easyui-panel' data-options="region:'west',title:'Sign in', cls:'panel-primary', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true">
         <form class='form-horizontal'>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <label class='col-2 control-label'>Email</label>
             <div class='col-10 col-last'>
               <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Email' type='email'>
             </div>
           </div>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <label class='col-2 control-label'>Password</label>
             <div class='col-10 col-last'>
               <input class='easyui-textbox form-control' data-options='width:330, height:35' placeholder='Password' type='password'>
             </div>
           </div>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <div class='col-push-2 col-10'>
               <div class='checkbox'>
                 <label>
-                  <input type='checkbox'>
-                    Remember me
-                  </input>
+                  <input class='easyui-checkbox' type='checkbox'>
+                  Remember me
                 </label>
               </div>
             </div>
           </div>
           <div class='form-group'>
             <div class='col-push-2 col-10'>
-              <a onclick="btnRegistry()" class="easyui-linkbutton color-info text-center" iconCls="fa fa-user-plus" href="javascript:void(0)">Sign up</a>
-              <a class="easyui-linkbutton color-primary mr-10 text-center" iconCls="fa fa-sign-in" href="javascript:void(0)">Sign in</a>
+              <a onclick="btnRegistry()" class="easyui-linkbutton l-btn-info text-center" iconCls="fa fa-user-plus" href="javascript:void(0)">Sign up</a>
+              <a class="easyui-linkbutton l-btn-primary mr-10 text-center" iconCls="fa fa-sign-in" href="javascript:void(0)">Sign in</a>
             </div>
           </div>
         </form>
@@ -38,7 +37,7 @@
     <div class='panel-sing-up'>
       <div class='easyui-panel' data-options="region:'west',title:'Sign up', cls:'panel-info', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true">
         <form class='form-horizontal'>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <div class='col-3'>
               <label class='col-2 control-label'>Username:</label>
             </div>
@@ -46,7 +45,7 @@
               <input class='easyui-textbox' data-options="prompt:'Enter a username...', width:240, height:35" name='Username'>
             </div>
           </div>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <div class='col-3'>
               <label class='col-2 control-label'>Email:</label>
             </div>
@@ -54,7 +53,7 @@
               <input class='easyui-textbox' data-options="prompt:'Enter a email address...' ,validType:'email', width:240, height:35" name='Username'>
             </div>
           </div>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <div class='col-3'>
               <label class='col-2 control-label'>Password:</label>
             </div>
@@ -62,7 +61,7 @@
               <input class='easyui-textbox' data-options='width:240, height:35' type='password'>
             </div>
           </div>
-          <div class='form-group'>
+          <div class='form-group col-12 mb-10'>
             <div class='col-3'>
               <label class='col-2 control-label'>Confirm Password:</label>
             </div>
@@ -72,8 +71,8 @@
           </div>
           <div class='form-group'>
             <div class='col-push-3'>
-              <a onclick="btnBack()" class="easyui-linkbutton color-default mr-10 text-center" iconCls="fa fa-arrow-left" href="javascript:void(0)">Back</a>
-              <a class="easyui-linkbutton color-info text-center" iconCls="fa fa-user-plus" href="javascript:void(0)">Sign up</a>
+              <a onclick="btnBack()" class="easyui-linkbutton l-btn-default mr-10 text-center" iconCls="fa fa-arrow-left" href="javascript:void(0)">Back</a>
+              <a class="easyui-linkbutton l-btn-info text-center" iconCls="fa fa-user-plus" href="javascript:void(0)">Sign up</a>
             </div>
           </div>
         </form>

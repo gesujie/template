@@ -1,6 +1,6 @@
-//
-// Forms
-// --------------------------------------------------
+/*------------------------------------*
+    #FORMS
+/*------------------------------------*
 
 //////
 // Basic form styles
@@ -10,25 +10,22 @@
   &::before
     display: table
     content: ''
-
-
+    
 label
   display: inline-block
   max-width: 100%
   margin-bottom: 5px
-  font-weight: 300
-  font-size: $font-size-small
+  font-size: 12px
+  color: $gray-light
 
-.form-control
-  display: block
-  width: 100%
-  height: 34px
+//// Merged Class
+// Merge with by form-control class
+
+.easyui-textbox
   padding: $padding-base-vertical $padding-base-horizontal
   background-color: $textbox-bg-color
-  font-size: 14px
+  font-size: $font-size-base
   color: #555
-  line-height: $line-height-base
-  border: none
   +border-radius (2px)
   +transition(background-color, 0.28s, ease-out)
   &:focus
@@ -45,7 +42,7 @@ input[type=file]
   margin-top: 5px
   margin-bottom: 10px
   color: #737373
-  font-size: $font-size-small
+  font-size: $font-size-base
 
 .checkbox,
 .radio
@@ -54,6 +51,13 @@ input[type=file]
   margin-top: 10px
   margin-bottom: 10px
 
+.checkbox .label,
+.radio .label
+  min-height: 20px
+  padding-left: 20px
+  margin-bottom: 0
+  font-weight: 400
+  cursor: pointer
 
 //////
 // From inline styles
@@ -64,7 +68,7 @@ input[type=file]
     margin-bottom: 0
 
 .form-inline
-  & .form-control
+  & .easyui-textbox
     +inline-block()
     width: auto
 
@@ -77,10 +81,6 @@ input[type=file]
     margin-bottom: 0
     text-align: right
 
-.form-horizontal
-  & .form-group
-    padding-bottom: 28px
-
 .form-horizontal .checkbox,
 .form-horizontal .radio
   min-height: 27px
@@ -92,3 +92,35 @@ input[type=file]
   padding-top: 7px
   margin-top: 0
   margin-bottom: 0
+
+//////
+// Custom checkbox and radio button
+
+.easyui-checkbox
+  display: inline-block
+  width: 12px
+  vertical-align: top
+  -webkit-appearance: none
+  outline: none
+  &::before
+    +font-icons(FontAwesome, '\f096', 14px, #4C4949)
+    +transition(color, 300ms, ease-in-out)
+  &:checked
+    &::before
+      +font-icons(FontAwesome, '\f046', 14px, $brand-info)
+      +transition(color, 300ms, ease-in-out)
+
+.easyui-radio
+  display: inline-block
+  width: 12px
+  vertical-align: top
+  -webkit-appearance: none
+  outline: none
+  &::before
+    +font-icons(FontAwesome, '\f10c', 14px, #4C4949)
+    +transition(color, 300ms, ease-in-out)
+  &:checked
+    &::before
+      +font-icons(FontAwesome, '\f192', 14px, $brand-info)
+      +transition(color, 300ms, ease-in-out)
+

@@ -1,22 +1,14 @@
-//
-// Search Box
-// --------------------------------------------------
-
+/*------------------------------------*
+    #SEARCHBOX
+/*------------------------------------*
 
 .searchbox
-  display: inline-block
+  +inline-block()
   white-space: nowrap
-  margin: 0
-  padding: 0
-  border-width: 1px
-  border-style: solid
   overflow: hidden
-  vertical-align: middle
 
 .searchbox .searchbox-text
   font-size: 12px
-  border: 0
-  margin: 0
   padding: 0 2px
   vertical-align: top
 
@@ -25,13 +17,12 @@
   color: #ccc
 
 .searchbox-button
-  width: 18px
-  height: 20px
-  overflow: hidden
   display: inline-block
+  height: 20px
+  padding: 0 15px
+  overflow: hidden
   vertical-align: top
   cursor: pointer
-  +opacity(0.6)
 
 .searchbox-button-hover
   +opacity(1)
@@ -53,22 +44,11 @@
   +border-radius(0)
 
 .searchbox .m-btn-active
-  border-width: 0 1px 0 0
   +border-radius(0)
-
-.searchbox .textbox-button-right
-  border-width: 0 0 0 1px
-
-.searchbox .textbox-button-left
-  border-width: 0 1px 0 0
 
 .searchbox-button
   &::before
-    +font-icons(FontAwesome, '\f002', 14px, #d7d7d7)
-
-.searchbox
-  border-color: #95B8E7
-  background-color: #fff
+    +font-icons(FontAwesome, '\f002', 14px, #525050)
 
 .searchbox .l-btn-plain
   background: #E0ECFF

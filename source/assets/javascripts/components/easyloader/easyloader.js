@@ -11,6 +11,7 @@
  * easyloader - jQuery EasyUI
  * 
  */
+
 (function(){
 	var modules = {
 		fontawesome:{

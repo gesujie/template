@@ -21,73 +21,29 @@
     }
 }());
 
-//### Sidebar Navigation Json
+//### Sidebar Navigation JSON
 qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 
 //### Registry Login Button
 function btnRegistry(){
-    $('.panel-sing-up').addClass('active');
-    $('.panel-sing-in').addClass('passive');
+	$('.panel-sing-up').addClass('active');
+	$('.panel-sing-in').addClass('passive');
 }
 
 //### Registry Back Button
 function btnBack(){
-    $('.panel-sing-up').removeClass('active');
-    $('.panel-sing-in').removeClass('passive');
+	$('.panel-sing-up').removeClass('active');
+	$('.panel-sing-in').removeClass('passive');
 }
 
-//### Schedule Prev Button
-function prevButton(){
-	var schedule = $('#schedule');
-	schedule.fullCalendar('prev');
-	var moment = schedule.fullCalendar('getDate');
-	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
-}
-
-//### Schedule Today Button
-function todayButton(){
-	var schedule = $('#schedule');
-	schedule.fullCalendar('today');
-	var moment = schedule.fullCalendar('getDate');
-	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
-}
-
-//### Schedule Next Button
-function nextButton(){
-	var schedule = $('#schedule');
-	schedule.fullCalendar('next');
-	var moment = schedule.fullCalendar('getDate');
-	document.getElementById("getDate").textContent = moment.format('YYYY/MM/DD');
-
-}
 //### Sidebar Badge Extend
 $('#mainSlideMenu').tree({
 	formatter:function(node){
 		var s = node.text;
 		if (node.children){
-			s += '&nbsp;<span class=\'badge badge-info\'>' + node.children.length + '</span>';
+			s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
 		}
 		return s;
 	}
 });
 
-$(window).load(function(){
-
-	//### Run Alert
-	//$.messager.alert('Info','Message will be closed after 4 seconds.','info');
-
-	//### Message Box
-	$.messager.show({
-		msg: 'Message will be closed after 4 seconds.',
-		showType: 'slide',
-		width: 500,
-		height: 50,
-		noheader: true,
-		onBeforeOpen: function(){
-			$(this).parent().addClass('message-default');
-			$(this).addClass('message-body-primary');
-			$(this).append("<a href='javascript:void(0)' class='message-close'>×</a>");
-		}
-	});
-
-});

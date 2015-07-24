@@ -27,7 +27,7 @@ gem 'compass', '1.0.3'
 gem 'susy', '2.2.3'
 
 # Twitter Bootstrap
-# gem 'bootstrap-sass', '~> 3.3.3'
+#gem 'bootstrap-sass', '~> 3.3.5.1'
 
 # Font Awesome
 # gem 'font-awesome-rails', '~> 4.3.0.0'

@@ -1,6 +1,6 @@
-//
-// Datagrid
-// --------------------------------------------------
+/*------------------------------------*
+    #DATAGRID
+/*------------------------------------*
 
 .datagrid
   min-height: 100%
@@ -54,8 +54,6 @@
 .datagrid .datagrid-pager
   display: block
   margin: 0
-  border-width: 1px 0 0 0
-  border-style: solid
 
 .datagrid .datagrid-pager-top
   border-width: 0 0 1px 0
@@ -171,8 +169,16 @@
   margin: 0
   padding: 2px 4px
   font-size: 12px
-  outline-style: none
   +border-radius(0)
+  color: #555
+  background-color: $textbox-bg-color
+  border: none
+  +transition(background-color, 0.28s, ease-out)
+  &:focus
+    background-color: #d7d7d7
+    color: #000
+    outline: none
+    +transition(background-color, 0.28s, ease-in)
 
 .datagrid-sort-icon
   float: right
@@ -243,7 +249,7 @@
   border-collapse: separate
 
 .datagrid-row-alt
-  background: #fafafa
+  background-color: #fafafa
 
 .datagrid-row-over,
 .datagrid-header td.datagrid-header-over

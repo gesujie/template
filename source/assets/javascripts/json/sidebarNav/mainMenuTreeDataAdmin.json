@@ -1,0 +1,10 @@
+[
+  {"resourcesId": "1", "resourcesName": "系统权限管理"},
+
+  {"resourcesId": "1-1", "resourcesName": "用户管理", "resourcesPid": "1", "resourcesIcon": "fa fa-list-alt", "resourcesUrl":"pages/admin-mng-user.html", "resourcesSort":0},
+  {"resourcesId": "1-2", "resourcesName": "人员信息管理", "resourcesPid": "1", "resourcesIcon": "fa fa-list-alt", "resourcesUrl":"pages/admin-mng-emp.html", "resourcesSort":1},
+  {"resourcesId": "1-3", "resourcesName": "菜单管理", "resourcesPid": "1", "resourcesIcon": "fa fa-list-alt", "resourcesUrl":"pages/admin-mng-menu.html", "resourcesSort":2},
+  {"resourcesId": "1-4", "resourcesName": "组织机构管理", "resourcesPid": "1", "resourcesIcon": "fa fa-list-alt", "resourcesUrl":"pages/admin-mng-dept.html", "resourcesSort":3},
+  {"resourcesId": "1-5", "resourcesName": "岗位管理", "resourcesPid": "1", "resourcesIcon": "fa fa-list-alt", "resourcesUrl":"pages/admin-mng-post.html", "resourcesSort":4},
+  {"resourcesId": "1-6", "resourcesName": "角色管理", "resourcesPid": "1", "resourcesIcon": "fa fa-list-alt", "resourcesUrl":"pages/admin-mng-role.html", "resourcesSort":5}
+]

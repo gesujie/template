@@ -14,6 +14,8 @@
  * 功能：获取数值的百分数形式
  * 返回： String
  */
+
+
 Number.prototype.toPercent = function(){
 	return (Math.round(this * 10000)/100).toFixed(2) + '%';
 };
@@ -48,10 +50,15 @@ Namespace.register = function(fullNS){
         sNS += nsArray[i];
         // 依次创建构造命名空间对象（假如不存在的话）的语句
         // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
-        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        if(i == nsArray.length - 1) {
+        	// 最后一个节点，如果已经存在，清空一次再生成
+        	sEval += sNS + " = new Object();"
+        } else {
+        	sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        }
     }
     if (sEval != "") eval(sEval);
-}
+};
 
 /**
  * @author 李钰龙
@@ -117,7 +124,7 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 			// 找不到id对应的iframe，则传递的参数应该是src
 			var frames = inFrame == true ? parent.$("iframe") : $("iframe");
 			for(var i=0; i<frames.size(); i++) {
-				var src = $(frames[i]).attr("src")
+				var src = $(frames[i]).attr("src");
 				if(src == idOrSrc) {
 					return frames[i].contentWindow;
 				}
@@ -125,9 +132,29 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 		} else {
 			var frame =  inFrame == true ? parent.$("iframe#" + idOrSrc) : $("iframe#" + idOrSrc);
 			if(frame.length != 0) {
-				return frame[0].contentWindow;;
+				return frame[0].contentWindow;
 			}
 		}
 		return undefined;
+	}
+};
+
+
+/**
+ * 功能：选中radio单选按钮
+ * 参数：
+ *	  radioParentId 父级容器的id
+ *	  radioName 元素name
+ *	  radiovalue 值
+ */
+$.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
+	var obj = radioParentId && radioParentId != "" ? 
+			$("#" + radioParentId).find("[name=" +  radioName+ "]") : 
+			$("[name=" +  radioName+ "]");
+	for(var i=0; i<obj.length; i++) {
+		if(obj[i].value == radiovalue) {  
+			obj[i].checked = true;
+			return true;
+		}  
 	}
 };

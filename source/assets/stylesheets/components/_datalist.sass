@@ -1,7 +1,6 @@
-//
-// Datalist
-// --------------------------------------------------
-
+/*------------------------------------*
+    #DATALIST
+/*------------------------------------*
 
 .datalist .datagrid-header
   border-width: 0
@@ -48,11 +47,11 @@
   overflow: hidden
 
 .datalist-link,
-.m-list li>a
+.m-list li > a
   display: block
   position: relative
   cursor: pointer
-  color: #000000
+  color: #000
   text-decoration: none
   overflow: hidden
   margin: -2px -4px
@@ -61,10 +60,9 @@
   line-height: 18px
   white-space: nowrap
   text-overflow: ellipsis
-  overflow: hidden
 
 .datalist-link::after,
-.m-list li>a::after
+.m-list li > a::after
   position: absolute
   display: block
   width: 8px
@@ -75,11 +73,7 @@
   margin-top: -4px
   border-style: solid
   border-width: 1px 1px 0 0
-  -ms-transform: rotate(45deg)
-  -moz-transform: rotate(45deg)
-  -webkit-transform: rotate(45deg)
-  -o-transform: rotate(45deg)
-  transform: rotate(45deg)
+  +transform (rotate(45deg))
 
 .m-list
   margin: 0
@@ -91,9 +85,9 @@
   border-width: 0 0 1px 0
   border-color: #ccc
 
-.m-list li>a:hover
+.m-list li > a:hover
   background: #eaf2ff
-  color: #000000
+  color: #000
 
 .m-list .m-list-group
   padding: 0 4px

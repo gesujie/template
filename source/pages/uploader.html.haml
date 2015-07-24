@@ -1,16 +1,16 @@
 -@title= 'Uploader | Admin Page '
 -@page_classes= 'uploader easyui-layout'
 
-
 .easyui-layout{fit:'true'}
-  %div.easyui-panel{'data-options' => "region:'center', tools:'#panel-custom-tool', cls:'panel-primary', title:'Uploader', iconCls:'fa fa-upload', collapsible:false"}
+  %div.easyui-panel{'data-options':"region:'center', tools:'#panel-custom-tool', cls:'panel-primary', title:'Uploader', iconCls:'fa fa-upload', collapsible:false"}
     #uploader.wu-example
       #thelist.uploader-list
       .btns
-        #picker 选择文件
+        #picker
+          %i.fa.fa-upload
+          选择文件
 
 :javascript
-
   var uploader = WebUploader.create({
 
       // swf文件路径

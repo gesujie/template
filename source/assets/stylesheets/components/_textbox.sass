@@ -1,13 +1,10 @@
-//
-// Text Box
-// --------------------------------------------------
-
+/*------------------------------------*
+    #TEXTBOX
+/*------------------------------------*
 
 .textbox
   position: relative
   +inline-block()
-
-.textbox
   & .textbox-text
     +inline-block()
     height: 100%
@@ -17,8 +14,7 @@
     +border-radius (2px)
     +transition(background-color, 0.28s, ease-out)
     font-weight: 300
-    font-size: $font-size-small
-
+    font-size: $font-size-base
     &:focus
       background-color: #d7d7d7
       color: #000
@@ -36,7 +32,6 @@
   & .textbox-text
     background-color: $brand-danger
     color: #fff
-
 
 .textbox
   & .textbox-prompt
@@ -104,4 +99,6 @@
 .textbox-icon-readonly
   cursor: default
 
-
+.textbox-icon-disabled
+  &:hover
+    cursor: default

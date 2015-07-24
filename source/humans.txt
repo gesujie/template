@@ -1,19 +1,21 @@
 /* TEAM */
 
 	Chains Front-End Develop Team
-	javascript modify: li yulong
-    styles modify: coskuntekin
+	Javascript Modify by: li yulong
+    Styles Modify by: coskuntekin
 
 /* THANKS */
 
+    Ruby
+    Node.Js
     Middleman
     HTML5 Bolireplate
     HAML
     Sass
+    Susy
     Compass
-    Modernizr
     jQuery
-    Easy UI
+    Easy UI (GPL Edition)
     GIT
 
 /* SITE */

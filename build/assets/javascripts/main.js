@@ -15,6 +15,8 @@
  * 返回： String
  */
 
+
+
 Number.prototype.toPercent = function(){
 	return (Math.round(this * 10000)/100).toFixed(2) + '%';
 };
@@ -49,10 +51,15 @@ Namespace.register = function(fullNS){
         sNS += nsArray[i];
         // 依次创建构造命名空间对象（假如不存在的话）的语句
         // 比如先创建Grandsoft，然后创建Qianchi.MyWork，依次下去
-        sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        if(i == nsArray.length - 1) {
+        	// 最后一个节点，如果已经存在，清空一次再生成
+        	sEval += sNS + " = new Object();"
+        } else {
+        	sEval += "if (typeof(" + sNS + ") == 'undefined') " + sNS + " = new Object();"
+        }
     }
     if (sEval != "") eval(sEval);
-}
+};
 
 /**
  * @author 李钰龙
@@ -118,7 +125,7 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 			// 找不到id对应的iframe，则传递的参数应该是src
 			var frames = inFrame == true ? parent.$("iframe") : $("iframe");
 			for(var i=0; i<frames.size(); i++) {
-				var src = $(frames[i]).attr("src")
+				var src = $(frames[i]).attr("src");
 				if(src == idOrSrc) {
 					return frames[i].contentWindow;
 				}
@@ -126,10 +133,30 @@ $.getFrameContent = function(idOrSrc, inFrame) {
 		} else {
 			var frame =  inFrame == true ? parent.$("iframe#" + idOrSrc) : $("iframe#" + idOrSrc);
 			if(frame.length != 0) {
-				return frame[0].contentWindow;;
+				return frame[0].contentWindow;
 			}
 		}
 		return undefined;
+	}
+};
+
+
+/**
+ * 功能：选中radio单选按钮
+ * 参数：
+ *	  radioParentId 父级容器的id
+ *	  radioName 元素name
+ *	  radiovalue 值
+ */
+$.setRadioBoxValue = function(radioParentId, radioName, radiovalue) {
+	var obj = radioParentId && radioParentId != "" ? 
+			$("#" + radioParentId).find("[name=" +  radioName+ "]") : 
+			$("[name=" +  radioName+ "]");
+	for(var i=0; i<obj.length; i++) {
+		if(obj[i].value == radiovalue) {  
+			obj[i].checked = true;
+			return true;
+		}  
 	}
 };
 /* 作者：李钰龙
@@ -152,7 +179,6 @@ $.getFrameContent = function(idOrSrc, inFrame) {
  * @requires jQuery,EasyUI
  * panel关闭时回收内存，主要用于layout使用iframe嵌入网页时的内存泄漏问题
  */
-
 
 
 $.fn.panel.defaults.onBeforeDestroy = function() {
@@ -321,7 +347,7 @@ $.extend($.fn.validatebox.defaults.rules, {
 	
 	chinese : {// 验证中文 
 		validator : function(value) { 
-			return /^[\Α-\￥]+$/i.test(value); 
+			return /^[Α-\￥]+$/i.test(value);
 		}, 
 		message : '请输入中文' 
 	}, 
@@ -364,7 +390,7 @@ $.extend($.fn.validatebox.defaults.rules, {
 	}, 
 	name : {// 验证姓名，可以是中文或英文 
 			validator : function(value) { 
-				return /^[\Α-\￥]+$/i.test(value)|/^\w+[\w\s]+\w+$/i.test(value); 
+				return /^[Α-\￥]+$/i.test(value)|/^\w+[\w\s]+\w+$/i.test(value);
 			}, 
 			message : '请输入姓名' 
 	},
@@ -429,7 +455,7 @@ $.extend($.fn.datagrid.methods, {
 				}	  
 			}).tooltip('show');	  
 	 
-		};	  
+		}
 		return jq.each(function () {	  
 			var grid = $(this);	  
 			var options = $(this).data('datagrid');	  
@@ -510,7 +536,7 @@ $.extend($.fn.datagrid.methods, {
 $.extend(jQuery.fn.datagrid.defaults.editors, {
 	combotree: {
 		init: function(container, options){
-			var editor = jQuery('<input type="text">').appendTo(container);
+			var editor = jQuery('<input type="text"/>').appendTo(container);
 			cip.editor = editor;
 			cip.options = options;
 			if(editor.combotree) {
@@ -546,7 +572,7 @@ $.extend(jQuery.fn.datagrid.defaults.editors, {
 $.fn.treeDataFilterListToTree = function(data, opt) {
 	if (opt.parentField) {
 		var idField = opt.idField || 'id';
-		var textField = opt.textField || 'text';
+		var textField = opt.textField || opt.treeField || 'text';
 		var iconField = opt.iconField || 'iconCls';
 		var parentField = opt.parentField || 'parentField';
 		var i, l, treeData = [], tmpMap = [];
@@ -573,7 +599,7 @@ $.fn.treeDataFilterListToTree = function(data, opt) {
 	}
 	return data;
 	
-}
+};
 
 /**
  * @author 李钰龙
@@ -594,6 +620,14 @@ $.fn.tree.defaults.loadFilter = function(data) {
 $.fn.treegrid.defaults.loadFilter = function(data) {
 	return $.fn.treeDataFilterListToTree(data, $(this).data().treegrid.options);
 };
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展combotree，使combotree支持设置父节点，自动生成树形结构
+ * 增加parentField属性
+ */
+$.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
 
 
 
@@ -674,14 +708,6 @@ $.extend($.fn.treegrid.methods,{
 /**
  * @author 李钰龙
  * @requires jQuery,EasyUI
- * 扩展combotree，使combotree支持设置父节点，自动生成树形结构
- * 增加parentField属性
- */
-$.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
-
-/**
- * @author 李钰龙
- * @requires jQuery,EasyUI
  * 扩展datagrid行编辑的combobox编辑器，解决无法设置多选值的bug
  */
 $.extend($.fn.datagrid.defaults.editors.combobox, {
@@ -716,7 +742,7 @@ $.extend($.fn.datagrid.defaults.editors.combobox, {
 $.extend($.fn.datagrid.defaults.editors, {
 	combogrid: {
 		init: function(container, options){
-			var input = $('<input type="text" class="datagrid-editable-input">').appendTo(container);
+			var input = $('<input type="text" class="datagrid-editable-input"/>').appendTo(container);
 			input.combogrid(options);
 			return input;
 		},
@@ -775,7 +801,8 @@ $.extend($.fn.datagrid.defaults.editors, {
 	}
 }); 
 
-$.extend($.fn.datagrid.methods, { /*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
+$.extend($.fn.datagrid.methods, { 
+	/*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
 	addEditor : function(jq, param) {
 		if (param instanceof Array) {
 			$.each(param, function(index, item) {
@@ -787,6 +814,7 @@ $.extend($.fn.datagrid.methods, { /*扩展动态编辑框，可以指定禁止�
 			e.editor = param.editor;
 		}
 	},
+	/*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
 	removeEditor : function(jq, param) {
 		if (param instanceof Array) {
 			$.each(param, function(index, item) {
@@ -797,6 +825,67 @@ $.extend($.fn.datagrid.methods, { /*扩展动态编辑框，可以指定禁止�
 			var e = $(jq).datagrid('getColumnOption', param);
 			e.editor = {};
 		}
+	},
+	/*扩展自动合并连续单元格*/
+	autoMergeCells : function (jq, fields) {
+		return jq.each(function () {
+			var target = $(this);
+			if (!fields) {
+				fields = target.datagrid("getColumnFields");
+			}
+			var rows = target.datagrid("getRows");
+			var i = 0,
+			j = 0,
+			temp = {};
+			for (i; i < rows.length; i++) {
+				var row = rows[i];
+				j = 0;
+				for (j; j < fields.length; j++) {
+					var field = fields[j];
+					var tf = temp[field];
+					if (!tf) {
+						tf = temp[field] = {};
+						tf[row[field]] = [i];
+					} else {
+						var tfv = tf[row[field]];
+						if (tfv) {
+							tfv.push(i);
+						} else {
+							tfv = tf[row[field]] = [i];
+						}
+					}
+				}
+			}
+			$.each(temp, function (field, colunm) {
+				$.each(colunm, function () {
+					var group = this;
+					
+					if (group.length > 1) {
+						var before,
+						after,
+						megerIndex = group[0];
+						for (var i = 0; i < group.length; i++) {
+							before = group[i];
+							after = group[i + 1];
+							if (after && (after - before) == 1) {
+								continue;
+							}
+							var rowspan = before - megerIndex + 1;
+							if (rowspan > 1) {
+								target.datagrid('mergeCells', {
+									index : megerIndex,
+									field : field,
+									rowspan : rowspan
+								});
+							}
+							if (after && (after - before) != 1) {
+								megerIndex = after;
+							}
+						}
+					}
+				});
+			});
+		});
 	}
 });
 
@@ -820,6 +909,33 @@ $.modalDialog = function(options) {
 	}, options);
 	opts.modal = true;// 强制此dialog为模式化，无视传递过来的modal参数
 	return $.modalDialog.handler = $('<div/>').dialog(opts);
+};
+
+$.showMessage = function(options) {
+	var msgType = !!options && !!options.msgType ? options.msgType : "warning";
+	var opts = $.extend({
+		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
+			+ '一般情况只用修改msg参数即可',
+		showType: 'slide',
+		width: 500,
+		height: 50,
+		noheader: true,
+		onBeforeOpen: function(){
+			if(options && options.onBeforeOpen) {
+				options.onBeforeOpen();
+			}
+			$(this).addClass('message-body-' + msgType);
+			$(this).append("<a class='message-close' href='javascript:void(0);' onclick='$.closeMessage(this)'>×</a>");
+		}
+	}, options);
+	opts.width = opts.width < 400 ? 400 : opts.width; // 强制宽度大于400
+	return $.messager.show(opts);
+};
+
+$.closeMessage = function(btn) {
+	if(!!btn) {
+		$(btn).parents(".panel.window").remove()
+	}
 };
 
 
@@ -897,7 +1013,6 @@ $.changeThemeFun = function(themeName) {
 		expires : 7
 	});
 };
-
 
 /**
  * @author 李钰龙
@@ -1065,7 +1180,6 @@ Namespace.register("qc.tabs");
  */
 
 
-
 Namespace.register("qc.main"); // UI框架命名空间
 qc.main.onlyOpenTitle = "欢迎使用";
 qc.main.mainTabs = null;
@@ -1076,12 +1190,14 @@ $(function(){
 		qc.main.slideMenuUrl = "json/mainMenuTreeData.json";
 	}
 
-	$("#mainSlideMenu").tree({
+	qc.main.slideMenu = $("#mainSlideMenu").tree({
 		url : qc.main.slideMenuUrl,
 		fit : true, animate : true,
 		parentField : "parentId",
 		onClick: function(node){
-			if(node.url) {
+			if(!!node.children) {
+				qc.main.slideMenu.tree("toggle", node.target);
+			} else if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
 		},
@@ -1094,13 +1210,11 @@ $(function(){
 		border : false,
         fit : true,
         tabHeight:41,
-        onAdd:function(title,index) {
-			//console.info(title);
-        },
-		onUpdate:function(title,index) {
-		},
 		onClose: function(title, index) {
 			qc.main.destroyContainsWindow(title);
+		},
+		onSelect: function(title,index) {
+			$(".combo-p").hide();
 		}
 	});
 });
@@ -1166,44 +1280,46 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 };
 
 qc.main.createFrame = function(url) {
-	var s = '<iframe scrolling="auto" frameborder="0"  src="' + url
-			+ '" style="width:100%;height:100%;"></iframe>';
+	var s = '<iframe scrolling="auto" src="' + url + '" style="width:100%;height:100%;"></iframe>';
 	return s;
 };
 
 // 绑定菜单
+var mainTabMenu = $('#mainTabMenu');
 qc.main.tabClose = function() {
+	var tabsInner = $('.tabs-inner');
+	var tabsSelected = $('.tabs-selected');
 	/* 双击关闭TAB选项卡 */
-	$(".tabs-inner").dblclick(function() {
+	tabsInner.dblclick(function() {
 		var subtitle = $(this).children(".tabs-closable").text();
 		qc.main.mainTabs.tabs('close', subtitle);
 	});
-	$(".tabs-inner").mousedown(function(e){
+	tabsInner.mousedown(function(e){
 		e.preventDefault();
 		if(e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 			var subtitle = $(this).children(".tabs-closable").text();
 			qc.main.mainTabs.tabs('close', subtitle);
 			return false;//阻止链接跳转
-		};
+		}
 	});
 	// 鼠标中键点击关闭操作
-	$(".tabs-selected").mousedown(function(e){
+	tabsSelected.mousedown(function(e){
 		e.preventDefault();
 		if(e.which == 2) { // 1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
 			var subtitle = $(this).children().first().text();
 			qc.main.mainTabs.tabs('close', subtitle);
 			return false;//阻止链接跳转
-		};
+		}
 		return false;
 	});
 	/* 为选项卡绑定右键 */
-	$(".tabs-selected").bind('contextmenu', function(e) {
-		$('#mainTabMenu').menu('show', {
+	tabsSelected.bind('contextmenu', function(e) {
+		mainTabMenu.menu('show', {
 			left : e.pageX,
 			top : e.pageY
 		});
 		var subtitle = $(this).children().first().text();
-		$('#mainTabMenu').data("currtab", subtitle);
+		mainTabMenu.data("currtab", subtitle);
 		qc.main.mainTabs.tabs('select', subtitle);
 		return false;
 	});
@@ -1211,13 +1327,13 @@ qc.main.tabClose = function() {
 
 // 绑定右键菜单事件
 qc.main.tabCloseEven = function() {
-	$('#mainTabMenu').menu({
+	mainTabMenu.menu({
 		onClick : function(item) {
 			qc.main.closeTab(item.id);
 		}
 	});
 	return false;
-}
+};
 
 qc.main.pushWindowId = function(ids) {
 	qc.main.windowStack.push({
@@ -1348,7 +1464,7 @@ qc.main.closeTab = function(action) {
 		break;
 	}
 	qc.main.destroyContainsWindow(allCloseTabTitle);
-}
+};
 
 qc.main.menushow = function(e){
 	var lis=$(".menu > li");
@@ -1366,7 +1482,7 @@ qc.main.menushow = function(e){
 			$("div."+lid).css("display", "none");
 		}
 	}
-}
+};
 /**
  * 功能：关闭当前tab,选中指定标题的tab,并刷新对应的frameID
  * 参数：tab的id
@@ -1403,17 +1519,17 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 	}
 	else//名称otherTabTitle的tab不存在
 	{
-			var currTab2 = qc.main.mainTabs.tabs('getSelected');
-			qc.main.mainTabs.tabs('update', {
-				tab : currTab2,
-				options : {
-				    title: otherTabTitle,
-					content : qc.main.createFrame(frameURL)
-				}
-			});
+		var currTab2 = qc.main.mainTabs.tabs('getSelected');
+		qc.main.mainTabs.tabs('update', {
+			tab : currTab2,
+			options : {
+				title: otherTabTitle,
+				content : qc.main.createFrame(frameURL)
+			}
+		});
 	}
 	
-}
+};
 
 /**
  * 功能：关闭模态窗口并刷新制定Frame
@@ -1427,7 +1543,7 @@ qc.main.getCurrentWindow = function(frameID) {
 		 framename=frameID.substring(0,index);
 	}
 	return frames[framename];
-}
+};
 
 /**
  * 功能：弹出信息窗口
@@ -1437,8 +1553,7 @@ qc.main.getCurrentWindow = function(frameID) {
  */
 qc.main.msgShow = function(title, msgString, msgType) {
 	$.messager.alert(title, msgString, msgType);
-}
-;
+};
 //! moment.js
 //! version : 2.10.2
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -4527,6 +4642,7 @@ qc.main.msgShow = function(title, msgString, msgType) {
  * Docs & License: http://fullcalendar.io/
  * (c) 2015 Adam Shaw
  */
+
 
 
 (function(factory) {
@@ -15321,6 +15437,7 @@ return fc; // export for Node/CommonJS
  *
  * AMD API 内部的简单不完全实现，请忽略。只有当WebUploader被合并成一个文件的时候才会引入。
  */
+
 
 (function( root, factory ) {
     var modules = {},

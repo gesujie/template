@@ -1,0 +1,117 @@
+/*------------------------------------*
+    #HEADER
+/*------------------------------------*
+
+.header
+  background-color: $header-bg
+  &.panel-body
+    overflow: visible
+
+.logo
+  float: left
+  display: table
+  width: 250px
+  height: inherit
+  background-color: $logo-bg
+  font-size: $font-size-base
+  color: $logo-color
+  font-weight: 300
+
+.logo-text
+  display: table-cell
+  width: inherit
+  padding-left: 16px
+  vertical-align: middle
+
+.navbar-subpages
+  float: left
+  height: inherit
+
+/*ul
+.nav-subpages
+  & > li
+    & > a
+      +inline-block()
+      background-color: darken($logo-material-bg, 10%)
+      padding: 8px $padding-large-horizontal
+      margin-top: 5px
+      color: #fff
+      &:hover,
+      &:active,
+      &:focus
+        background-color: $brand-material-warning
+
+/*ul
+.dropdown-menu
+  display: none
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  float: left
+  min-width: 800px
+  background-color: $brand-material-warning
+  +background-clip(padding-box)
+  padding: $padding-large-vertical $padding-large-horizontal
+  +transition(transform, 400ms, ease-in-out, opacity, 400ms, ease-in-out)
+  z-index: 99
+  & > li
+    +inline-block()
+
+.btn-dropdown
+  display: block
+  padding: $padding-base-vertical $padding-base-horizontal
+  background-color: darken($brand-material-warning, 10%)
+  color: #fff
+
+/*li
+.dropdown
+  position: relative
+  float: left
+  margin-left: 15px
+  &:hover
+    .dropdown-menu
+      display: block
+      +transition(transform, 400ms, ease-in-out, opacity, 400ms, ease-in-out)
+
+.navbar-header
+  display: table
+  height: inherit
+  padding-right: 20px
+  & .fa
+    font-size: 20px
+
+.nav
+  display: table-cell
+  vertical-align: middle
+  margin: 0
+  padding: 0
+  & > li
+    list-style: none
+
+.nav-rounded
+  & > li
+    position: relative
+    +inline-block()
+    margin: 0 2px
+    &:last-child
+      margin-right: 0
+    &.notice::before
+      content: ''
+      position: absolute
+      top: 0
+      right: -2px
+      +border-radius (50%)
+      +box-shadow (-2px 1px 0px #D7DDE4)
+      float: right
+      width: 8px
+      height: 8px
+      background-color: #ff5722
+      z-index: 3
+    & > a
+      +inline-block()
+      padding: 6px 8px
+      background-color: #d7d7d7
+      +border-radius(50%)
+      text-align: center
+      color: #7e8e9f
