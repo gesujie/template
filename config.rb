@@ -33,7 +33,6 @@ page 'pages/colors.html', layout: :iframe_layout
 # Pages Layouts
 page 'pages/register.html', layout: :pages_layout
 page 'pages/error.html', layout: :pages_layout
-page 'pages/colors.html', layout: :pages_layout
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
@@ -82,7 +81,7 @@ configure :build do
   activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # GZIP text files
   # activate :gzip

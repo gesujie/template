@@ -2,15 +2,9 @@
     #SIDEBAR
 /*------------------------------------*
 
-
-.sidebar-header
-  background-color: $sidebar-header-bg
-  +border-top-radius(0)
-
 .sidebar
   width: 250px
   height: 100%
-  background-color: $sidebar-bg
   overflow: auto
   & .tree-indent
     float: left
@@ -18,28 +12,18 @@
   & .tree-node
     height: 100%
     padding: $padding-large-vertical $padding-base-horizontal
-  & .tree-node-hover
-    background-color: $sidebar-link-bg
   & .tree-icon
-    color: $sidebar-icon-color
     font-size: 12px
-  & .tree-node-selected
-    background-color: $sidebar-active-bg
     & .tree-expanded,
     & .tree-collapsed
       &::before
         color: #424344
-    & .tree-title
-      color: $sidebar-title-color
-    & .tree-icon
-      color: $sidebar-title-color
   & .tree-title
     width: 80%
     height: 100%
     margin-left: 3px
     overflow: hidden
     text-overflow: ellipsis
-    color: $sidebar-title-color
     vertical-align: bottom
   & .tree-expanded
     float: right
@@ -78,5 +62,4 @@
       background-color: #616161
       +transition (color 0.28s ease-out)
 
-.sidebar-nav
-  background-color: $sidebar-in-bg
+
