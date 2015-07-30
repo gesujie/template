@@ -1,1 +1,930 @@
-$.fn.panel.defaults.onBeforeDestroy=function(){var e=$("iframe",this);try{if(e.length>0){for(var t=0;t<e.length;t++)e[t].contentWindow.document.write(""),e[t].contentWindow.close();e.remove(),$.browser.msie&&CollectGarbage()}}catch(n){}},$.fn.panel.defaults.loadingMessage="\u52a0\u8f7d\u4e2d....",$.fn.datagrid.defaults.loadMsg="\u52a0\u8f7d\u4e2d....",$.fn.dialog.defaults.onOpen=function(){$(this).parent().addClass("active")},$.fn.dialog.defaults.onClose=function(){$(this).parent().removeClass("active")};var easyuiErrorFunction=function(e){$.messager.progress("close"),$.messager.alert("\u9519\u8bef",e.responseText)};$.fn.datagrid.defaults.onLoadError=easyuiErrorFunction,$.fn.treegrid.defaults.onLoadError=easyuiErrorFunction,$.fn.tree.defaults.onLoadError=easyuiErrorFunction,$.fn.combogrid.defaults.onLoadError=easyuiErrorFunction,$.fn.combobox.defaults.onLoadError=easyuiErrorFunction,$.fn.form.defaults.onLoadError=easyuiErrorFunction;var createGridHeaderContextMenu=function(e){e.preventDefault();var t=$(this),n=this.headerContextMenu;if(!n){for(var o=$('<div style="width:100px;"></div>').appendTo("body"),i=t.datagrid("getColumnFields"),a=0;a<i.length;a++){var r=t.datagrid("getColumnOption",i[a]);r.hidden?$('<div iconCls="icon-empty" field="'+i[a]+'"/>').html(r.title).appendTo(o):$('<div iconCls="icon-ok" field="'+i[a]+'"/>').html(r.title).appendTo(o)}n=this.headerContextMenu=o.menu({onClick:function(e){var n=$(e.target).attr("field");"icon-ok"==e.iconCls?(t.datagrid("hideColumn",n),$(this).menu("setIcon",{target:e.target,iconCls:"icon-empty"})):(t.datagrid("showColumn",n),$(this).menu("setIcon",{target:e.target,iconCls:"icon-ok"}))}})}n.menu("show",{left:e.pageX,top:e.pageY})};$.fn.datagrid.defaults.onHeaderContextMenu=createGridHeaderContextMenu,$.fn.treegrid.defaults.onHeaderContextMenu=createGridHeaderContextMenu,$.extend($.fn.validatebox.defaults.rules,{idcard:{validator:function(e){return/^\d{15}(\d{2}[A-Za-z0-9])?$/i.test(e)},message:"\u8eab\u4efd\u8bc1\u53f7\u7801\u683c\u5f0f\u4e0d\u6b63\u786e"},minLength:{validator:function(e,t){return e.length>=t[0]},message:"\u8bf7\u8f93\u5165\u81f3\u5c11\uff082\uff09\u4e2a\u5b57\u7b26."},length:{validator:function(e,t){var n=$.trim(e).length;return n>=t[0]&&n<=t[1]},message:"\u8f93\u5165\u5185\u5bb9\u957f\u5ea6\u5fc5\u987b\u4ecb\u4e8e{0}\u548c{1}\u4e4b\u95f4."},phone:{validator:function(e){return/^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/i.test(e)},message:"\u683c\u5f0f\u4e0d\u6b63\u786e,\u8bf7\u4f7f\u7528\u4e0b\u9762\u683c\u5f0f:020-88888888"},mobile:{validator:function(e){return/^(13|15|18)\d{9}$/i.test(e)},message:"\u624b\u673a\u53f7\u7801\u683c\u5f0f\u4e0d\u6b63\u786e"},intOrFloat:{validator:function(e){return/^\d+(\.\d+)?$/i.test(e)},message:"\u8bf7\u8f93\u5165\u6570\u5b57\uff0c\u5e76\u786e\u4fdd\u683c\u5f0f\u6b63\u786e"},currency:{validator:function(e){return/^\d+(\.\d+)?$/i.test(e)},message:"\u8d27\u5e01\u683c\u5f0f\u4e0d\u6b63\u786e"},qq:{validator:function(e){return/^[1-9]\d{4,9}$/i.test(e)},message:"QQ\u53f7\u7801\u683c\u5f0f\u4e0d\u6b63\u786e"},integer:{validator:function(e){return/^[+]?[1-9]+\d*$/i.test(e)},message:"\u8bf7\u8f93\u5165\u6574\u6570"},age:{validator:function(e){return/^(?:[1-9][0-9]?|1[01][0-9]|120)$/i.test(e)},message:"\u5e74\u9f84\u5fc5\u987b\u662f0\u5230120\u4e4b\u95f4\u7684\u6574\u6570"},chinese:{validator:function(e){return/^[\u0391-\\uffe5]+$/i.test(e)},message:"\u8bf7\u8f93\u5165\u4e2d\u6587"},english:{validator:function(e){return/^[A-Za-z]+$/i.test(e)},message:"\u8bf7\u8f93\u5165\u82f1\u6587"},unnormal:{validator:function(e){return/.+/i.test(e)},message:"\u8f93\u5165\u503c\u4e0d\u80fd\u4e3a\u7a7a\u548c\u5305\u542b\u5176\u4ed6\u975e\u6cd5\u5b57\u7b26"},username:{validator:function(e){return/^[a-zA-Z][a-zA-Z0-9_]{5,15}$/i.test(e)},message:"\u7528\u6237\u540d\u4e0d\u5408\u6cd5\uff08\u5b57\u6bcd\u5f00\u5934\uff0c\u5141\u8bb86-16\u5b57\u8282\uff0c\u5141\u8bb8\u5b57\u6bcd\u6570\u5b57\u4e0b\u5212\u7ebf\uff09"},faxno:{validator:function(e){return/^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/i.test(e)},message:"\u4f20\u771f\u53f7\u7801\u4e0d\u6b63\u786e"},zip:{validator:function(e){return/^[1-9]\d{5}$/i.test(e)},message:"\u90ae\u653f\u7f16\u7801\u683c\u5f0f\u4e0d\u6b63\u786e"},ip:{validator:function(e){return/d+.d+.d+.d+/i.test(e)},message:"IP\u5730\u5740\u683c\u5f0f\u4e0d\u6b63\u786e"},name:{validator:function(e){return/^[\u0391-\\uffe5]+$/i.test(e)|/^\w+[\w\s]+\w+$/i.test(e)},message:"\u8bf7\u8f93\u5165\u59d3\u540d"},date:{validator:function(e){return/^(?:(?!0000)[0-9]{4}([-]?)(?:(?:0?[1-9]|1[0-2])\1(?:0?[1-9]|1[0-9]|2[0-8])|(?:0?[13-9]|1[0-2])\1(?:29|30)|(?:0?[13578]|1[02])\1(?:31))|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)([-]?)0?2\2(?:29))$/i.test(e)},message:"\u6e05\u8f93\u5165\u5408\u9002\u7684\u65e5\u671f\u683c\u5f0f"},msn:{validator:function(e){return/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(e)},message:"\u8bf7\u8f93\u5165\u6709\u6548\u7684msn\u8d26\u53f7(\u4f8b\uff1aabc@hotmail(msn/live).com)"},same:{validator:function(e,t){return void 0==e?!1:$(t[0]).val()==e},message:"\u4e24\u6b21\u8f93\u5165\u7684\u5bc6\u7801\u4e0d\u4e00\u81f4\uff01"}}),$.extend($.fn.datagrid.methods,{doCellTip:function(e,t){function n(e,n){""!=$(n).text()&&(t=t||{},e.content='<div class="tipcontent">'+e.content+"</div>",$(n).tooltip({content:e.content,trackMouse:!0,position:t.position,onHide:function(){$(this).tooltip("destroy")},onShow:function(){var t=$(this).tooltip("tip");e.tipStyler&&t.css(e.tipStyler),e.contentStyler&&t.find("div.tipcontent").css(e.contentStyler)}}).tooltip("show"))}return e.each(function(){var e=$(this),o=$(this).data("datagrid");if(o&&!o.tooltip){var i=e.datagrid("getPanel").panel("panel");i.find(".datagrid-body").each(function(){var a=$(this).find("> div.datagrid-body-inner").length?$(this).find("> div.datagrid-body-inner")[0]:this;$(a).undelegate("td","mouseover").undelegate("td","mouseout").undelegate("td","mousemove").delegate("td[field]",{mouseover:function(a){var r=this,d=null;if(t.specialShowFields&&t.specialShowFields.sort)for(var s=0;s<t.specialShowFields.length;s++)t.specialShowFields[s].field==$(this).attr("field")&&(d=t.specialShowFields[s]);if(null==d){o.factContent=$(this).find(">div").clone().css({"margin-left":"-5000px",width:"auto",display:"inline",position:"absolute"}).appendTo("body");var l=o.factContent.width();t.content=$(this).text(),t.onlyShowInterrupt?l>$(this).width()&&n(t,this,a,e):n(t,this,a,e)}else i.find(".datagrid-body").each(function(){var e=$(this).find('tr[datagrid-row-index="'+$(r).parent().attr("datagrid-row-index")+'"]');e.each(function(){var e=$(this).find('> td[field="'+d.showField+'"]');e.length&&(t.content=e.text())})}),n(t,this,a,e)},mouseout:function(){o.factContent&&(o.factContent.remove(),o.factContent=null)}})})}})},cancelCellTip:function(e){return e.each(function(){var e=$(this).data("datagrid");e.factContent&&(e.factContent.remove(),e.factContent=null);var t=$(this).datagrid("getPanel").panel("panel");t.find(".datagrid-body").undelegate("td","mouseover").undelegate("td","mouseout").undelegate("td","mousemove")})}}),$.extend(jQuery.fn.datagrid.defaults.editors,{combotree:{init:function(e,t){var n=jQuery('<input type="text"/>').appendTo(e);return cip.editor=n,cip.options=t,n.combotree&&n.combotree(t),n},destroy:function(e){$(e).combotree("destroy")},getValue:function(e){var t=$(e).combotree("getValues");return t.join(",")},setValue:function(e,t){if(t&&null!=t){var n=t.split(",");$(e).combotree("setValues",n)}},resize:function(e,t){$(e).combotree("resize",t)}}}),$.fn.treeDataFilterListToTree=function(e,t){if(t.parentField){var n,o,i=t.idField||"id",a=t.textField||t.treeField||"text",r=t.iconField||"iconCls",d=t.parentField||"parentField",s=[],l=[];for(n=0,o=e.length;o>n;n++)l[e[n][i]]=e[n];for(n=0,o=e.length;o>n;n++)l[e[n][d]]&&e[n][i]!=e[n][d]?(l[e[n][d]].children||(l[e[n][d]].children=[]),e[n].id=e[n][i],e[n].text=e[n][a],e[n].iconCls=e[n][r],l[e[n][d]].children.push(e[n])):(e[n].id=e[n][i],e[n].text=e[n][a],e[n].iconCls=e[n][r],s.push(e[n]));return s}return e},$.fn.tree.defaults.loadFilter=function(e){return $.fn.treeDataFilterListToTree(e,$(this).data().tree.options)},$.fn.treegrid.defaults.loadFilter=function(e){return $.fn.treeDataFilterListToTree(e,$(this).data().treegrid.options)},$.fn.combotree.defaults.loadFilter=$.fn.tree.defaults.loadFilter,$.extend($.fn.treegrid.methods,{cascadeCheck:function(e,t){function n(e,t,o,i){var a=$(e).treegrid("getParent",t);if(a){var r=a[o];i?$(e).treegrid("select",r):$(e).treegrid("unselect",r),n(e,r,o,i)}}function o(e,t,n,i,a){!a&&i&&$(e).treegrid("expand",t);for(var r=$(e).treegrid("getChildren",t),d=0;d<r.length;d++){var s=r[d][n];a?$(e).treegrid("select",s):$(e).treegrid("unselect",s),o(e,s,n,i,a)}}var i=$.data(e[0],"treegrid").options;if(!i.singleSelect){for(var a=i.idField,r=!1,d=$(e).treegrid("getSelections"),s=0;s<d.length;s++)d[s][a]==t.id&&(r=!0);n(e[0],t.id,a,r),o(e[0],t.id,a,t.deepCascade,r)}}}),$.extend($.fn.datagrid.defaults.editors.combobox,{getValue:function(e){var t=$(e).combobox("options");if(t.multiple){var n=$(e).combobox("getValues");return n.length>0&&(""==n[0]||" "==n[0])?n.join(",").substring(1):n.join(",")}return $(e).combobox("getValue")},setValue:function(e,t){var n=$(e).combobox("options");if(n.multiple&&null!=t&&-1!=(""+t).indexOf(n.separator)){var o=(""+t).split(n.separator);$(e).combobox("setValues",o)}else $(e).combobox("setValue",t)}}),$.extend($.fn.datagrid.defaults.editors,{combogrid:{init:function(e,t){var n=$('<input type="text" class="datagrid-editable-input"/>').appendTo(e);return n.combogrid(t),n},destroy:function(e){$(e).combogrid("destroy")},getValue:function(e){var t=$(e).combogrid("options");if(t.multiple){var n=$(e).combogrid("getValues");return n.length>0&&(""==n[0]||" "==n[0])?n.join(",").substring(1):n.join(",")}return $(e).combogrid("getValue")},setValue:function(e,t){var n=$(e).combogrid("options");if(n.multiple&&null!=t&&-1!=(""+t).indexOf(n.separator)){var o=(""+t).split(n.separator);$(e).combogrid("setValues",o)}else $(e).combogrid("setValue",t)},resize:function(e,t){$(e).combogrid("resize",t)}}}),$.extend($.fn.datagrid.defaults.editors,{datetimebox:{init:function(e,t){var n=$("<input />").appendTo(e);return t.editable=!1,n.datetimebox(t),n},getValue:function(e){return $(e).datetimebox("getValue")},setValue:function(e,t){$(e).datetimebox("setValue",t)},resize:function(e,t){$(e).datetimebox("resize",t)},destroy:function(e){$(e).datetimebox("destroy")}}}),$.extend($.fn.datagrid.methods,{addEditor:function(e,t){if(t instanceof Array)$.each(t,function(t,n){var o=$(e).datagrid("getColumnOption",n.field);o.editor=n.editor});else{var n=$(e).datagrid("getColumnOption",t.field);n.editor=t.editor}},removeEditor:function(e,t){if(t instanceof Array)$.each(t,function(t,n){var o=$(e).datagrid("getColumnOption",n);o.editor={}});else{var n=$(e).datagrid("getColumnOption",t);n.editor={}}},autoMergeCells:function(e,t){return e.each(function(){var e=$(this);t||(t=e.datagrid("getColumnFields"));var n=e.datagrid("getRows"),o=0,i=0,a={};for(o;o<n.length;o++){var r=n[o];for(i=0;i<t.length;i++){var d=t[i],s=a[d];if(s){var l=s[r[d]];l?l.push(o):l=s[r[d]]=[o]}else s=a[d]={},s[r[d]]=[o]}}$.each(a,function(t,n){$.each(n,function(){var n=this;if(n.length>1)for(var o,i,a=n[0],r=0;r<n.length;r++)if(o=n[r],i=n[r+1],!i||i-o!=1){var d=o-a+1;d>1&&e.datagrid("mergeCells",{index:a,field:t,rowspan:d}),i&&i-o!=1&&(a=i)}})})})}}),$.modalDialog=function(e){var t=$.extend({title:"\u6a21\u6001\u7a97\u53e3",width:840,height:680,modal:!0,closable:!0,onClose:function(){$(this).dialog("destroy")}},e);return t.modal=!0,$.modalDialog.handler=$("<div/>").dialog(t)},$.showMessage=function(e){var t=e&&e.msgType?e.msgType:"warning",n=$.extend({msg:"\u6b64\u51fd\u6570\u53ef\u4ee5\u5b8c\u5168\u4f7f\u7528easyuiMessage\u7684\u53c2\u6570<br/>\u4e00\u822c\u60c5\u51b5\u53ea\u7528\u4fee\u6539msg\u53c2\u6570\u5373\u53ef",showType:"slide",width:500,height:50,noheader:!0,onBeforeOpen:function(){e&&e.onBeforeOpen&&e.onBeforeOpen(),$(this).addClass("message-body-"+t),$(this).append("<a class='message-close' href='javascript:void(0);' onclick='$.closeMessage(this)'>\xd7</a>")}},e);return n.width=n.width<400?400:n.width,$.messager.show(n)},$.closeMessage=function(e){e&&$(e).parents(".panel.window").remove()};var easyuiPanelOnMove=function(e,t){var n=e,o=t;1>n&&(n=1),1>o&&(o=1);var i=parseInt($(this).parent().css("width"))+14,a=parseInt($(this).parent().css("height"))+14,r=n+i,d=o+a,s=$(window).width(),l=$(window).height();r>s&&(n=s-i),d>l&&(o=l-a),$(this).parent().css({left:n,top:o})};$.fn.dialog.defaults.onMove=easyuiPanelOnMove,$.fn.window.defaults.onMove=easyuiPanelOnMove,$.fn.panel.defaults.onMove=easyuiPanelOnMove,$.ajaxSetup({type:"POST",error:function(e,t,n){$.messager.progress("close"),$.messager.alert("\u9519\u8bef",e.responseText+"_"+n)}}),$.changeThemeFun=function(e){var t=$("#easyuiTheme"),n=t.attr("href"),o=n.substring(0,n.indexOf("themes"))+"themes/"+e+"/easyui.css";t.attr("href",o);var i=$("iframe");if(i.length>0)for(var a=0;a<i.length;a++){var r=i[a];$(r).contents().find("#easyuiTheme").attr("href",o)}$.cookie("easyuiThemeName",e,{expires:7})},$.fn.my97=function(e,t){return"string"==typeof e?$.fn.my97.methods[e](this,t):(e=e||{},WdatePicker?this.each(function(){var t,n=$.data(this,"my97");n?(t=$.extend(n.options,e),n.opts=t):(t=$.extend({},$.fn.my97.defaults,$.fn.my97.parseOptions(this),e),$.data(this,"my97",{options:t})),$(this).addClass("Wdate").click(function(){WdatePicker(t)})}):void alert("\u672a\u5f15\u5165My97js\u5305\uff01"))},$.fn.my97.methods={setValue:function(e,t){e.val(t)},getValue:function(e){return e.val()},clearValue:function(e){e.val("")}},$.fn.my97.parseOptions=function(e){return $.extend({},$.parser.parseOptions(e,["el","vel","weekMethod","lang","skin","dateFmt","realDateFmt","realTimeFmt","realFullFmt","minDate","maxDate","startDate",{doubleCalendar:"boolean",enableKeyboard:"boolean",enableInputMask:"boolean",autoUpdateOnChanged:"boolean",firstDayOfWeek:"number",isShowWeek:"boolean",highLineWeekDay:"boolean",isShowClear:"boolean",isShowToday:"boolean",isShowOthers:"boolean",readOnly:"boolean",errDealMode:"boolean",autoPickDate:"boolean",qsEnabled:"boolean",autoShowQS:"boolean",opposite:"boolean"}]))},$.fn.my97.defaults={dateFmt:"yyyy-MM-dd HH:mm:ss"},$.parser.plugins.push("my97");
+/* 作者：李钰龙
+ * 功能：扩展EasyUI
+ * 扩展项目：
+ * 	1、自动回收自动回收iframe
+ * 	2、可自定义加载时的文字
+ *  3、加载出错时，将出错内容放入对话框
+ *  4、增加表头菜单，控制显示隐藏列
+ *  5、扩展数据验证
+ *  6、树形控件自动可根据parentField自动生成树
+ *  9、检测处理pannel超出边界情况
+ * 10、可更换主题 
+ * 11、建立图标对象数组
+ * 12、扩展datagrid，使datagrid的editors能保存combotree的多选值
+ */
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * panel关闭时回收内存，主要用于layout使用iframe嵌入网页时的内存泄漏问题
+ */
+
+
+$.fn.panel.defaults.onBeforeDestroy = function() {
+	var frame = $('iframe', this);
+	try {
+		if (frame.length > 0) {
+			for ( var i = 0; i < frame.length; i++) {
+				frame[i].contentWindow.document.write('');
+				frame[i].contentWindow.close();
+			}
+			frame.remove();
+			if ($.browser.msie) {
+				CollectGarbage();
+			}
+		}
+	} catch (e) {
+	}
+};
+
+/**
+ * 使panel和datagrid在加载时提示
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 
+ */
+$.fn.panel.defaults.loadingMessage = '加载中....';
+$.fn.datagrid.defaults.loadMsg = '加载中....';
+
+$.fn.dialog.defaults.onOpen = function() {
+	$(this).parent().addClass("active");
+};
+$.fn.dialog.defaults.onClose = function() {
+	$(this).parent().removeClass("active");
+};
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 通用错误提示
+ * 用于datagrid/treegrid/tree/combogrid/combobox/form加载数据出错时的操作
+ */
+var easyuiErrorFunction = function(XMLHttpRequest) {
+	$.messager.progress('close');
+	$.messager.alert('错误', XMLHttpRequest.responseText);
+};
+$.fn.datagrid.defaults.onLoadError = easyuiErrorFunction;
+$.fn.treegrid.defaults.onLoadError = easyuiErrorFunction;
+$.fn.tree.defaults.onLoadError = easyuiErrorFunction;
+$.fn.combogrid.defaults.onLoadError = easyuiErrorFunction;
+$.fn.combobox.defaults.onLoadError = easyuiErrorFunction;
+$.fn.form.defaults.onLoadError = easyuiErrorFunction;
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 为datagrid、treegrid增加表头菜单，用于显示或隐藏列，注意：冻结列不在此菜单中
+ */
+var createGridHeaderContextMenu = function(e, field) {
+	e.preventDefault();
+	var grid = $(this);/* grid本身 */
+	var headerContextMenu = this.headerContextMenu;/* grid上的列头菜单对象 */
+	if (!headerContextMenu) {
+		var tmenu = $('<div style="width:100px;"></div>').appendTo('body');
+		var fields = grid.datagrid('getColumnFields');
+		for ( var i = 0; i < fields.length; i++) {
+			var fildOption = grid.datagrid('getColumnOption', fields[i]);
+			if (!fildOption.hidden) {
+				$('<div iconCls="icon-ok" field="' + fields[i] + '"/>').html(fildOption.title).appendTo(tmenu);
+			} else {
+				$('<div iconCls="icon-empty" field="' + fields[i] + '"/>').html(fildOption.title).appendTo(tmenu);
+			}
+		}
+		headerContextMenu = this.headerContextMenu = tmenu.menu({
+			onClick : function(item) {
+				var field = $(item.target).attr('field');
+				if (item.iconCls == 'icon-ok') {
+					grid.datagrid('hideColumn', field);
+					$(this).menu('setIcon', {
+						target : item.target,
+						iconCls : 'icon-empty'
+					});
+				} else {
+					grid.datagrid('showColumn', field);
+					$(this).menu('setIcon', {
+						target : item.target,
+						iconCls : 'icon-ok'
+					});
+				}
+			}
+		});
+	}
+	headerContextMenu.menu('show', {
+		left : e.pageX,
+		top : e.pageY
+	});
+};
+$.fn.datagrid.defaults.onHeaderContextMenu = createGridHeaderContextMenu;
+$.fn.treegrid.defaults.onHeaderContextMenu = createGridHeaderContextMenu;
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展validatebox，添加验证数据功能
+ */
+$.extend($.fn.validatebox.defaults.rules, {
+	idcard : {// 验证身份证 
+		validator : function(value) { 
+			return /^\d{15}(\d{2}[A-Za-z0-9])?$/i.test(value); 
+		}, 
+		message : '身份证号码格式不正确' 
+	},
+	minLength: {
+		validator: function(value, param){
+			return value.length >= param[0];
+		},
+		message: '请输入至少（2）个字符.'
+	},
+	length:{validator:function(value,param){ 
+		var len=$.trim(value).length; 
+			return len>=param[0]&&len<=param[1]; 
+		}, 
+			message:"输入内容长度必须介于{0}和{1}之间." 
+		}, 
+	phone : {// 验证电话号码 
+		validator : function(value) { 
+			return /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/i.test(value); 
+		}, 
+		message : '格式不正确,请使用下面格式:020-88888888' 
+	}, 
+	mobile : {// 验证手机号码 
+		validator : function(value) { 
+			return /^(13|15|18)\d{9}$/i.test(value); 
+		}, 
+		message : '手机号码格式不正确' 
+	}, 
+	intOrFloat : {// 验证整数或小数 
+		validator : function(value) { 
+			return /^\d+(\.\d+)?$/i.test(value); 
+		}, 
+		message : '请输入数字，并确保格式正确' 
+	}, 
+	currency : {// 验证货币 
+		validator : function(value) { 
+			return /^\d+(\.\d+)?$/i.test(value); 
+		}, 
+		message : '货币格式不正确' 
+	}, 
+	qq : {// 验证QQ,从10000开始 
+		validator : function(value) { 
+			return /^[1-9]\d{4,9}$/i.test(value); 
+		}, 
+		message : 'QQ号码格式不正确' 
+	}, 
+	integer : {// 验证整数 
+		validator : function(value) { 
+			return /^[+]?[1-9]+\d*$/i.test(value); 
+		}, 
+		message : '请输入整数' 
+	}, 
+	age : {// 验证年龄
+		validator : function(value) { 
+			return /^(?:[1-9][0-9]?|1[01][0-9]|120)$/i.test(value); 
+		}, 
+		message : '年龄必须是0到120之间的整数' 
+	}, 
+	
+	chinese : {// 验证中文 
+		validator : function(value) { 
+			return /^[Α-\￥]+$/i.test(value);
+		}, 
+		message : '请输入中文' 
+	}, 
+	english : {// 验证英语 
+		validator : function(value) { 
+			return /^[A-Za-z]+$/i.test(value); 
+		}, 
+		message : '请输入英文' 
+	}, 
+	unnormal : {// 验证是否包含空格和非法字符 
+		validator : function(value) { 
+			return /.+/i.test(value); 
+		}, 
+		message : '输入值不能为空和包含其他非法字符' 
+	}, 
+	username : {// 验证用户名 
+		validator : function(value) { 
+			return /^[a-zA-Z][a-zA-Z0-9_]{5,15}$/i.test(value); 
+		}, 
+		message : '用户名不合法（字母开头，允许6-16字节，允许字母数字下划线）' 
+	}, 
+	faxno : {// 验证传真 
+		validator : function(value) { 
+//				return /^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/i.test(value); 
+			return /^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$/i.test(value); 
+		}, 
+		message : '传真号码不正确' 
+	}, 
+	zip : {// 验证邮政编码 
+		validator : function(value) { 
+			return /^[1-9]\d{5}$/i.test(value); 
+		}, 
+		message : '邮政编码格式不正确' 
+	}, 
+	ip : {// 验证IP地址 
+		validator : function(value) { 
+			return /d+.d+.d+.d+/i.test(value); 
+		}, 
+		message : 'IP地址格式不正确' 
+	}, 
+	name : {// 验证姓名，可以是中文或英文 
+			validator : function(value) { 
+				return /^[Α-\￥]+$/i.test(value)|/^\w+[\w\s]+\w+$/i.test(value);
+			}, 
+			message : '请输入姓名' 
+	},
+	date : {// 验证日期
+		validator : function(value) { 
+		//格式yyyy-MM-dd或yyyy-M-d
+			return /^(?:(?!0000)[0-9]{4}([-]?)(?:(?:0?[1-9]|1[0-2])\1(?:0?[1-9]|1[0-9]|2[0-8])|(?:0?[13-9]|1[0-2])\1(?:29|30)|(?:0?[13578]|1[02])\1(?:31))|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)([-]?)0?2\2(?:29))$/i.test(value); 
+		},
+		message : '清输入合适的日期格式'
+	},
+	msn:{ 
+		validator : function(value){ 
+		return /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value); 
+		}, 
+		message : '请输入有效的msn账号(例：abc@hotmail(msn/live).com)' 
+	},
+	same:{ 
+		validator : function(value, param){
+			if(value == undefined) {
+				return false;
+			}
+			return $(param[0]).val() == value;
+		}, 
+		message : '两次输入的密码不一致！'	
+	} 
+});
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展datagrid，添加单元格内容提示框
+ */
+$.extend($.fn.datagrid.methods, {	  
+	/**
+	 * 开打提示功能	
+	 * @param {} jq	
+	 * @param {} params 提示消息框的样式	
+	 * @return {}	
+	 */	 
+	doCellTip:function (jq, params) {	  
+		function showTip(showParams, td, e, dg) {	  
+			//无文本，不提示。	  
+			if ($(td).text() == "") return;	  
+			   
+			params = params || {};   
+			showParams.content = '<div class="tipcontent">' + showParams.content + '</div>';	  
+			$(td).tooltip({	  
+				content:showParams.content,	  
+				trackMouse:true,	  
+				position:params.position,	  
+				onHide:function () {	  
+					$(this).tooltip('destroy');	  
+				},
+				onShow:function () {	  
+					var tip = $(this).tooltip('tip');	  
+					if(showParams.tipStyler){	  
+						tip.css(showParams.tipStyler);	  
+					}
+					if(showParams.contentStyler){	  
+						tip.find('div.tipcontent').css(showParams.contentStyler);	  
+					}
+				}	  
+			}).tooltip('show');	  
+	 
+		}
+		return jq.each(function () {	  
+			var grid = $(this);	  
+			var options = $(this).data('datagrid');	  
+			if (options && !options.tooltip) {	  
+				var panel = grid.datagrid('getPanel').panel('panel');	  
+				panel.find('.datagrid-body').each(function () {	  
+					var delegateEle = $(this).find('> div.datagrid-body-inner').length ? $(this).find('> div.datagrid-body-inner')[0] : this;	  
+					$(delegateEle).undelegate('td', 'mouseover').undelegate('td', 'mouseout').undelegate('td', 'mousemove').delegate('td[field]', {	  
+						'mouseover':function (e) {   
+							//if($(this).attr('field')===undefined) return;	  
+							var that = this;   
+							var setField = null;   
+							if(params.specialShowFields && params.specialShowFields.sort){   
+								for(var i=0; i<params.specialShowFields.length; i++){   
+									if(params.specialShowFields[i].field == $(this).attr('field')){   
+										setField = params.specialShowFields[i];   
+									}   
+								}   
+							}   
+							if(setField==null){   
+								options.factContent = $(this).find('>div').clone().css({'margin-left':'-5000px', 'width':'auto', 'display':'inline', 'position':'absolute'}).appendTo('body');	  
+								var factContentWidth = options.factContent.width();	  
+								params.content = $(this).text();	  
+								if (params.onlyShowInterrupt) {	  
+									if (factContentWidth > $(this).width()) {	  
+										showTip(params, this, e, grid);	  
+									}	  
+								} else {	  
+									showTip(params, this, e, grid);	  
+								}	
+							}else{   
+								panel.find('.datagrid-body').each(function(){   
+									var trs = $(this).find('tr[datagrid-row-index="' + $(that).parent().attr('datagrid-row-index') + '"]');   
+									trs.each(function(){   
+										var td = $(this).find('> td[field="' + setField.showField + '"]');   
+										if(td.length){   
+											params.content = td.text();   
+										}   
+									});   
+								});   
+								showTip(params, this, e, grid);   
+							}   
+						},	  
+						'mouseout':function (e) {	  
+							if (options.factContent) {	  
+								options.factContent.remove();	  
+								options.factContent = null;	  
+							}	  
+						}	  
+					});	  
+				});	  
+			}	  
+		});	  
+	},
+	/**
+	 * 关闭消息提示功能	
+	 * @param {} jq	
+	 * @return {}	
+	 */	 
+	cancelCellTip:function (jq) {	  
+		return jq.each(function () {	  
+			var data = $(this).data('datagrid');	  
+			if (data.factContent) {	  
+				data.factContent.remove();	  
+				data.factContent = null;	  
+			}	  
+			var panel = $(this).datagrid('getPanel').panel('panel');	  
+			panel.find('.datagrid-body').undelegate('td', 'mouseover').undelegate('td', 'mouseout').undelegate('td', 'mousemove');
+		});	  
+	}	  
+});  
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展datagrid，使datagrid的editors能保存combotree的多选值
+ */
+$.extend(jQuery.fn.datagrid.defaults.editors, {
+	combotree: {
+		init: function(container, options){
+			var editor = jQuery('<input type="text"/>').appendTo(container);
+			cip.editor = editor;
+			cip.options = options;
+			if(editor.combotree) {
+				editor.combotree(options);
+			} 
+			return editor;
+		},  
+		destroy: function(target){
+			$(target).combotree('destroy');
+		},  
+		getValue: function(target){
+			var temp = $(target).combotree('getValues');
+			return temp.join(',');
+		},  
+		setValue: function(target, value){
+			if(value && value != null) {
+				var temp = value.split(',');
+				$(target).combotree('setValues', temp);
+			}
+		},
+		resize: function(target, width){
+			$(target).combotree('resize', width);
+		}
+	}
+});  
+
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 将tree，treegrid的list数据自动转换tree形式的json
+ */
+$.fn.treeDataFilterListToTree = function(data, opt) {
+	if (opt.parentField) {
+		var idField = opt.idField || 'id';
+		var textField = opt.textField || opt.treeField || 'text';
+		var iconField = opt.iconField || 'iconCls';
+		var parentField = opt.parentField || 'parentField';
+		var i, l, treeData = [], tmpMap = [];
+		for (i = 0, l = data.length; i < l; i++) {
+			tmpMap[data[i][idField]] = data[i];
+		}
+		for (i = 0, l = data.length; i < l; i++) {
+			if (tmpMap[data[i][parentField]] && data[i][idField] != data[i][parentField]) {
+				if (!tmpMap[data[i][parentField]]['children']) {
+					tmpMap[data[i][parentField]]['children'] = [];
+				}
+				data[i]['id'] = data[i][idField];
+				data[i]['text'] = data[i][textField];
+				data[i]['iconCls'] = data[i][iconField];
+				tmpMap[data[i][parentField]]['children'].push(data[i]);
+			} else {
+				data[i]['id'] = data[i][idField];
+				data[i]['text'] = data[i][textField];
+				data[i]['iconCls'] = data[i][iconField];
+				treeData.push(data[i]);
+			}
+		}
+		return treeData;
+	}
+	return data;
+	
+};
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展tree，使tree支持设置父节点，自动生成树形结构
+ * 增加parentField属性
+ */
+$.fn.tree.defaults.loadFilter = function(data) {
+	return $.fn.treeDataFilterListToTree(data, $(this).data().tree.options);
+};
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展treegrid，使treegrid支持设置父节点，自动生成树形结构
+ * 增加parentField属性
+ */
+$.fn.treegrid.defaults.loadFilter = function(data) {
+	return $.fn.treeDataFilterListToTree(data, $(this).data().treegrid.options);
+};
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展combotree，使combotree支持设置父节点，自动生成树形结构
+ * 增加parentField属性
+ */
+$.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
+
+
+
+/** 
+ * 扩展树表格级联勾选方法： 
+ * @param {Object} container 
+ * @param {Object} options 
+ * @return {TypeName}  
+ */  
+$.extend($.fn.treegrid.methods,{  
+	/** 
+	 * 级联选择 
+	 * @param {Object} target 
+	 * @param {Object} param  
+	 *	  param包括两个参数: 
+	 *		  id:勾选的节点ID 
+	 *		  deepCascade:是否深度级联 
+	 * @return {TypeName}  
+	 */  
+	cascadeCheck : function(target,param){  
+		var opts = $.data(target[0], "treegrid").options;  
+		if(opts.singleSelect)  
+			return;  
+		var idField = opts.idField;//这里的idField其实就是API里方法的id参数  
+		var status = false;//用来标记当前节点的状态，true:勾选，false:未勾选  
+		var selectNodes = $(target).treegrid('getSelections');//获取当前选中项  
+		for(var i=0;i<selectNodes.length;i++){  
+			if(selectNodes[i][idField]==param.id)  
+				status = true;  
+		}  
+		//级联选择父节点  
+		selectParent(target[0],param.id,idField,status);  
+		selectChildren(target[0],param.id,idField,param.deepCascade,status);  
+		/** 
+		 * 级联选择父节点 
+		 * @param {Object} target 
+		 * @param {Object} id 节点ID 
+		 * @param {Object} status 节点状态，true:勾选，false:未勾选 
+		 * @return {TypeName}  
+		 */  
+		function selectParent(target,id,idField,status){  
+			var parent = $(target).treegrid('getParent',id);  
+			if(parent){  
+				var parentId = parent[idField];  
+				if(status)  
+					$(target).treegrid('select',parentId);  
+				else  
+					$(target).treegrid('unselect',parentId);  
+				selectParent(target,parentId,idField,status);  
+			}  
+		}  
+		/** 
+		 * 级联选择子节点 
+		 * @param {Object} target 
+		 * @param {Object} id 节点ID 
+		 * @param {Object} deepCascade 是否深度级联 
+		 * @param {Object} status 节点状态，true:勾选，false:未勾选 
+		 * @return {TypeName}  
+		 */  
+		function selectChildren(target,id,idField,deepCascade,status){  
+			//深度级联时先展开节点  
+			if(!status&&deepCascade)  
+				$(target).treegrid('expand',id);  
+			//根据ID获取下层孩子节点  
+			var children = $(target).treegrid('getChildren',id);  
+			for(var i=0;i<children.length;i++){  
+				var childId = children[i][idField];  
+				if(status)  
+					$(target).treegrid('select',childId);  
+				else  
+					$(target).treegrid('unselect',childId);  
+				selectChildren(target,childId,idField,deepCascade,status);//递归选择子节点  
+			}  
+		}  
+	}  
+});
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展datagrid行编辑的combobox编辑器，解决无法设置多选值的bug
+ */
+$.extend($.fn.datagrid.defaults.editors.combobox, {
+	getValue : function(jq) {
+		var opts = $(jq).combobox('options');
+		if(opts.multiple){
+			var values = $(jq).combobox('getValues');
+			if(values.length>0){
+				if(values[0]==''||values[0]==' '){
+					return values.join(',').substring(1);//新增的时候会把空白当成一个值了，去掉
+				}
+			}
+			return values.join(',');
+		} else
+			return $(jq).combobox("getValue");
+	},
+	setValue : function(jq, value) {
+		var opts = $(jq).combobox('options');
+		if(opts.multiple && value!=null && (""+value).indexOf(opts.separator)!=-1){//多选且不只一个值
+			var values = (""+value).split(opts.separator);
+			$(jq).combobox("setValues", values);
+		} else
+			$(jq).combobox("setValue", value);
+	}
+});
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 扩展datagrid行编辑的combogrid编辑器
+ */
+$.extend($.fn.datagrid.defaults.editors, {
+	combogrid: {
+		init: function(container, options){
+			var input = $('<input type="text" class="datagrid-editable-input"/>').appendTo(container);
+			input.combogrid(options);
+			return input;
+		},
+		destroy: function(target){
+			$(target).combogrid('destroy');
+		},
+		getValue: function(jq){
+			var opts = $(jq).combogrid('options');
+			if(opts.multiple){
+				var values = $(jq).combogrid('getValues');
+				if(values.length>0){
+					if(values[0]==''||values[0]==' '){
+						return values.join(',').substring(1);//新增的时候会把空白当成一个值了，去掉
+					}
+				}
+				return values.join(',');
+			} else
+				return $(jq).combogrid("getValue");
+		},
+		setValue: function(jq, value){
+			var opts = $(jq).combogrid('options');
+			if(opts.multiple && value!=null && (""+value).indexOf(opts.separator)!=-1){//多选且不只一个值
+				var values = (""+value).split(opts.separator);
+				$(jq).combogrid("setValues", values);
+			} else
+				$(jq).combogrid("setValue", value);
+		},
+		resize: function(target, width){
+			$(target).combogrid('resize',width);
+		}
+	}
+});
+/**
+ * 扩展datebox为datetimebox
+ */
+$.extend($.fn.datagrid.defaults.editors, { 
+	datetimebox: {   
+		init: function(container, options){   
+			var editor = $('<input />').appendTo(container);   
+			options.editable = false;
+			editor.datetimebox(options);
+			return editor;   
+		},   
+		getValue: function(target){   
+			return $(target).datetimebox('getValue');   
+		},   
+		setValue: function(target, value){   
+			$(target).datetimebox('setValue', value);   
+		},   
+		resize: function(target, width){   
+			$(target).datetimebox('resize',width);
+		},
+		destroy: function(target) {
+			$(target).datetimebox('destroy');
+		}
+	}
+}); 
+
+$.extend($.fn.datagrid.methods, { 
+	/*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
+	addEditor : function(jq, param) {
+		if (param instanceof Array) {
+			$.each(param, function(index, item) {
+				var e = $(jq).datagrid('getColumnOption', item.field);
+				e.editor = item.editor;
+			});
+		} else {
+			var e = $(jq).datagrid('getColumnOption', param.field);
+			e.editor = param.editor;
+		}
+	},
+	/*扩展动态编辑框，可以指定禁止编辑的编辑框所在的列*/
+	removeEditor : function(jq, param) {
+		if (param instanceof Array) {
+			$.each(param, function(index, item) {
+				var e = $(jq).datagrid('getColumnOption', item);
+				e.editor = {};
+			});
+		} else {
+			var e = $(jq).datagrid('getColumnOption', param);
+			e.editor = {};
+		}
+	},
+	/*扩展自动合并连续单元格*/
+	autoMergeCells : function (jq, fields) {
+		return jq.each(function () {
+			var target = $(this);
+			if (!fields) {
+				fields = target.datagrid("getColumnFields");
+			}
+			var rows = target.datagrid("getRows");
+			var i = 0,
+			j = 0,
+			temp = {};
+			for (i; i < rows.length; i++) {
+				var row = rows[i];
+				j = 0;
+				for (j; j < fields.length; j++) {
+					var field = fields[j];
+					var tf = temp[field];
+					if (!tf) {
+						tf = temp[field] = {};
+						tf[row[field]] = [i];
+					} else {
+						var tfv = tf[row[field]];
+						if (tfv) {
+							tfv.push(i);
+						} else {
+							tfv = tf[row[field]] = [i];
+						}
+					}
+				}
+			}
+			$.each(temp, function (field, colunm) {
+				$.each(colunm, function () {
+					var group = this;
+					
+					if (group.length > 1) {
+						var before,
+						after,
+						megerIndex = group[0];
+						for (var i = 0; i < group.length; i++) {
+							before = group[i];
+							after = group[i + 1];
+							if (after && (after - before) == 1) {
+								continue;
+							}
+							var rowspan = before - megerIndex + 1;
+							if (rowspan > 1) {
+								target.datagrid('mergeCells', {
+									index : megerIndex,
+									field : field,
+									rowspan : rowspan
+								});
+							}
+							if (after && (after - before) != 1) {
+								megerIndex = after;
+							}
+						}
+					}
+				});
+			});
+		});
+	}
+});
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 创建一个模式化的dialog
+ * @returns $.modalDialog.handler 这个handler代表弹出的dialog句柄
+ * @returns $.modalDialog.xxx 这个xxx是可以自己定义名称，主要用在弹窗关闭时，刷新某些对象的操作，可以将xxx这个对象预定义好
+ */
+$.modalDialog = function(options) {
+	var opts = $.extend({
+		title : '模态窗口',
+		width : 840,
+		height : 680,
+		modal : true,
+		closable : true,
+		onClose : function() {
+			$(this).dialog('destroy');
+		}
+	}, options);
+	opts.modal = true;// 强制此dialog为模式化，无视传递过来的modal参数
+	return $.modalDialog.handler = $('<div/>').dialog(opts);
+};
+
+$.showMessage = function(options) {
+	var msgType = !!options && !!options.msgType ? options.msgType : "warning";
+	var opts = $.extend({
+		msg : '此函数可以完全使用easyuiMessage的参数<br/>'
+			+ '一般情况只用修改msg参数即可',
+		showType: 'slide',
+		width: 500,
+		height: 50,
+		noheader: true,
+		onBeforeOpen: function(){
+			if(options && options.onBeforeOpen) {
+				options.onBeforeOpen();
+			}
+			$(this).addClass('message-body-' + msgType);
+			$(this).append("<a class='message-close' href='javascript:void(0);' onclick='$.closeMessage(this)'>×</a>");
+		}
+	}, options);
+	opts.width = opts.width < 400 ? 400 : opts.width; // 强制宽度大于400
+	return $.messager.show(opts);
+};
+
+$.closeMessage = function(btn) {
+	if(!!btn) {
+		$(btn).parents(".panel.window").remove()
+	}
+};
+
+
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI
+ * 防止panel/window/dialog组件超出浏览器边界
+ * @param left
+ * @param top
+ */
+var easyuiPanelOnMove = function(left, top) {
+	var l = left;
+	var t = top;
+	if (l < 1) {
+		l = 1;
+	}
+	if (t < 1) {
+		t = 1;
+	}
+	var width = parseInt($(this).parent().css('width')) + 14;
+	var height = parseInt($(this).parent().css('height')) + 14;
+	var right = l + width;
+	var buttom = t + height;
+	var browserWidth = $(window).width();
+	var browserHeight = $(window).height();
+	if (right > browserWidth) {
+		l = browserWidth - width;
+	}
+	if (buttom > browserHeight) {
+		t = browserHeight - height;
+	}
+	$(this).parent().css({/* 修正面板位置 */
+		left : l,
+		top : t
+	});
+};
+$.fn.dialog.defaults.onMove = easyuiPanelOnMove;
+$.fn.window.defaults.onMove = easyuiPanelOnMove;
+$.fn.panel.defaults.onMove = easyuiPanelOnMove;
+
+
+/**
+ * @author 李钰龙
+ * @requires jQuery
+ * 改变jQuery的AJAX默认属性和方法
+ */
+$.ajaxSetup({
+	type : 'POST',
+	error : function(XMLHttpRequest, textStatus, errorThrown) {
+		$.messager.progress('close');
+		$.messager.alert('错误', XMLHttpRequest.responseText+"_"+errorThrown);
+	}
+});
+ 
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI,jQuery cookie plugin
+ * 更换EasyUI主题的方法
+ * @param themeName 主题名称
+ */
+$.changeThemeFun = function(themeName) {
+	var $easyuiTheme = $('#easyuiTheme');
+	var url = $easyuiTheme.attr('href');
+	var href = url.substring(0, url.indexOf('themes')) + 'themes/' + themeName + '/easyui.css';
+	$easyuiTheme.attr('href', href);
+	var $iframe = $('iframe');
+	if ($iframe.length > 0) {
+		for ( var i = 0; i < $iframe.length; i++) {
+			var ifr = $iframe[i];
+			$(ifr).contents().find('#easyuiTheme').attr('href', href);
+		}
+	}
+	$.cookie('easyuiThemeName', themeName, {
+		expires : 7
+	});
+};
+
+/**
+ * @author 李钰龙
+ * @requires jQuery,EasyUI，My97
+ * 扩展my97插件
+ * 使用方法：参数和my97原本控件参数相同
+ * 			class="easyui-my97"
+ * 			data-options="readOnly:true,dateFmt:'yyyy-MM-dd'"
+ */
+$.fn.my97 = function (options, params) {
+	if (typeof options == "string") {
+		return $.fn.my97.methods[options](this, params);
+	}
+	options = options || {};
+	if (!WdatePicker) {
+		alert("未引入My97js包！");
+		return;
+	}
+	return this.each(function () {
+		var data = $.data(this, "my97");
+		var newOptions;
+		if (data) {
+			newOptions = $.extend(data.options, options);
+			data.opts = newOptions;
+		} else {
+			newOptions = $.extend({}, $.fn.my97.defaults, $.fn.my97.parseOptions(this), options);
+			$.data(this, "my97", {
+				options : newOptions
+			});
+		}
+		$(this).addClass('Wdate').click(function () {
+			WdatePicker(newOptions);
+		});
+	});
+};
+$.fn.my97.methods = {
+	setValue : function (target, params) {
+		target.val(params);
+	},
+	getValue : function (target) {
+		return target.val();
+	},
+	clearValue : function (target) {
+		target.val('');
+	}
+};
+$.fn.my97.parseOptions = function (target) {
+	return $.extend({}, $.parser.parseOptions(target, 
+		["el", "vel", "weekMethod", "lang", "skin", 
+		 "dateFmt", "realDateFmt", "realTimeFmt", 
+		 "realFullFmt", "minDate", "maxDate", "startDate", {
+			doubleCalendar : "boolean",
+			enableKeyboard : "boolean",
+			enableInputMask : "boolean",
+			autoUpdateOnChanged : "boolean",
+			firstDayOfWeek : "number",
+			isShowWeek : "boolean",
+			highLineWeekDay : "boolean",
+			isShowClear : "boolean",
+			isShowToday : "boolean",
+			isShowOthers : "boolean",
+			readOnly : "boolean",
+			errDealMode : "boolean",
+			autoPickDate : "boolean",
+			qsEnabled : "boolean",
+			autoShowQS : "boolean",
+			opposite : "boolean"
+		}
+	]));
+};
+$.fn.my97.defaults = {
+	dateFmt : 'yyyy-MM-dd HH:mm:ss'
+};
+$.parser.plugins.push('my97');
+//扩展my97日期控件结束
+;
