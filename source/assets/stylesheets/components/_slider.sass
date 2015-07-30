@@ -3,8 +3,7 @@
 /*------------------------------------*
 
 .slider-disabled
-  opacity: 0.5
-  filter: alpha(opacity=50)
+  +opacity (0.5)
 
 .slider-h
   height: 22px
@@ -14,10 +13,8 @@
 
 .slider-inner
   position: relative
-  height: 6px
   top: 7px
-  border-width: 1px
-  border-style: solid
+  height: 6px
   border-radius: 5px
 
 .slider-handle
@@ -81,9 +78,6 @@
 .slider-v .slider-rule span
   width: 5px
   height: auto
-  border-left: 0
-  border-width: 1px 0 0 0
-  border-style: solid
 
 .slider-v .slider-rulelabel
   top: 0
@@ -91,7 +85,7 @@
   float: left
 
 .slider-handle
-  //background: url('images/slider_handle.png') no-repeat
+  cursor: hand
 
 .slider-inner
   border-color: #95B8E7

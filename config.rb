@@ -33,7 +33,6 @@ page 'pages/colors.html', layout: :iframe_layout
 # Pages Layouts
 page 'pages/register.html', layout: :pages_layout
 page 'pages/error.html', layout: :pages_layout
-page 'pages/colors.html', layout: :pages_layout
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout

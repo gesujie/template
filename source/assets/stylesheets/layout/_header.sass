@@ -32,14 +32,9 @@
   & > li
     & > a
       +inline-block()
-      background-color: darken($logo-material-bg, 10%)
       padding: 8px $padding-large-horizontal
       margin-top: 5px
       color: #fff
-      &:hover,
-      &:active,
-      &:focus
-        background-color: $brand-material-warning
 
 /*ul
 .dropdown-menu
@@ -50,10 +45,8 @@
   right: 0
   float: left
   min-width: 800px
-  background-color: $brand-material-warning
   +background-clip(padding-box)
   padding: $padding-large-vertical $padding-large-horizontal
-  +transition(transform, 400ms, ease-in-out, opacity, 400ms, ease-in-out)
   z-index: 99
   & > li
     +inline-block()
@@ -61,8 +54,10 @@
 .btn-dropdown
   display: block
   padding: $padding-base-vertical $padding-base-horizontal
-  background-color: darken($brand-material-warning, 10%)
+  background-color: darken($brand-primary, 10%)
   color: #fff
+  &:hover
+    color: darken(#fff, 20%)
 
 /*li
 .dropdown
@@ -72,7 +67,6 @@
   &:hover
     .dropdown-menu
       display: block
-      +transition(transform, 400ms, ease-in-out, opacity, 400ms, ease-in-out)
 
 .navbar-header
   display: table

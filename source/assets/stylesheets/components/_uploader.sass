@@ -13,7 +13,7 @@
   position: relative
   display: inline-block
   cursor: pointer
-  background: #00b7ee
+  background-color: $brand-primary
   padding: 10px 15px
   color: #fff
   text-align: center
@@ -21,21 +21,21 @@
   overflow: hidden
 
 .webuploader-pick-hover
-  background: #00a2d4
+  background-color: darken($brand-primary, 10%)
 
 .webuploader-pick-disable
   opacity: 0.6
   pointer-events: none
 
 
-#uploader .queueList 
+#uploader .queueList
   margin: 20px
 
-.element-invisible 
+.element-invisible
   position: absolute !important
   clip: rect(1px,1px,1px,1px)
 
-#uploader .placeholder 
+#uploader .placeholder
   position: relative
   min-height: 238px
   border: 3px dashed #e6e6e6
@@ -45,9 +45,9 @@
   color: #ccc
   font-size: 18px
 
-#uploader .placeholder .webuploader-pick 
+#uploader .placeholder .webuploader-pick
   font-size: 18px
-  background: #00b7ee
+  background-color: $brand-primary
   border-radius: 3px
   line-height: 44px
   padding: 0 30px
@@ -58,7 +58,7 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1)
 
 #uploader .placeholder .webuploader-pick-hover
-  background: #00a2d4
+  background-color: $brand-primary
 
 #uploader .placeholder .flashTip
   color: #666
@@ -161,25 +161,25 @@
   width: 100%
 
 #uploader .filelist li p.error
-  background: #f43838
-  color: #fff
   position: absolute
   bottom: 0
   left: 0
-  height: 28px
-  line-height: 28px
   width: 100%
+  height: 28px
+  background-color: #f43838
+  color: #fff
+  line-height: 28px
   z-index: 100
 
 #uploader .filelist li .success
   display: block
   position: absolute
-  left: 0
   bottom: 0
-  height: 40px
+  left: 0
   width: 100%
-  z-index: 200
+  height: 40px
   background: image_url('success.png') no-repeat right bottom
+  z-index: 200
 
 #uploader .filelist div.file-panel
   position: absolute
@@ -187,21 +187,20 @@
   left: 0
   width: 100%
   height: 0
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80000000', endColorstr='#80000000')
   background-color: rgba( 0, 0, 0, 0.5 )
   overflow: hidden
   z-index: 300
 
 #uploader .filelist div.file-panel span
-  width: 24px
-  height: 24px
   display: inline
   float: right
-  text-indent: -9999px
-  overflow: hidden
+  width: 24px
+  height: 24px
   background: image_url('icons.png') no-repeat
   margin: 5px 1px 1px
   cursor: pointer
+  overflow: hidden
+  text-indent: -9999px
 
 #uploader .filelist div.file-panel span.rotateLeft
   background-position: 0 -24px

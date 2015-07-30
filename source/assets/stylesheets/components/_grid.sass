@@ -2,14 +2,11 @@
     #GRID
 /*------------------------------------*
 
-
 $susy: (columns: 12, container: 1200px, gutters: 1/4, use-custom:(box-sizing: false))
 
-//**** Container
 .container
   +container
 
-//**** Grid systems of columns
 .col-1
   @include span(1 of 12)
 
@@ -49,7 +46,6 @@ $susy: (columns: 12, container: 1200px, gutters: 1/4, use-custom:(box-sizing: fa
 .col-last
   @include last()
 
-//**** Pull systems of columns
 .col-pull-1
   +pull(1 of 12)
 
@@ -86,7 +82,6 @@ $susy: (columns: 12, container: 1200px, gutters: 1/4, use-custom:(box-sizing: fa
 .col-pull-12
   +pull(12 of 12)
 
-//**** Pull systems of columns
 .col-push-1
   +push(1 of 12)
 

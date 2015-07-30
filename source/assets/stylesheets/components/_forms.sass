@@ -2,15 +2,18 @@
     #FORMS
 /*------------------------------------*
 
-//////
+//
 // Basic form styles
 
 .form-group
   margin-bottom: 15px
-  &::before
-    display: table
+  &::before,
+  &::after
     content: ''
-    
+    display: table
+  &::after
+    clear: both
+
 label
   display: inline-block
   max-width: 100%
@@ -18,7 +21,7 @@ label
   font-size: 12px
   color: $gray-light
 
-//// Merged Class
+// Merged Class
 // Merge with by form-control class
 
 .easyui-textbox
@@ -59,7 +62,7 @@ input[type=file]
   font-weight: 400
   cursor: pointer
 
-//////
+//
 // From inline styles
 
 .form-inline
@@ -72,7 +75,7 @@ input[type=file]
     +inline-block()
     width: auto
 
-//////
+//
 // From horizontal styles
 
 .form-horizontal
@@ -93,7 +96,7 @@ input[type=file]
   margin-top: 0
   margin-bottom: 0
 
-//////
+//
 // Custom checkbox and radio button
 
 .easyui-checkbox

@@ -6,15 +6,15 @@
     .panel-sing-in
       .easyui-panel{'data-options':"region:'west',title:'Sign in', cls:'panel-primary', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true"}
         %form.form-horizontal
-          .form-group.col-12.mb-10
+          .form-group
             %label.col-2.control-label Email
             .col-10.col-last
               %input.easyui-textbox.form-control{placeholder: 'Email', type: 'email', 'data-options':'width:330, height:35'}
-          .form-group.col-12.mb-10
+          .form-group
             %label.col-2.control-label Password
             .col-10.col-last
               %input.easyui-textbox.form-control{placeholder: 'Password', type: 'password', 'data-options':'width:330, height:35'}
-          .form-group.col-12.mb-10
+          .form-group
             .col-push-2.col-10
               .checkbox
                 %label
@@ -27,22 +27,22 @@
     .panel-sing-up
       .easyui-panel{'data-options':"region:'west',title:'Sign up', cls:'panel-info', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
         %form.form-horizontal
-          .form-group.col-12.mb-10
+          .form-group
             .col-3
               %label.col-2.control-label Username:
             .col-9.col-last
               %input.easyui-textbox{name:'Username',  'data-options':"prompt:'Enter a username...', width:240, height:35"}
-          .form-group.col-12.mb-10
+          .form-group
             .col-3
               %label.col-2.control-label Email:
             .col-9.col-last
               %input.easyui-textbox{name:'Username',  'data-options':"prompt:'Enter a email address...' ,validType:'email', width:240, height:35"}
-          .form-group.col-12.mb-10
+          .form-group
             .col-3
               %label.col-2.control-label Password:
             .col-9.col-last
               %input.easyui-textbox{type:'password', 'data-options':'width:240, height:35'}
-          .form-group.col-12.mb-10
+          .form-group
             .col-3
               %label.col-2.control-label Confirm Password:
             .col-9.col-last
