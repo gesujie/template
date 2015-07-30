@@ -1,17 +1,24 @@
 -@title= 'Datagrid and Form | Admin Page '
 -@page_classes= 'datagrid easyui-layout'
 
-.easyui-layout{fit:'true'}
-  %div.easyui-panel{'data-options':"region:'west', title:'Form', cls:'panel-default pr-10', split:false, iconCls:'fa fa-file-text', width:450, border:false, collapsible:false"}
-    %form
-      .form-group
-        %label Product
-        %input.easyui-textbox{'data-options':"prompt:'Product', width:400, height:34, type: 'text'"}
-      .form-group.mb-10
-        %label Price
-        %input.easyui-textbox{'data-options':"prompt:'Price', width:400, height:34, type: 'text'"}
-      %button.easyui-linkbutton.l-btn-success{type: 'submit'} Add
-  %div.easyui-panel{'data-options':"region:'center', border:false"}
+.container
+  .col-4
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          Add Product
+      .panel-body
+        %form
+          .form-group
+            %label Product
+            %input.easyui-textbox{'data-options':"prompt:'Product', width:322, height:34, type: 'text'"}
+          .form-group.mb-10
+            %label Price
+            %input.easyui-textbox{'data-options':"prompt:'Price', width:322, height:34, type: 'text'"}
+          %button.easyui-linkbutton.l-btn-success.pull-right{type: 'submit'}
+            %i.fa.fa-plus
+            Add
+  .col-8.col-last{style:'min-height:700px'}
     %table.easyui-datagrid.datagrid-bg#dg{'data-options':"title:'Data Grid', iconCls:'fa fa-database', cls:'panel-default', fit:true, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
       %thead
         %tr
