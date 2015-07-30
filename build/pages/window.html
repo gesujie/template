@@ -1,9 +1,12 @@
 <div class='easyui-layout' fit='true'>
-  <a class='easyui-linkbutton l-btn-primary' iconCls='fa fa-columns' onclick='qc.demoWindow.openWindow()'>
+  <a class='easyui-linkbutton l-btn-primary' href='javascript:void(0)' onclick='qc.demoWindowA.openWindow()'>
     打开窗口
   </a>
+  <a class='easyui-linkbutton l-btn-primary' href='javascript:void(0)' onclick='qc.demoWindowB.openWindow()'>
+    Window with footer
+  </a>
 </div>
-<div id='qc-window-windowObj'>
+<div id='qc-window-windowObjA'>
   <form class='form-horizontal'>
     <div class='form-group'>
       <label class='col-2 control-label'>Email</label>
@@ -34,13 +37,26 @@
     </div>
   </form>
 </div>
+<div id='qc-window-windowObjB'>
+  <p>
+    Quidem ipsum magnam blanditiis sunt nihil unde et et placeat tenetur non vero. Officiis eos explicabo eligendi dolorum ipsa velit pariatur nisi voluptatem reiciendis distinctio quia odio. Id cum eveniet sed maxime voluptas amet ea est iste facere sed voluptate. Voluptatem aut magnam quaerat id eum fugiat vitae quaerat maiores. Repudiandae ea quia modi enim odio officia fugiat. Quis nostrum illo magnam eum magni animi
+  </p>
+  <div class='text-right' id='ft'>
+    <a class='easyui-linkbutton l-btn-primary' data-options="iconCls:'fa fa-check-circle-o'" href='javascript:void(0)' onclick="javascript:alert('ok')">
+      Ok
+    </a>
+    <a class='easyui-linkbutton l-btn-danger' data-options="iconCls:'fa fa-times-circle-o'" href='javascript:void(0)' onclick="javascript:alert('cancel')">
+      Cancel
+    </a>
+  </div>
+</div>
 <script>
-  Namespace.register("qc.demoWindow");
-  qc.main.pushWindowId("qc-window-windowObj");
-  qc.demoWindow.windowObj = null;
-  qc.demoWindow.openWindow = function() {
-    if (!qc.demoWindow.windowObj) {
-      qc.demoWindow.windowObj = $("#qc-window-windowObj").show().window({
+  Namespace.register("qc.demoWindowA");
+  qc.main.pushWindowId("qc-window-windowObjA");
+  qc.demoWindowA.windowObj = null;
+  qc.demoWindowA.openWindow = function() {
+    if (!qc.demoWindowA.windowObj) {
+      qc.demoWindowA.windowObj = $("#qc-window-windowObjA").show().window({
         title: 'Easy UI Window Login',
         iconCls: 'fa fa-columns',
         modal: true,
@@ -50,7 +66,27 @@
         closable: true
       });
     } else {
-      qc.demoWindow.windowObj.window("open");
+      qc.demoWindowA.windowObj.window("open");
+    }
+  };
+  
+  Namespace.register("qc.demoWindowB");
+  qc.main.pushWindowId("qc-window-windowObjB");
+  qc.demoWindowB.windowObj = null;
+  qc.demoWindowB.openWindow = function() {
+    if (!qc.demoWindowB.windowObj) {
+      qc.demoWindowB.windowObj = $("#qc-window-windowObjB").show().window({
+        title: 'Easy UI Window With Footer Buttons',
+        iconCls: 'fa fa-columns',
+        modal: true,
+        width: 600,
+        height: 400,
+        footer: '#ft',
+        minimizable: false,
+        closable: true
+      });
+    } else {
+      qc.demoWindowB.windowObj.window("open");
     }
   };
 </script>

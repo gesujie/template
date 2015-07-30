@@ -1,18 +1,30 @@
-<div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'west', title:'Form', cls:'panel-default pr-10', split:false, iconCls:'fa fa-file-text', width:450, border:false, collapsible:false">
-    <form>
-      <div class='form-group'>
-        <label>Product</label>
-        <input class='easyui-textbox' data-options="prompt:'Product', width:400, height:34, type: 'text'">
+<div class='container'>
+  <div class='col-4'>
+    <div class='panel panel-default'>
+      <div class='panel-header'>
+        <h3 class='panel-title'>
+          Add Product
+        </h3>
       </div>
-      <div class='form-group mb-10'>
-        <label>Price</label>
-        <input class='easyui-textbox' data-options="prompt:'Price', width:400, height:34, type: 'text'">
+      <div class='panel-body'>
+        <form>
+          <div class='form-group'>
+            <label>Product</label>
+            <input class='easyui-textbox' data-options="prompt:'Product', width:322, height:34, type: 'text'">
+          </div>
+          <div class='form-group mb-10'>
+            <label>Price</label>
+            <input class='easyui-textbox' data-options="prompt:'Price', width:322, height:34, type: 'text'">
+          </div>
+          <button class='easyui-linkbutton l-btn-success pull-right' type='submit'>
+            <i class='fa fa-plus'></i>
+            Add
+          </button>
+        </form>
       </div>
-      <button class='easyui-linkbutton l-btn-success' type='submit'>Add</button>
-    </form>
+    </div>
   </div>
-  <div class='easyui-panel' data-options="region:'center', border:false">
+  <div class='col-8 col-last' style='min-height:700px'>
     <table class='easyui-datagrid datagrid-bg' data-options="title:'Data Grid', iconCls:'fa fa-database', cls:'panel-default', fit:true, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'" id='dg'>
       <thead>
         <tr>
