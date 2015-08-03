@@ -120,13 +120,6 @@
     "iconCls": "fa fa-list-ol"
   },
   {
-    "id": "2-1-10",
-    "text": "Tree Grid",
-    "url": "pages/treegrid.html",
-    "parentId": "2-1",
-    "iconCls": "fa fa-list-ol"
-  },
-  {
     "id": "2-1-11",
     "text": "Number Spinner",
     "url": "pages/numberspinner.html",

@@ -1,10 +1,8 @@
 -@title= 'Number Spinner | Admin Page '
 -@page_classes= 'spinner'
 
-.easyui-layout{fit:'true'}
-  .easyui-panel{title:'Number Spinner', 'data-options':"region:'center', iconCls:'fa fa-sort-numeric-asc', cls:'panel-primary', collapsible:false"}
-    .container.mb-10
-      .col-6
-        %input.easyui-numberspinner.brand-success{'data-options':"\n onChange: function(value){\n $('#vv').text(value);\n}\n"}
-        %small Value:
-        %small#vv
+.container
+  .col-6
+    %input.easyui-numberspinner.brand-success{'data-options':"\n onChange: function(value){\n $('#vv').text(value);\n}\n"}
+    %small Value:
+    %small#vv

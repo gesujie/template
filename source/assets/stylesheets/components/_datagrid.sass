@@ -182,7 +182,7 @@
 
 .datagrid-sort-icon
   float: right
-  
+
 .datagrid-sort-desc
   & .datagrid-sort-icon
     &::before
@@ -253,15 +253,13 @@
 
 .datagrid-row-over,
 .datagrid-header td.datagrid-header-over
-  background-color: #B3DAD6
-  color: #000
+  background-color: darken(#fff, 10%)
   cursor: default
-  +transition(background-color, 0.28s, ease-out)
+  +transition(background-color, 0.2s, ease-out)
 
 .datagrid-row-selected
-  background-color: $brand-info
-  color: #fff
-  +transition(background-color, 0.28s, ease-in)
+  background-color: darken(#fff, 10%)
+  +transition(background-color, 0.2s, ease-in)
 
 .datagrid-row-editing .textbox,
 .datagrid-row-editing .textbox-text

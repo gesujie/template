@@ -1,53 +1,30 @@
 -@title= 'Login | Admin Page '
--@page_classes= 'login'
+-@page_classes= 'login theme-default'
 
-.easyui-layout{'data-options':'width:450, height:500'}
-  .panel-login
-    .panel-sing-in
-      .easyui-panel{'data-options':"region:'west',title:'Sign in', cls:'panel-primary', split:false, iconCls:'fa fa-sign-in', width:450, border:false, collapsible:false, closable:true"}
-        %form.form-horizontal
+.container
+  .col-4.col-push-4
+    .panel.panel-primary
+      .panel-header
+        .panel-title
+          %i.fa.fa-lock
+          Login The Admin App
+      .panel-body
+        .text-center
+          .border-circle.mt-20
+            %i.fa.fa-user.fa-5x.mt-10
+        %form
           .form-group
-            %label.col-2.control-label Email
-            .col-10.col-last
-              %input.easyui-textbox.form-control{placeholder: 'Email', type: 'email', 'data-options':'width:330, height:35'}
+            %label Email address
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
           .form-group
-            %label.col-2.control-label Password
-            .col-10.col-last
-              %input.easyui-textbox.form-control{placeholder: 'Password', type: 'password', 'data-options':'width:330, height:35'}
-          .form-group
-            .col-push-2.col-10
-              .checkbox
-                %label
-                  %input.easyui-checkbox{type: 'checkbox'}
-                  Remember me
-          .form-group
-            .col-push-2.col-10
-              =link_to 'Sign up', 'javascript:void(0)', onclick:'btnRegistry()', class:'easyui-linkbutton l-btn-info text-center',  iconCls: 'fa fa-user-plus'
-              =link_to 'Sign in', 'javascript:void(0)', class:'easyui-linkbutton l-btn-primary mr-10 text-center',  iconCls: 'fa fa-sign-in'
-    .panel-sing-up
-      .easyui-panel{'data-options':"region:'west',title:'Sign up', cls:'panel-info', split:false, iconCls:'fa fa-user-plus', width:450, border:false, collapsible:false, closable:true"}
-        %form.form-horizontal
-          .form-group
-            .col-3
-              %label.col-2.control-label Username:
-            .col-9.col-last
-              %input.easyui-textbox{name:'Username',  'data-options':"prompt:'Enter a username...', width:240, height:35"}
-          .form-group
-            .col-3
-              %label.col-2.control-label Email:
-            .col-9.col-last
-              %input.easyui-textbox{name:'Username',  'data-options':"prompt:'Enter a email address...' ,validType:'email', width:240, height:35"}
-          .form-group
-            .col-3
-              %label.col-2.control-label Password:
-            .col-9.col-last
-              %input.easyui-textbox{type:'password', 'data-options':'width:240, height:35'}
-          .form-group
-            .col-3
-              %label.col-2.control-label Confirm Password:
-            .col-9.col-last
-              %input.easyui-textbox{type:'password', 'data-options':'width:240, height:35'}
-          .form-group
-            .col-push-3
-              =link_to 'Back', 'javascript:void(0)', onclick:'btnBack()', class:'easyui-linkbutton l-btn-default mr-10 text-center',  iconCls: 'fa fa-arrow-left'
-              =link_to 'Sign up', 'javascript:void(0)', class:'easyui-linkbutton l-btn-info text-center',  iconCls: 'fa fa-user-plus'
+            %label Password
+            %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          .checkbox
+            %label
+              %input.easyui-checkbox{type: 'checkbox'}
+              Remember me
+          %button.col-12.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
+            Login
+      .panel-footer.text-center
+        %small.text-muted
+          设计单位：贵州黔驰信息股份有限公司
