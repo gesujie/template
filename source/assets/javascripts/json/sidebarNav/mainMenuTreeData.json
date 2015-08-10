@@ -37,20 +37,6 @@
     "parentId": "1-1"
   },
   {
-    "id": "1-2",
-    "text": "用户功能",
-    "parentId": "1",
-    "iconCls": "fa fa-user",
-    "state": "closed"
-  },
-  {
-    "id": "1-2-1",
-    "text": "登陆注册",
-    "url": "pages/login.html",
-    "iconCls": "fa fa-sign-in",
-    "parentId": "1-2"
-  },
-  {
     "id": "2-1",
     "text": "Components",
     "parentId": "2",
@@ -118,13 +104,6 @@
     "url": "pages/tree.html",
     "parentId": "2-1",
     "iconCls": "fa fa-list-ol"
-  },
-  {
-    "id": "2-1-11",
-    "text": "Number Spinner",
-    "url": "pages/numberspinner.html",
-    "parentId": "2-1",
-    "iconCls": "fa fa-sort-numeric-asc"
   },
   {
     "id": "2-1-12",
