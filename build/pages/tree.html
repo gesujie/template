@@ -1,8 +1,42 @@
-<div class='easyui-layout' fit='true'>
-  <div class='easyui-panel' data-options="region:'west', iconCls:'fa fa-list-ol', width:420, cls:'panel-primary', collapsible:false" title='Tree Live Example'>
-    <ul class='easyui-tree' data-options="url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true" id='tt'></ul>
-    <div class='panel-footer'>
-      <small>Tree folder with by lines</small>
+<div class='container'>
+  <div class='col-6'>
+    <div class='panel panel-default'>
+      <div class='panel-header'>
+        <h3 class='panel-title'>
+          Tree
+        </h3>
+      </div>
+      <ul class='easyui-tree' data-options="url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true" id='tt'></ul>
+      <div class='panel-footer'>
+        <small>Tree folder with by lines</small>
+      </div>
+    </div>
+  </div>
+  <div class='col-6 col-last'>
+    <div class='panel panel-default'>
+      <div class='panel-header'>
+        <h3 class='panel-title'>
+          Tree Grid
+        </h3>
+      </div>
+      <table class='easyui-treegrid' data-options="method: 'get', rownumbers: true, idField: 'id', treeField: 'name', url:'assets/javascripts/json/datagridData/treegrid_data1.json'">
+        <thead>
+          <tr>
+            <th data-options="field:'name'" width='220'>
+              Name
+            </th>
+            <th align='right' data-options="field:'size'" width='100'>
+              Size
+            </th>
+            <th data-options="field:'date'" width='150'>
+              Modified Date
+            </th>
+          </tr>
+        </thead>
+      </table>
+      <div class='panel-footer'>
+        <small>Tree folder with by lines</small>
+      </div>
     </div>
   </div>
 </div>

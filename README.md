@@ -8,13 +8,18 @@ Easy Admin are HTML5-CSS3-JS based administrator template.
 ## Feature of Easy Admin
 
   - #### Grid System
-    Easy Admin has grid system. Example page under the components, please check out.
-
   - #### Button Icon Hover Animation
-    Easy Admin has two different button hover animations. Bounce and fade.
-
   - #### Themes
-    Easy Admin has two different theme. `theme-default` and `theme-material`  
+  - #### Datagrid
+  - #### Tabs
+  - #### Panels
+  - #### Labels & Buttons
+  - #### Window & Dialog
+  - #### Accordion
+  - #### Forms
+  - #### Tree
+  - #### Calendar
+  - #### Uploader 
 
 ## How do I get set up?
 
