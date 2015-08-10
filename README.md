@@ -19,7 +19,7 @@ Easy Admin are HTML5-CSS3-JS based administrator template.
   - #### Forms
   - #### Tree
   - #### Calendar
-  - #### Uploader 
+  - #### Uploader
 
 ## How do I get set up?
 
@@ -29,11 +29,11 @@ Several quick start options are available:
 
 ### If you have no "GIT"
 
-[Download the latest release.](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.5.zip)
+[Download the latest release.](https://bitbucket.org/coskuntekin/easy-admin/get/0.1.5.zip)
 
 ###  If you have "GIT"
 
-Clone the repo: `git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git`
+Clone the repo: `git clone https://coskuntekin@bitbucket.org/coskuntekin/easy-admin.git`
 
 ### Windows
 
@@ -105,11 +105,11 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 
 ### 如果你没有使用GIT
 
-[下载这个最新版本的发布包](https://bitbucket.org/coskuntekin/admin-template-easyui/get/0.1.5.zip)
+[下载这个最新版本的发布包](https://bitbucket.org/coskuntekin/easy-admin/get/0.1.5.zip)
 
 ### 如果使用了GIT
 
-直接在你的电脑上迁出这个地址 `git clone https://coskuntekin@bitbucket.org/coskuntekin/admin-template-easyui.git`
+直接在你的电脑上迁出这个地址 `git clone https://coskuntekin@bitbucket.org/coskuntekin/easy-admin.git`
 
 ### Windows
 
