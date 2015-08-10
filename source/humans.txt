@@ -2,14 +2,15 @@
 
 	Chains Front-End Develop Team
 	Javascript Modify by: li yulong
-    Styles Modify by: coskuntekin
+  Styles Modify by: @coskuntekin
+
+  CHAINS
 
 /* THANKS */
 
     Ruby
-    Node.Js
     Middleman
-    HTML5 Bolireplate
+    HTML5 Boilerplate
     HAML
     Sass
     Susy
@@ -20,7 +21,7 @@
 
 /* SITE */
 
-    Last Update: 2015/04/22
+    Last Update: 2015/07/30
     Doctype: HTML5
     IDE: RubyMine
     Platform: Middleman - Ruby

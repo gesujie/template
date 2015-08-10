@@ -1,13 +1,14 @@
 -@title= 'Window | Admin Page '
 -@page_classes= 'window easyui-layout'
 
-.easyui-layout{fit: 'true'}
-  %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowA.openWindow()'}
-    打开窗口
-  %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowB.openWindow()'}
-    Window with footer
+.container
+  .col-12
+    %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowA.openWindow()'}
+      打开窗口
+    %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowB.openWindow()'}
+      Window with footer
 
-#qc-window-windowObjA
+#qc-window-windowObjA.hidden
   %form.form-horizontal
     .form-group
       %label.col-2.control-label Email
@@ -27,7 +28,7 @@
       .col-push-2.col-10
         %button.easyui-linkbutton.l-btn-primary{type: 'submit'} Sign in
 
-#qc-window-windowObjB
+#qc-window-windowObjB.hidden
   %p
     =lorem.sentences 6
   .text-right#ft

@@ -108,7 +108,7 @@
         %form
           %input.easyui-searchbox{'data-options':"prompt:'Please Input Value', searcher:doSearch, width: 440, height:34"}
   %hr.col-12
-  .col-12
+  .col-6
     .panel.panel-primary
       .panel-header
         .panel-icon.fa.fa-align-justify
@@ -128,6 +128,16 @@
           %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:'.',prefix:'$', height:34", value: '1234567.89'}
           %p Currency:EUR
           %input.easyui-numberbox{'data-options':"precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34", value: '1234567.89'}
+  .col-6.col-last
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-align-justify
+        .panel-title.panel-with-icon
+          Number Spinner
+      .panel-body
+        %input.easyui-numberspinner{'data-options':"\n onChange: function(value){\n $('#vv').text(value);\n}\n"}
+        %small Value:
+        %small#vv
 
 :javascript
   //Search Box

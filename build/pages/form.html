@@ -163,7 +163,7 @@
     </div>
   </div>
   <hr class='col-12'>
-  <div class='col-12'>
+  <div class='col-6'>
     <div class='panel panel-primary'>
       <div class='panel-header'>
         <div class='panel-icon fa fa-align-justify'></div>
@@ -186,6 +186,21 @@
           <p>Currency:EUR</p>
           <input class='easyui-numberbox' data-options="precision:2,groupSeparator:',',decimalSeparator:' ',prefix:'€', height:34" value='1234567.89'>
         </form>
+      </div>
+    </div>
+  </div>
+  <div class='col-6 col-last'>
+    <div class='panel panel-primary'>
+      <div class='panel-header'>
+        <div class='panel-icon fa fa-align-justify'></div>
+        <div class='panel-title panel-with-icon'>
+          Number Spinner
+        </div>
+      </div>
+      <div class='panel-body'>
+        <input class='easyui-numberspinner' data-options="&#x000A; onChange: function(value){&#x000A; $('#vv').text(value);&#x000A;}">
+        <small>Value:</small>
+        <small id='vv'></small>
       </div>
     </div>
   </div>

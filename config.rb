@@ -15,9 +15,7 @@ page 'pages/dashboard.html', layout: :iframe_layout
 page 'pages/datagrid.html', layout: :iframe_layout
 page 'pages/datagrid-form.html', layout: :iframe_layout
 page 'pages/tabs.html', layout: :iframe_layout
-page 'pages/login.html', layout: :iframe_layout
 page 'pages/tree.html', layout: :iframe_layout
-page 'pages/treegrid.html', layout: :iframe_layout
 page 'pages/schedule.html', layout: :iframe_layout
 page 'pages/uploader.html', layout: :iframe_layout
 page 'pages/window.html', layout: :iframe_layout
@@ -31,7 +29,7 @@ page 'pages/label-button.html', layout: :iframe_layout
 page 'pages/colors.html', layout: :iframe_layout
 
 # Pages Layouts
-page 'pages/register.html', layout: :pages_layout
+page 'pages/login.html', layout: :pages_layout
 page 'pages/error.html', layout: :pages_layout
 
 # With alternative layout

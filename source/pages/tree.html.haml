@@ -1,8 +1,28 @@
 -@title= 'Tree | Admin Page '
 -@page_classes= 'tree'
 
-.easyui-layout{fit:'true'}
-  .easyui-panel{title:'Tree Live Example', 'data-options':"region:'west', iconCls:'fa fa-list-ol', width:420, cls:'panel-primary', collapsible:false"}
-    %ul.easyui-tree#tt{'data-options':"url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true"}
-    .panel-footer
-      %small Tree folder with by lines
+.container
+  .col-6
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          Tree
+      %ul.easyui-tree#tt{'data-options':"url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true"}
+      .panel-footer
+        %small Tree folder with by lines
+  .col-6.col-last
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          Tree Grid
+      %table.easyui-treegrid{'data-options':"method: 'get', rownumbers: true, idField: 'id', treeField: 'name', url:'assets/javascripts/json/datagridData/treegrid_data1.json'"}
+        %thead
+          %tr
+            %th{'data-options':"field:'name'", width:'220'}
+              Name
+            %th{align:'right', 'data-options':"field:'size'", width:'100'}
+              Size
+            %th{'data-options':"field:'date'", width:'150'}
+              Modified Date
+      .panel-footer
+        %small Tree folder with by lines

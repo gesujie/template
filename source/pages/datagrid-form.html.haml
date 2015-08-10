@@ -18,13 +18,19 @@
           %button.easyui-linkbutton.l-btn-success.pull-right{type: 'submit'}
             %i.fa.fa-plus
             Add
-  .col-8.col-last{style:'min-height:700px'}
-    %table.easyui-datagrid.datagrid-bg#dg{'data-options':"title:'Data Grid', iconCls:'fa fa-database', cls:'panel-default', fit:true, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
-      %thead
-        %tr
-          %th{'data-options':"field:'itemid', sortable:'true', width:80"} Item ID
-          %th{'data-options':"field:'productid',width:100"} Product
-          %th{'data-options':"field:'listprice',width:80,align:'right'"} List Price
-          %th{'data-options':"field:'unitcost',width:80,align:'right'"} Unit Cost
-          %th{'data-options':"field:'attr1',width:250"} Attribute
-          %th{'data-options':"field:'status',width:60,align:'center'"} Status
+  .col-8.col-last
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-database
+        .panel-title.panel-with-icon
+          Data Grid
+      %table.easyui-datagrid{'data-options':"height:640, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
+        %thead
+          %tr
+            %th{'data-options':"field:'ck', checkbox:'true'"}
+            %th{'data-options':"field:'itemid', sortable:'true', width:80"} Item ID
+            %th{'data-options':"field:'productid', sortable:'true', width:100"} Product
+            %th{'data-options':"field:'listprice', sortable:'true', width:80"} List Price
+            %th{'data-options':"field:'unitcost', sortable:'true', width:80"} Unit Cost
+            %th{'data-options':"field:'attr1', sortable:'true', width:250"} Attribute
+            %th{'data-options':"field:'status', sortable:'true', width:60"} Status
