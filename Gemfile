@@ -30,7 +30,7 @@ gem 'susy', '2.2.3'
 #gem 'bootstrap-sass', '~> 3.3.5.1'
 
 # Font Awesome
-# gem 'font-awesome-rails', '~> 4.3.0.0'
+gem 'font-awesome-rails', '~> 4.4.0.0'
 
 # Middleman Sitemap
 # gem 'middleman-sitemap', '~> 0.0.13'

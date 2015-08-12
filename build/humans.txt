@@ -1,8 +1,10 @@
 /* TEAM */
 
 	Chains Front-End Develop Team
-	Li Yulong
-  @coskuntekin
+	Javascript Modify by: li yulong
+  Styles Modify by: @coskuntekin
+
+  CHAINS
 
 /* THANKS */
 
