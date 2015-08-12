@@ -29,7 +29,7 @@ Several quick start options are available:
 
 ### If you have no "GIT"
 
-[Download the latest release.](https://bitbucket.org/coskuntekin/easy-admin/get/0.1.5.zip)
+[Download the latest release.](https://bitbucket.org/coskuntekin/easy-admin/get/v0.1.6.zip)
 
 ###  If you have "GIT"
 
