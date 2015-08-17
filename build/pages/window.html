@@ -6,6 +6,9 @@
     <a class='easyui-linkbutton l-btn-primary' href='javascript:void(0)' onclick='qc.demoWindowB.openWindow()'>
       Window with footer
     </a>
+    <a class='easyui-linkbutton l-btn-primary' href='javascript:void(0)' onclick='qc.demoWindowC.openWindow()'>
+      Window with validate form
+    </a>
   </div>
 </div>
 <div class='hidden' id='qc-window-windowObjA'>
@@ -41,15 +44,7 @@
 </div>
 <div class='hidden' id='qc-window-windowObjB'>
   <p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    Facilis nobis voluptatem similique. Aut ratione cum facilis ut quia temporibus. Quidem ut velit minima labore sed hic rerum qui quibusdam sed consequatur qui. Quo saepe voluptatibus consectetur a et laboriosam qui aut quis fugit. Fugit quisquam amet vitae suscipit recusandae qui. Expedita cumque atque repellat
-=======
-    Corporis magni qui perferendis explicabo est eaque. Nemo et eos voluptatibus iusto aut molestias et id ut ratione. Non totam a eius dicta quo vitae natus esse natus occaecati cupiditate quia aut. Sit dolor minus fugit corporis dicta similique. Atque non ut aperiam exercitationem. Repudiandae animi eveniet quidem consequatur possimus autem molestiae hic cupiditate nesciunt nobis et
->>>>>>> develop
-=======
-    Odio non earum nulla pariatur voluptatibus distinctio illo non voluptate. Qui voluptate est commodi quas dolores suscipit enim sit. Commodi cumque perspiciatis dolorem molestias accusantium qui earum quos repudiandae iusto beatae omnis explicabo occaecati. Reprehenderit quam vitae quis unde fuga ullam sapiente quod ut corporis rem. Et rerum illum et est nihil qui consequuntur nulla deserunt sit vero ut nemo. Dolores qui est ut
->>>>>>> develop
+    Ut est temporibus animi odit et iure omnis odit ea vitae aut. Non voluptate nobis id dolorum eos non quis omnis quia non unde. Quaerat a molestiae laboriosam corrupti quia. Assumenda molestiae eos velit expedita nihil voluptatibus enim minus. Nostrum necessitatibus et repellat tempore eaque aut alias porro. Est facere doloremque ipsam molestias
   </p>
   <div class='text-right' id='ft'>
     <a class='easyui-linkbutton l-btn-primary' data-options="iconCls:'fa fa-check-circle-o'" href='javascript:void(0)' onclick="javascript:alert('ok')">
@@ -59,6 +54,30 @@
       Cancel
     </a>
   </div>
+</div>
+<div class='hidden' id='qc-window-windowObjC'>
+  <form data-options='novalidate:true' id='ff' method='post'>
+    <div class='form-group'>
+      <label class='col-12'>Name:</label>
+      <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='name' type='text'>
+    </div>
+    <div class='form-group'>
+      <label class='col-12'>Email:</label>
+      <input class='easyui-textbox' data-options="required:true, width:480, height:34, validType:'email'" name='email' type='text'>
+    </div>
+    <div class='form-group'>
+      <label class='col-12'>Subject:</label>
+      <input class='easyui-textbox' data-options='required:true, width:480, height:34' name='subject' type='text'>
+    </div>
+    <div class='form-group'>
+      <label class='col-12'>Message:</label>
+      <input class='easyui-textbox' data-options='multiline:true, width:480, height:60' name='message'>
+    </div>
+    <div class='form-group'>
+      <button class='easyui-linkbutton l-btn-primary' onclick='submitForm()' type='submit'>Submit</button>
+      <button class='easyui-linkbutton l-btn-danger' onclick='clearForm()' type='submit'>Clear</button>
+    </div>
+  </form>
 </div>
 <script>
   Namespace.register("qc.demoWindowA");
@@ -99,4 +118,33 @@
       qc.demoWindowB.windowObj.window("open");
     }
   };
+  
+  Namespace.register("qc.demoWindowC");
+  qc.main.pushWindowId("qc-window-windowObjC");
+  qc.demoWindowC.windowObj = null;
+  qc.demoWindowC.openWindow = function() {
+    if (!qc.demoWindowC.windowObj) {
+      qc.demoWindowC.windowObj = $("#qc-window-windowObjC").show().window({
+        title: 'Easy UI Window With Footer Buttons',
+        iconCls: 'fa fa-columns',
+        modal: true,
+        width: 515,
+        height: 480,
+        footer: '#ft',
+        minimizable: false,
+        closable: true
+      });
+    } else {
+      qc.demoWindowC.windowObj.window("open");
+    }
+  };
+  
+  //Validate Form on Submit
+  function submitForm(){
+    $('#ff').form('submit',{
+        onSubmit:function(){
+            return $(this).form('enableValidation').form('validate');
+        }
+    });
+  }
 </script>
