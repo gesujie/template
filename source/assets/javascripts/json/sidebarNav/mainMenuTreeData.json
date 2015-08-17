@@ -65,7 +65,7 @@
   },
   {
     "id": "2-1-4",
-    "text": "Label & Button",
+    "text": "Label - Button - Tooltip ",
     "url": "pages/label-button.html",
     "parentId": "2-1",
     "iconCls": "fa fa-flag"
