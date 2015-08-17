@@ -7,6 +7,8 @@
       打开窗口
     %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowB.openWindow()'}
       Window with footer
+    %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowC.openWindow()'}
+      Window with validate form
 
 #qc-window-windowObjA.hidden
   %form.form-horizontal
@@ -36,6 +38,24 @@
       Ok
     %a.easyui-linkbutton.l-btn-danger{'data-options':"iconCls:'fa fa-times-circle-o'", href:'javascript:void(0)', onclick:"javascript:alert('cancel')"}
       Cancel
+
+#qc-window-windowObjC.hidden
+  %form#ff{'data-options':'novalidate:true', method: 'post'}
+    .form-group
+      %label.col-12 Name:
+      %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'name', type: 'text'}
+    .form-group
+      %label.col-12 Email:
+      %input.easyui-textbox{'data-options':"required:true, width:480, height:34, validType:'email'", name: 'email', type: 'text'}
+    .form-group
+      %label.col-12 Subject:
+      %input.easyui-textbox{'data-options':'required:true, width:480, height:34', name: 'subject', type: 'text'}
+    .form-group
+      %label.col-12 Message:
+      %input.easyui-textbox{'data-options':'multiline:true, width:480, height:60', name: 'message'}
+    .form-group
+      %button.easyui-linkbutton.l-btn-primary{onclick: 'submitForm()', type: 'submit'} Submit
+      %button.easyui-linkbutton.l-btn-danger{onclick: 'clearForm()', type: 'submit'} Clear
 
 :javascript
   Namespace.register("qc.demoWindowA");
@@ -76,3 +96,32 @@
       qc.demoWindowB.windowObj.window("open");
     }
   };
+
+  Namespace.register("qc.demoWindowC");
+  qc.main.pushWindowId("qc-window-windowObjC");
+  qc.demoWindowC.windowObj = null;
+  qc.demoWindowC.openWindow = function() {
+    if (!qc.demoWindowC.windowObj) {
+      qc.demoWindowC.windowObj = $("#qc-window-windowObjC").show().window({
+        title: 'Easy UI Window With Footer Buttons',
+        iconCls: 'fa fa-columns',
+        modal: true,
+        width: 515,
+        height: 480,
+        footer: '#ft',
+        minimizable: false,
+        closable: true
+      });
+    } else {
+      qc.demoWindowC.windowObj.window("open");
+    }
+  };
+
+  //Validate Form on Submit
+  function submitForm(){
+    $('#ff').form('submit',{
+        onSubmit:function(){
+            return $(this).form('enableValidation').form('validate');
+        }
+    });
+  }
