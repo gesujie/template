@@ -20,22 +20,16 @@
       color: #000
       +transition(background-color, 0.28s, ease-in)
       outline: none
-      &::-webkit-input-placeholder
-        color: #BDBCBC
-      &::-moz-placeholder
-        color: #BDBCBC
-      &:-ms-input-placeholder
-        color: #BDBCBC
 
 .textbox-invalid
   & .validatebox-invalid,
   & .textbox-text
-    background-color: $brand-danger
-    color: #fff
+    background-color: lighten($brand-warning, 20%)
+    color: $brand-warning
 
-.textbox
-  & .textbox-prompt
-    color: #BDBCBC
+
+.textbox-prompt
+  color: #BDBCBC
 
 .textbox-button-right,
 .textbox-button-left

@@ -2,29 +2,72 @@
 -@page_classes= 'login theme-default'
 
 .container
-  .col-4.col-push-4
-    .panel.panel-primary
-      .panel-header
-        .panel-title
-          %i.fa.fa-lock
-          Login The Admin App
-      .panel-body
-        .text-center
-          .border-circle.mt-20
-            %i.fa.fa-user.fa-5x.mt-10
-        %form
-          .form-group
-            %label Email address
-            %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
-          .form-group
-            %label Password
-            %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
-          .checkbox
-            %label
-              %input.easyui-checkbox{type: 'checkbox'}
-              Remember me
-          %button.col-12.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
-            Login
-      .panel-footer.text-center
-        %small.text-muted
-          设计单位：贵州黔驰信息股份有限公司
+  .col-12.panel-login
+    .col-4.col-push-4.panel-sign-in.js-panel-sign-in.in
+      .panel.panel-primary
+        .panel-header
+          .panel-title
+            %i.fa.fa-lock
+            Login The Admin App
+        .panel-body
+          .text-center
+            .border-circle.mt-20
+              %i.fa.fa-user.fa-5x.mt-10
+          %form.easyui-form#ff{'data-options':'novalidate:true', method: 'post'}
+            .form-group
+              %label Email address
+              %input.easyui-textbox{'data-options':"required:true, validType:'email', prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+            .form-group
+              %label Password
+              %input.easyui-textbox{'data-options':"required:true, prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+            .checkbox
+              %label
+                %input.easyui-checkbox{type: 'checkbox'}
+                Remember me
+            %button.col-6.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', onclick: 'submitForm()', 'data-options':"iconCls:'fa fa-sign-in'"}
+              Sign In
+            %button.col-6.col-last.easyui-linkbutton.l-btn-info.l-btn-bounce.js-sign-up{type: 'button', 'data-options':"iconCls:'fa fa-user-plus'"}
+              Sign Up
+        .panel-footer.text-center
+          %small.text-muted
+            设计单位：贵州黔驰信息股份有限公司
+    .col-4.col-push-4.panel-sign-up.js-panel-sign-up.out
+      .panel.panel-info
+        .panel-header
+          .panel-title.text-right
+            .pull-left
+              %i.fa.fa-user-plus
+              Sign Up Form
+            =link_to '#', class:'js-back-to-sign-in' do
+              %i.fa.fa-arrow-circle-left.text-light
+        .panel-body
+          %form
+            .form-group
+              %label User Name
+              %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+            .form-group
+              %label Email address
+              %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+            .form-group
+              %label Password
+              %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+            .form-group
+              %label Confirm Password
+              %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+            %button.col-12.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
+              Submit
+        .panel-footer.text-center
+          %small.text-muted
+            设计单位：贵州黔驰信息股份有限公司
+
+:javascript
+
+  //Validate Form on Submit
+  function submitForm(){
+    $('#ff').form('submit',{
+        onSubmit:function(){
+            return $(this).form('enableValidation').form('validate');
+        }
+    });
+  }
+
