@@ -1,40 +1,33 @@
-// Avoid `console` errors in browsers that lack a console.
-(function() {
-    var method;
-    var noop = function () {};
-    var methods = [
-        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
-        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
-        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
-        'timeStamp', 'trace', 'warn'
-    ];
-    var length = methods.length;
-    var console = (window.console = window.console || {});
 
-    while (length--) {
-        method = methods[length];
+$(document).ready(function(){
 
-        // Only stub undefined methods.
-        if (!console[method]) {
-            console[method] = noop;
-        }
+  //### Login Page Panel Animations
+  var jsPanelSignUp = $('.js-panel-sign-up');
+  var jsPanelSignIn = $('.js-panel-sign-in');
+
+  $('.js-sign-up').on("click",function(){
+    if(jsPanelSignUp.hasClass('out')){
+      jsPanelSignUp.removeClass('out').addClass('in');
     }
-}());
+    if(jsPanelSignIn.hasClass('in')){
+      jsPanelSignIn.removeClass('in').addClass('out');
+    }
+  });
+
+  $('.js-back-to-sign-in').on("click",function(e){
+    e.preventDefault();
+    if(jsPanelSignUp.hasClass('in')){
+      jsPanelSignUp.removeClass('in').addClass('out');
+    }
+    if(jsPanelSignIn.hasClass('out')){
+      jsPanelSignIn.removeClass('out').addClass('in');
+    }
+  });
+
+});
 
 //### Sidebar Navigation JSON
 qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
-
-//### Registry Login Button
-function btnRegistry(){
-	$('.panel-sing-up').addClass('active');
-	$('.panel-sing-in').addClass('passive');
-}
-
-//### Registry Back Button
-function btnBack(){
-	$('.panel-sing-up').removeClass('active');
-	$('.panel-sing-in').removeClass('passive');
-}
 
 //### Sidebar Badge Extend
 $('#mainSlideMenu').tree({
