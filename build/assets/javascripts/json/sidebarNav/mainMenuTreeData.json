@@ -129,7 +129,7 @@
   {
     "id": "2-1-13",
     "text": "iframe中打开百度",
-    "url": "http://baidu.com",
+    "url": "https://baidu.com",
     "iframe": true,
     "parentId": "2-1",
     "iconCls": "fa fa-paw"
@@ -150,14 +150,14 @@
   },
   {
     "id": "2-2-2",
-    "text": "日历-FullCalendar.js",
+    "text": "日历-Full Calendar",
     "url": "pages/schedule.html",
     "iconCls": "fa fa-calendar",
     "parentId": "2-2"
   },
   {
     "id": "2-2-3",
-    "text": "上传-Webuploader.js",
+    "text": "上传-Web Uploader",
     "url": "pages/uploader.html",
     "iconCls": "fa fa-upload",
     "parentId": "2-2"

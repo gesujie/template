@@ -1156,7 +1156,6 @@ if ($.fn.datetimespinner){
 	$.fn.datetimespinner.defaults.selections = [[0,4],[5,7],[8,10],[11,13],[14,16],[17,19]]
 }
 ;
-
 /* 说明：如果使用url方式引入页面，自己页面的变量，必须在qc下添加命名空间
  * 例： 添加页面 planTreeYear.jsp
  *      命名空间为 qc.planTreeYear (命名空间可以自定义，要求不与其他页面命名空间重复即可)
