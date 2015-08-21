@@ -20,7 +20,8 @@ Easy Admin are HTML5-CSS3-JS based administrator template.
   - #### Tree
   - #### Calendar
   - #### Uploader
-
+  - #### Alert
+  
 ## How do I get set up?
 
 ### Download
@@ -50,6 +51,8 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 * If you updated please pull request
 
 ## How to Update (v0.1.8)
+
+* Added alert. 4 color variant. 
 
 * If you are using `fontawesome` CDN please removed, on this version we added fontawesome in local file. Please feel free to use CDN.
     
