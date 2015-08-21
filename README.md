@@ -49,9 +49,9 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 * If you have any idea about features please create a issue
 * If you updated please pull request
 
-## How to Update (v0.1.6)
+## How to Update (v0.1.8)
 
-* If you are using `fontawesome` CDN please removed, on this version we added fontawesome in the stylesheet.
+* If you are using `fontawesome` CDN please removed, on this version we added fontawesome in local file. Please feel free to use CDN.
     
 * We added two theme options. For use please add class on `body`
 
