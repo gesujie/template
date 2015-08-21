@@ -31,6 +31,8 @@ page 'pages/colors.html', layout: :iframe_layout
 # Pages Layouts
 page 'pages/login.html', layout: :pages_layout
 page 'pages/error.html', layout: :pages_layout
+page 'pages/sign-up.html', layout: :pages_layout
+page 'pages/forgotpwd.html', layout: :pages_layout
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
