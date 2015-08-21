@@ -52,7 +52,7 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 
 ## How to Update (v0.1.8)
 
-* Added alert. 4 color variant. 
+* Added alert. 4 color variant. `alert alert-success`
 
 * If you are using `fontawesome` CDN please removed, on this version we added fontawesome in local file. Please feel free to use CDN.
     
