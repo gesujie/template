@@ -1,0 +1,20 @@
+-@title= 'Forget Password | Admin Page '
+-@page_classes= 'login theme-default'
+
+.container
+  .col-4.col-push-4
+    .panel.panel-danger
+      .panel-header
+        .panel-title
+          %i.fa.fa-lock
+          Forgot Password
+      .panel-body
+        %form
+          .form-group
+            %label Email address
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+          %button.col-12.easyui-linkbutton.l-btn-danger.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-info-circle'"}
+            Send Reset Link
+      .panel-footer.text-center
+        %small.text-muted
+          设计单位：贵州黔驰信息股份有限公司

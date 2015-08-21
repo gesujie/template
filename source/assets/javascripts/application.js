@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(window).load(function(){
 
   //### Login Page Panel Animations
   var jsPanelSignUp = $('.js-panel-sign-up');
@@ -24,18 +24,18 @@ $(document).ready(function(){
     }
   });
 
+  //### Sidebar Badge Extend
+  $('#mainSlideMenu').tree({
+    formatter:function(node){
+      var s = node.text;
+      if (node.children){
+        s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
+      }
+      return s;
+    }
+  });
+
 });
 
 //### Sidebar Navigation JSON
 qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
-
-//### Sidebar Badge Extend
-$('#mainSlideMenu').tree({
-	formatter:function(node){
-		var s = node.text;
-		if (node.children){
-			s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
-		}
-		return s;
-	}
-});

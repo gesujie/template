@@ -1,0 +1,29 @@
+-@title= 'Sign In | Admin Page '
+-@page_classes= 'login theme-default'
+
+.container
+  .col-4.col-push-4
+    .panel.panel-info
+      .panel-header
+        .panel-title
+          %i.fa.fa-user-plus
+          Sign Up Form
+      .panel-body
+        %form
+          .form-group
+            %label User Name
+            %input.easyui-textbox{'data-options':"prompt:'User Name', width:360, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+          .form-group
+            %label Email address
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+          .form-group
+            %label Password
+            %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          .form-group
+            %label Confirm Password
+            %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+          %button.col-12.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
+            Submit
+      .panel-footer.text-center
+        %small.text-muted
+          设计单位：贵州黔驰信息股份有限公司

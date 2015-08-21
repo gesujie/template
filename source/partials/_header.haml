@@ -26,12 +26,13 @@
         =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm2', hasDownArrow:false, plain:false" do
           %i.fa.fa-user
       %li
-        =link_to 'javascript:void(0)' do
+        =link_to '/pages/login.html' do
           %i.fa.fa-power-off
+
 
 #mm1{'data-options':' itemHeight:32'}
   %div{'data-options':"iconCls:'fa fa-user-plus'"}
-    %span
+    =link_to '/pages/sign-up.html' do
       New User
   %div{'data-options':"iconCls:'fa fa-inbox'"}
     %span
@@ -49,8 +50,8 @@
     %span
       Profile
   %div{'data-options':"iconCls:'fa fa-unlock-alt'"}
-    %span
-      Password
+    =link_to '/pages/forgotpwd.html' do
+      Forget Password
   %div{'data-options':"iconCls:'fa fa-gear'"}
     %span
       Settings

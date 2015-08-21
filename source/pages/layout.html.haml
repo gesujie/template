@@ -2,10 +2,20 @@
 -@page_classes= 'layout'
 
 .easyui-layout{'data-options':'fit:true'}
-  %div{'data-options':"region:'north',title:'North Title', cls:'layout-panel panel-default', height:100"}
+  %div{'data-options':"region:'north',title:'North Title', cls:'layout-panel panel-primary', height:100"}
+    %p
+      =lorem.words 10
   %div{'data-options':"region:'south',title:'South Title', cls:'layout-panel panel-primary', height:100"}
-  %div{'data-options':"region:'east',title:'East', cls:'layout-panel panel-info', width:100"}
-  %div{'data-options':"region:'west',title:'West', cls:'layout-panel panel-success', width:100"}
-  %div{'data-options':"region:'center',title:'center title', cls:'layout-panel panel-warning'"}
+    %p
+      =lorem.words 10
+  %div{'data-options':"region:'east',title:'East', cls:'layout-panel panel-primary', width:100"}
+    %p
+      =lorem.words 10
+  %div{'data-options':"region:'west',title:'West', cls:'layout-panel panel-primary', width:100"}
+    %p
+      =lorem.words 10
+  %div{'data-options':"region:'center',title:'center title', cls:'layout-panel panel-primary'"}
+    %p
+      =lorem.words 10
 
 
