@@ -27,4 +27,4 @@ $(window).load(function(){
 });
 
 //### Sidebar Navigation JSON
-qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
+qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
