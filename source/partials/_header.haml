@@ -1,33 +1,47 @@
 .header{'data-options':"region:'north', split:false, border:false, height:45"}
   .logo
     %span.logo-text 黔驰UI框架
-  .navbar-subpages
-    %ul.nav.nav-subpages
-      %li.dropdown
-        =link_to 'javascript:void(0)' do
-          %i.fa.fa-angle-right
-          Pages
-        %ul.dropdown-menu
-          %li
-            =link_to '/pages/login.html', class:'btn-dropdown' do
-              %i.fa.fa-laptop
-              Login Page
-          %li
-            =link_to '/pages/error.html', class:'btn-dropdown'  do
-              %i.fa.fa-exclamation
-              404 Page
+  .user-nav.pull-left
+    %ul.list-inline.list-user-info
+      %li
+        Welcome,
+        %strong
+          =lorem.name
+      %li
+        %i.fa.fa-pencil-square
+        %strong
+          Post:
+        =lorem.word
+      %li
+        %i.fa.fa-sitemap
+        %strong
+          Role :
+        %select.easyui-combobox{'data-options':"width:'120', height:'25'", panelheight: 'auto'}
+          %option{value:'manager'} Manager
+          %option{value:'developer'} Developer
+          %option{value:'designer'} Designer
+      %li
+        %i.fa.fa-briefcase
+        %strong
+          Depart. :
+        =lorem.word
+      %li
+        %i.fa.fa-desktop
+        %strong
+          Ip:
+        192.168.1.139
 
-  .navbar-header.pull-right
-    %ul.nav.nav-rounded
-      %li.notice
-        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm1', hasDownArrow:false, plain:false" do
-          %i.fa.fa-bell
-      %li
-        =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm2', hasDownArrow:false, plain:false" do
-          %i.fa.fa-user
-      %li
-        =link_to '/pages/login.html' do
-          %i.fa.fa-power-off
+    .navbar-header.pull-right
+      %ul.nav.nav-rounded
+        %li.notice
+          =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm1', hasDownArrow:false, plain:false" do
+            %i.fa.fa-bell
+        %li
+          =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm2', hasDownArrow:false, plain:false" do
+            %i.fa.fa-user
+        %li
+          =link_to '/pages/login.html' do
+            %i.fa.fa-power-off
 
 
 #mm1{'data-options':' itemHeight:32'}
