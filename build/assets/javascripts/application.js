@@ -24,17 +24,6 @@ $(window).load(function(){
     }
   });
 
-  //### Sidebar Badge Extend
-  $('#mainSlideMenu').tree({
-    formatter:function(node){
-      var s = node.text;
-      if (node.children){
-        s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
-      }
-      return s;
-    }
-  });
-
 });
 
 //### Sidebar Navigation JSON

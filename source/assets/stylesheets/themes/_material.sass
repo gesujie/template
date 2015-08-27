@@ -19,9 +19,12 @@
   .sidebar-header
     background-color:  $sidebar-material-header-bg
   .sidebar
-    background-color: $sidebar-material-body-bg
+    background-color: darken($sidebar-material-body-bg, 5%)
   .sidebar-nav
     background-color: $sidebar-material-body-in-bg
+    & > li
+      & > ul
+        background-color: darken( $sidebar-material-body-in-bg, 5%)
   .tabs-header
     background-color: $tabs-material-header-bg
   .tabs-selected

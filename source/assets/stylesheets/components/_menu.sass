@@ -4,11 +4,11 @@
 
 .menu
   position: absolute
-  +border-radius(2px)
-  +box-shadow (0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19))
   background-color: #fafafa
   border-color: #ddd
   color: #7e8e9f
+  +box-shadow (0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19))
+  +border-radius(2px)
 
 .menu-inline
   position: relative
@@ -16,10 +16,9 @@
 .menu-item
   position: relative
   cursor: pointer
-  +transition(background-color, 0.28s, ease-out)
-  border-bottom: 1px dotted #ccc
-  &:last-child
-    border-bottom: 0
+  +transition(background-color, 0.28s, ease-out, color, 0.28s, ease-out)
+  &:not(:last-child)
+    border-bottom: 1px dotted #ccc
 
 .menu-text
   float: left
@@ -77,9 +76,9 @@
   background-color: #fff
 
 .menu-active
-  color: #fff
-  background-color: #D7D7D7
-  +transition(background-color, 0.28s, ease-in)
+  color: lighten(#000, 10%)
+  background-color: darken(#fafafa, 10%)
+  +transition(background-color, 0.28s, ease-in, color, 0.28s, ease-in)
 
 .menu-active-disabled
   background-color: transparent

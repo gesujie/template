@@ -1,7 +1,38 @@
 -@title= 'Home page | Admin Page '
 -@page_classes= 'easyui-layout theme-default'
 
-#mainTabMenu.easyui-menu{'data-options':' itemHeight:28'}
+%div{'data-options':"region:'center', border:false"}
+  .easyui-tabs#mainTabs
+    .container{'data-options':"iconCls:'fa fa-home'", title: '欢迎使用'}
+      .col-8.mb-10
+        .easyui-panel{title:'Latest Announcement', 'data-options': "cls:'panel-primary', iconCls:'fa fa-bullhorn', closable:true"}
+          %p
+            =lorem.sentences 3
+      .col-4.col-last
+        .easyui-panel{title:'Previous Announcement', 'data-options': "cls:'panel-info', iconCls:'fa fa-history', closable:true"}
+          %ul
+            -5.times do
+              %li
+                =lorem.words 3
+      .col-8
+        .easyui-panel{title:'Analytics', 'data-options': "cls:'panel-primary', iconCls:'fa fa-tachometer', closable:true"}
+          .col-4.text-center
+            %i.fa.fa-bar-chart.fa-3x
+            %p 23.30%
+            %small.text-muted
+              BOUNCE RATE
+          .col-4.text-center
+            %i.fa.fa-eye.fa-3x
+            %p 67.32%
+            %small.text-muted
+              VIEW RATE
+          .col-4.col-last.text-center
+            %i.fa.fa-clock-o.fa-3x
+            %p 43.78%
+            %small.text-muted
+              TIME RATE
+
+.easyui-menu#mainTabMenu{'data-options':' itemHeight:28'}
   #refresh{'data-options':"iconCls:'fa fa-refresh'"}
     %small 刷新
   #close{'data-options':"iconCls:'fa fa-times'"}
@@ -14,9 +45,5 @@
     %small 当前页右侧全部关闭
   #closeleft{'data-options':"iconCls:'fa fa-caret-square-o-left'"}
     %small 当前页左侧全部关闭
-
-%div{'data-options':"region:'center', border:false"}
-  .easyui-tabs#mainTabs{'data-options':'fit:true, border:false, tabHeight:30'}
-    .jumbotron{title: '欢迎使用'}
 
 

@@ -11,39 +11,43 @@ qc.main.mainTabs = null;
 qc.main.windowStack = [];
 
 $(function(){
+
 	if(!qc.main.slideMenuUrl || qc.main.slideMenuUrl == null) {
-		qc.main.slideMenuUrl = "json/mainMenuTreeData.json";
+		qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 	}
 
 	qc.main.slideMenu = $("#mainSlideMenu").tree({
-		url : qc.main.slideMenuUrl,
-		fit : true, animate : true,
+    url : qc.main.slideMenuUrl,
+    method: 'get',
+		fit : true,
+    animate : true,
 		parentField : "parentId",
-		onClick: function(node){
+
+    onClick: function(node){
 			if(!!node.children) {
 				qc.main.slideMenu.tree("toggle", node.target);
 			} else if(node.url) {
 				qc.main.addTab(node.text, node.url, node.iconCls, !!node.iframe);
 			}
 		},
-		onLoadSuccess: function(node, data)  {
-			$("#mainSlideMenu .tree-hit").before('<span class="tree-indent"></span>');
-		}
+
+    formatter:function(node){
+      var s = node.text;
+      if (node.children){
+        s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
+      }
+      return s;
+    }
+
 	});
 
 	qc.main.mainTabs = $("#mainTabs").tabs({
 		border : false,
-        fit : true,
-        tabHeight:41,
-		onClose: function(title, index) {
-			qc.main.destroyContainsWindow(title);
-		},
-		onSelect: function(title,index) {
-			$(".combo-p").hide();
-		}
+    fit : true,
+    tabHeight:40
 	});
-});
 
+});
 
 // 获取左侧导航的图标
 qc.main.getIcon = function(id) {
@@ -73,7 +77,7 @@ qc.main.find = function(id) {
 qc.main.addTab = function(subtitle, url, icon, iframe) {
 	var currTab = null;
 	if (!qc.main.mainTabs.tabs('exists', subtitle)) {
-		qc.main.mainTabs.tabs('add', {
+    qc.main.mainTabs.tabs('add', {
 			title : subtitle,
 			content : !!iframe ? qc.main.createFrame(url) : null,
 			href : !!iframe ? null : url,
@@ -97,7 +101,7 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 		}
 	}
 	if(iframe && currTab != null) {
-		currTab.css("overflow", "hidden");
+		currTab.addClass('overflow-hide');
 		currTab.iframe = iframe;
 	}
 	qc.main.tabClose();
@@ -105,7 +109,7 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
 };
 
 qc.main.createFrame = function(url) {
-	var s = '<iframe scrolling="auto" src="' + url + '" style="width:100%;height:100%;"></iframe>';
+	var s = '<iframe class="iframe-fluid" src="' + url + '"></iframe>';
 	return s;
 };
 
@@ -192,7 +196,6 @@ qc.main.destroyContainsWindow = function(titleArray) {
 			}
 		}
 		qc.main.windowStack = tempWindowStack;
-
 	}
 };
 
@@ -304,7 +307,7 @@ qc.main.menushow = function(e){
 		var lid=lis[int].id;
 		if(e.id!=lid){
 			$("#"+lid).removeClass("active");
-			$("div."+lid).css("display", "none");
+			$("div."+lid).add("hidden");
 		}
 	}
 };
@@ -314,7 +317,7 @@ qc.main.menushow = function(e){
  * 使用约束：必须传递.doUrl
  */
 qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
-    
+
     //判断otherTabTitle的tab是否存在
 	if (qc.main.mainTabs.tabs('exists', otherTabTitle))
 	{  //关闭当前tab
@@ -322,12 +325,12 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 	    //存在 先选中
 	   qc.main.mainTabs.tabs('select', otherTabTitle);
 	    //获取地址
-	   
+
 		var currTab = qc.main.mainTabs.tabs('getSelected');
 		var iframe = $(currTab.panel('options').content);
 		src = iframe.attr('src');
 		//地址不同，更换Frame
-		if(src != frameURL) 
+		if(src != frameURL)
 		{
 		 qc.main.mainTabs.tabs('update', {
 				tab : currTab,
@@ -338,8 +341,7 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 		}
 		else//地址相同，不执行
 		{
-		  	//var reloadframe=qc.main.getCurrentWindow(frameURL);
-			//reloadframe.location.reload();
+
 		}
 	}
 	else//名称otherTabTitle的tab不存在
@@ -353,7 +355,7 @@ qc.main.closeThisAndsOpenOther = function(thisTabTitle,otherTabTitle,frameURL) {
 			}
 		});
 	}
-	
+
 };
 
 /**
@@ -372,8 +374,8 @@ qc.main.getCurrentWindow = function(frameID) {
 
 /**
  * 功能：弹出信息窗口
- * 参数：title:标题 
- *		 msgString:提示信息 
+ * 参数：title:标题
+ *		 msgString:提示信息
  *		 msgType:信息类型 [error,info,question,warning]
  */
 qc.main.msgShow = function(title, msgString, msgType) {

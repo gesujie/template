@@ -23,55 +23,9 @@
   padding-left: 16px
   vertical-align: middle
 
-.navbar-subpages
-  float: left
-  height: inherit
-
-/*ul
-.nav-subpages
-  & > li
-    & > a
-      +inline-block()
-      padding: 8px $padding-large-horizontal
-      margin-top: 5px
-      color: #fff
-
-/*ul
-.dropdown-menu
-  display: none
-  position: absolute
-  top: 100%
-  left: 0
-  right: 0
-  float: left
-  min-width: 800px
-  +background-clip(padding-box)
-  padding: $padding-large-vertical $padding-large-horizontal
-  z-index: 99
-  & > li
-    +inline-block()
-
-.btn-dropdown
-  display: block
-  padding: $padding-base-vertical $padding-base-horizontal
-  background-color: darken($brand-primary, 10%)
-  color: #fff
-  &:hover
-    color: darken(#fff, 20%)
-
-/*li
-.dropdown
-  position: relative
-  float: left
-  margin-left: 15px
-  &:hover
-    .dropdown-menu
-      display: block
-
 .navbar-header
   display: table
   height: inherit
-  padding-right: 20px
   & .fa
     font-size: 20px
 
@@ -109,3 +63,19 @@
       +border-radius(50%)
       text-align: center
       color: #7e8e9f
+
+.user-nav
+  display: table
+  width: 78%
+  height: inherit
+  margin-left: 20px
+
+//ul
+.list-user-info
+  display: table-cell
+  vertical-align: middle
+  & > li
+    &:not(:last-child)
+      margin-right: 20px
+      padding-right: 20px
+      border-right: 1px solid #d7d7d7

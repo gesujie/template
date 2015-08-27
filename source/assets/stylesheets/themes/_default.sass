@@ -15,7 +15,7 @@
   & .sidebar-header
     background-color: $sidebar-header-bg
   & .sidebar
-    background-color: $sidebar-bg
+    background-color: darken($sidebar-bg, 5%)
     & .tree-node-hover
       background-color: $sidebar-link-bg
     & .tree-icon
@@ -26,6 +26,9 @@
       color: $sidebar-title-color
   & .sidebar-nav
     background-color: $sidebar-in-bg
+    & > li
+      & > ul
+        background-color: darken($sidebar-in-bg, 5%)
   .badge-default
     background-color: $brand-default
   .badge-primary
