@@ -50,7 +50,9 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 * If you have any idea about features please create a issue
 * If you updated please pull request
 
-## How to Update (v0.1.8)
+## Changelog (v0.1.10)
+
+* Fixed tree JSON issue 
 
 * Added alert. 4 color variant. `alert alert-success`
 
