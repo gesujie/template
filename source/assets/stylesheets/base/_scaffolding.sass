@@ -34,12 +34,13 @@ hr
 // Links
 a
   color: $link-color
+  +transition(color, 200ms, $animation-easing, background-color, 200ms, $animation-easing, box-shadow, 200ms, $animation-easing)
   &:hover,
   &:active,
   &:focus
     color: $link-hover-color
     text-decoration: $link-hover-decoration
-    +transition(color, 300ms, ease-in-out, background-color, 300ms, ease-in-out, box-shadow, 300ms, ease-in-out)
+    +transition(color, 200ms, $animation-easing, background-color, 200ms, $animation-easing, box-shadow, 200ms, $animation-easing)
   &:focus
     +tab-focus
 

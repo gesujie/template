@@ -4,19 +4,49 @@
 .container.mb-10
   .col-12
     %h1 Css Only Panels
-  .col-4
+  .col-6
     .panel.panel-default
       .panel-header
         %i.panel-icon.fa.fa-paper-plane
         .panel-title.panel-with-icon
-          No Panel Class
+          Default Panel
       .panel-body
         %p
           =lorem.words 10
       .panel-footer
         %small
           =lorem.words 2
-  .col-4
+  .col-6.col-last
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          Default Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="panel panel-default">
+            <div class="panel-header">
+              <i class="panel-icon fa fa-paper-plane"></i>
+              <div class="panel-title panel-with-icon">
+                Default Panel
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>
+                dolores modi ipsum velit architecto reiciendis
+                repellat et voluptatem et
+              </p>
+            </div>
+            <div class="panel-footer">
+              <small>
+                iste sunt
+              </small>
+            </div>
+          </div>
+
+  %hr.col-12
+
+  .col-6
     .panel.panel-primary
       .panel-header
         %i.panel-icon.fa.fa-diamond
@@ -28,7 +58,38 @@
       .panel-footer
         %small
           =lorem.words 2
-  .col-4.col-last
+
+  .col-6.col-last
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Primary Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="panel panel-primary">
+            <div class="panel-header">
+              <i class="panel-icon fa fa-paper-plane"></i>
+              <div class="panel-title panel-with-icon">
+                Primary Panel
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>
+                dolores modi ipsum velit architecto reiciendis
+                repellat et voluptatem et
+              </p>
+            </div>
+            <div class="panel-footer">
+              <small>
+                iste sunt
+              </small>
+            </div>
+          </div>
+
+  %hr.col-12
+
+  .col-6
     .panel.panel-info
       .panel-header
         %i.panel-icon.fa.fa-info
@@ -40,8 +101,38 @@
       .panel-footer
         %small
           =lorem.words 2
+
+  .col-6.col-last
+    .panel.panel-info
+      .panel-header
+        %h3.panel-title
+          Info Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="panel panel-info">
+            <div class="panel-header">
+              <i class="panel-icon fa fa-paper-plane"></i>
+              <div class="panel-title panel-with-icon">
+                Info Panel
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>
+                dolores modi ipsum velit architecto reiciendis
+                repellat et voluptatem et
+              </p>
+            </div>
+            <div class="panel-footer">
+              <small>
+                iste sunt
+              </small>
+            </div>
+          </div>
+
   %hr.col-12
-  .col-4
+
+  .col-6
     .panel.panel-success
       .panel-header
         %i.panel-icon.fa.fa-certificate
@@ -53,7 +144,38 @@
       .panel-footer
         %small
           =lorem.words 2
-  .col-4
+
+  .col-6.col-last
+    .panel.panel-success
+      .panel-header
+        %h3.panel-title
+          Success Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="panel panel-success">
+            <div class="panel-header">
+              <i class="panel-icon fa fa-paper-plane"></i>
+              <div class="panel-title panel-with-icon">
+                Success Panel
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>
+                dolores modi ipsum velit architecto reiciendis
+                repellat et voluptatem et
+              </p>
+            </div>
+            <div class="panel-footer">
+              <small>
+                iste sunt
+              </small>
+            </div>
+          </div>
+
+  %hr.col-12
+
+  .col-6
     .panel.panel-warning
       .panel-header
         %i.panel-icon.fa.fa-warning
@@ -65,7 +187,38 @@
       .panel-footer
         %small
           =lorem.words 2
-  .col-4.col-last
+
+  .col-6.col-last
+    .panel.panel-warning
+      .panel-header
+        %h3.panel-title
+          Warning Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="panel panel-warning">
+            <div class="panel-header">
+              <i class="panel-icon fa fa-paper-plane"></i>
+              <div class="panel-title panel-with-icon">
+                Warning Panel
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>
+                dolores modi ipsum velit architecto reiciendis
+                repellat et voluptatem et
+              </p>
+            </div>
+            <div class="panel-footer">
+              <small>
+                iste sunt
+              </small>
+            </div>
+          </div>
+
+  %hr.col-12
+
+  .col-6
     .panel.panel-danger
       .panel-header
         %i.panel-icon.fa.fa-diamond
@@ -77,14 +230,62 @@
       .panel-footer
         %small
           =lorem.words 2
+
+  .col-6.col-last
+    .panel.panel-danger
+      .panel-header
+        %h3.panel-title
+          Danger Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="panel panel-danger">
+            <div class="panel-header">
+              <i class="panel-icon fa fa-paper-plane"></i>
+              <div class="panel-title panel-with-icon">
+                Danger Panel
+              </div>
+            </div>
+            <div class="panel-body">
+              <p>
+                dolores modi ipsum velit architecto reiciendis
+                repellat et voluptatem et
+              </p>
+            </div>
+            <div class="panel-footer">
+              <small>
+                iste sunt
+              </small>
+            </div>
+          </div>
   %hr.col-12
   .col-12
-    %h1 EasyUI Panels
-    .col-6
-      .easyui-panel{'data-options': "cls:'panel-primary', iconCls:'fa fa-floppy-o',collapsible:true,minimizable:true,maximizable:true,closable:true, footer:'#footer'", title:'Panel Tools'}
-        %p
-          =lorem.sentences 3
-      #footer
-        %small
-          =lorem.words 3
+    %h1 EasyUI Panel
+  .col-12
+    .easyui-panel{'data-options': "cls:'panel-primary', iconCls:'fa fa-floppy-o',collapsible:true, minimizable:true, maximizable:true, closable:true, footer:'#footer'", title:'Panel Tools'}
+      %p
+        =lorem.sentences 3
+    #footer
+      %small
+        =lorem.words 3
+  %hr.col-12
+  .col-12
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          EasyUI Panel | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-panel" title="Panel Tools" data-options="cls:'panel-primary', iconCls:'fa fa-floppy-o',collapsible:true, minimizable:true, maximizable:true, closable:true, footer:'#footer'">
+            <p>
+              Ducimus quos aut expedita consequatur aut iure quia molestiae deserunt iure enim. Possimus reprehenderit impedit rerum sint dolor eos sunt ut quaerat mollitia
+              beatae nam corrupti. Veritatis modi quasi ea et libero magnam
+            </p>
+            <div id="footer">
+              <p>
+                modi quasi ea et libero magnam
+              </p>
+            </div>
+          </div>
   %hr.col-12

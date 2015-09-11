@@ -9,7 +9,6 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-
 # Iframe Layouts
 page 'pages/dashboard.html', layout: :iframe_layout
 page 'pages/datagrid.html', layout: :iframe_layout
@@ -39,66 +38,70 @@ page 'pages/forgotpwd.html', layout: :pages_layout
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-# which_fake_page: "Rendering a fake page with a local variable" }
+#  which_fake_page: "Rendering a fake page with a local variable" }
 
 ###
 # Helpers
 ###
 
-# Server Environment
-configure :server do
+# Methods defined in the helpers block are available in templates
+# helpers do
+#   def some_helper
+#     "Helping"
+#   end
+# end
 
-  # Debug assets
-  set :debug_assets, true
+# Automatic image dimensions on image_tag helper
 
-end
+# Compass Target Directory Configuration
 
-# Development Environment
+# Reload the browser automatically whenever files change
 configure :development do
 
-  # Automatic image dimensions on image_tag helpers
-  activate :automatic_image_sizes
-
-  # Reload the browser automatically whenever files change
   activate :livereload
 
-  # Assets Pipeline Sets
-  set :haml, {ugly: false, format: :html5}
+  activate :automatic_image_sizes
+
+  activate :syntax
+  set :markdown_engine, :redcarpet
+  set :markdown, :fenced_code_blocks => true, :smartypants => true
+
   set :css_dir, 'assets/stylesheets'
   set :js_dir, 'assets/javascripts'
   set :images_dir, 'assets/images'
   set :fonts_dir, 'assets/fonts'
 
-  # Pretty URLs
-  # activate :directory_indexes
-
 end
 
-# Build Environment
+# Build-specific configuration
 configure :build do
 
-  # Minify CSS on build
+  # For example, change the Compass output style for deployment
   activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
-  # GZIP text files
-  # activate :gzip
+  # Enable cache buster
+  activate :cache_buster
 
-end
+  activate :syntax
+  set :markdown_engine, :redcarpet
+  set :markdown, :fenced_code_blocks => true, :smartypants => true
 
-# Production Environment
-configure :production do
+  # Use relative URLs
+  activate :relative_assets
 
-  # Assets Pipeline Sets
   set :css_dir, 'assets/stylesheets'
   set :js_dir, 'assets/javascripts'
   set :images_dir, 'assets/images'
   set :fonts_dir, 'assets/fonts'
 
-  # Middleman Production dev server run code
-  # middleman server -e production
+  # Compress PNGs after build
+  # First: gem install middleman-smusher
+  # require "middleman-smusher"
+  # activate :smusher
 
+  # Or use a different image path
+  #set :http_path, "/images/"
 end
-

@@ -9,7 +9,7 @@
     <meta content='' name='description'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     
-    <link href="/assets/stylesheets/application.css" rel="stylesheet" type="text/css" /><link href="/assets/stylesheets/vendor/fontawesome/fontawesome.css" rel="stylesheet" type="text/css" /><link href="//fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css" />
+    <link href="assets/stylesheets/application.css?1441963757" rel="stylesheet" /><link href="assets/stylesheets/vendor/fontawesome/fontawesome.css?1440992355" rel="stylesheet" /><link href="//fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" /><link href="assets/stylesheets/highlighting.css?1441963453" rel="stylesheet" />
     <link href='favicon.ico' rel='icon' type='image/x-icon'>
     <link href='/humans.txt' rel='author' type='text/plain'>
   </head>
@@ -26,7 +26,7 @@
           <li>
             Welcome,
             <strong>
-              Jackie Justice
+              Mitzi Jones
             </strong>
           </li>
           <li>
@@ -34,7 +34,7 @@
             <strong>
               Post:
             </strong>
-            expedita
+            architecto
           </li>
           <li>
             <i class='fa fa-sitemap'></i>
@@ -52,7 +52,7 @@
             <strong>
               Depart. :
             </strong>
-            voluptas
+            tempore
           </li>
           <li>
             <i class='fa fa-desktop'></i>
@@ -104,9 +104,8 @@
     </div>
     <div data-options=' itemHeight:32' id='mm2'>
       <div data-options="iconCls:'fa fa-user'">
-        <span>
-          Profile
-        </span>
+        <a onclick="$('#userProfile').dialog('open')" href="javascript:void(0)">Profile
+        </a>
       </div>
       <div data-options="iconCls:'fa fa-unlock-alt'">
         <a href="/pages/forgotpwd.html">Forget Password
@@ -118,6 +117,46 @@
         </span>
       </div>
     </div>
+    <div id='userProfile'>
+      <form>
+        <div class='form-group col-12 text-center'>
+          <div class='border-circle mt-20'>
+            <i class='fa fa-user fa-3x mt-10'></i>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label>User Name</label>
+          <input class='easyui-textbox' data-options="readonly:true, width:320, height:34, iconCls:'fa fa-user', iconWidth:38" type='text' value='John Doe'>
+        </div>
+        <div class='form-group'>
+          <hr>
+        </div>
+        <div class='form-group'>
+          <label>Old Password</label>
+          <input class='easyui-textbox' data-options="prompt:'Old Password', width:320, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
+        </div>
+        <div class='form-group'>
+          <label>New Password</label>
+          <input class='easyui-textbox' data-options="prompt:'New Password', width:320, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
+        </div>
+        <div class='form-group'>
+          <label>Confirm New Password</label>
+          <input class='easyui-textbox' data-options="prompt:'Confirm New Password', width:320, height:34, iconCls:'fa fa-lock', iconWidth:38" type='password'>
+        </div>
+        <div class='form-group mt-20'>
+          <div class='col-6 col-push-3'>
+            <button class='easyui-linkbutton l-btn-warning pull-right' type='submit'>
+              <i class='fa fa-times'></i>
+              Close
+            </button>
+            <button class='easyui-linkbutton l-btn-primary pull-left' type='submit'>
+              <i class='fa fa-check'></i>
+              Accept
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
     <div class='sidebar' data-options="region:'west', title:'系统菜单', split:false, border:false, headerCls:'sidebar-header'">
       <ul class='sidebar-nav' id='mainSlideMenu'></ul>
     </div>
@@ -127,7 +166,7 @@
           <div class='col-8 mb-10'>
             <div class='easyui-panel' data-options="cls:'panel-primary', iconCls:'fa fa-bullhorn', closable:true" title='Latest Announcement'>
               <p>
-                Repudiandae est corrupti ut enim officia itaque autem. Velit ut maiores sed hic modi enim qui hic dolor animi placeat et nisi. Ipsa dolores dolor animi aperiam occaecati molestias nobis sed et architecto explicabo molestias
+                Sit sed ipsa aut qui est est. Magnam qui vitae assumenda ipsam aliquam recusandae corrupti. Accusamus excepturi vel et totam officiis est cum
               </p>
             </div>
           </div>
@@ -135,19 +174,19 @@
             <div class='easyui-panel' data-options="cls:'panel-info', iconCls:'fa fa-history', closable:true" title='Previous Announcement'>
               <ul>
                 <li>
-                  consequatur non similique
+                  ipsam doloribus qui
                 </li>
                 <li>
-                  qui rerum quisquam
+                  rerum et dolores
                 </li>
                 <li>
-                  qui occaecati ut
+                  blanditiis est in
                 </li>
                 <li>
-                  eaque voluptas aperiam
+                  ea in quibusdam
                 </li>
                 <li>
-                  incidunt voluptatem animi
+                  dicta consequatur expedita
                 </li>
               </ul>
             </div>
@@ -200,6 +239,6 @@
         <small>当前页左侧全部关闭</small>
       </div>
     </div>
-    <script src="/assets/javascripts/vendor/jquery-2.1.3.min.js" type="text/javascript"></script><script src="/assets/javascripts/vendor/jquery.easyui.min.js" type="text/javascript"></script><script src="/assets/javascripts/main.js" type="text/javascript"></script><script src="/assets/javascripts/application.js" type="text/javascript"></script>
+    <script src="assets/javascripts/vendor/jquery-2.1.3.min.js?1440992355"></script><script src="assets/javascripts/vendor/jquery.easyui.min.js?1440992355"></script><script src="assets/javascripts/main.js?1441963453"></script><script src="assets/javascripts/application.js?1441963757"></script>
   </body>
 </html>

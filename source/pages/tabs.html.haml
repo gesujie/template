@@ -5,59 +5,204 @@
   .col-12{style:'min-height:300px'}
     .easyui-layout{fit:'true'}
       .easyui-panel{'data-options':"region:'center'"}
-        %h1 Tab Position of Top
-        .easyui-tabs{tabHeight:41, tabPosition:'top'}
+        %h1 Tab Background is Transparent
+        .easyui-tabs.tabs-transparent{'data-options':'tabHeight:40, plain:true'}
           %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
           %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
           %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Tab Background is Transparent | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, plain:true">
+            <div title="About">
+              <p>
+                This is the About content.
+              </p>
+            </div>
+            <div title="My Documents">
+              <p>
+                It's My Documents
+              </p>
+            </div>
+            <div title="Help">
+              <p>
+                This is the Help content.
+              </p>
+            </div>
+          </div>
+  %hr.col-12
+  .col-12{style:'min-height:300px'}
+    .easyui-layout{fit:'true'}
+      .easyui-panel{'data-options':"region:'center'"}
+        %h1 Tab Position of Top
+        .easyui-tabs{tabHeight:40, tabPosition:'top'}
+          %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
+            %p
+              =lorem.paragraphs 2
+          %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
+            %p
+              =lorem.paragraphs 2
+          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
+            %p
+              =lorem.paragraphs 2
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Tab Position of Top | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'top'">
+            <div title="About">
+              <p>
+                This is the About content.
+              </p>
+            </div>
+            <div title="My Documents">
+              <p>
+                It's My Documents
+              </p>
+            </div>
+            <div title="Help">
+              <p>
+                This is the Help content.
+              </p>
+            </div>
+          </div>
   %hr.col-12
   .col-12{style:'min-height:300px'}
     .easyui-layout{fit:'true'}
       .easyui-panel{'data-options':"region:'center'"}
         %h1 Tab Position of Bottom
-        .easyui-tabs{tabHeight:41, tabPosition:'bottom'}
+        .easyui-tabs{tabHeight:40, tabPosition:'bottom'}
           %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
           %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
           %div{'data-options':"iconCls:'fa fa-info-circle',closable:true", title: 'Help'}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
   %hr.col-12
-  .col-12{style:'min-height:350px'}
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Tab Position of Bottom | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'bottom'">
+            <div title="About">
+              <p>
+                This is the About content.
+              </p>
+            </div>
+            <div title="My Documents">
+              <p>
+                It's My Documents
+              </p>
+            </div>
+            <div title="Help">
+              <p>
+                This is the Help content.
+              </p>
+            </div>
+          </div>
+  %hr.col-12
+  .col-12{style:'min-height:300px'}
     .easyui-layout{fit:'true'}
       .easyui-panel{'data-options':"region:'center'"}
         %h1 Tab Position of Left
-        .easyui-tabs{tabHeight:41, tabPosition:'left'}
+        .easyui-tabs{tabHeight:40, tabPosition:'left'}
           %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
           %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
             %p
-              =lorem.paragraphs 3
-          %div{'data-options':"iconCls:'fa fa-info-circle',closable:true", title: 'Help'}
+              =lorem.paragraphs 2
+          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
   %hr.col-12
-  .col-12{style:'min-height:350px'}
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Tab Position of Left | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'left'">
+            <div title="About">
+              <p>
+                This is the About content.
+              </p>
+            </div>
+            <div title="My Documents">
+              <p>
+                It's My Documents
+              </p>
+            </div>
+            <div title="Help">
+              <p>
+                This is the Help content.
+              </p>
+            </div>
+          </div>
+  %hr.col-12
+  .col-12{style:'min-height:300px'}
     .easyui-layout{fit:'true'}
       .easyui-panel{'data-options':"region:'center'"}
         %h1 Tab Position of Right
-        .easyui-tabs{tabHeight:41, tabPosition:'right'}
+        .easyui-tabs{tabHeight:40, tabPosition:'right'}
           %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
           %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
             %p
-              =lorem.paragraphs 3
-          %div{'data-options':"iconCls:'fa fa-info-circle',closable:true", title: 'Help'}
+              =lorem.paragraphs 2
+          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
             %p
-              =lorem.paragraphs 3
+              =lorem.paragraphs 2
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Tab Position of Right | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'right'">
+            <div title="About">
+              <p>
+                This is the About content.
+              </p>
+            </div>
+            <div title="My Documents">
+              <p>
+                It's My Documents
+              </p>
+            </div>
+            <div title="Help">
+              <p>
+                This is the Help content.
+              </p>
+            </div>
+          </div>

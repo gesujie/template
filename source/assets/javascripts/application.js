@@ -2,6 +2,8 @@
 $(window).load(function(){
 
   //### Login Page Panel Animations
+  //
+  //###############################
   var jsPanelSignUp = $('.js-panel-sign-up');
   var jsPanelSignIn = $('.js-panel-sign-in');
 
@@ -24,7 +26,45 @@ $(window).load(function(){
     }
   });
 
+  //### Form Validate Control
+  //
+  //###############################
+  $('#formLogin').form('submit', {
+    onSubmit: function () {
+      var jsAlert =  $('.js-alert');
+      var isValid = $(this).form('validate');
+      if (!isValid) {
+        jsAlert.removeClass('alert-hide');
+        jsAlert.addClass('alert-show');
+        setTimeout(function(){
+          $('.js-alert').addClass('alert-hide');
+        }.bind(undefined, 10), 3000);
+
+      }else{
+        console.log('error');
+      }
+      return $(this).form('enableValidation').form('validate');
+    },
+      success: function () {
+        console.log('success');
+      }
+    });
+
+  //### Sidebar Navigation JSON
+  qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
+
+  //### User Profile Dialog
+  //
+  //###############################
+  $('#userProfile').dialog({
+    title: 'User Profile',
+    width: 360,
+    height: 580,
+    closed:true,
+    cache: true,
+    modal: true,
+    iconCls: 'fa fa-user'
+  });
+
 });
 
-//### Sidebar Navigation JSON
-qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
