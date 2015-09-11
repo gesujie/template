@@ -24,11 +24,12 @@
     margin-left: 3px
     overflow: hidden
     text-overflow: ellipsis
-    vertical-align: bottom
+    vertical-align: -webkit-baseline-middle
   & .tree-expanded
+    display: table
     float: right
     width: 18px
-    display: table
+    margin-top: 3px
     text-align: center
     background: none
     &::before
@@ -62,4 +63,13 @@
       background-color: #616161
       +transition (color 0.28s ease-out)
 
-
+.sidebar
+  & .tree-node-selected
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      height: 100%
+      border-right: 2px solid $brand-success

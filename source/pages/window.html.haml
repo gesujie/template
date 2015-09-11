@@ -3,12 +3,97 @@
 
 .container
   .col-12
+    %h1 Easy UI Window
     %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowA.openWindow()'}
       打开窗口
     %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowB.openWindow()'}
       Window with footer
     %a.easyui-linkbutton.l-btn-primary{href:'javascript:void(0)', onclick:'qc.demoWindowC.openWindow()'}
       Window with validate form
+
+.container
+  %hr.col-12
+  .col-12
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          Window | Source Code
+      .panel-body
+        :code
+          # lang: html
+          //#####
+          // Button
+          //################################
+
+          <a class="easyui-linkbutton l-btn-default" href="javascript:void(0)" onclick="qc.demoWindowA.openWindow()">打开窗口</a>
+
+          //#####
+          // Window
+          //################################
+
+          <div class="hidden" id="qc-window-windowObjA">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-2 control-label">
+                  Email
+                </label>
+                <div class="col-10 col-last">
+                  <input class="easyui-textbox" data-options="prompt:'Email', width:250, height:34, iconCls:'fa fa-user', iconWidth:38" type="text" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-2 control-label">
+                  Password
+                </label>
+                <div class="col-10 col-last">
+                  <input class="easyui-textbox" data-options="prompt:'Password', width:250, height:34, iconCls:'fa fa-lock', iconWidth:38" type="password" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-push-2 col-10">
+                  <div class="checkbox">
+                    <label>
+                      <input class="easyui-checkbox" type="checkbox" />
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-push-2 col-10">
+                  <button class="easyui-linkbutton l-btn-primary" type="submit">
+                    Sign In
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        :code
+          # lang: js
+
+          //#####
+          // Javascript
+          //################################
+
+          Namespace.register("qc.demoWindowA");
+          qc.main.pushWindowId("qc-window-windowObjA");
+          qc.demoWindowA.windowObj = null;
+          qc.demoWindowA.openWindow = function() {
+            if (!qc.demoWindowA.windowObj) {
+              qc.demoWindowA.windowObj = $("#qc-window-windowObjA").show().window({
+                title: 'Easy UI Window Login',
+                iconCls: 'fa fa-columns',
+                modal: true,
+                width: 450,
+                height: 280,
+                minimizable: false,
+                closable: true
+              });
+            } else {
+              qc.demoWindowA.windowObj.window("open");
+            }
+          };
 
 #qc-window-windowObjA.hidden
   %form.form-horizontal
@@ -107,8 +192,7 @@
         iconCls: 'fa fa-columns',
         modal: true,
         width: 515,
-        height: 480,
-        footer: '#ft',
+        height: 420,
         minimizable: false,
         closable: true
       });

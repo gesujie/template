@@ -3,57 +3,74 @@
 
 .container
   .col-6
+    %h1 Accordion Default Color
     .easyui-accordion
       %div{'data-options':"iconCls:'fa fa-check-square-o', cls:'panel-default'", title: 'About'}
         %h3 Accordion for jQuery
         %p Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.
       %div{'data-options':"iconCls:'fa fa-compass', cls:'panel-default'", title: 'Help'}
         %p The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.
-      %div{'data-options':"iconCls:'fa fa-search', cls:'panel-default'", title: 'TreeMenu'}
-        %ul.easyui-tree
-          %li
-            %span Foods
-            %ul
-              %li
-                %span Fruits
-                %ul
-                  %li apple
-                  %li orange
-              %li
-                %span Vegetables
-                %ul
-                  %li tomato
-                  %li carrot
-                  %li cabbage
-                  %li potato
-                  %li lettuce
-  .col-6.col-last
+      %div{'data-options':"iconCls:'fa fa-search', cls:'panel-default'", title: 'Info'}
+        %p
+          =lorem.sentences 2
+  %hr.col-12
+  .col-12
+    .panel.panel-default
+      .panel-header
+        %h3.panel-title
+          Accordion Default Color | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-accordion">
+            <div title="About" data-options="iconCls:'fa fa-check-square-o', cls:'panel-default'">
+              <h3>Accordion for jQuery</h3>
+              <p>Accordion is a part of easyui framework for jQuery.</p>
+            </div>
+            <div title="Help" data-options="iconCls:'fa fa-compass', cls:'panel-default'">
+              <p>The accordion allows you to provide multiple panels and display one or more at a time.</p>
+            </div>
+            <div title="Info" data-options="iconCls:'fa fa-search', cls:'panel-default'">
+            <p>Voluptas veritatis molestiae dolores et aliquid qui reprehenderit voluptate.</p>
+            </div>
+          </div>
+  %hr.col-12
+  .col-6
+    %h1 Accordion Primary Color
     .easyui-accordion
       %div{'data-options':"iconCls:'fa fa-check-square-o', cls:'panel-primary'", title: 'About'}
         %h3 Accordion for jQuery
         %p Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web page more easily.
       %div{'data-options':"iconCls:'fa fa-compass', cls:'panel-primary'", title: 'Help'}
         %p The accordion allows you to provide multiple panels and display one or more at a time. Each panel has built-in support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body. The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be selected. If it is not specified, then the first panel is taken by default.
-      %div{'data-options':"iconCls:'fa fa-search', cls:'panel-primary'", title: 'TreeMenu'}
-        %ul.easyui-tree
-          %li
-            %span Foods
-            %ul
-              %li
-                %span Fruits
-                %ul
-                  %li apple
-                  %li orange
-              %li
-                %span Vegetables
-                %ul
-                  %li tomato
-                  %li carrot
-                  %li cabbage
-                  %li potato
-                  %li lettuce
+      %div{'data-options':"iconCls:'fa fa-search', cls:'panel-primary'", title: 'Info'}
+        %p
+          =lorem.sentences 2
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Accordion Primary Color | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class="easyui-accordion">
+            <div title="About" data-options="iconCls:'fa fa-check-square-o', cls:'panel-primary'">
+              <h3>Accordion for jQuery</h3>
+              <p>Accordion is a part of easyui framework for jQuery.</p>
+            </div>
+            <div title="Help" data-options="iconCls:'fa fa-compass', cls:'panel-primary'">
+              <p>The accordion allows you to provide multiple panels and display one or more at a time.</p>
+            </div>
+            <div title="Info" data-options="iconCls:'fa fa-search', cls:'panel-primary'">
+            <p>Voluptas veritatis molestiae dolores et aliquid qui reprehenderit voluptate.</p>
+            </div>
+          </div>
+
   %hr.col-12
   .col-6
+    %h1 Accordion Info Color
     .easyui-accordion
       %div{'data-options':"iconCls:'fa fa-check-square-o', cls:'panel-info'", title: 'About'}
         %h3 Accordion for jQuery
@@ -79,6 +96,7 @@
                   %li potato
                   %li lettuce
   .col-6.col-last
+    %h1 Accordion Success Color
     .easyui-accordion
       %div{'data-options':"iconCls:'fa fa-check-square-o', cls:'panel-success'", title: 'About'}
         %h3 Accordion for jQuery
@@ -105,6 +123,7 @@
                   %li lettuce
   %hr.col-12
   .col-6
+    %h1 Accordion Warning Color
     .easyui-accordion
       %div{'data-options':"iconCls:'fa fa-check-square-o', cls:'panel-warning'", title: 'About'}
         %h3 Accordion for jQuery
@@ -130,6 +149,7 @@
                   %li potato
                   %li lettuce
   .col-6.col-last
+    %h1 Accordion Danger Color
     .easyui-accordion
       %div{'data-options':"iconCls:'fa fa-check-square-o', cls:'panel-danger'", title: 'About'}
         %h3 Accordion for jQuery
@@ -154,3 +174,4 @@
                   %li cabbage
                   %li potato
                   %li lettuce
+  %hr.col-12

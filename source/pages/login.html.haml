@@ -4,6 +4,10 @@
 .container
   .col-12.panel-login
     .col-4.col-push-4.panel-sign-in.js-panel-sign-in.in
+      .alert.alert-danger.alert-hide.mb-10.js-alert
+        %i.fa.fa-exclamation-triangle
+        %small
+          =lorem.words 4
       .panel.panel-primary
         .panel-header
           .panel-title
@@ -12,8 +16,8 @@
         .panel-body
           .text-center
             .border-circle.mt-20
-              %i.fa.fa-user.fa-5x.mt-10
-          %form.easyui-form#ff{'data-options':'novalidate:true', method: 'post'}
+              %i.fa.fa-user.fa-3x.mt-10
+          %form.easyui-form#formLogin{'data-options':'novalidate:true', method: 'post'}
             .form-group
               %label Email address
               %input.easyui-textbox{'data-options':"required:true, validType:'email', prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
@@ -24,7 +28,7 @@
               %label
                 %input.easyui-checkbox{type: 'checkbox'}
                 Remember me
-            %button.col-6.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', onclick: 'submitForm()', 'data-options':"iconCls:'fa fa-sign-in'"}
+            %button.col-6.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
               Sign In
             %button.col-6.col-last.easyui-linkbutton.l-btn-info.l-btn-bounce.js-sign-up{type: 'button', 'data-options':"iconCls:'fa fa-user-plus'"}
               Sign Up
@@ -59,15 +63,4 @@
         .panel-footer.text-center
           %small.text-muted
             设计单位：贵州黔驰信息股份有限公司
-
-:javascript
-
-  //Validate Form on Submit
-  function submitForm(){
-    $('#ff').form('submit',{
-        onSubmit:function(){
-            return $(this).form('enableValidation').form('validate');
-        }
-    });
-  }
 

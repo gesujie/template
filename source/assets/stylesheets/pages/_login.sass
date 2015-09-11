@@ -9,11 +9,13 @@
 
 .border-circle
   +inline-block()
-  width: 120px
-  height: 120px
+  width: 80px
+  height: 80px
   background-color: #fff
-  border: 10px solid #d7d7d7
+  border: 5px solid #d7d7d7
   +border-radius(50%)
+  & > .fa-user
+    color: darken(#d7d7d7, 10%)
 
 .panel-login
   position: relative
@@ -27,6 +29,7 @@
   position: absolute
   top: 0
   left: 0
+  margin-top: 65px
   visibility: hidden
   +opacity(0)
   +transition(transform, 600ms, ease-out, visibility, 600ms, ease-out)
@@ -49,3 +52,15 @@
     +transform(translateY(-100px))
     visibility: hidden
     +opacity(0)
+
+.alert-show
+  +opacity(1)
+  visibility: visible
+  +transform(translateY(0))
+  +transition(transform, 300ms, ease-out, visibility, 300ms, ease-out)
+
+.alert-hide
+  +opacity(0)
+  visibility: hidden
+  +transform(translateY(-170px))
+  +transition(transform, 300ms, ease-in, visibility, 300ms, ease-in)

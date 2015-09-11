@@ -12,7 +12,7 @@ qc.main.windowStack = [];
 $(function(){
 
 	if(!qc.main.slideMenuUrl || qc.main.slideMenuUrl == null) {
-		qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
+		qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 	}
 
 	qc.main.slideMenu = $("#mainSlideMenu").tree({
@@ -33,11 +33,10 @@ $(function(){
     formatter:function(node){
       var s = node.text;
       if (node.children){
-        s += '&nbsp;<span class=\'badge badge-warning\'>' + node.children.length + '</span>';
+        s += '<span class=\'badge badge-fw badge-warning\'>' + node.children.length + '</span>';
       }
       return s;
     }
-
 	});
 
 	qc.main.mainTabs = $("#mainTabs").tabs({
@@ -74,38 +73,46 @@ qc.main.find = function(id) {
 };
 
 qc.main.addTab = function(subtitle, url, icon, iframe) {
-	var currTab = null;
-	if (!qc.main.mainTabs.tabs('exists', subtitle)) {
-    qc.main.mainTabs.tabs('add', {
-			title : subtitle,
-			content : !!iframe ? qc.main.createFrame(url) : null,
-			href : !!iframe ? null : url,
-			closable : true,
-			icon : icon
-		});
-		currTab = qc.main.mainTabs.tabs('getSelected');
-	} else {
-		qc.main.mainTabs.tabs('select', subtitle);
-		// 下面的代码解决同名菜单问题，同名但不同地址，则刷新页面
-		var src = qc.main.mainTabs.tabs('getTab', subtitle).find("iframe").attr("src");
-		currTab = qc.main.mainTabs.tabs('getSelected');
-		if(src != url) {
-			qc.main.mainTabs.tabs('update', {
-				tab : currTab,
-				options : {
-					content : !!iframe ? qc.main.createFrame(url) : null,
-					href : !!iframe ? null : url, icon : icon
-				}
-			});
-		}
-	}
-	if(iframe && currTab != null) {
-		currTab.addClass('overflow-hide');
-		currTab.iframe = iframe;
-	}
-	qc.main.tabClose();
-	qc.main.tabCloseEven();
+  var currTab = null;
+  if (!qc.main.mainTabs.tabs('exists', subtitle)) {
+    if(qc.main.mainTabs.tabs("tabs").length >= 6) {
+      $.messager.show({
+        title:'提醒',
+        msg:'打开窗口过多，请先关闭不需要的窗口。',
+        showType:'slide'
+      });
+    } else {
+      qc.main.mainTabs.tabs('add', {
+        title : subtitle,
+        content : !!iframe ? qc.main.createFrame(url) : null,
+        href : !!iframe ? null : url,
+        closable : true
+      });
+    }
+    currTab = qc.main.mainTabs.tabs('getSelected');
+  } else {
+    qc.main.mainTabs.tabs('select', subtitle);
+    // 下面的代码解决同名菜单问题，同名但不同地址，则刷新页面
+    var src = qc.main.mainTabs.tabs('getTab', subtitle).find("iframe").attr("src");
+    currTab = qc.main.mainTabs.tabs('getSelected');
+    if(src != url) {
+      qc.main.mainTabs.tabs('update', {
+        tab : currTab,
+        options : {
+          content : !!iframe ? qc.main.createFrame(url) : null,
+          href : !!iframe ? null : url
+        }
+      });
+    }
+  }
+  if(iframe && currTab != null) {
+    currTab.addClass('overflow-hide');
+    currTab.iframe = iframe;
+  }
+  qc.main.tabClose();
+  qc.main.tabCloseEven();
 };
+
 
 qc.main.createFrame = function(url) {
 	var s = '<iframe class="iframe-fluid" src="' + url + '"></iframe>';

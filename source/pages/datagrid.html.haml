@@ -1,79 +1,79 @@
 -@title= 'Datagrid | Admin Page '
 -@page_classes= 'datagrid easyui-layout'
 
-.easyui-layout{fit:'true'}
-  .container
-    .col-12
-      .panel.panel-default
-        .panel-header
-          %i.panel-icon.fa.fa-cog
-          .panel-title.panel-with-icon
-            Toolbar
-        .panel-body
-          .col-12.mb-10
-            %form.form-inline
-              .col-3
-                .form-group
-                  %label Date From:
-                  %input.form-control.easyui-datebox{'data-options':'height:32'}
-              .col-3
-                .form-group
-                  %label To:
-                  %input.form-control.easyui-datebox{'data-options':'height:32'}
-              .col-3
-                .form-group
-                  %label Language:
-                  %select.form-control.easyui-combobox{'data-options':"width:'180', height:'32'", panelheight: 'auto'}
-                    %option{value: 'java'} Java
-                    %option{value: 'c'} C
-                    %option{value: 'basic'} Basic
-                    %option{value: 'perl'} Perl
-                    %option{value: 'python'} Python
-              .col-3.col-last
-                .col-6
-                  =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton l-btn-default'
-                .col-6.col-last
-                  =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton l-btn-default', onclick:"$('#dlg-add').dialog('open')"
-          .col-12
-            %form.form-inline
-              .col-3
-                .form-group
-                  %label Date From:
-                  %input.form-control.easyui-datebox{'data-options':'height:32'}
-              .col-3
-                .form-group
-                  %label To:
-                  %input.form-control.easyui-datebox{'data-options':'height:32'}
-              .col-3
-                .form-group
-                  %label Language:
-                  %select.form-control.easyui-combobox{'data-options':"width:'180', height:'32'", panelheight: 'auto'}
-                    %option{value: 'java'} Java
-                    %option{value: 'c'} C
-                    %option{value: 'basic'} Basic
-                    %option{value: 'perl'} Perl
-                    %option{value: 'python'} Python
-              .col-3.col-last
-                .col-6
-                  =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton l-btn-default'
-                .col-6.col-last
-                  =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton l-btn-default', onclick:"$('#dlg-add').dialog('open')"
-    .col-12
-      .panel.panel-primary
-        .panel-header
-          .panel-icon.fa.fa-database
-          .panel-title.panel-with-icon
-            Data Grid
-        %table.easyui-datagrid{'data-options':"height:500, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
-          %thead
-            %tr
-              %th{'data-options':"field:'ck', checkbox:'true'"}
-              %th{'data-options':"field:'itemid', sortable:'true', width:80"} Item ID
-              %th{'data-options':"field:'productid', sortable:'true', width:100"} Product
-              %th{'data-options':"field:'listprice', sortable:'true', width:80"} List Price
-              %th{'data-options':"field:'unitcost', sortable:'true', width:80"} Unit Cost
-              %th{'data-options':"field:'attr1', sortable:'true', width:250"} Attribute
-              %th{'data-options':"field:'status', sortable:'true', width:60"} Status
+
+.container
+  .col-12
+    .panel.panel-default
+      .panel-header
+        %i.panel-icon.fa.fa-cog
+        .panel-title.panel-with-icon
+          Toolbar
+      .panel-body
+        .col-12.mb-10
+          %form.form-inline
+            .col-3
+              .form-group
+                %label Date From:
+                %input.form-control.easyui-datebox{'data-options':'height:32'}
+            .col-3
+              .form-group
+                %label To:
+                %input.form-control.easyui-datebox{'data-options':'height:32'}
+            .col-3
+              .form-group
+                %label Language:
+                %select.form-control.easyui-combobox{'data-options':"width:'180', height:'32'", panelheight: 'auto'}
+                  %option{value: 'java'} Java
+                  %option{value: 'c'} C
+                  %option{value: 'basic'} Basic
+                  %option{value: 'perl'} Perl
+                  %option{value: 'python'} Python
+            .col-3.col-last
+              .col-6
+                =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton l-btn-default'
+              .col-6.col-last
+                =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton l-btn-default', onclick:"$('#dlg-add').dialog('open')"
+        .col-12
+          %form.form-inline
+            .col-3
+              .form-group
+                %label Date From:
+                %input.form-control.easyui-datebox{'data-options':'height:32'}
+            .col-3
+              .form-group
+                %label To:
+                %input.form-control.easyui-datebox{'data-options':'height:32'}
+            .col-3
+              .form-group
+                %label Language:
+                %select.form-control.easyui-combobox{'data-options':"width:'180', height:'32'", panelheight: 'auto'}
+                  %option{value: 'java'} Java
+                  %option{value: 'c'} C
+                  %option{value: 'basic'} Basic
+                  %option{value: 'perl'} Perl
+                  %option{value: 'python'} Python
+            .col-3.col-last
+              .col-6
+                =link_to 'Search', 'javascript:void(0)', iconcls: 'fa fa-search', class:'easyui-linkbutton l-btn-default'
+              .col-6.col-last
+                =link_to 'Add', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton l-btn-default', onclick:"$('#dlg-add').dialog('open')"
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-database
+        .panel-title.panel-with-icon
+          Data Grid
+      %table.easyui-datagrid{'data-options':"height:500, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
+        %thead
+          %tr
+            %th{'data-options':"field:'ck', checkbox:'true'"}
+            %th{'data-options':"field:'itemid', sortable:'true', width:80"} Item ID
+            %th{'data-options':"field:'productid', sortable:'true', width:100"} Product
+            %th{'data-options':"field:'listprice', sortable:'true', width:80"} List Price
+            %th{'data-options':"field:'unitcost', sortable:'true', width:80"} Unit Cost
+            %th{'data-options':"field:'attr1', sortable:'true', width:250"} Attribute
+            %th{'data-options':"field:'status', sortable:'true', width:60"} Status
 
 .easyui-dialog#dlg-add{'data-options':"iconCls:'fa fa-plus-square', modal:true, closed: true, width:500, height:280", title:'Add new rows'}
   %form
