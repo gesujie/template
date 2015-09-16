@@ -27,6 +27,20 @@
           <span class="label label-danger">Danger</span>
   %hr.col-12
   .col-6
+    %h1 Dropdown Button
+    =link_to 'Dropdown', 'javascript:void()', class:'easyui-menubutton l-btn-primary', 'data-options':"menu:'#mm5'"
+    #mm5{'data-options':' itemHeight:32'}
+      %div{'data-options':"iconCls:'fa fa-chevron-circle-right'"}
+        =link_to '#' do
+          =lorem.words 2
+      %div{'data-options':"iconCls:'fa fa-chevron-circle-right'"}
+        =link_to '#' do
+          =lorem.words 2
+      %div{'data-options':"iconCls:'fa fa-chevron-circle-right'"}
+        =link_to '#' do
+          =lorem.words 2
+
+  .col-6
     %h1 Progress Bar
     .easyui-progressbar{'data-options':'value:80'}
   %hr.col-12

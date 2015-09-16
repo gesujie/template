@@ -13,16 +13,9 @@
   font-size: 1px
   margin-top: -8px
 
-.m-btn-active,
-.s-btn-active
-  background: #eaf2ff
-  color: #000
-
 .m-btn-plain-active,
 .s-btn-plain-active
   background-color: transparent
-  padding: 0
-  +border-radius (5px)
 
 .m-btn .l-btn-left .l-btn-text
   margin-right: 20px
@@ -52,23 +45,6 @@
   left: 50%
   margin-left: -8px
 
-.m-btn-line
-  position: absolute
-  display: inline-block
-  font-size: 1px
-
-.m-btn .l-btn-left .m-btn-line
-  right: 0
-  width: 16px
-  height: 500px
-
-.m-btn .l-btn-icon-top .m-btn-line,
-.m-btn .l-btn-icon-bottom .m-btn-line
-  left: 0
-  bottom: 0
-  width: 500px
-  height: 16px
-
 .m-btn-large .l-btn-icon-right .l-btn-text
   margin-right: 56px
 
@@ -80,8 +56,9 @@
   &::before
     +font-icons(FontAwesome, '\f107', 14px, #000)
 
-.m-btn-plain-active,
-.s-btn-plain-active
-  background-color: #eaf2ff
-  color: #000
+.m-btn-plain-active
+  & .m-btn-downarrow,
+  & .s-btn-downarrow
+    &::before
+      +font-icons(FontAwesome, '\f106', 14px, #000)
 
