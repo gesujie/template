@@ -39,6 +39,27 @@
       %div{'data-options':"iconCls:'fa fa-chevron-circle-right'"}
         =link_to '#' do
           =lorem.words 2
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %h3.panel-title
+          Dropdown Button
+      .panel-body
+        :code
+          # lang: html
+          <a href="#" class="easyui-menubutton l-btn-primary" data-options="menu:'#mm1'">Dropdown</a>
+          <div id="mm1">
+            <div data-options="iconCls:'fa fa-chevron-circle-right'">
+              <a href="#">Item</a>
+            </div>
+            <div data-options="iconCls:'fa fa-chevron-circle-right'">
+              <a href="#">Item</a>
+            </div>
+            <div data-options="iconCls:'fa fa-chevron-circle-right'">
+              <a href="#">Item</a>
+            </div>
+          </div>
 
   .col-6
     %h1 Progress Bar

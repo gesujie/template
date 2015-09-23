@@ -68,3 +68,10 @@ $(window).load(function(){
 
 });
 
+<<<<<<< HEAD
+=======
+//### Navigation JSON Root
+//
+//###############################
+qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
+>>>>>>> develop
