@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-$(window).load(function(){var s=$(".js-panel-sign-up"),a=$(".js-panel-sign-in");$(".js-sign-up").on("click",function(){s.hasClass("out")&&s.removeClass("out").addClass("in"),a.hasClass("in")&&a.removeClass("in").addClass("out")}),$(".js-back-to-sign-in").on("click",function(e){e.preventDefault(),s.hasClass("in")&&s.removeClass("in").addClass("out"),a.hasClass("out")&&a.removeClass("out").addClass("in")}),$("#formLogin").form("submit",{onSubmit:function(){var s=$(".js-alert"),a=$(this).form("validate");return a?console.log("error"):(s.removeClass("alert-hide"),s.addClass("alert-show"),setTimeout(function(){$(".js-alert").addClass("alert-hide")}.bind(void 0,10),3e3)),$(this).form("enableValidation").form("validate")},success:function(){console.log("success")}}),qc.main.slideMenuUrl="/assets/javascripts/json/sidebarNav/mainMenuTreeData.json",$("#userProfile").dialog({title:"User Profile",width:360,height:580,closed:!0,cache:!0,modal:!0,iconCls:"fa fa-user"})});
-=======
 
 $(window).load(function(){
 
@@ -48,11 +45,10 @@ $(window).load(function(){
       }
       return $(this).form('enableValidation').form('validate');
     },
-
-    success: function () {
-      console.log('success');
-    }
-  });
+      success: function () {
+        console.log('success');
+      }
+    });
 
   //### User Profile Dialog
   //
@@ -66,10 +62,11 @@ $(window).load(function(){
     modal: true,
     iconCls: 'fa fa-user'
   });
+
 });
 
 //### Navigation JSON Root
 //
 //###############################
 qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
->>>>>>> develop
+
