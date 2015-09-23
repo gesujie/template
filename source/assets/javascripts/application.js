@@ -64,3 +64,8 @@ $(window).load(function(){
     iconCls: 'fa fa-user'
   });
 });
+
+//### Navigation JSON Root
+//
+//###############################
+qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
