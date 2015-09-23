@@ -50,9 +50,6 @@ $(window).load(function(){
       }
     });
 
-  //### Sidebar Navigation JSON
-  qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
-
   //### User Profile Dialog
   //
   //###############################
@@ -68,10 +65,8 @@ $(window).load(function(){
 
 });
 
-<<<<<<< HEAD
-=======
 //### Navigation JSON Root
 //
 //###############################
 qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
->>>>>>> develop
+
