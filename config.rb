@@ -11,8 +11,8 @@ page '/*.txt', layout: false
 
 # Iframe Layouts
 page 'pages/dashboard.html', layout: :iframe_layout
-page 'pages/datagrid.html', layout: :iframe_layout
-page 'pages/datagrid-form.html', layout: :iframe_layout
+page 'pages/datagrid-horizontal-form.html', layout: :iframe_layout
+page 'pages/datagrid-vertical-form.html', layout: :iframe_layout
 page 'pages/tabs.html', layout: :iframe_layout
 page 'pages/tree.html', layout: :iframe_layout
 page 'pages/schedule.html', layout: :iframe_layout

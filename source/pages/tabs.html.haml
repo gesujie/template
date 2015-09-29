@@ -2,20 +2,19 @@
 -@page_classes= 'tabs easyui-layout'
 
 .container
-  .col-12{style:'min-height:300px'}
-    .easyui-layout{fit:'true'}
-      .easyui-panel{'data-options':"region:'center'"}
-        %h1 Tab Background is Transparent
-        .easyui-tabs.tabs-transparent{'data-options':'tabHeight:40, plain:true'}
-          %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
-            %p
-              =lorem.paragraphs 2
-          %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
-            %p
-              =lorem.paragraphs 2
-          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
-            %p
-              =lorem.paragraphs 2
+  .col-12
+    .easyui-panel{'data-options': 'height:400'}
+      %h1 Tab Background is Transparent
+      .easyui-tabs.tabs-transparent{'data-options':'tabHeight:40, plain:true'}
+        %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
+          %p
+            =lorem.paragraphs 2
+        %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
+          %p
+            =lorem.paragraphs 2
+        %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
+          %p
+            =lorem.paragraphs 2
   %hr.col-12
   .col-12
     .panel.panel-primary
@@ -25,38 +24,45 @@
       .panel-body
         :code
           # lang: html
-          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, plain:true">
-            <div title="About">
-              <p>
-                This is the About content.
-              </p>
-            </div>
-            <div title="My Documents">
-              <p>
-                It's My Documents
-              </p>
-            </div>
-            <div title="Help">
-              <p>
-                This is the Help content.
-              </p>
+          <div class='col-12'>
+            <div class='easyui-panel' data-options='height:400'>
+              <h1>Tab Background is Transparent</h1>
+              <div class='easyui-tabs tabs-transparent' data-options='tabHeight:40, plain:true'>
+                <div data-options="iconCls:'fa fa-life-ring'" title='About'>
+                  <p>
+                    Veniam exercitationem consequuntur consequatur et est ipsam quaerat voluptatem consectetur et impedit dicta asperiores ea. molestias nostrum voluptas facilis. temporibus praesentium vel minima quas
+                    Repellat porro quisquam voluptas impedit alias quisquam aut ipsam ex dolor. voluptas ut accusamus adipisci natus maxime. voluptatem eius molestias aut cumque nulla reiciendis ut laboriosam eos quia accusamus. et aspernatur quidem quasi. est rem sunt quidem consequatur quidem earum blanditiis quidem molestias reprehenderit. perspiciatis possimus saepe laborum
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-pie-chart'" title='My Documents'>
+                  <p>
+                    Vitae cumque aut voluptates et laboriosam non voluptas qui in magnam dignissimos harum minima distinctio. vel delectus tenetur et minus aliquam et molestias non commodi voluptate. dolorem sit eum esse vero temporibus soluta qui quis doloribus enim
+                    Quos optio ipsam non beatae nisi nihil molestiae autem quod maiores voluptatem eum. inventore sit aliquid odit ut nostrum eos rerum voluptates id. saepe dicta architecto sit. quis et culpa sunt sint explicabo recusandae numquam rerum fuga et neque. aperiam qui ut inventore rerum consequatur enim id mollitia aut ex quia. velit praesentium qui architecto quo est cumque. voluptates tempore sint incidunt soluta repellat minima eos repellat eum rerum
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-info-circle', closable:true" title='Help'>
+                  <p>
+                    Recusandae sunt ratione architecto aperiam ut ipsa sunt. qui sunt minima laudantium id aliquam iusto voluptas dolor quae. dignissimos eligendi praesentium reiciendis minima maiores et dolorum hic repellendus quaerat non dicta est a. voluptatem maiores temporibus voluptate. dolor magnam id repudiandae repellat error eos praesentium non optio quis et. minima harum temporibus autem ipsa tempore ut quidem veniam aut quo est recusandae. libero rem ducimus culpa tempora illo sed ut omnis ratione consequatur
+                    Aut quia et harum quibusdam in tempora velit nihil iure. earum quibusdam pariatur ea aperiam repellendus. impedit est officiis mollitia officiis ut veritatis et consequatur molestiae. vitae non facilis eius
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
   %hr.col-12
-  .col-12{style:'min-height:300px'}
-    .easyui-layout{fit:'true'}
-      .easyui-panel{'data-options':"region:'center'"}
-        %h1 Tab Position of Top
-        .easyui-tabs{tabHeight:40, tabPosition:'top'}
-          %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
-            %p
-              =lorem.paragraphs 2
-          %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
-            %p
-              =lorem.paragraphs 2
-          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
-            %p
-              =lorem.paragraphs 2
+  .col-12
+    .easyui-panel{'data-options': 'height:400'}
+      %h1 Tab Position of Top
+      .easyui-tabs{tabHeight:40, tabPosition:'top'}
+        %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
+          %p
+            =lorem.paragraphs 2
+        %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
+          %p
+            =lorem.paragraphs 2
+        %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
+          %p
+            =lorem.paragraphs 2
   %hr.col-12
   .col-12
     .panel.panel-primary
@@ -66,38 +72,45 @@
       .panel-body
         :code
           # lang: html
-          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'top'">
-            <div title="About">
-              <p>
-                This is the About content.
-              </p>
-            </div>
-            <div title="My Documents">
-              <p>
-                It's My Documents
-              </p>
-            </div>
-            <div title="Help">
-              <p>
-                This is the Help content.
-              </p>
+          <div class='col-12'>
+            <div class='easyui-panel' data-options='height:400'>
+              <h1>Tab Position of Top</h1>
+              <div class='easyui-tabs' tabHeight='40' tabPosition='top'>
+                <div data-options="iconCls:'fa fa-life-ring'" title='About'>
+                  <p>
+                    Velit ab quia fuga eius cum debitis pariatur facilis quia iure adipisci quaerat quasi consequatur. reiciendis qui neque facilis rerum aut rem qui placeat ut eos aut. accusantium officiis est harum quia. velit maxime non fugiat reprehenderit magni
+                    Itaque ut commodi est cupiditate aut omnis dolor unde voluptatum. velit repellat officiis ad aspernatur. et quisquam corporis voluptas et et rerum maiores praesentium amet ut et. aut sit accusantium unde voluptatem quae et quam quis id. pariatur eum rerum voluptatem quisquam maxime consequuntur vel cum necessitatibus. et at quisquam et dolor saepe corporis quasi beatae magnam. temporibus necessitatibus aut facilis
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-pie-chart'" title='My Documents'>
+                  <p>
+                    Inventore eos sapiente laborum ipsam tenetur commodi nesciunt eaque. et ab eaque quod fuga vel et repellendus inventore eos ducimus deleniti ea nemo. delectus et non ab debitis deserunt suscipit explicabo eligendi aut veniam rem corrupti. aliquid iusto illum quis quia. quod totam veritatis aut aut ut aut asperiores maiores. et aliquid rem voluptas architecto quod esse aliquid voluptatum libero fugit. voluptas non rerum omnis iusto
+                    Ut libero at temporibus incidunt. qui explicabo quo aut labore eveniet. illo consequuntur nemo iure at eos quam similique vero deleniti ipsa maiores sint sint debitis
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-info-circle', closable:true" title='Help'>
+                  <p>
+                    At adipisci error vel dolorem repellat corrupti. debitis deleniti corrupti atque deleniti officiis blanditiis. modi architecto in cupiditate temporibus dignissimos voluptas vel eos. iusto sed expedita autem aliquid enim cupiditate architecto quia quasi maiores culpa velit. temporibus laudantium tenetur magni id pariatur voluptatem dolores cum maiores ipsam sunt ut sit
+                    Quia nesciunt quia ut. similique omnis quia earum iste dolorum quo. enim quisquam porro ut doloremque nostrum modi. vel eligendi vitae dolore ipsam perspiciatis est officia nam cumque eos iure et earum quisquam
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
   %hr.col-12
-  .col-12{style:'min-height:300px'}
-    .easyui-layout{fit:'true'}
-      .easyui-panel{'data-options':"region:'center'"}
-        %h1 Tab Position of Bottom
-        .easyui-tabs{tabHeight:40, tabPosition:'bottom'}
-          %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
-            %p
-              =lorem.paragraphs 2
-          %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
-            %p
-              =lorem.paragraphs 2
-          %div{'data-options':"iconCls:'fa fa-info-circle',closable:true", title: 'Help'}
-            %p
-              =lorem.paragraphs 2
+  .col-12
+    .easyui-panel{'data-options': 'height:400'}
+      %h1 Tab Position of Bottom
+      .easyui-tabs{tabHeight:40, tabPosition:'bottom'}
+        %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
+          %p
+            =lorem.paragraphs 2
+        %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
+          %p
+            =lorem.paragraphs 2
+        %div{'data-options':"iconCls:'fa fa-info-circle',closable:true", title: 'Help'}
+          %p
+            =lorem.paragraphs 2
   %hr.col-12
   .col-12
     .panel.panel-primary
@@ -107,38 +120,47 @@
       .panel-body
         :code
           # lang: html
-          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'bottom'">
-            <div title="About">
-              <p>
-                This is the About content.
-              </p>
+          <div class='col-12'>
+            <div class='easyui-panel' data-options='height:400'>
+              <h1>Tab Position of Bottom</h1>
+              <div class='easyui-tabs' tabHeight='40' tabPosition='bottom'>
+                <div data-options="iconCls:'fa fa-life-ring'" title='About'>
+                  <p>
+                    Cupiditate optio est vel tenetur omnis commodi nesciunt doloremque ab facere voluptatibus. omnis facilis accusantium voluptatum id ea quis impedit qui velit vel illum fugit in. rerum illo maiores odit distinctio sed error quis assumenda est consequatur. molestiae mollitia et suscipit mollitia sequi totam sunt ullam repellat dolorem ut officiis
+                    Delectus ut et autem dolore non atque provident nesciunt exercitationem aut accusamus provident asperiores nam. possimus est sit error ullam aut est itaque. aut placeat aut magnam veniam laboriosam ut. voluptas expedita unde veritatis dolorem quasi possimus perspiciatis quas quaerat minus
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-pie-chart'" title='My Documents'>
+                  <p>
+                    Nam mollitia velit numquam nisi. voluptatem omnis omnis qui quaerat neque ut nihil vel voluptatem rerum dolores rem quod. harum sint repudiandae quis. laborum ab sunt esse deserunt qui qui doloribus omnis quisquam placeat neque. autem labore rerum atque
+                    Voluptate eaque suscipit saepe molestias omnis et deserunt aspernatur. assumenda hic accusamus quibusdam consequatur repellendus ipsa ad dignissimos fuga ullam ut qui. optio ea consequatur ex rerum et incidunt ab sint sint unde recusandae illum. architecto delectus aut sed dolore dolores quidem illo maiores et dolorem. voluptas assumenda quisquam et. temporibus reiciendis rem harum doloremque aliquam consectetur officia voluptate soluta provident aperiam
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-info-circle',closable:true" title='Help'>
+                  <p>
+                    Earum molestiae nisi rerum nemo dolorem qui quia velit magni id inventore libero. quia voluptatem aut earum nihil rerum facilis et voluptatum debitis iure vero voluptas. eligendi eligendi perferendis quam voluptatem
+                    Qui quia qui corrupti sint fuga tempora. qui distinctio sed non numquam doloremque neque voluptatibus voluptatem quo harum eveniet. fugiat ipsa nostrum sequi rem iure atque eum. nulla repellat aliquid fugiat est repudiandae temporibus tempora quam quis explicabo exercitationem quos. est culpa aut voluptas et provident maxime non repellat. sequi aut aut quia quibusdam ducimus in architecto odio fugiat. voluptas et quibusdam sunt est
+                  </p>
+                </div>
+              </div>
             </div>
-            <div title="My Documents">
-              <p>
-                It's My Documents
-              </p>
-            </div>
-            <div title="Help">
-              <p>
-                This is the Help content.
-              </p>
-            </div>
-          </div>
+        </div>
   %hr.col-12
-  .col-12{style:'min-height:300px'}
-    .easyui-layout{fit:'true'}
-      .easyui-panel{'data-options':"region:'center'"}
-        %h1 Tab Position of Left
-        .easyui-tabs{tabHeight:40, tabPosition:'left'}
-          %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
-            %p
-              =lorem.paragraphs 2
-          %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
-            %p
-              =lorem.paragraphs 2
-          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
-            %p
-              =lorem.paragraphs 2
+  .col-12
+    .easyui-panel{'data-options': 'height:400'}
+      %h1 Tab Position of Left
+      .easyui-tabs{tabHeight:40, tabPosition:'left'}
+        %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
+          %p
+            =lorem.paragraphs 2
+        %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
+          %p
+            =lorem.paragraphs 2
+        %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
+          %p
+            =lorem.paragraphs 2
+        =link_to '#', class:'easyui-linkbutton l-btn-primary l-btn-circle pull-right l-btn-tabs-right' do
+          %i.fa.fa-plus-circle
   %hr.col-12
   .col-12
     .panel.panel-primary
@@ -148,38 +170,48 @@
       .panel-body
         :code
           # lang: html
-          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'left'">
-            <div title="About">
-              <p>
-                This is the About content.
-              </p>
-            </div>
-            <div title="My Documents">
-              <p>
-                It's My Documents
-              </p>
-            </div>
-            <div title="Help">
-              <p>
-                This is the Help content.
-              </p>
+          <div class='col-12'>
+            <div class='easyui-panel' data-options='height:400'>
+              <h1>Tab Position of Left</h1>
+              <div class='easyui-tabs' tabHeight='40' tabPosition='left'>
+                <div data-options="iconCls:'fa fa-life-ring'" title='About'>
+                  <p>
+                    Provident aut eos hic sint earum autem. sit quia et sint qui et quia et quidem aperiam dolores assumenda quae qui quo. et consequatur dolores consequatur consequatur voluptatibus est fuga porro. omnis dolorem sed et ullam fuga est fugiat eligendi
+                    Vel tempore numquam ea quam. iusto magni sed ut. voluptatem qui et id deleniti velit voluptas ea quia voluptatem commodi rerum rerum eaque fuga. natus earum ut non quisquam ipsam eveniet velit nihil repudiandae. aut fugiat culpa voluptas maxime minima alias quo est dicta distinctio occaecati aspernatur. quia quis culpa aut minus repudiandae odio error expedita earum animi alias sit deleniti. adipisci voluptatibus dolor et consectetur quia quaerat inventore quo quis quidem
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-pie-chart'" title='My Documents'>
+                  <p>
+                    Exercitationem sit ipsam inventore illum ratione qui dolores sit harum sequi qui architecto. aspernatur atque excepturi quis dicta excepturi nam esse fugit. nisi recusandae iusto perspiciatis aliquam alias nostrum. facere sapiente dolores odio rerum est accusantium nesciunt provident cupiditate ut assumenda sit
+                    Incidunt aut asperiores sint et magnam quo est rerum iure consequatur quasi eum. illum cum et nulla quam nam nam fugit et. est sequi accusamus iure at magnam laborum ipsa quia qui quidem qui qui officia voluptatem. hic at eos nam autem dignissimos eum enim deleniti eaque. quidem fuga laudantium dolorum quia ducimus omnis voluptatum. error ab aliquam cumque
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-info-circle', closable:true" title='Help'>
+                  <p>
+                    Rerum sunt aperiam voluptas aliquam mollitia nostrum molestias ipsum aut consequatur earum ut autem aut. et pariatur eaque magni dolorem sit perspiciatis maxime distinctio ducimus maiores perferendis occaecati. omnis sed dignissimos vero debitis tempora nisi necessitatibus id eius dicta quae distinctio
+                    Vel omnis vero debitis in porro error et quo aut tempore pariatur officiis unde. omnis ut eos distinctio qui dolor. iusto iure nemo et voluptas et et at. accusamus qui eos iure illo et impedit et dolor quo molestiae. autem reprehenderit sapiente optio voluptas et. quas tempore doloremque ut porro. ipsam aut nihil possimus et
+                  </p>
+                </div>
+                <a class="easyui-linkbutton l-btn-primary l-btn-circle pull-right l-btn-tabs-right" href="#">
+                  <i class='fa fa-plus-circle'></i>
+                </a>
+              </div>
             </div>
           </div>
   %hr.col-12
-  .col-12{style:'min-height:300px'}
-    .easyui-layout{fit:'true'}
-      .easyui-panel{'data-options':"region:'center'"}
-        %h1 Tab Position of Right
-        .easyui-tabs{tabHeight:40, tabPosition:'right'}
-          %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
-            %p
-              =lorem.paragraphs 2
-          %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
-            %p
-              =lorem.paragraphs 2
-          %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
-            %p
-              =lorem.paragraphs 2
+  .col-12
+    .easyui-panel{'data-options': 'height:400'}
+      %h1 Tab Position of Right
+      .easyui-tabs{tabHeight:40, tabPosition:'right'}
+        %div{title: 'About', 'data-options':"iconCls:'fa fa-life-ring'"}
+          %p
+            =lorem.paragraphs 2
+        %div{title: 'My Documents', 'data-options':"iconCls:'fa fa-pie-chart'"}
+          %p
+            =lorem.paragraphs 2
+        %div{'data-options':"iconCls:'fa fa-info-circle', closable:true", title: 'Help'}
+          %p
+            =lorem.paragraphs 2
   %hr.col-12
   .col-12
     .panel.panel-primary
@@ -189,20 +221,28 @@
       .panel-body
         :code
           # lang: html
-          <div class="easyui-tabs tabs-transparent" data-options="tabHeight:40, tabPosition:'right'">
-            <div title="About">
-              <p>
-                This is the About content.
-              </p>
-            </div>
-            <div title="My Documents">
-              <p>
-                It's My Documents
-              </p>
-            </div>
-            <div title="Help">
-              <p>
-                This is the Help content.
-              </p>
+          <div class='col-12'>
+            <div class='easyui-panel' data-options='height:400'>
+              <h1>Tab Position of Right</h1>
+              <div class='easyui-tabs' tabHeight='40' tabPosition='right'>
+                <div data-options="iconCls:'fa fa-life-ring'" title='About'>
+                  <p>
+                    Nam ratione reiciendis qui qui nihil et quae. aut suscipit qui a consectetur. porro occaecati sed doloremque unde eos in nostrum quia molestiae dolores eos omnis autem in. nostrum libero deleniti quia consequatur voluptates animi. et et voluptas occaecati quis quae. est id eaque et quod soluta consequuntur placeat
+                    Cumque odit itaque eaque in facilis eos fugit doloribus dolorum a possimus. perferendis ut neque distinctio quisquam nulla et hic quia. expedita voluptatum non earum voluptas itaque ea optio suscipit ducimus totam. qui sit et rem expedita quod quis
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-pie-chart'" title='My Documents'>
+                  <p>
+                    Ex deserunt cum quae ratione. ut est et voluptatem sed saepe deleniti omnis iste. voluptatem dolores corporis ut commodi commodi. iusto necessitatibus explicabo fuga rerum quas magnam nemo quod eos expedita voluptatem esse quo veniam. laboriosam praesentium fuga qui nam cum nulla quibusdam omnis fugit placeat nihil ipsum
+                    Voluptas nihil et aperiam labore iste alias sed est impedit et asperiores officiis. quia laborum eligendi aliquid sint sit consequatur eius. iure qui natus eveniet voluptates necessitatibus quia quia. debitis repellendus odio deleniti consequuntur sint adipisci aut quia dolores adipisci et culpa et. repellendus sit deserunt in eveniet aut mollitia aliquid perferendis et pariatur dolores
+                  </p>
+                </div>
+                <div data-options="iconCls:'fa fa-info-circle', closable:true" title='Help'>
+                  <p>
+                    Blanditiis sint facere sint inventore et est repudiandae aliquid quae natus ut occaecati. aut laudantium eveniet nemo maxime voluptatibus corrupti nobis illo et eum amet et. sed exercitationem asperiores minima tempora harum id aliquam asperiores quia. iure explicabo id rerum ut maiores qui
+                    Veniam voluptatum rerum alias voluptate dicta sit. cum culpa in voluptatem excepturi consequuntur occaecati ut aut. quo ratione repudiandae rerum exercitationem eaque cupiditate quibusdam dolor ut et est hic nesciunt. veritatis quis et aspernatur consectetur ullam voluptatem aut occaecati delectus modi eaque et. voluptatem natus blanditiis quasi neque sed molestias sed ratione aliquam suscipit nesciunt
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
