@@ -13,7 +13,7 @@ qc.main.windowStack = [];
 $(function(){
 
 	if(!qc.main.slideMenuUrl || qc.main.slideMenuUrl == null) {
-		qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
+		qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 	}
 
 	qc.main.slideMenu = $("#mainSlideMenu").tree({

@@ -63,8 +63,6 @@ $(window).load(function(){
     iconCls: 'fa fa-user'
   });
 
-<<<<<<< HEAD
-=======
   //### User Settings
   //
   //###############################
@@ -78,11 +76,10 @@ $(window).load(function(){
     iconCls: 'fa fa-gear'
   });
 
->>>>>>> develop
 });
 
 //### Navigation JSON Root
 //
 //###############################
-qc.main.slideMenuUrl = "/assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
+qc.main.slideMenuUrl = "assets/javascripts/json/sidebarNav/mainMenuTreeData.json";
 
