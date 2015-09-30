@@ -63,6 +63,20 @@ $(window).load(function(){
     modal: true,
     iconCls: 'fa fa-user'
   });
+
+  //### User Settings
+  //
+  //###############################
+  $('#userSettings').dialog({
+    title: 'User Settings',
+    width: 360,
+    height: 380,
+    closed:true,
+    cache: true,
+    modal: true,
+    iconCls: 'fa fa-gear'
+  });
+
 });
 
 //### Navigation JSON Root

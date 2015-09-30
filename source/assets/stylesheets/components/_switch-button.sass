@@ -1,0 +1,59 @@
+/*------------------------------------*
+    #switch button
+/*------------------------------------*
+
+.switchbutton
+  +inline-block()
+  cursor: pointer
+  +border-radius(20px)
+  overflow: hidden
+
+.switchbutton-inner
+  position: relative
+  display: inline-block
+
+.switchbutton-on,
+.switchbutton-off,
+.switchbutton-handle
+  float: left
+  display: inline-block
+  height: 100%
+  text-align: center
+  font-size: 12px
+  +border-radius(50%)
+
+.switchbutton-on
+  background-color: $brand-success
+  color: #fff
+
+.switchbutton-off
+  background-color: $brand-default
+  color: #fff
+
+.switchbutton-on,
+.switchbutton-reversed .switchbutton-off
+  +border-radius(5px 0 0 5px)
+
+.switchbutton-off,
+.switchbutton-reversed .switchbutton-on
+  +border-radius(0 5px 5px 0)
+
+.switchbutton-handle
+  position: absolute
+  top: 0
+  left: 50%
+  background-color: #fff
+  color: #000
+
+.switchbutton-value
+  position: absolute
+  top: 0
+  left: -5000px
+
+.switchbutton-disabled
+  +opacity(0.5)
+
+.switchbutton-disabled,
+.switchbutton-readonly
+  cursor: default
+
