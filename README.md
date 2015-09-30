@@ -56,9 +56,9 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 
 ## What is Next ?
 
-[] Add slim scroll 
-[] Add SVG graph 
-[] Add responsive media query
+ * Add slim scroll 
+ * Add SVG graph 
+ * Add responsive media query
 
 ## Changelog (v0.1.12)
 
@@ -99,4 +99,3 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 * [Web Uploader](http://fex.baidu.com/webuploader/)
 
 [Chains Development Team](http://qianchi.net/jsp/web/homepage)
-
