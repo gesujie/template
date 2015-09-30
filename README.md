@@ -66,7 +66,8 @@ If you have ruby you should to install `gem install middleman` gem then you can 
 * Created user settings dialog with switch button
 * Fixed datagrid layout gap between panel
 * Added text colors classes
-* Fixed Tab inline css
+* Fixed Tab's inline css
+* Created under constructor page
 
 ## Changelog (v0.1.12)
 
