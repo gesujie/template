@@ -2,22 +2,119 @@
 -@page_classes= 'colors'
 
 .container
-  %h1 Colors with Name
-  .col-2.color-picker-default
-    %p
+  %h1 Background Colors Classes
+  .col-2.color-picker-default.text-center
+    %h4
       Default Color
-  .col-2.color-picker-primary
-    %p
+  .col-2.color-picker-primary.text-center
+    %h4
       Primary Color
-  .col-2.color-picker-info
-    %p
+  .col-2.color-picker-info.text-center
+    %h4
       Info Color
-  .col-2.col-last.color-picker-success
-    %p
+  .col-2.color-picker-success.text-center
+    %h4
       Success Color
-  .col-2.color-picker-warning
-    %p
+  .col-2.color-picker-warning.text-center
+    %h4
       Warning Color
-  .col-2.color-picker-danger
-    %p
+  .col-2.col-last.color-picker-danger.text-center
+    %h4
       Danger Color
+  %hr.col-12
+  %h1 Text Colors Classes
+  .col-2.text-default
+    %h4
+      Default Color
+  .col-2.text-primary
+    %h4
+      Primary Color
+  .col-2.text-info
+    %h4
+      Info Color
+  .col-2.text-success
+    %h4
+      Success Color
+  .col-2.text-warning
+    %h4
+      Warning Color
+  .col-2.col-last.text-danger
+    %h4
+      Danger Color
+  %hr.col-12
+.col-12
+  .panel.panel-danger
+    .panel-header
+      %h3.panel-title
+        Background Colors Classes | Source Code
+    .panel-body
+      :code
+        # lang: html
+        <div class='color-picker-default'>
+          <p>
+            Default Color
+          </p>
+        </div>
+        <div class='color-picker-primary'>
+          <p>
+            Primary Color
+          </p>
+        </div>
+        <div class='color-picker-info'>
+          <p>
+            Info Color
+          </p>
+        </div>
+        <div class='col-last color-picker-success'>
+          <p>
+            Success Color
+          </p>
+        </div>
+        <div class='color-picker-warning'>
+          <p>
+            Warning Color
+          </p>
+        </div>
+        <div class='color-picker-danger'>
+          <p>
+            Danger Color
+          </p>
+        </div>
+.col-12
+  .panel.panel-danger
+    .panel-header
+      %h3.panel-title
+        Text Colors Classes | Source Code
+    .panel-body
+      :code
+        # lang: html
+        <div class='text-default'>
+          <h4>
+            Default Color
+          </h4>
+        </div>
+        <div class='text-primary'>
+          <h4>
+            Primary Color
+          </h4>
+        </div>
+        <div class='text-info'>
+          <h4>
+            Info Color
+          </h4>
+        </div>
+        <div class='text-success'>
+          <h4>
+            Success Color
+          </h4>
+        </div>
+        <div class='text-warning'>
+          <h4>
+            Warning Color
+          </h4>
+        </div>
+        <div class='text-danger'>
+          <h4>
+            Danger Color
+          </h4>
+        </div>

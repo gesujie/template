@@ -28,7 +28,7 @@
   {
     "id": "1-4",
     "text": "Label - Button - Tooltip ",
-    "url": "pages/label-button.html",
+    "url": "pages/label_button.html",
     "iconCls": "fa fa-chevron-circle-right",
     "parentId": "1"
   },
@@ -75,6 +75,13 @@
     "parentId": "1"
   },
   {
+    "id": "1-11",
+    "text": "Under Construction",
+    "url": "pages/under_construction.html",
+    "iconCls": "fa fa-chevron-circle-right",
+    "parentId": "1"
+  },
+  {
     "id": "2",
     "text": "Plugins",
     "iconCls": "fa fa-plug"
@@ -100,15 +107,15 @@
   },
   {
     "id": "3-1",
-    "text": "With Horizontal Form",
-    "url": "pages/datagrid.html",
+    "text": "With Vertical Form",
+    "url": "pages/datagrid_vertical_form.html",
     "iconCls": "fa fa-chevron-circle-right",
     "parentId": "3"
   },
  {
     "id": "3-2",
-    "text": "With Vertical Form",
-    "url": "pages/datagrid-form.html",
+    "text": "With Horizontal Form",
+    "url": "pages/datagrid_horizontal_form.html",
     "iconCls": "fa fa-chevron-circle-right",
     "parentId": "3"
   }

@@ -11,8 +11,8 @@ page '/*.txt', layout: false
 
 # Iframe Layouts
 page 'pages/dashboard.html', layout: :iframe_layout
-page 'pages/datagrid.html', layout: :iframe_layout
-page 'pages/datagrid-form.html', layout: :iframe_layout
+page 'pages/datagrid_horizontal_form.html', layout: :iframe_layout
+page 'pages/datagrid_vertical_form.html', layout: :iframe_layout
 page 'pages/tabs.html', layout: :iframe_layout
 page 'pages/tree.html', layout: :iframe_layout
 page 'pages/schedule.html', layout: :iframe_layout
@@ -24,13 +24,14 @@ page 'pages/form.html', layout: :iframe_layout
 page 'pages/accordion.html', layout: :iframe_layout
 page 'pages/numberspinner.html', layout: :iframe_layout
 page 'pages/layout.html', layout: :iframe_layout
-page 'pages/label-button.html', layout: :iframe_layout
+page 'pages/label_button.html', layout: :iframe_layout
 page 'pages/colors.html', layout: :iframe_layout
+page 'pages/under_construction.html', layout: :iframe_layout
 
 # Pages Layouts
 page 'pages/login.html', layout: :pages_layout
 page 'pages/error.html', layout: :pages_layout
-page 'pages/sign-up.html', layout: :pages_layout
+page 'pages/sign_up.html', layout: :pages_layout
 page 'pages/forgotpwd.html', layout: :pages_layout
 
 # With alternative layout

@@ -30,7 +30,6 @@
         %strong
           Ip:
         192.168.1.139
-
     .navbar-header.pull-right
       %ul.nav.nav-rounded
         %li.notice
@@ -43,10 +42,9 @@
           =link_to '/pages/login.html' do
             %i.fa.fa-power-off
 
-
 #mm1{'data-options':' itemHeight:32'}
   %div{'data-options':"iconCls:'fa fa-user-plus'"}
-    =link_to '/pages/sign-up.html' do
+    =link_to '/pages/sign_up.html' do
       New User
   %div{'data-options':"iconCls:'fa fa-inbox'"}
     %span
@@ -67,7 +65,7 @@
     =link_to '/pages/forgotpwd.html' do
       Forget Password
   %div{'data-options':"iconCls:'fa fa-gear'"}
-    %span
+    =link_to 'javascript:void(0)', onclick:"$('#userSettings').dialog('open')" do
       Settings
 
 #userProfile
@@ -97,3 +95,34 @@
         %button.easyui-linkbutton.l-btn-primary.pull-left{type: 'submit'}
           %i.fa.fa-check
           Accept
+
+#userSettings
+  %h5 GENERAL SETTINGS
+  %form.form-horizontal.form-horizontal-left
+    .form-group
+      %label.col-10.control-label
+        Daily Newsletter
+      .col-2.col-last
+        %input.easyui-switchbutton{checked:''}
+    .form-group
+      %label.col-10.control-label
+        Call Phones
+      .col-2.col-last
+        %input.easyui-switchbutton{checked:''}
+    .form-group
+      %label.col-10.control-label
+        Login Notifications
+      .col-2.col-last
+        %input.easyui-switchbutton{checked:''}
+    .form-group
+      %label.col-10.control-label
+        E-mail Notifications
+      .col-2.col-last
+        %input.easyui-switchbutton{checked:''}
+    .form-group
+      %label.col-10.control-label
+        Browser Notifications
+      .col-2.col-last
+        %input.easyui-switchbutton{checked:''}
+
+
