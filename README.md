@@ -60,6 +60,14 @@ If you have ruby you should to install `gem install middleman` gem then you can 
  * Add SVG graph 
  * Add responsive media query
 
+## Changelog (v0.1.13)
+
+* Added switch button
+* Created user settings dialog with switch button
+* Fixed datagrid layout gap between panel
+* Added text colors classes
+* Fixed Tab inline css
+
 ## Changelog (v0.1.12)
 
 * Added dropdown button
