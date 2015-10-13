@@ -3,11 +3,32 @@
 
 .container
   .col-6
-    .panel.panel-primary
-      .panel-header
-        %h3.panel-title
-          Tree
-      %ul.easyui-tree#tt{'data-options':"url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true"}
+    .easyui-panel{'data-options': "height:400, tools:'#tt', cls:'panel-primary panel-datagrid', iconCls:'fa fa-list'", title:'Editable Tree Grid'}
+      %table#tg.easyui-treegrid{'data-options': "fit:true, rownumbers: true, collapsible: true, url: 'assets/javascripts/json/datagridData/treegrid_data2.json', method: 'get', idField: 'id', treeField: 'name', showFooter: true"}
+        %thead
+          %tr
+            %th{'data-options': "field:'name',width:180,editor:'text'"}
+              Task Name
+            %th{'data-options': "field:'persons',width:88,align:'right',editor:'numberbox'"}
+              Persons
+            %th{'data-options': "field:'begin',width:120,editor:'datebox'"}
+              Begin Date
+            %th{'data-options': "field:'end',width:120,editor:'datebox'"}
+              End Date
+    #tt
+      =link_to '#', class:'easyui-linkbutton l-btn-primary easyui-tooltip', onclick:'edit()', title:'Edit' do
+        %i.fa.fa-pencil
+      =link_to '#', class:'easyui-linkbutton l-btn-primary easyui-tooltip', onclick:'removeRow()', title:'Remove'  do
+        %i.fa.fa-trash-o
+      =link_to '#', class:'easyui-linkbutton l-btn-primary easyui-tooltip', onclick:'save()', title:'Save'  do
+        %i.fa.fa-floppy-o
+      =link_to '#', class:'easyui-linkbutton l-btn-primary easyui-tooltip', onclick:'cancel()', title:'Cancel'  do
+        %i.fa.fa-times
+
+  %hr.col-12
+  .col-6
+    .easyui-panel{'data-options': "height:400, cls:'panel-primary', iconCls:'fa fa-list'", title:'Tree'}
+      %ul.easyui-tree#tt{'data-options':"fit:true, url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true"}
       .panel-footer
         %small Tree folder with by lines
   %hr.col-12
@@ -20,22 +41,23 @@
       .panel-body
         :code
           # lang: html
-          <ul class="easyui-tree" id="tt" data-options="url:'assets/javascripts/json/demoData/tree_data1.json', method:'get', animate:true, checkbox:true, lines:true">
-          </ul>
+          <div class='easyui-panel' data-options="height:400, cls:'panel-primary', iconCls:'fa fa-list'" title='Tree'>
+            <ul class='easyui-tree' data-options="fit:true, url:'assets/javascripts/json/demoData/tree_data1.json',method:'get',animate:true,checkbox:true, lines:true" id='tt'></ul>
+            <div class='panel-footer'>
+              <small>Tree folder with by lines</small>
+            </div>
+          </div>
   %hr.col-12
   .col-6
-    .panel.panel-primary
-      .panel-header
-        %h3.panel-title
-          Tree Grid
+    .easyui-panel{'data-options': "height:304, cls:'panel-primary panel-datagrid', iconCls:'fa fa-list'", title:'Tree Grid'}
       %table.easyui-treegrid{'data-options':"method: 'get', rownumbers: true, idField: 'id', treeField: 'name', url:'assets/javascripts/json/datagridData/treegrid_data1.json'"}
         %thead
           %tr
-            %th{'data-options':"field:'name'", width:'220'}
+            %th{'data-options':"field:'name', width:150"}
               Name
-            %th{'data-options':"field:'size'", width:'100'}
+            %th{'data-options':"field:'size', width:150"}
               Size
-            %th{'data-options':"field:'date'", width:'150'}
+            %th{'data-options':"field:'date', width:208"}
               Modified Date
       .panel-footer
         %small Tree folder with by lines
@@ -49,18 +71,74 @@
       .panel-body
         :code
           # lang: html
-          <table class="easyui-treegrid" data-options="method: 'get', rownumbers: true, idField: 'id', treeField: 'name', url:'assets/javascripts/json/datagridData/treegrid_data1.json'">
-            <thead>
-              <tr>
-                <th data-options="field:'name'" width:220>
-                  Name
-                </th>
-                <th data-options="field:'size'" width:100>
-                  Size
-                </th>
-                <th data-options="field:'date'" width:150>
-                  Modified Date
-                </th>
-              </tr>
-            </thead>
-          </table>
+          <div class='easyui-panel' data-options="height:304, cls:'panel-primary panel-datagrid', iconCls:'fa fa-list'" title='Tree Grid'>
+            <table class='easyui-treegrid' data-options="method: 'get', rownumbers: true, idField: 'id', treeField: 'name', url:'assets/javascripts/json/datagridData/treegrid_data1.json'">
+              <thead>
+                <tr>
+                  <th data-options="field:'name', width:150">
+                    Name
+                  </th>
+                  <th data-options="field:'size', width:150">
+                    Size
+                  </th>
+                  <th data-options="field:'date', width:208">
+                    Modified Date
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <div class='panel-footer'>
+              <small>Tree folder with by lines</small>
+            </div>
+          </div>
+:javascript
+  var editingId;
+  function edit(){
+    if (editingId != undefined){
+      $('#tg').treegrid('select', editingId);
+      return;
+    }
+    var row = $('#tg').treegrid('getSelected');
+    if (row){
+      editingId = row.id;
+      $('#tg').treegrid('beginEdit', editingId);
+    }
+  }
+
+  function removeRow(){
+    if (editingId != undefined){
+      $('#tg').treegrid('select', editingId);
+      return;
+    }
+    var row = $('#tg').treegrid('getSelected');
+    if (row){
+      editingId = row.id;
+      $('#tg').treegrid('remove', editingId);
+    }
+  }
+
+  function save(){
+    if (editingId != undefined){
+      var t = $('#tg');
+      t.treegrid('endEdit', editingId);
+      editingId = undefined;
+      var persons = 0;
+      var rows = t.treegrid('getChildren');
+      for(var i=0; i<rows.length; i++){
+        var p = parseInt(rows[i].persons);
+        if (!isNaN(p)){
+          persons += p;
+        }
+      }
+      var frow = t.treegrid('getFooterRows')[0];
+      frow.persons = persons;
+      t.treegrid('reloadFooter');
+    }
+  }
+
+  function cancel(){
+    if (editingId != undefined){
+      $('#tg').treegrid('cancelEdit', editingId);
+      editingId = undefined;
+    }
+  }

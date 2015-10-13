@@ -10,6 +10,49 @@
     <a class='easyui-linkbutton l-btn-primary' href='javascript:void(0)' onclick='qc.demoWindowC.openWindow()'>
       Window with validate form
     </a>
+    <div class='easyui-window' data-options="iconCls:'fa fa-tasks',modal:true, footer:'#register_form_ft'" id='win' style='width:400px;height:400px' title='发布任务'>
+      <form>
+        <div class='form-group'>
+          <label>
+            任务内容
+            <i class='fa fa-asterisk text-danger'></i>
+          </label>
+          <input class='easyui-textbox' data-options='multiline:true, fit:true, height:80'>
+        </div>
+        <div class='radio'>
+          <label for='male'>
+            <input class='easyui-radio' id='male' type='radio'>
+            团队
+          </label>
+          <label for='female'>
+            <input class='easyui-radio' id='female' type='radio'>
+            个人
+          </label>
+          <select class='easyui-combobox' data-options="width:'50', height:'25'" panelheight='auto'>
+            <option value='manager'>1</option>
+            <option value='developer'>2</option>
+            <option value='designer'>3</option>
+          </select>
+        </div>
+        <div class='form-group'>
+          <label>
+            截止时间
+            <i class='fa fa-asterisk text-danger'></i>
+          </label>
+          <input class='easyui-textbox' data-options='width:370, height:30'>
+        </div>
+        <div class='checkbox'>
+          <label>
+            <input class='easyui-checkbox' type='checkbox'>
+            保存并发布
+          </label>
+        </div>
+        <div class='text-right' id='register_form_ft'>
+          <button class='easyui-linkbutton l-btn-success' type='submit'>保存</button>
+          <button class='easyui-linkbutton l-btn-danger' type='submit'>取消</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 <div class='container'>
@@ -61,7 +104,7 @@
 </div>
 <div class='hidden' id='qc-window-windowObjB'>
   <p>
-    Architecto libero sed qui distinctio eum accusantium eveniet. Sunt et eligendi ipsum et pariatur veritatis fugiat voluptatibus consequatur eligendi. Quidem qui libero accusamus repellendus ipsum et non ab assumenda veritatis. Iusto aut cumque ut eaque doloribus eum aut omnis molestias sit animi soluta. Doloremque a facere velit unde ut aspernatur nemo cumque ut nostrum. Saepe ut accusamus harum in itaque voluptatem exercitationem explicabo
+    Non qui aut aliquam ut. Vero iste aut dicta explicabo dolorem et omnis necessitatibus. Voluptatum autem voluptatem quis magni enim neque dolores sit autem. Et earum optio praesentium pariatur omnis in nobis quaerat vero ad quibusdam sapiente. Voluptas repellat quas reiciendis. Esse illum nihil veritatis tenetur hic ut ipsam
   </p>
   <div class='text-right' id='ft'>
     <a class='easyui-linkbutton l-btn-primary' data-options="iconCls:'fa fa-check-circle-o'" href='javascript:void(0)' onclick="javascript:alert('ok')">
