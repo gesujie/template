@@ -39,11 +39,14 @@ $(function(){
     }
 	});
 
-	qc.main.mainTabs = $("#mainTabs").tabs({
-		border : false,
+  qc.main.mainTabs = $("#mainTabs").tabs({
+    border : false,
     fit : true,
-    tabHeight:40
-	});
+    tabHeight:40,
+    onClose: function(title, index){
+      qc.main.destroyContainsWindow([title]);
+    }
+  });
 
 });
 
