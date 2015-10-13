@@ -62,7 +62,7 @@
 
 #Changelog 
   
-  Please checkout [here](https://bitbucket.org/coskuntekin/easy-admin/CHANGELOG.md)
+  Please checkout [here](https://bitbucket.org/coskuntekin/easy-admin/src/f4f9a91df08a6f8feecebc6cd6de3c8cae0b4c5a/CHANGELOG.md)
 
 ## Credit
 
