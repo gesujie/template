@@ -59,7 +59,6 @@
 ## What is Next ?
  
   * Add SVG graph 
-  * [x] Add responsive media query
 
 #Changelog 
   
