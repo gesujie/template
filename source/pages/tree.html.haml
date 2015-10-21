@@ -24,7 +24,100 @@
         %i.fa.fa-floppy-o
       =link_to '#', class:'easyui-linkbutton l-btn-primary easyui-tooltip', onclick:'cancel()', title:'Cancel'  do
         %i.fa.fa-times
+  %hr.col-12
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-code
+        %h3.panel-title.panel-with-icon
+          Tree | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <div class='col-6'>
+            <div class='easyui-panel' data-options="height:400, tools:'#tt', cls:'panel-primary panel-datagrid', iconCls:'fa fa-list'" title='Editable Tree Grid'>
+              <table class='easyui-treegrid' data-options="fit:true, rownumbers: true, collapsible: true, url: 'assets/javascripts/json/datagridData/treegrid_data2.json', method: 'get', idField: 'id', treeField: 'name', showFooter: true" id='tg'>
+                <thead>
+                  <tr>
+                    <th data-options="field:'name',width:180,editor:'text'">
+                      Task Name
+                    </th>
+                    <th data-options="field:'persons',width:88,align:'right',editor:'numberbox'">
+                      Persons
+                    </th>
+                    <th data-options="field:'begin',width:120,editor:'datebox'">
+                      Begin Date
+                    </th>
+                    <th data-options="field:'end',width:120,editor:'datebox'">
+                      End Date
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div id='tt'>
+              <a class="easyui-linkbutton l-btn-primary easyui-tooltip" onclick="edit()" title="Edit" href="#"><i class='fa fa-pencil'></i>
+              </a>
+              <a class="easyui-linkbutton l-btn-primary easyui-tooltip" onclick="removeRow()" title="Remove" href="#"><i class='fa fa-trash-o'></i>
+              </a>
+              <a class="easyui-linkbutton l-btn-primary easyui-tooltip" onclick="save()" title="Save" href="#"><i class='fa fa-floppy-o'></i>
+              </a>
+              <a class="easyui-linkbutton l-btn-primary easyui-tooltip" onclick="cancel()" title="Cancel" href="#"><i class='fa fa-times'></i>
+              </a>
+            </div>
+          </div>
+        :code
+          # lang: js
+            var editingId;
+            function edit(){
+              if (editingId != undefined){
+                $('#tg').treegrid('select', editingId);
+                return;
+              }
+              var row = $('#tg').treegrid('getSelected');
+              if (row){
+                editingId = row.id;
+                $('#tg').treegrid('beginEdit', editingId);
+              }
+            }
 
+            function removeRow(){
+              if (editingId != undefined){
+                $('#tg').treegrid('select', editingId);
+                return;
+              }
+              var row = $('#tg').treegrid('getSelected');
+              if (row){
+                editingId = row.id;
+                $('#tg').treegrid('remove', editingId);
+              }
+            }
+
+            function save(){
+              if (editingId != undefined){
+                var t = $('#tg');
+                t.treegrid('endEdit', editingId);
+                editingId = undefined;
+                var persons = 0;
+                var rows = t.treegrid('getChildren');
+                for(var i=0; i<rows.length; i++){
+                  var p = parseInt(rows[i].persons);
+                  if (!isNaN(p)){
+                    persons += p;
+                  }
+                }
+                var frow = t.treegrid('getFooterRows')[0];
+                frow.persons = persons;
+                t.treegrid('reloadFooter');
+              }
+            }
+
+            function cancel(){
+              if (editingId != undefined){
+                $('#tg').treegrid('cancelEdit', editingId);
+                editingId = undefined;
+              }
+            }
   %hr.col-12
   .col-6
     .easyui-panel{'data-options': "height:400, cls:'panel-primary', iconCls:'fa fa-list'", title:'Tree'}

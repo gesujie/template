@@ -21,11 +21,22 @@
 .layout-panel-south
   z-index: 3
 
+.layout-expand-north
+  height: 27px
+  & .panel-tool
+    & > a
+      height: 27px
+      line-height: 27px
+
 .layout-expand
   position: absolute
   cursor: pointer
   z-index: 1
   background-color: darken(#d7d7d7, 10%)
+
+.layout-expand
+  & .panel-header
+    +box-shadow(none)
 
 .layout-split-proxy-h,
 .layout-split-proxy-v

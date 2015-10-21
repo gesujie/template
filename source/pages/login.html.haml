@@ -3,11 +3,11 @@
 
 .container
   .col-12.panel-login
-    .col-4.col-push-4.panel-sign-in.js-panel-sign-in.in
+    .col-3.col-push-5.panel-sign-in.js-panel-sign-in.in
       .alert.alert-danger.alert-hide.mb-10.js-alert
         %i.fa.fa-exclamation-triangle
         %small
-          =lorem.words 4
+          Your e-mail or password is wrong please, try again.
       .panel.panel-primary
         .panel-header
           .panel-title
@@ -20,10 +20,10 @@
           %form.easyui-form#formLogin{'data-options':'novalidate:true', method: 'post'}
             .form-group
               %label Email address
-              %input.easyui-textbox{'data-options':"required:true, validType:'email', prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+              %input.easyui-textbox{'data-options':"required:true, validType:'email', prompt:'Email', width:300, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
             .form-group
               %label Password
-              %input.easyui-textbox{'data-options':"required:true, prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+              %input.easyui-textbox{'data-options':"required:true, prompt:'Password', width:300, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
             .checkbox
               %label
                 %input.easyui-checkbox{type: 'checkbox'}
@@ -35,7 +35,7 @@
         .panel-footer.text-center
           %small.text-muted
             设计单位：贵州黔驰信息股份有限公司
-    .col-4.col-push-4.panel-sign-up.js-panel-sign-up.out
+    .col-3.col-push-5.panel-sign-up.js-panel-sign-up.out
       .panel.panel-info
         .panel-header
           .panel-title.text-right
@@ -48,19 +48,24 @@
           %form
             .form-group
               %label User Name
-              %input.easyui-textbox{'data-options':"prompt:'User Name', width:360, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
+              %input.easyui-textbox{'data-options':"prompt:'User Name', width:300, height:34, iconCls:'fa fa-user', iconWidth:38", type: 'text'}
             .form-group
               %label Email address
-              %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+              %input.easyui-textbox{'data-options':"prompt:'Email', width:300, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
             .form-group
               %label Password
-              %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+              %input.easyui-textbox{'data-options':"prompt:'Password', width:300, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
             .form-group
               %label Confirm Password
-              %input.easyui-textbox{'data-options':"prompt:'Password', width:360, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
+              %input.easyui-textbox{'data-options':"prompt:'Password', width:300, height:34, iconCls:'fa fa-lock', iconWidth:38", type: 'password'}
             %button.col-12.easyui-linkbutton.l-btn-success.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-sign-in'"}
               Submit
         .panel-footer.text-center
           %small.text-muted
             设计单位：贵州黔驰信息股份有限公司
-
+.container
+  .col-3.col-push-5.text-center.mt-20
+    =link_to '/', class:'easyui-tooltip', title:'Go back to home.' do
+      %span.fa-stack.fa-lg
+        %i.fa.fa-circle.fa-stack-2x
+        %i.fa.fa-home.fa-stack-1x.fa-inverse

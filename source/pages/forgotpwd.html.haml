@@ -2,7 +2,7 @@
 -@page_classes= 'login theme-default'
 
 .container
-  .col-4.col-push-4
+  .col-3.col-push-5
     .panel.panel-danger
       .panel-header
         .panel-title
@@ -12,9 +12,15 @@
         %form
           .form-group
             %label Email address
-            %input.easyui-textbox{'data-options':"prompt:'Email', width:360, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
+            %input.easyui-textbox{'data-options':"prompt:'Email', width:300, height:34, iconCls:'fa fa-envelope', iconWidth:38", type: 'text'}
           %button.col-12.easyui-linkbutton.l-btn-danger.l-btn-bounce{type: 'submit', 'data-options':"iconCls:'fa fa-info-circle'"}
             Send Reset Link
       .panel-footer.text-center
         %small.text-muted
           设计单位：贵州黔驰信息股份有限公司
+.container
+  .col-3.col-push-5.text-center.mt-20
+    =link_to '/', class:'easyui-tooltip', title:'Go back to home.' do
+      %span.fa-stack.fa-lg
+        %i.fa.fa-circle.fa-stack-2x
+        %i.fa.fa-home.fa-stack-1x.fa-inverse

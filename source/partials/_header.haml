@@ -6,7 +6,7 @@
       %li
         Welcome,
         %strong
-          =lorem.name
+          John Doe
       %li
         %i.fa.fa-pencil-square
         %strong
@@ -33,13 +33,13 @@
     .navbar-header.pull-right
       %ul.nav.nav-rounded
         %li.notice
-          =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm1', hasDownArrow:false, plain:false" do
+          =link_to 'javascript:void(0)', class:'easyui-menubutton l-btn-default', 'data-options':"menu:'#mm1', hasDownArrow:false, plain:false" do
             %i.fa.fa-bell
         %li
-          =link_to 'javascript:void(0)', class:'easyui-menubutton', 'data-options':"menu:'#mm2', hasDownArrow:false, plain:false" do
+          =link_to 'javascript:void(0)', class:'easyui-menubutton l-btn-default', 'data-options':"menu:'#mm2', hasDownArrow:false, plain:false" do
             %i.fa.fa-user
         %li
-          =link_to '/pages/login.html' do
+          =link_to '/pages/login.html', class:'easyui-linkbutton l-btn-default' do
             %i.fa.fa-power-off
 
 #mm1{'data-options':' itemHeight:32'}
@@ -101,28 +101,6 @@
   %form.form-horizontal.form-horizontal-left
     .form-group
       %label.col-10.control-label
-        Daily Newsletter
+        Theme Material
       .col-2.col-last
-        %input.easyui-switchbutton{checked:''}
-    .form-group
-      %label.col-10.control-label
-        Call Phones
-      .col-2.col-last
-        %input.easyui-switchbutton{checked:''}
-    .form-group
-      %label.col-10.control-label
-        Login Notifications
-      .col-2.col-last
-        %input.easyui-switchbutton{checked:''}
-    .form-group
-      %label.col-10.control-label
-        E-mail Notifications
-      .col-2.col-last
-        %input.easyui-switchbutton{checked:''}
-    .form-group
-      %label.col-10.control-label
-        Browser Notifications
-      .col-2.col-last
-        %input.easyui-switchbutton{checked:''}
-
-
+        %input.easyui-switchbutton.js-theme-switch{type:'checkbox'}

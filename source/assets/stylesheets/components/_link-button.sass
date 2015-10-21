@@ -12,12 +12,25 @@
   +border-radius(2px)
   text-align: center
   white-space: nowrap
-  color: #fff
   &:hover,
   &:active,
   &:focus
     color: darken(#fff, 10%)
     +box-shadow(0 1px 6px 0 rgba(0,0,0,.20), 0 1px 6px 0 rgba(0,0,0,.20))
+
+.theme-default
+  & .l-btn
+    color: #fff
+
+.theme-material
+  & .l-btn-default
+    color: #666
+  & .l-btn-primary,
+  & .l-btn-info,
+  & .l-btn-success,
+  & .l-btn-warning,
+  & .l-btn-danger
+    color: #fff
 
 .l-btn-left
   position: relative

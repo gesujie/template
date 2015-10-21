@@ -78,7 +78,8 @@ qc.main.find = function(id) {
 qc.main.addTab = function(subtitle, url, icon, iframe) {
   var currTab = null;
   if (!qc.main.mainTabs.tabs('exists', subtitle)) {
-    if(qc.main.mainTabs.tabs("tabs").length >= 6) {
+    var tabsCounter = 6;
+    if(qc.main.mainTabs.tabs("tabs").length >= tabsCounter) {
       $.messager.show({
         title:'提醒',
         msg:'打开窗口过多，请先关闭不需要的窗口。',
@@ -92,7 +93,9 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
         closable : true
       });
     }
+
     currTab = qc.main.mainTabs.tabs('getSelected');
+
   } else {
     qc.main.mainTabs.tabs('select', subtitle);
     // 下面的代码解决同名菜单问题，同名但不同地址，则刷新页面
@@ -108,6 +111,7 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
       });
     }
   }
+
   if(iframe && currTab != null) {
     currTab.addClass('overflow-hide');
     currTab.iframe = iframe;
@@ -115,7 +119,6 @@ qc.main.addTab = function(subtitle, url, icon, iframe) {
   qc.main.tabClose();
   qc.main.tabCloseEven();
 };
-
 
 qc.main.createFrame = function(url) {
 	var s = '<iframe class="iframe-fluid" src="' + url + '"></iframe>';

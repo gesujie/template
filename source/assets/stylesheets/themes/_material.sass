@@ -3,6 +3,9 @@
 /*------------------------------------*
 
 .theme-material
+  & .tabs-general-content
+    & > .tabs-panels
+      background-color: #E4E9F0
   .dropdown-menu
     background-color: $brand-material-primary
   .btn-dropdown
@@ -13,44 +16,52 @@
         +inline-block()
         background-color: $brand-material-primary
   .header
-    background-color: $header-material-bg
+    background-color: #fff
   .logo
-    background-color: $logo-material-bg
+    background-color: #17BAB8
   .sidebar-header
-    background-color:  $sidebar-material-header-bg
+    background-color: #fff
+    & > .panel-title
+      color: #666
+    & > .panel-tool
+      & > a
+        background-color: transparent
+        &:hover::before
+          color: #666
   .sidebar
-    background-color: darken($sidebar-material-body-bg, 5%)
+    background-color: #fff
   .sidebar-nav
-    background-color: $sidebar-material-body-in-bg
+    background-color: #fff
     & > li
       & > ul
-        background-color: darken( $sidebar-material-body-in-bg, 5%)
+        background-color: #fff
   .tabs-header
-    background-color: $tabs-material-header-bg
+    background-color: #fff
+  .tabs-title
+    color: #17BAB8
   .tabs-selected
     & .tabs-inner
-      background-color: $tabs-material-selected-bg
-      color: $tabs-material-selected-color
+      background-color: #F2F2F2
+      color: #17BAB8
   .tabs-inner
-    color: $header-material-bg
+    color: #d7d7d7
     &::before
-      background-color: $tabs-material-link-color
+      background-color: #F2F2F2
   // ###
   //Sidebar declarations
   & .sidebar
     & .tree-icon,
     & .tree-title
-      color: $sidebar-material-title-color
+      color: #666
     & .tree-node-hover,
     & .tree-node-selected
-      background-color: lighten($sidebar-material-body-bg, 8%)
+      background-color: #F2F2F2
       & .tree-icon,
       & .tree-title
-        color: darken($sidebar-material-title-color, 90%)
-    & .tree-collapsed,
-    & .tree-expanded
-      &::before
-        +font-icons(FontAwesome, '\f104', inherit, #fff)
+        color: #17BAB8
+    & .tree-node-selected
+      &::after
+        border-right-color: #17BAB8
   // ###
   //Badge declarations
   .badge-default

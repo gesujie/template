@@ -1,8 +1,8 @@
 -@title= 'Home page | Admin Page '
--@page_classes= 'easyui-layout theme-default'
+-@page_classes= 'easyui-layout theme-default js-theme-body'
 
 %div{'data-options':"region:'center', border:false"}
-  .easyui-tabs#mainTabs
+  .easyui-tabs.tabs-general-content#mainTabs{'data-options':'tabHeight:35, border:false'}
     .container{'data-options':"iconCls:'fa fa-home'", title: '欢迎使用'}
       .col-8.mb-10
         .easyui-panel{title:'Latest Announcement', 'data-options': "cls:'panel-primary', iconCls:'fa fa-bullhorn', closable:true"}

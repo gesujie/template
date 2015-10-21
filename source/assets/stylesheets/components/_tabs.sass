@@ -1,6 +1,6 @@
-/*------------------------------------*
+//------------------------------------//
     #TABS
-/*------------------------------------*
+//------------------------------------//
 
 .tabs
   width: 50000px
@@ -269,10 +269,11 @@
 
 .tabs-close
   position: absolute
-  top: 31%
+  top: 32%
   right: 4px
   display: table
   text-align: center
+  line-height: 1
   &::before
     display: table-cell
     width: 15px
@@ -280,6 +281,7 @@
     +font-icons(inherit, '×', 12px, #4E4C49)
     +transition(color 0.28s ease-in)
     vertical-align: middle
+    line-height: 1
   &:hover::before
     content: "×"
     +border-radius (50%)

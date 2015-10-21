@@ -45,10 +45,10 @@ $(window).load(function(){
       }
       return $(this).form('enableValidation').form('validate');
     },
-      success: function () {
-        console.log('success');
-      }
-    });
+    success: function () {
+      console.log('success');
+    }
+  });
 
   //### User Profile Dialog
   //
@@ -74,6 +74,36 @@ $(window).load(function(){
     cache: true,
     modal: true,
     iconCls: 'fa fa-gear'
+  });
+
+  //### Header Width
+  //
+  //###############################
+  var setHeaderWidth = function(logoLayout){
+    var userNav = $('.user-nav');
+    var windowWidth = $(window).width();
+    var headerResult = windowWidth - logoLayout;
+    userNav.width(headerResult+'px');
+  };
+
+  setHeaderWidth(280);
+
+  //### Theme switch Button
+  //
+  //###############################
+
+  $('.js-theme-switch').switchbutton({
+    checked: false,
+    onChange: function(checked){
+      var themeBody = $('.js-theme-body');
+      if(checked === true){
+        themeBody.addClass('theme-material');
+        themeBody.removeClass('theme-default');
+      }else{
+        themeBody.removeClass('theme-material');
+        themeBody.addClass('theme-default');
+      }
+    }
   });
 
 });

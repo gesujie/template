@@ -7,26 +7,26 @@
   padding: $padding-large-vertical $padding-base-horizontal
   +box-shadow (0 3px 6px rgba(0, 0, 0, 0.1))
 
-.panel-icon,
-.panel-tool
+.panel-icon
   position: absolute
   top: 32%
   width: auto
 
-.panel-icon
-  color: #fff
-
 .panel-tool
-  right: 10px
-  margin-top: -12px
-  margin-right: -10px
+  position: absolute
+  top: 0
+  right: 0
+  display: table
   & > a
-    +inline-block()
+    display: table-cell
+    width: 30px
+    height: 39px
     background-color: rgba(0,0,0, 0.2)
-    padding: 9px 10px
     +transform (translateZ(0))
     +backface-visibility (hidden)
     +transition-duration(0.3s)
+    text-align: center
+    vertical-align: middle
     &:last-child
       border-right: 0
     &:first-child
@@ -40,8 +40,30 @@
       &::before
         color: rgba(255, 255, 255, 0.2)
 
+.theme-default
+  & .panel-icon,
+  & .panel-title
+    color: lighten($brand-default, 50%)
+  & .panel-footer
+    background-color: #E6E6E6
+
+.theme-material
+  & .panel-default
+    & .panel-title,
+    & .panel-icon
+      color: #666
+  & .panel-primary,
+  & .panel-info,
+  & .panel-success,
+  & .panel-warning,
+  & .panel-danger
+    & .panel-title,
+    & .panel-icon
+      color: #fff
+  & .panel-footer
+    background-color: #ddd
+
 .panel-title
-  color: lighten($brand-default, 50%)
   font-size: $font-size-base
   margin: 0
 
@@ -51,7 +73,6 @@
 
 .panel-footer
   padding: $padding-large-vertical 15px
-  background-color: #E6E6E6
   border-top: 1px solid #d7d7d7
 
 .panel-body

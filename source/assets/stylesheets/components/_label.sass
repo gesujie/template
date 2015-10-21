@@ -8,7 +8,6 @@
   font-size: 75%
   font-weight: bold
   line-height: 1
-  color: #fff
   text-align: center
   white-space: nowrap
   vertical-align: baseline
@@ -20,6 +19,19 @@
   &:empty
     display: none
 
+.theme-default
+  & .label
+    color: #fff
+
+.theme-material
+  & .label-default
+    color: #666
+  & .label-primary,
+  & .label-info,
+  & .label-success,
+  & .label-warning,
+  & .label-danger
+    color: #fff
 
 // Add hover effects, but only for links
 a.label
