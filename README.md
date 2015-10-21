@@ -21,6 +21,8 @@
   - #### Accordion
   - #### Forms
   - #### Tree
+  - #### Tree Grid
+  - #### Switch Button
   - #### Calendar
   - #### Uploader
   - #### Alert
@@ -55,10 +57,9 @@
   * If you updated please pull request
 
 ## What is Next ?
-
- * Add slim scroll 
- * Add SVG graph 
- * Add responsive media query
+ 
+  * Add SVG graph 
+  * [x] Add responsive media query
 
 #Changelog 
   

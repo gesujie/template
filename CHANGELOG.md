@@ -1,4 +1,13 @@
 
+## Changelog (v0.1.14)
+
+  * Fixed layout [issue](https://bitbucket.org/coskuntekin/easy-admin/issues/51/easyui-layout-has-grid-issues)
+  * Fixed responsive [issue](https://bitbucket.org/coskuntekin/easy-admin/issues/52/1920x1080-resolution-layout-problems) 
+  * Updated `theme-material`
+  * Added theme settings
+  * Added tree grid source code
+  * Added go back button
+  
 ## Changelog (v0.1.13.5)
 
   * Fixed dialog's stack when a tab closed
