@@ -8,13 +8,19 @@
         .easyui-panel{title:'Latest Announcement', 'data-options': "cls:'panel-primary', iconCls:'fa fa-bullhorn', closable:true"}
           %p
             =lorem.sentences 3
+          %hr/
+          %p
+            =lorem.sentences 3
       .col-4.col-last
-        .easyui-panel{title:'Previous Announcement', 'data-options': "cls:'panel-info', iconCls:'fa fa-history', closable:true"}
-          %ul
+        .easyui-panel{title:'To Do List', 'data-options': "cls:'panel-info', iconCls:'fa fa-history', closable:true"}
+          %ul.list-unstyled
             -5.times do
               %li
-                =lorem.words 3
-      .col-8
+                .checkbox
+                  %label
+                    %input.easyui-checkbox{type:'checkbox'}
+                    =lorem.words 3
+      .col-8.mb-10
         .easyui-panel{title:'Analytics', 'data-options': "cls:'panel-primary', iconCls:'fa fa-tachometer', closable:true"}
           .col-4.text-center
             %i.fa.fa-bar-chart.fa-3x
@@ -37,13 +43,13 @@
     %small 刷新
   #close{'data-options':"iconCls:'fa fa-times'"}
     %small 关闭
-  #closeall{'data-options':"iconCls:'fa fa-ban'"}
+  #closeAll{'data-options':"iconCls:'fa fa-exchange'"}
     %small 全部关闭
-  #closeother{'data-options':"iconCls:'fa fa-ellipsis-h'"}
+  #closeOther{'data-options':"iconCls:'fa fa-ellipsis-h'"}
     %small 除此之外全部关闭
-  #closeright{'data-options':"iconCls:'fa fa-caret-square-o-right'"}
+  #closeRight{'data-options':"iconCls:'fa fa-arrow-right'"}
     %small 当前页右侧全部关闭
-  #closeleft{'data-options':"iconCls:'fa fa-caret-square-o-left'"}
+  #closeLeft{'data-options':"iconCls:'fa fa-arrow-left'"}
     %small 当前页左侧全部关闭
 
 

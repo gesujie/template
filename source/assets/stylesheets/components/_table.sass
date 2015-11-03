@@ -1,0 +1,50 @@
+/*------------------------------------*
+    #TABLE
+/*------------------------------------*
+
+.table
+  table-layout: fixed
+  font-size: 12px
+  & > thead
+    & > tr
+      & > th
+        padding: 5px
+        border: 1px solid #ccc
+        background-color: #fff
+  & > tbody
+    & > tr
+      & > td
+        padding: 5px
+        border: 1px solid #ccc
+
+.table-hovered
+  & > tbody
+    & > tr
+      +transition(backgroud-color, 200ms, ease-in)
+      &:hover
+        background-color: #ddd
+        +transition(backgroud-color, 200ms, ease-out)
+
+.fixed-table .table tr td,
+.fixed-table .table tr th
+  min-width: 100px
+  width: 100px
+  min-height: 45px
+  height: 45px
+
+.fixed-table-header
+  width: 100%
+  height: auto
+  overflow: hidden
+
+.fixed-table-body
+  float: left
+  width: 520px
+  height: 310px
+  overflow: auto
+
+.fixed-table-sidebar
+  float: left
+  width: auto
+  height: 310px
+  overflow: hidden
