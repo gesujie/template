@@ -23,3 +23,8 @@
 // ## Web Uploader
 //###
 //=require components/webUploader/webuploader.js
+
+//####
+// ## Freeze Table
+//###
+//=require components/freezeTable/jquery.freezeTable.js

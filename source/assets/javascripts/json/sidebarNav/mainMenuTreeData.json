@@ -82,6 +82,13 @@
     "parentId": "1"
   },
   {
+    "id": "1-12",
+    "text": "Table",
+    "url": "pages/table.html",
+    "iconCls": "fa fa-chevron-circle-right",
+    "parentId": "1"
+  },
+  {
     "id": "2",
     "text": "Plugins",
     "iconCls": "fa fa-plug"

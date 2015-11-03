@@ -91,7 +91,6 @@ $(window).load(function(){
   //### Theme switch Button
   //
   //###############################
-
   $('.js-theme-switch').switchbutton({
     checked: false,
     onChange: function(checked){
@@ -105,6 +104,11 @@ $(window).load(function(){
       }
     }
   });
+
+  //### Freeze Table
+  //
+  //###############################
+ $('.fixedTable').freezeTable();
 
 });
 

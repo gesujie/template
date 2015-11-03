@@ -1,23 +1,22 @@
-/* 作者：李钰龙
+/***
+ * 作者：李钰龙
  * 功能：扩展EasyUI
  * 扩展项目：
- * 	1、自动回收自动回收iframe
+ * 	1、自动回收自动回收 iframe
  * 	2、可自定义加载时的文字
  *  3、加载出错时，将出错内容放入对话框
  *  4、增加表头菜单，控制显示隐藏列
  *  5、扩展数据验证
  *  6、树形控件自动可根据parentField自动生成树
- *  9、检测处理pannel超出边界情况
+ *  9、检测处理 panel 超出边界情况
  * 10、可更换主题
  * 11、建立图标对象数组
  * 12、扩展datagrid，使datagrid的editors能保存combotree的多选值
- */
-
-/**
+ *
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * panel关闭时回收内存，主要用于layout使用iframe嵌入网页时的内存泄漏问题
- */
+***/
 
 $.fn.panel.defaults.onBeforeDestroy = function() {
 	var frame = $('iframe', this);
@@ -36,12 +35,13 @@ $.fn.panel.defaults.onBeforeDestroy = function() {
 	}
 };
 
-/**
+/***
  * 使panel和datagrid在加载时提示
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  *
- */
+***/
+
 $.fn.panel.defaults.loadingMessage = '加载中....';
 $.fn.datagrid.defaults.loadMsg = '加载中....';
 
@@ -52,12 +52,13 @@ $.fn.dialog.defaults.onClose = function() {
 	$(this).parent().removeClass("active");
 };
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 通用错误提示
  * 用于datagrid/treegrid/tree/combogrid/combobox/form加载数据出错时的操作
- */
+***/
+
 var easyuiErrorFunction = function(XMLHttpRequest) {
 	$.messager.progress('close');
 	$.messager.alert('错误', XMLHttpRequest.responseText);
@@ -69,11 +70,12 @@ $.fn.combogrid.defaults.onLoadError = easyuiErrorFunction;
 $.fn.combobox.defaults.onLoadError = easyuiErrorFunction;
 $.fn.form.defaults.onLoadError = easyuiErrorFunction;
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 为datagrid、treegrid增加表头菜单，用于显示或隐藏列，注意：冻结列不在此菜单中
- */
+***/
+
 var createGridHeaderContextMenu = function(e, field) {
 	e.preventDefault();
 	var grid = $(this);/* grid本身 */
@@ -116,11 +118,11 @@ var createGridHeaderContextMenu = function(e, field) {
 $.fn.datagrid.defaults.onHeaderContextMenu = createGridHeaderContextMenu;
 $.fn.treegrid.defaults.onHeaderContextMenu = createGridHeaderContextMenu;
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
- * 扩展validatebox，添加验证数据功能
- */
+ * @requires jQuery, EasyUI
+ * 扩展validate box，添加验证数据功能
+***/
 $.extend($.fn.validatebox.defaults.rules, {
 	idcard : {// 验证身份证
 		validator : function(value) {
@@ -256,11 +258,12 @@ $.extend($.fn.validatebox.defaults.rules, {
 	}
 });
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展datagrid，添加单元格内容提示框
- */
+***/
+
 $.extend($.fn.datagrid.methods, {
 	/**
 	 * 开打提示功能
@@ -366,11 +369,12 @@ $.extend($.fn.datagrid.methods, {
 	}
 });
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展datagrid，使datagrid的editors能保存combotree的多选值
- */
+ ***/
+
 $.extend(jQuery.fn.datagrid.defaults.editors, {
 	combotree: {
 		init: function(container, options){
@@ -402,11 +406,12 @@ $.extend(jQuery.fn.datagrid.defaults.editors, {
 });
 
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 将tree，treegrid的list数据自动转换tree形式的json
- */
+***/
+
 $.fn.treeDataFilterListToTree = function(data, opt) {
 	if (opt.parentField) {
 		var idField = opt.idField || 'id';
@@ -439,42 +444,44 @@ $.fn.treeDataFilterListToTree = function(data, opt) {
 
 };
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展tree，使tree支持设置父节点，自动生成树形结构
  * 增加parentField属性
- */
+***/
+
 $.fn.tree.defaults.loadFilter = function(data) {
 	return $.fn.treeDataFilterListToTree(data, $(this).data().tree.options);
 };
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展treegrid，使treegrid支持设置父节点，自动生成树形结构
  * 增加parentField属性
- */
+***/
+
 $.fn.treegrid.defaults.loadFilter = function(data) {
 	return $.fn.treeDataFilterListToTree(data, $(this).data().treegrid.options);
 };
 
-/**
+/***
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展combotree，使combotree支持设置父节点，自动生成树形结构
  * 增加parentField属性
- */
+***/
+
 $.fn.combotree.defaults.loadFilter = $.fn.tree.defaults.loadFilter;
-
-
 
 /**
  * 扩展树表格级联勾选方法：
  * @param {Object} container
  * @param {Object} options
  * @return {TypeName}
- */
+ ***/
+
 $.extend($.fn.treegrid.methods,{
 	/**
 	 * 级联选择
@@ -545,7 +552,7 @@ $.extend($.fn.treegrid.methods,{
 
 /**
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展datagrid行编辑的combobox编辑器，解决无法设置多选值的bug
  */
 $.extend($.fn.datagrid.defaults.editors.combobox, {
@@ -574,7 +581,7 @@ $.extend($.fn.datagrid.defaults.editors.combobox, {
 
 /**
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 扩展datagrid行编辑的combogrid编辑器
  */
 $.extend($.fn.datagrid.defaults.editors, {
@@ -729,7 +736,7 @@ $.extend($.fn.datagrid.methods, {
 
 /**
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 创建一个模式化的dialog
  * @returns $.modalDialog.handler 这个handler代表弹出的dialog句柄
  * @returns $.modalDialog.xxx 这个xxx是可以自己定义名称，主要用在弹窗关闭时，刷新某些对象的操作，可以将xxx这个对象预定义好
@@ -780,7 +787,7 @@ $.closeMessage = function(btn) {
 
 /**
  * @author 李钰龙
- * @requires jQuery,EasyUI
+ * @requires jQuery, EasyUI
  * 防止panel/window/dialog组件超出浏览器边界
  * @param left
  * @param top
@@ -831,7 +838,7 @@ $.ajaxSetup({
 
 /**
  * @author 李钰龙
- * @requires jQuery,EasyUI,jQuery cookie plugin
+ * @requires jQuery, EasyUI,jQuery cookie plugin
  * 更换EasyUI主题的方法
  * @param themeName 主题名称
  */

@@ -27,6 +27,7 @@ page 'pages/layout.html', layout: :iframe_layout
 page 'pages/label_button.html', layout: :iframe_layout
 page 'pages/colors.html', layout: :iframe_layout
 page 'pages/under_construction.html', layout: :iframe_layout
+page 'pages/table.html', layout: :iframe_layout
 
 # Pages Layouts
 page 'pages/login.html', layout: :pages_layout
@@ -53,8 +54,6 @@ page 'pages/forgotpwd.html', layout: :pages_layout
 # end
 
 # Automatic image dimensions on image_tag helper
-
-# Compass Target Directory Configuration
 
 # Reload the browser automatically whenever files change
 configure :development do
@@ -105,4 +104,5 @@ configure :build do
 
   # Or use a different image path
   #set :http_path, "/images/"
+
 end

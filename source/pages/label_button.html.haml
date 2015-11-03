@@ -118,7 +118,10 @@
   %hr.col-12
   .col-12
     %h1 Button with Icons
-    =link_to 'Button With Icon', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-user'"
+    =link_to 'Button With Default(Left) Icon', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-user'"
+    =link_to 'Button With Right Icon', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-user', iconAlign:'right'"
+    =link_to 'Button With Top Icon', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-user fa-1x', iconAlign:'top'"
+    =link_to 'Button With Bottom Icon', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-user', iconAlign:'bottom'"
     =link_to 'Button Disabled', 'javascript:void()', class:'easyui-linkbutton l-btn-danger', 'data-options':"iconCls:'fa fa-lock', disabled:true"
   %hr.col-12
   .col-12
@@ -133,12 +136,10 @@
           <a class="easyui-linkbutton l-btn-danger" href="#" data-options="iconCls:'fa fa-user', disabled:true">Button Disabled</a>
   %hr.col-12
   .col-12
-    =link_to 'Camera', 'javascript:void()', class:'easyui-linkbutton l-btn-default', 'data-options':"iconCls:'fa fa-camera fa-2x', size:'large', iconAlign:'top'"
-    =link_to 'Calendar', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-calendar fa-2x', size:'large', iconAlign:'top'"
-    =link_to 'Dashboard', 'javascript:void()', class:'easyui-linkbutton l-btn-info', 'data-options':"iconCls:'fa fa-dashboard fa-2x', size:'large', iconAlign:'top'"
-    =link_to 'Mail', 'javascript:void()', class:'easyui-linkbutton l-btn-success', 'data-options':"iconCls:'fa fa-envelope-o fa-2x', size:'large', iconAlign:'top'"
-    =link_to 'Setting', 'javascript:void()', class:'easyui-linkbutton l-btn-warning', 'data-options':"iconCls:'fa fa-gear fa-2x', size:'large', iconAlign:'top'"
-    =link_to 'Folder', 'javascript:void()', class:'easyui-linkbutton l-btn-danger', 'data-options':"iconCls:'fa fa-folder fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Gift', 'javascript:void()', class:'easyui-linkbutton l-btn-danger', 'data-options':"iconCls:'fa fa-gift fa-3x', size:'large', iconAlign:'top'"
+    =link_to 'Gift', 'javascript:void()', class:'easyui-linkbutton l-btn-danger', 'data-options':"iconCls:'fa fa-gift fa-3x', size:'large', iconAlign:'bottom'"
+    =link_to 'Calendar', 'javascript:void()', class:'easyui-linkbutton l-btn-primary', 'data-options':"iconCls:'fa fa-calendar fa-2x', size:'large', iconAlign:'right'"
+    =link_to 'Mail Inbox', 'javascript:void()', class:'easyui-linkbutton l-btn-success', 'data-options':"iconCls:'fa fa-envelope-o fa-2x', size:'large', iconAlign:'left'"
   %hr.col-12
   .col-12
     .panel.panel-primary
@@ -154,7 +155,6 @@
           <a class="easyui-linkbutton l-btn-success" href="#" data-options="iconCls:'fa fa-envelope-o fa-2x', size:'large', iconAlign:'top'">Mail</a>
           <a class="easyui-linkbutton l-btn-warning" href="#" data-options="iconCls:'fa fa-gear fa-2x', size:'large', iconAlign:'top'">Setting</a>
           <a class="easyui-linkbutton l-btn-danger" href="#" data-options="iconCls:'fa fa-folder fa-2x', size:'large', iconAlign:'top'">Folder</a>
-
   %hr.col-12
   .col-12
     =link_to 'Left', 'javascript:void()', class:'easyui-linkbutton l-btn-default', 'data-options':"iconCls:'fa fa-arrow-circle-o-left', iconAlign:'left'"
@@ -177,7 +177,7 @@
   %hr.col-12
   .col-12
     %h1 Button Hover Effect
-    =link_to 'Bounce', 'javascript:void()', class:'easyui-linkbutton l-btn-default l-btn-bounce', 'data-options':"iconCls:'fa fa-camera fa-2x', size:'large', iconAlign:'top'"
+    =link_to 'Bounce', 'javascript:void()', class:'easyui-linkbutton l-btn-danger l-btn-bounce', 'data-options':"iconCls:'fa fa-gift', iconAlign:'left'"
     =link_to 'Fade', 'javascript:void()', class:'easyui-linkbutton l-btn-default l-btn-fade', 'data-options':"iconCls:'fa fa-times', iconAlign:'right'"
   %hr.col-12
   .col-12

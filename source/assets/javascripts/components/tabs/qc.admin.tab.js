@@ -247,7 +247,7 @@ qc.main.closeTab = function(action) {
 			qc.main.mainTabs.tabs('close', currtabTitle);
 		}
 		break;
-	case "closeall":
+	case "closeAll":
 		$.each(allTabtitle, function(i, n) {
 			if (n != qc.main.onlyOpenTitle) {
 				qc.main.mainTabs.tabs('close', n);
@@ -255,7 +255,7 @@ qc.main.closeTab = function(action) {
 			}
 		});
 		break;
-	case "closeother":
+	case "closeOther":
 		$.each(allTabtitle, function(i, n) {
 			if (n != currtabTitle && n != qc.main.onlyOpenTitle) {
 				qc.main.mainTabs.tabs('close', n);
@@ -263,7 +263,7 @@ qc.main.closeTab = function(action) {
 			}
 		});
 		break;
-	case "closeright":
+	case "closeRight":
 		var tabIndex = qc.main.mainTabs.tabs('getTabIndex', currentTab);
 		if (tabIndex == alltabs.length - 1) {
 			$.messager.show({title:'提示',
@@ -283,7 +283,7 @@ qc.main.closeTab = function(action) {
 		});
 
 		break;
-	case "closeleft":
+	case "closeLeft":
 		var tabIndex = qc.main.mainTabs.tabs('getTabIndex', currentTab);
 		if (tabIndex == 1) {
 			$.messager.show({title:'提示',

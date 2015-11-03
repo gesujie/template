@@ -1,0 +1,91 @@
+-@title= 'Table | Admin Page '
+-@page_classes= 'page'
+
+.container.mb-20
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %i.panel-icon.fa.fa-table
+        .panel-title.panel-with-icon
+          Simple Table
+      .panel-body
+        %table.table.table-hovered
+          %thead
+            %tr
+              -10.times do
+                %th
+                  =lorem.words 2
+          %tbody
+            -10.times do
+              %tr
+                -10.times do
+                  %td
+                    =lorem.words 2
+.container
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        .panel-icon.fa.fa-code
+        %h3.panel-title.panel-with-icon
+          Simple Table | Source Code
+      .panel-body
+        :code
+          # lang: html
+          <table class='table table-hovered'>
+          .
+          .
+          .
+.container.mb-20
+  .col-12
+    .panel.panel-primary
+      .panel-header
+        %i.panel-icon.fa.fa-thumb-tack
+        .panel-title.panel-with-icon
+          Fixed Table
+      .panel-body
+        .fixed-table.js-fixed-table
+          %header.fixed-table-header
+            %table.table
+              %thead
+                %tr
+                  -14.times do
+                    %th
+                      =lorem.words 2
+          %aside.fixed-table-sidebar
+            %table.table
+              %tbody
+                -17.times do
+                  %tr
+                    -2.times do
+                      %td
+                        =lorem.words 2
+          .fixed-table-body
+            %table.table
+              %tbody
+                -17.times do
+                  %tr
+                    -12.times do
+                      %td
+                        =lorem.words 2
+
+:javascript
+
+  //### Fixed Table Columns
+  //
+  //###############################
+  (function () {
+    var fixedTableFn, fixedTable;
+    fixedTable = function (el) {
+      var $body, $header, $sidebar;
+      $body = $(el).find('.fixed-table-body');
+      $sidebar = $(el).find('.fixed-table-sidebar table');
+      $header = $(el).find('.fixed-table-header table');
+      var bodyWidth = $(window).width() - ($('.fixed-table-sidebar').width() + $('.sidebar').width() + 70);
+      $body.css('width', bodyWidth + 'px');
+      return $($body).scroll(function () {
+        $($sidebar).css('margin-top', -($($body).scrollTop()));
+        return $($header).css('margin-left', -($($body).scrollLeft()));
+      });
+    };
+    fixedTableFn = new fixedTable($('.js-fixed-table'));
+  }.call(this));
