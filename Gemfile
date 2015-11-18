@@ -19,7 +19,6 @@ gem 'susy', '~> 2.2.6'
 gem 'middleman-syntax', '~> 2.0.0'
 gem 'redcarpet', '~> 3.3.3'
 
-
 # For faster file watcher updates on Windows:
 gem 'wdm', '~> 0.1.1', platforms: [:mswin, :mingw]
 
