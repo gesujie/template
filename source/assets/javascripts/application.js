@@ -1,4 +1,8 @@
 
+/*!
+* # Easy Admin  v0.1.15 (https://bitbucket.org/coskuntekin/easy-admin)
+*/
+
 $(window).load(function(){
 
   //### Login Page Panel Animations
@@ -104,11 +108,6 @@ $(window).load(function(){
       }
     }
   });
-
-  //### Freeze Table
-  //
-  //###############################
- $('.fixedTable').freezeTable();
 
 });
 
