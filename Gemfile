@@ -13,12 +13,11 @@ gem 'sass', '~> 3.4.19'
 gem 'compass', '~> 1.0.3'
 
 # Susy [https://rubygems.org/gems/susy]
-gem 'susy', '~> 2.2.6'
+gem 'susy', '~> 2.2.7'
 
 # Middleman::Rouge [https://github.com/Linuus/middleman-rouge]
 gem 'middleman-syntax', '~> 2.0.0'
 gem 'redcarpet', '~> 3.3.3'
-
 
 # For faster file watcher updates on Windows:
 gem 'wdm', '~> 0.1.1', platforms: [:mswin, :mingw]

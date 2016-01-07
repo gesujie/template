@@ -1,7 +1,6 @@
 -@title= 'Datagrid | Admin Page '
 -@page_classes= 'datagrid easyui-layout'
 
-
 .container
   .col-12
     .panel.panel-default
@@ -35,7 +34,7 @@
               .col-4
                 =link_to 'Insert', 'javascript:void(0)', iconcls: 'fa fa-plus-square', class:'easyui-linkbutton l-btn-primary', onclick:"$('#dlg-add').dialog('open')"
               .col-4.col-last
-                =link_to 'Remove', 'javascript:void(0)', iconcls: 'fa fa-minus-square', class:'easyui-linkbutton l-btn-warning'
+                =link_to 'Delete', 'javascript:void(0)', iconcls: 'fa fa-minus-square', class:'easyui-linkbutton l-btn-warning'
   .col-12
     .easyui-panel{'data-options': "height:500, cls:'panel-primary panel-datagrid', iconCls:'fa fa-database'", title:'Product List'}
       %table.easyui-datagrid{'data-options':"fit:true, singleSelect:true, striped:true, fitColumns:true, collapsible:true, rownumbers: true, border: false, pagination:true, sortName:'itemid', sortOrder:'asc', url:'assets/javascripts/json/datagridData/demoDatagridData.json',method:'get'"}
